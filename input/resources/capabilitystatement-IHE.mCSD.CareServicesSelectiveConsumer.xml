@@ -261,6 +261,26 @@
         <name value="partof.name:exact"/> 
         <type value="string"/> 
       </searchParam> 
+      <searchParam>
+        <name value="ihe-mcsd-hierarchy-type"/>
+        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyType"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="ihe-mcsd-hierarchy-partof"/>
+        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="ihe-mcsd-hierarchy-partof:below"/>
+        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="ihe-mcsd-hierarchy-partof:above"/>
+        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"/>
+        <type value="reference"/>
+      </searchParam>
     </resource> 
     <resource> 
       <type value="Practitioner"/> 
