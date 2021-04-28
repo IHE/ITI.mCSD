@@ -58,7 +58,8 @@
         <nameUrl value="1_overview.html"/>
         <title value="Overview"/>
         <generation value="markdown"/>
-		<page>
+    </page>
+	  <page>
 			<nameUrl value="2_actors_and_transactions.html"/>
 			<title value="Actors and Transactions"/>
 			<generation value="markdown"/>
@@ -83,7 +84,6 @@
 			<title value="Open and Closed Considerations"/>
 			<generation value="markdown"/>
 		</page>
-      </page>
       <page>
         <nameUrl value="domain-Y.html"/>
         <title value="Transaction Y"/>
