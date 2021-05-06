@@ -39,9 +39,7 @@
     <documentation value="IHE ITI mCSD ITI-90 endpoint"/> 
     <resource> 
       <type value="Location"/> 
-      <supportedProfile> 
-        <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.LocationDistance"/> 
-      </supportedProfile> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.LocationDistance"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="search-type"/> 
