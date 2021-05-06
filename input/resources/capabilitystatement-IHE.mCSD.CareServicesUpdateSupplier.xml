@@ -39,10 +39,8 @@
     <documentation value="IHE ITI mCSD ITI-91 endpoint"/> 
     <resource> 
       <type value="Organization"/> 
-      <profile> 
-        <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization"/> 
-      </profile> 
       <supportedProfile> 
+        <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization"/> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.FacilityOrganization"/> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionOrganization"/> 
       </supportedProfile> 
@@ -58,10 +56,8 @@
     </resource> 
     <resource> 
       <type value="Location"/> 
-      <profile> 
-        <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location"/> 
-      </profile> 
       <supportedProfile> 
+        <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location"/> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.FacilityLocation"/> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionLocation"/> 
       </supportedProfile> 
@@ -77,9 +73,9 @@
     </resource> 
     <resource> 
       <type value="Practitioner"/> 
-      <profile> 
+      <supportedProfile> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Practitioner"/> 
-      </profile> 
+      </supportedProfile> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -92,9 +88,9 @@
     </resource> 
     <resource> 
       <type value="PractitionerRole"/> 
-      <profile> 
+      <supportedProfile> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PractitionerRole"/> 
-      </profile> 
+      </supportedProfile> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -107,9 +103,9 @@
     </resource> 
     <resource> 
       <type value="HealthcareService"/> 
-      <profile> 
+      <supportedProfile> 
         <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.HealthcareService"/> 
-      </profile> 
+      </supportedProfile> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
