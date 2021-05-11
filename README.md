@@ -9,3 +9,11 @@ Mobile Care Services Discovery
 * https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf
 
 * continuous build http://ihe.github.io/ITI.mCSD/
+
+
+## Notes for changes as part of migration
+* Add Facilities and Jurisdictions to Concepts
+* Clarify that facilities and jurisdictions are a combination of 
+Organization and Location under the Organization constraint tables with 
+link to Concepts.
+* Remove meta.profile constraints in tables as this is duplicative.
