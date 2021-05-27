@@ -137,7 +137,7 @@ This guide is organized into four main sections:
 2. Volume I: [Overview](146_introduction.html)
    1. [Actors and Transactions](1461_actors_and_transactions.html)
    2. [Actors Options](1462_actors_options.html)
-   3. [Required Actor Groupsings](1463_required_actor_groupings.html)
+   3. [Required Actor Groupings](1463_required_actor_groupings.html)
    4. [Overview](1464_overview.html)
    5. [Security Considerations](1465_security_considerations.html)
    6. [Cross Profile Considerations](1466_cross_profile_considerations.html)

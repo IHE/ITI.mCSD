@@ -55,38 +55,68 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="1_overview.html"/>
+        <nameUrl value="146_introduction.html"/>
+        <title value="Mobile Care Services Discovery (mCSD)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1461_actors_and_transactions.html"/>
+        <title value="Actors and Transactions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1462_actors_options.html"/>
+        <title value="Actors Options"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1463_required_actor_groupings.html"/>
+        <title value="Required Actor Groupings"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1464_overview.html"/>
         <title value="Overview"/>
         <generation value="markdown"/>
-    </page>
-	  <page>
-			<nameUrl value="2_actors_and_transactions.html"/>
-			<title value="Actors and Transactions"/>
-			<generation value="markdown"/>
-		</page>
-		<page>
-			<nameUrl value="3_security_considerations.html"/>
-			<title value="Security and Privacy Considerations"/>
-			<generation value="markdown"/>
-		</page>
-		<page>
-			<nameUrl value="4_grouping.html"/>
-			<title value="Grouping Considerations"/>
-			<generation value="markdown"/>
-		</page>
-		<page>
-			<nameUrl value="5_testplan.html"/>
-			<title value="Test Plan Considerations"/>
-			<generation value="markdown"/>
-		</page>
+      </page>
+      <page>
+        <nameUrl value="1465_security_considerations.html"/>
+        <title value="Security Considerations"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1466_cross_profile_considerations.html"/>
+        <title value="Cross Profile Considerations"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="1467_deployment_considerations.html"/>
+        <title value="Deployment Considerations"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="a_actor_summary_definitions.html"/>
+        <title value="Appendix A -- Actor Summary Definitions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="b_transaction_summary_definitions.html"/>
+        <title value="Appendix B -- Transaction Summary Definitions"/>
+        <generation value="markdown"/>
+      </page>
 		<page>
 			<nameUrl value="a_issues.html"/>
 			<title value="Open and Closed Considerations"/>
 			<generation value="markdown"/>
 		</page>
       <page>
-        <nameUrl value="domain-Y.html"/>
-        <title value="Transaction Y"/>
+        <nameUrl value="ITI-90.html"/>
+        <title value="Find Matching Care Services [ITI 90]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="ITI-91.html"/>
+        <title value="Request Care Services Updates [ITI 91]"/>
         <generation value="markdown"/>
       </page>
 
