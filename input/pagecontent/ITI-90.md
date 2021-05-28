@@ -320,7 +320,7 @@ Table 2:3.90.4.2.2.1-1 references the object model defined at
 
 Table 2:3.90.4.2.2.1-1: Organization Resource Constraints
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -378,7 +378,7 @@ references the object model defined at
 Table 2:3.90.4.2.2.1-2: Additional Organization Resource Constraints for
 Facilities
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -414,7 +414,7 @@ as described in Table 2:3.90.4.2.2.2-1. The Element column in Table
 
 Table 2:3.90.4.2.2.2-1: Location Resource Constraints
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -469,7 +469,7 @@ as described in Table 2:3.90.4.2.2.2-2. The Element column in Table
 Table 2:3.90.4.2.2.2-2: Additional Location Resource Constraints for
 Facilities
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -509,7 +509,7 @@ defined at <http://hl7.org/fhir/R4/location.html#resource>.
 Table 2:3.90.4.2.2.2-3: Location Resource Constraints with Location
 Distance Option
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -544,7 +544,7 @@ Table 2:3.90.4.2.2.3-1 references the object model defined at
 
 Table 2:3.90.4.2.2.3-1: Practitioner Resource Constraints
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -579,7 +579,7 @@ column in Table 2:3.90.4.2.2.4-1 references the object model defined at
 
 Table 2:3.90.4.2.2.4-1: PractitionerRole Resource Constraints
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>
@@ -614,7 +614,7 @@ defined at <http://hl7.org/fhir/R4/healthcareservice.html#resource>.
 
 Table 2:3.90.4.2.2.5-1: HealthcareService Resource Constraints
 
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th><p>Element</p>

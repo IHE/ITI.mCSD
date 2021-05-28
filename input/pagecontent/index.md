@@ -1,4 +1,4 @@
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <tbody>
 <tr class="odd">
 <td><p>Whenever possible, IHE profiles are based on established and stable underlying standards. However, if an IHE domain determines that an emerging standard has high likelihood of industry adoption, and the standard offers significant benefits for the use cases it is attempting to address, the domain may develop IHE profiles based on such a standard. During Trial Implementation, the IHE domain will update and republish the IHE profile as the underlying standard evolves.</p>
@@ -6,7 +6,7 @@
 <p>This mCSD Profile incorporates content from Release 4 of the emerging HL7<sup>®</sup>[1] FHIR<sup>®</sup>[2] specification. HL7 describes FHIR Change Management and Versioning at <a href="https://www.hl7.org/fhir/versions.html">https://www.hl7.org/fhir/versions.html</a>.</p>
 <p>HL7 provides a rating of the maturity of FHIR content based on the FHIR Maturity Model (FMM): level 0 (draft) through N (Normative). See <a href="http://hl7.org/fhir/versions.html#maturity">http://hl7.org/fhir/versions.html#maturity</a>.</p>
 <p>The FMM levels for FHIR content used in this profile are:</p>
-<table>
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
 <th>FHIR Content</th>
