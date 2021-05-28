@@ -7,7 +7,7 @@ organizations, locations, facilities, practitioners, and healthcare
 services. The relationship between these entities is illustrated in
 Figure 1:46.4.1-1.
 
-![](./media/image2.png)
+![](image2.png)
 
 Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities
 
@@ -50,7 +50,7 @@ surgeon.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.1.2-1.
 
-![Untitled (6)](./media/image3.png)
+![Untitled (6)](image3.png)
 
 Figure 1:46.4.2.1.2-1: Provider Query Use Case
 
@@ -128,7 +128,7 @@ health worker.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.2.2-1.
 
-![Untitled (7)](./media/image4.png)
+![Untitled (7)](image4.png)
 
 Figure 1:46.4.2.2.2-1: Federated Data Site Management Workflow
 
@@ -223,7 +223,7 @@ data for the sites managed by the OU.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.3.2-1.
 
-![](./media/image5.png)
+![](image5.png)
 
 Figure 1:46.4.2.3.2-1: Cross-jurisdictional Site Management Workflow
 
@@ -305,7 +305,7 @@ retrieve the list of facilities.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.4.1-1.
 
-![](./media/image6.png)
+![](image6.png)
 
 Figure 1:46.4.2.4.2-1: Master Facility List Workflow
 
