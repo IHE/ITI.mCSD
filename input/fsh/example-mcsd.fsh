@@ -24,25 +24,3 @@ Usage: #example
 * type = Facility
 * type[Facility].coding.system = "urn:ietf:rfc:3986"
 * type[Facility].coding.code = #urn:ihe:iti:mcsd:2019:facility
-
-
-
-// Instance: Example-English
-// InstanceOf: Bundle
-// Usage: #example
-
-// * type = #transaction
-// * entry[+].fullUrl = "http://www.example.org/fhir/Patient/DDCC-Patient-English"
-// * entry[=].request.url = "Patient"
-// * entry[=].request.method = #PUT
-// * entry[=].resource = DDCC-Patient-English
-
-// * entry[+].fullUrl = "http://www.example.org/fhir/Patient/DDCC-Organization-English"
-// * entry[=].request.url = "Organization"
-// * entry[=].request.method = #PUT
-// * entry[=].resource = DDCC-Organization-English
-
-// * entry[+].fullUrl = "http://www.example.org/fhir/Patient/DDCC-Immunization-English"
-// * entry[=].request.url = "Immunization"
-// * entry[=].request.method = #PUT
-// * entry[=].resource = DDCC-Immunization-English
