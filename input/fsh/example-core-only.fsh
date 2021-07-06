@@ -56,19 +56,19 @@ Usage: #example
 * entry[=].request.method = #PUT
 * entry[=].resource = Location-Example
 
-* entry[+].fullUrl = "http://www.example.org/fhir/Patient/HealthcareService-Example"
+* entry[+].fullUrl = "http://www.example.org/fhir/HealthcareService/HealthcareService-Example"
 * entry[=].request.url = "HealthcareService"
 * entry[=].request.method = #PUT
 * entry[=].resource = HealthcareService-Example
-
-* entry[+].fullUrl = "http://www.example.org/fhir/Practitioner/Practitioner-Example"
-* entry[=].request.url = "Practitioner"
-* entry[=].request.method = #PUT
-* entry[=].resource = Practitioner-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/PractitionerRole/PractitionerRole-Example"
 * entry[=].request.url = "PractitionerRole"
 * entry[=].request.method = #PUT
 * entry[=].resource = PractitionerRole-Example
+
+* entry[+].fullUrl = "http://www.example.org/fhir/Practitioner/Practitioner-Example"
+* entry[=].request.url = "Practitioner"
+* entry[=].request.method = #PUT
+* entry[=].resource = Practitioner-Example
 
 
