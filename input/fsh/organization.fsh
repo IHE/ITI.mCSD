@@ -36,7 +36,7 @@ Title:        "Search on the IHE defined extension for hierarchy type."
 * code = #ihe-mcsd-hierarchy-type
 * base = #Organization
 * type = #token
-* expression = "(extension('http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy').extension('hierarchy-type).value as CodeableConcept)"
+* expression = "extension('http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy').extension('hierarchy-type').value as CodeableConcept"
 
 Instance:     MCSDSearchOrganizationHierarchyPartOf
 InstanceOf:   SearchParameter
@@ -49,7 +49,7 @@ Title:        "Search on the IHE defined extension for hierarchy part of."
 * code = #ihe-mcsd-hierarchy-partof
 * base = #Organization
 * type = #reference
-* expression = "(extension('http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy').extension('part-of).value as Reference)"
+* expression = "extension('http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy').extension('part-of').value as Reference"
 * modifier[+] = #below
 * modifier[+] = #above
 
