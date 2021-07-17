@@ -8,6 +8,10 @@ Description:  "A profile on the Organization resource for mCSD."
 * name 1..1
 * partOf 0..1
 * extension contains MCSDOrganizationHierarchy named hierarchy 0..* MS
+* extension[hierarchy] MS
+* extension[hierarchy] ^label = "Hierarchy"
+* extension[hierarchy].extension[hierarchy-type].valueCodeableConcept MS
+* extension[hierarchy].extension[part-of].valueReference MS
 
 
 Extension:    MCSDOrganizationHierarchy
