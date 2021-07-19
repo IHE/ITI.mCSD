@@ -4,3 +4,6 @@ template
 output
 input-cache
 fsh-generated
+
+# macos
+.DS_Store
