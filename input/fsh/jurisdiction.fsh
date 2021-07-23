@@ -4,6 +4,7 @@ Id:           IHE.mCSD.JurisdictionOrganization
 Title:        "mCSD Organization for Jurisdictions"
 Description:  "A profile on the mCSD Organization for mCSD Jurisdictions"
 
+* url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionOrganization"
 * type 2..*
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "coding.system"
@@ -20,6 +21,7 @@ Id:           IHE.mCSD.JurisdictionLocation
 Title:        "mCSD Location for Jurisdictions"
 Description:  "A profile on the mCSD Location for mCSD Jurisdictions"
 
+* url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionLocation"
 * type 2..*
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "coding.system"
