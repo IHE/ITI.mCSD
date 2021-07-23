@@ -4,6 +4,7 @@ Id:           IHE.mCSD.Organization
 Title:        "mCSD Organization"
 Description:  "A profile on the Organization resource for mCSD."
 
+* url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization"
 * type 1..*
 * name 1..1
 * partOf 0..1
@@ -15,6 +16,7 @@ Id:           IHE.mCSD.OrganizationHierarchy
 Title:        "mCSD Additional Hierarchies extension for mCSD Organization."
 Description:  "If there are additional hierarchies (such as funding source),then use this extension."
 
+* url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy"
 * ^context.type = #element
 * ^context.expression = "MCSDOrganization"
 * extension contains
