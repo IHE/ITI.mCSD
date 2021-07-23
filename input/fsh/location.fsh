@@ -4,6 +4,7 @@ Id:           IHE.mCSD.Location
 Title:        "mCSD Location"
 Description:  "A profile on the Location resource for mCSD."
 
+* url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location"
 * type 1..*
 * physicalType 1..1
 * name 1..1
@@ -15,4 +16,5 @@ Id:           IHE.mCSD.LocationDistance
 Title:        "mCSD Location with Distance"
 Description:  "A profile on the mCSD Location resource for distance searches."
 
+* url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.LocationDistance"
 * position 1..1
