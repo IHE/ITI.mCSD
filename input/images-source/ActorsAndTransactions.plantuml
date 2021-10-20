@@ -1,8 +1,9 @@
 @startuml
-' This is a PlantUML comment
-' this style of diagram is not yet supported by IG Build, so you must manually extract 
-' and put the PNG into the image folder and check it in.
-agent "Client" as Client
-agent "Server" as Server
-Client -- Server : "go [domain-Y] ↓"
+agent "Care Services Selective Supplier" as SelectiveSupplier
+agent "Care Services Selective Consumer" as SelectiveConsumer
+agent "Care Services Update Supplier" as UpdateSupplier
+agent "Care Services Update Consumer" as UpdateConsumer
+SelectiveConsumer -> SelectiveSupplier : "Find Matching Care Services [ITI-90]"
+SelectiveConsumer -[hidden]-> UpdateConsumer
+UpdateConsumer -> UpdateSupplier : "Request Care Services Updates [ITI-91]"
 @enduml

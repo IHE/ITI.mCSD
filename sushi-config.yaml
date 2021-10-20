@@ -1,7 +1,85 @@
-id: ihe.mcsd.fhir
-canonical: https://profiles.ihe.net/ITI/mCSD
-name: mCSD
-status: draft
-version: 0.1.0
+id: IHE.ITI.mCSD
+canonical: http://profiles.ihe.net/ITI/mCSD
+version: 3.3.1
+name: IHE_mCSD
+title: "Mobile Care Services Discovery (mCSD)"
+status: active
+publisher:
+  - name: IHE IT Infrastructure Technical Committee
+  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
+  - email: iti@ihe.net
+contact:
+  - name: IHE IT Infrastructure Technical Committee
+    telecom:
+      - system: email
+        value: iti@ihe.net
+description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
+license:  CC-BY-SA-4.0
 fhirVersion: 4.0.1
-FSHOnly: true
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+copyrightYear: 2020+
+releaseLabel: ci-build
+
+
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+#  path-pages:
+#    - input/pagecontent
+#    - fsh-generated/includes
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'false'
+  logging: progress
+  shownav: 'true'
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+  special-url: 
+    - urn:ihe:event-type-code
+
+
+pages:
+  index.md:
+    title: Mobile Care Services Discovery (mCSD)
+    generation: markdown
+  volume-1.md:
+    title: 1:46 Mobile Care Services Discovery (mCSD)
+    generation: markdown
+  ITI-90.md:
+    title: 2:3.90 Find Matching Care Services [ITI-90]
+    generation: markdown
+  ITI-91.md:
+    title: 2:3.91 Request Care Services Updates [ITI-91]
+    generation: markdown
+  testplan.md:
+    title: mCSD Test Plan
+    generation: markdown
+  issues.md:
+    title: mCSD Open and Closed issues
+    generation: markdown
+  other.md:
+    title: Changes to Other Profiles
+    generation: markdown
+
+
+menu:
+  mCSD Home: index.html
+  Volume 1:
+    Introduction: volume-1.html
+    Actors and Transactions: volume-1.html#1461-mcsd-actors-and-transactions
+    Actor Options: volume-1.html#1462-mcsd-actor-options
+    Required Groupings: volume-1.html#1463-mcsd-required-actor-grouping
+    Overview: volume-1.html#1464-mcsd-overview
+    Security Considerations: volume-1.html#1465-mcsd-security-considerations
+    Cross-Profile Considerations: volume-1.html#1466-mcsd-cross-profile-considerations
+    Deployment Considerations: volume-1.html#1467-mcsd-deployment-considerations  
+  Volume 2:
+    "Find Matching Care Services [ITI-90]": ITI-90.html
+    "Request Care Services Updates [ITI-91]": ITI-91.html 
+  Test Plan: testplan.html
+  Artifacts: artifacts.html
+  Other: other.html

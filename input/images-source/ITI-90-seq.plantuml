@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+participant "Care Services Selective Consumer" as Client
+participant "Care Services Selective Supplier" as Server
+activate Client
+activate Server
+Client -> Server : 1. Find Matching Care Services Request [ITI-90]
+Server --> Client : 2. Find Matching Care Services Response [ITI-90]
+deactivate Client
+deactivate Server
+@enduml

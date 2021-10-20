@@ -1,5 +1,9 @@
-### Issues
-#### Open Issues and Questions
+<div markdown="1" class="stu-note">
+
+### Significant changes from PDQm, Rev 3.3:
+- FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
+
+### Open Issues and Questions
 
 mCSD\_7. Should there be additional required search parameters? Should
 we also require any reverse chaining (\_has) options for the search?
@@ -28,7 +32,7 @@ Services Updates \[ITI-91\] the Care Services Update Consumer may have
 to filter results if required. Is this a common configuration and is
 this step necessary?
 
-#### Closed Issues
+### Closed Issues
 
 *mCSD\_1. Should we include the FreeBusy transaction and use cases or
 just remove them?*
@@ -54,7 +58,7 @@ be based at that facility. *
 
 *Not quite sure the best way to capture this when looking at:*
 
-[*http://build.fhir.org/location.html\#bnr*](http://build.fhir.org/location.html#bnr)
+*[http://build.fhir.org/location.html\#bnr](http://build.fhir.org/location.html#bnr)*
 
 *It is clear that we have a hierarchy of locations to capture the
 geographic hierarchy (jurisdictions): *
@@ -93,7 +97,7 @@ that data instead of just a position (latitude/longitude).
 has been opened for this.*
 
 As per the request, FHIR has added a standard extension to address this:
-<https://www.hl7.org/fhir/extension-location-boundary-geojson.html>
+[https://www.hl7.org/fhir/extension-location-boundary-geojson.html](https://www.hl7.org/fhir/extension-location-boundary-geojson.html)
 
 *mCSD\_5. With a federated deployment, data may come from multiple
 sources and there can be an issue with resolving duplicate records and
@@ -111,3 +115,5 @@ period and we have created a CP to add an entry to the use field:
 [GF\#13265](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemEdit&tracker_item_id=13265).*
 
 FHIR has added an additional Identifier.use code of “old” for this case.
+
+</div>

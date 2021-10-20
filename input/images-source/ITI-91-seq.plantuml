@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+participant "Care Services Update Consumer" as Client
+participant "Care Services Update Supplier" as Server
+activate Client
+activate Server
+Client -> Server : 1. Request Care Services Updates Request [ITI-91]
+Server --> Client : 2. Request Care Services Updates Response [ITI-91]
+deactivate Client
+deactivate Server
+@enduml

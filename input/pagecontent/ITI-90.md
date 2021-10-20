@@ -1,4 +1,3 @@
-## 2:3.90 Find Matching Care Services \[ITI-90\]
 
 ### 2:3.90.1 Scope
 
@@ -9,25 +8,23 @@ against a Care Services Selective Supplier.
 
 ### 2:3.90.2 Actor Roles
 
-| **Actor:** | Care Services Selective Consumer                                                                 |
-| ---------- | ------------------------------------------------------------------------------------------------ |
-| **Role:**  | Requests a list of resources from the Care Services Selective Supplier based on query parameters |
-| **Actor:** | Care Services Selective Supplier                                                                 |
-| **Role:**  | Accepts the query request and returns a list of matching resources.                              |
+| Actor | Role |
+| ----- | ---- |
+| Care Services Selective Consumer  | Requests a list of resources from the Care Services Selective Supplier based on query parameters |
+| Care Services Selective Supplier  | Accepts the query request and returns a list of matching resources.                              |
 
 ### 2:3.90.3 Referenced Standards
 
-  - HL7 FHIR standard Release 4 <http://hl7.org/fhir/R4/index.html>
-
-  - JSON – IETF RFC7159
-
-  - XML
-
-  - HTTP 1.1
+  - HL7 FHIR standard Release 4 [http://hl7.org/fhir/R4/index.html](http://hl7.org/fhir/R4/index.html)
 
 ### 2:3.90.4 Messages
 
-Figure 2:3.90.4-1: Interaction Diagram
+<div>
+{%include ITI-90-seq.svg%}
+</div>
+<br clear="all">
+
+**Figure 2:3.90.4-1: Interaction Diagram**
 
 #### 2:3.90.4.1 Find Matching Care Services Request Message
 
@@ -45,14 +42,14 @@ of this transaction.
 ##### 2:3.90.4.1.2 Message Semantics
 
 A Care Services Selective Consumer initiates a search request using HTTP
-GET as defined at <http://hl7.org/fhir/R4/http.html#search> on the
+GET as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the
 Organization, Location, Practitioner, PractitionerRole, or
 HealthcareService Resources. The query parameters are identified below.
 A Care Services Selective Consumer may query any combination or subset
 of the parameters.
 
 A Care Services Selective Supplier shall support combinations of search
-parameters as defined at <http://hl7.org/fhir/R4/search.html#combining>,
+parameters as defined at [http://hl7.org/fhir/R4/search.html#combining](http://hl7.org/fhir/R4/search.html#combining),
 “Composite Search Parameters.”
 
 A Care Services Selective Supplier shall support responding to a request
@@ -76,7 +73,7 @@ The Care Services Selective Supplier shall support the :contains and
 :exact modifiers in all of the string query parameters below.
 
 The Care Services Selective Supplier shall support the following search
-parameters as defined at <http://hl7.org/fhir/R4/search.html#all>.
+parameters as defined at [http://hl7.org/fhir/R4/search.html#all](http://hl7.org/fhir/R4/search.html#all).
 
 \_id
 
@@ -91,8 +88,8 @@ prefixes for the \_lastUpdated parameter: gt, lt, ge, le, sa, and eb.
 
 The Care Services Selective Supplier shall support the following search
 parameters on the Organization Resource as defined at
-<http://hl7.org/fhir/R4/organization.html#search>. String parameter
-modifiers are defined at <http://hl7.org/fhir/R4/search.html#string>.
+[http://hl7.org/fhir/R4/organization.html#search](http://hl7.org/fhir/R4/organization.html#search). String parameter
+modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
 The ihe-mcsd-hierarchy-\* search parameters query the hierarchy
 extension identified by the following canonical URI
 http://ihe.net/fhir/StructureDefinition/IHE\_mCSD\_hierarchy\_extension.
@@ -129,8 +126,8 @@ ihe-mcsd-hierarchy-partof:below
 
 The Care Services Selective Supplier shall support the following search
 parameters on the Location Resource as defined at
-<http://hl7.org/fhir/R4/location.html#search>. String parameter
-modifiers are defined at <http://hl7.org/fhir/R4/search.html#string>.
+[http://hl7.org/fhir/R4/location.html#search](http://hl7.org/fhir/R4/location.html#search). String parameter
+modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
 
 identifier
 
@@ -164,8 +161,8 @@ organization.name
 
 The Care Services Selective Supplier shall support the following search
 parameters on the Practitioner Resource as defined at
-<http://hl7.org/fhir/R4/practitioner.html#search>. String parameter
-modifiers are defined at <http://hl7.org/fhir/R4/search.html#string>.
+[http://hl7.org/fhir/R4/practitioner.html#search](http://hl7.org/fhir/R4/practitioner.html#search). String parameter
+modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
 
 active
 
@@ -181,7 +178,7 @@ family
 
 The Care Services Selective Supplier shall support the following search
 parameters on the PractitionerRole Resource as defined at
-<http://hl7.org/fhir/R4/practitionerrole.html#search>.
+[http://hl7.org/fhir/R4/practitionerrole.html#search](http://hl7.org/fhir/R4/practitionerrole.html#search).
 
 active
 
@@ -233,8 +230,8 @@ service.organization
 
 The Care Services Selective Supplier shall support the following search
 parameters on the HealthcareService Resource as defined at
-<http://hl7.org/fhir/R4/healthcareservice.html#search>. String parameter
-modifiers are defined at <http://hl7.org/fhir/R4/search.html#string>.
+[http://hl7.org/fhir/R4/healthcareservice.html#search](http://hl7.org/fhir/R4/healthcareservice.html#search). String parameter
+modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
 
 active
 
@@ -264,7 +261,7 @@ location.name
 
 The Care Services Selective Supplier supporting the Location Distance
 Option shall support the following search parameters on the Location
-Resource as defined at <http://hl7.org/fhir/R4/location.html#search>.
+Resource as defined at [http://hl7.org/fhir/R4/location.html#search](http://hl7.org/fhir/R4/location.html#search).
 
 near
 
@@ -273,7 +270,7 @@ near
 The Care Services Selective Supplier shall process the query to discover
 the resources that match the search parameters given, and return a
 response as per Section 2:3.90.4.2 or an error as per
-<http://hl7.org/fhir/R4/search.html#errors>.
+[http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
 #### 2:3.90.4.2 Find Matching Care Services Response Message
 
@@ -286,26 +283,26 @@ to the query are ready.
 ##### 2:3.90.4.2.2 Message Semantics
 
 The Care Services Selective Supplier shall support the search response
-message as defined at <http://hl7.org/fhir/R4/http.html#search> on the
+message as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the
 following Resources.
 
   - Organization, as defined at
-    <http://hl7.org/fhir/R4/organization.html>
+    [http://hl7.org/fhir/R4/organization.html](http://hl7.org/fhir/R4/organization.html)
 
-  - Location, as defined at <http://hl7.org/fhir/R4/location.html>
+  - Location, as defined at [http://hl7.org/fhir/R4/location.html](http://hl7.org/fhir/R4/location.html)
 
   - Practitioner, as defined at
-    <http://hl7.org/fhir/R4/practitioner.html>
+    [http://hl7.org/fhir/R4/practitioner.html](http://hl7.org/fhir/R4/practitioner.html)
 
   - PractitionerRole, as defined at
-    <http://hl7.org/fhir/R4/practitionerrole.html>
+    [http://hl7.org/fhir/R4/practitionerrole.html](http://hl7.org/fhir/R4/practitionerrole.html)
 
   - HealthcareService, as defined at
-    <http://hl7.org/fhir/R4/healthcareservice.html>
+    [http://hl7.org/fhir/R4/healthcareservice.html](http://hl7.org/fhir/R4/healthcareservice.html)
     
     All References (reference.reference element) to Resources defined in
     this transaction shall be populated with an accessible URL (see
-    <https://www.hl7.org/fhir/references-definitions.html#Reference.reference>),
+    [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)),
     unless the referenced resource is not present on a server accessible
     to the client.
 
@@ -316,7 +313,7 @@ A Care Services Selective Supplier shall return a Bundle of matching
 Organization Resources. The Organization Resource shall be further
 constrained as described in Table 2:3.90.4.2.2.1-1. The Element column in
 Table 2:3.90.4.2.2.1-1 references the object model defined at
-<http://hl7.org/fhir/R4/organization.html#resource>.
+[http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 Table 2:3.90.4.2.2.1-1: Organization Resource Constraints
 
@@ -373,7 +370,7 @@ Facilities. In addition to the constraints in Table 2:3.90.4.2.2.1-1, the
 FHIR Organization Resource shall be further constrained as described in
 Table 2:3.90.4.2.2.1-2. The Element column in Table 2:3.90.4.2.2.1-2
 references the object model defined at
-<http://hl7.org/fhir/R4/organization.html#resource>.
+[http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 Table 2:3.90.4.2.2.1-2: Additional Organization Resource Constraints for
 Facilities
@@ -410,7 +407,7 @@ Care Services Selective Supplier shall return a Bundle of matching
 Location Resources. The Location Resource shall be further constrained
 as described in Table 2:3.90.4.2.2.2-1. The Element column in Table
 2:3.90.4.2.2.2-1 references the object model defined at
-<http://hl7.org/fhir/R4/location.html#resource>.
+[http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 Table 2:3.90.4.2.2.2-1: Location Resource Constraints
 
@@ -464,7 +461,7 @@ working with Facilities. In addition to the constraints in Table
 2:3.90.4.2.2.2-1, the FHIR Location Resource shall be further constrained
 as described in Table 2:3.90.4.2.2.2-2. The Element column in Table
 2:3.90.4.2.2.2-2 references the object model defined at
-<http://hl7.org/fhir/R4/location.html#resource>.
+[http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 Table 2:3.90.4.2.2.2-2: Additional Location Resource Constraints for
 Facilities
@@ -504,7 +501,7 @@ Facilities
 When supporting the Location Distance Option. The Location Resource
 shall be further constrained as described in Table 2:3.90.4.2.2.2-3. The
 Element column in Table 2:3.90.4.2.2.2-3 references the object model
-defined at <http://hl7.org/fhir/R4/location.html#resource>.
+defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 Table 2:3.90.4.2.2.2-3: Location Resource Constraints with Location
 Distance Option
@@ -540,7 +537,7 @@ A Care Services Selective Supplier shall return a Bundle of matching
 Practitioner Resources. The Practitioner Resource shall be further
 constrained as described in Table 2:3.90.4.2.2.3-1. The Element column in
 Table 2:3.90.4.2.2.3-1 references the object model defined at
-<http://hl7.org/fhir/R4/practitioner.html#resource>.
+[http://hl7.org/fhir/R4/practitioner.html#resource](http://hl7.org/fhir/R4/practitioner.html#resource).
 
 Table 2:3.90.4.2.2.3-1: Practitioner Resource Constraints
 
@@ -575,7 +572,7 @@ Resources. A Care Services Selective Supplier shall return a Bundle of
 matching PractitionerRole Resources. The PractitionerRole Resource shall
 be further constrained as described in Table 2:3.90.4.2.2.4-1. The Element
 column in Table 2:3.90.4.2.2.4-1 references the object model defined at
-<http://hl7.org/fhir/R4/practitionerrole.html#resource>.
+[http://hl7.org/fhir/R4/practitionerrole.html#resource](http://hl7.org/fhir/R4/practitionerrole.html#resource).
 
 Table 2:3.90.4.2.2.4-1: PractitionerRole Resource Constraints
 
@@ -610,7 +607,7 @@ Resources. A Care Services Selective Supplier shall return a Bundle of
 matching HealthcareService Resources. The HealthcareService Resource
 shall be further constrained as described in Table 2:3.90.4.2.2.5-1. The
 Element column in Table 2:3.90.4.2.2.5-1 references the object model
-defined at <http://hl7.org/fhir/R4/healthcareservice.html#resource>.
+defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.org/fhir/R4/healthcareservice.html#resource).
 
 Table 2:3.90.4.2.2.5-1: HealthcareService Resource Constraints
 
