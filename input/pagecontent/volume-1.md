@@ -25,14 +25,20 @@ The profile supports querying for:
 
 3.  **Location** – Locations are physical places where care can be
     delivered such as facilities, buildings, wards, rooms, or vehicles.
-    Locations also include political administrative units such as a
+    Locations also include jurisdictions such as a
     village districts or regions. A Location has a unique identifier and
     may have geographic attributes (address, geocode), attributes
     regarding its hours of operation, etc. Each Location may be related
     to one Organization. A location may have a hierarchical relationship
     with other locations.
 
-4.  **Practitioner** – A Practitioner is a health worker such as defined
+4.	**Jurisdiction** – Jurisdictions are political administrative units or 
+    other territories over which authority is exercised.  A Jurisdiction has 
+    a unique identifier, geographic attributes, etc.  Jurisdictions include 
+    political administrative units such as village districts or regions.  
+    Each Jurisdiction is defined by a pairing of Location and Organization.
+
+5.  **Practitioner** – A Practitioner is a health worker such as defined
     by WHO ([http://www.who.int/whr/2006/06_chap1_en.pdf](http://www.who.int/whr/2006/06_chap1_en.pdf)); a
     Practitioner might be a physician, nurse, pharmacist, community
     health worker, district health manager, etc. Practitioners have
@@ -41,7 +47,7 @@ The profile supports querying for:
     Healthcare Services. Specific attributes may be associated with the
     Practitioner relationship with these other entities.
 
-5. **Healthcare Service** – Each healthcare service has a unique
+6. **Healthcare Service** – Each healthcare service has a unique
     identifier. Examples include surgical services, antenatal care
     services, or primary care services. The combination of a Healthcare
     Service offered at a Location may have specific attributes including
@@ -168,7 +174,7 @@ Figure 1:46.4.1-1.
 
 ![](image2.png)
 
-Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities
+**Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities**
 
 #### 1:46.4.1.1 Create, Update, and Delete Services
 
@@ -211,7 +217,7 @@ in Figure 1:46.4.2.1.2-1.
 
 ![Untitled (6)](image3.png)
 
-Figure 1:46.4.2.1.2-1: Provider Query Use Case
+**Figure 1:46.4.2.1.2-1: Provider Query Use Case**
 
 The text in Figure 1:46.4.2.1.2-2 was used to generate the diagram in
 Figure 1:46.4.2.1.2-1. Readers will generally find the diagram more
@@ -246,7 +252,7 @@ Dr. West -\> EMR (Care Services Selective Consumer): create Referral
 
 @enduml
 
-Figure 1:46.4.2.1.2-2: Provider Query Use Case Diagram Pseudocode
+**Figure 1:46.4.2.1.2-2: Provider Query Use Case Diagram Pseudocode**
 
 #### 1:46.4.2.2 Use Case \#2: Provider Lookup During an Emergency Event
 
@@ -289,7 +295,7 @@ in Figure 1:46.4.2.2.2-1.
 
 ![Untitled (7)](image4.png)
 
-Figure 1:46.4.2.2.2-1: Federated Data Site Management Workflow
+**Figure 1:46.4.2.2.2-1: Federated Data Site Management Workflow**
 
 The text in Figure 1:46.4.2.2.2-2 was used to generate the diagram in
 Figure 1:46.4.2.2.2-1. Readers will generally find the diagram more
@@ -336,8 +342,8 @@ Emergency Responder\\nCare Services Selective Consumer -\> Health Worker
 
 @enduml
 
-Figure 1:46.4.2.2.2-2: Federated Data Site Management Workflow Diagram
-Pseudocode
+**Figure 1:46.4.2.2.2-2: Federated Data Site Management Workflow Diagram
+Pseudocode**
 
 #### 1:46.4.2.3 Use Case \#3: Cross-jurisdictional Site Management 
 
@@ -356,7 +362,7 @@ pre-existing data systems hosted by these organizations. This data
 exchange requires a way to share site lists and implement identifier
 mapping between the sites in these lists. 
 
-Figure 1:46.4.2.3.1-1: Cross-Jurisdictional Data Exchange
+**Figure 1:46.4.2.3.1-1: Cross-Jurisdictional Data Exchange**
 
 ##### 1:46.4.2.3.2 Cross-jurisdictional Site Management Process Flow
 
@@ -384,7 +390,7 @@ in Figure 1:46.4.2.3.2-1.
 
 ![](image5.png)
 
-Figure 1:46.4.2.3.2-1: Cross-jurisdictional Site Management Workflow
+**Figure 1:46.4.2.3.2-1: Cross-jurisdictional Site Management Workflow**
 
 The text in Figure 1:46.4.2.3.2-2 was used to generate the diagram in
 Figure 1:46.4.2.3.2-1. Readers will generally find the diagram more
@@ -423,8 +429,8 @@ flagged Locations
 
 @enduml
 
-Figure 1:46.4.2.3.2-2: Cross-jurisdictional Site Management Workflow
-Diagram Pseudocode
+**Figure 1:46.4.2.3.2-2: Cross-jurisdictional Site Management Workflow
+Diagram Pseudocode**
 
 #### 1:46.4.2.4 Use Case \#4: Master Facility List 
 
@@ -466,7 +472,7 @@ in Figure 1:46.4.2.4.1-1.
 
 ![](image6.png)
 
-Figure 1:46.4.2.4.2-1: Master Facility List Workflow
+**Figure 1:46.4.2.4.2-1: Master Facility List Workflow**
 
 The text in Figure 1:46.4.2.4.2-2 was used to generate the diagram in
 Figure 1:46.4.2.4.2-1. Readers will generally find the diagram more
@@ -494,7 +500,7 @@ Consumer: Request Care Services Updates \[ITI-91\] response
 
 @enduml
 
-Figure 1:46.4.2.4.2-2: Master Facility List Workflow Diagram Pseudocode
+**Figure 1:46.4.2.4.2-2: Master Facility List Workflow Diagram Pseudocode**
 
 ## 1:46.5 mCSD Security Considerations
 
@@ -576,7 +582,7 @@ Supplier (or Care Services Update Supplier) to send search results back
 to one or more Care Services Selective Consumers (or Care Services
 Update Consumer). See Figure 1:46.7.1-1.
 
-Figure 1:46.7.1-1: Simple Deployment
+**Figure 1:46.7.1-1: Simple Deployment**
 
 ### 1:46.7.2 Federated and Cross-Jurisdictional Deployments
 
@@ -616,7 +622,7 @@ Update Supplier or a Care Services Selective Supplier. The way in which
 these conflicts are resolved is defined by the implementing jurisdiction
 of the Care Services Update Consumer.
 
-Figure 1:46.7.2-1: Federated and Cross Jurisdictional Deployment
+**Figure 1:46.7.2-1: Federated and Cross Jurisdictional Deployment**
 
 The Care Services Selective Consumer is the actor that queries for
 information about interrelated care services. These queries are sent to

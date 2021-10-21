@@ -127,6 +127,8 @@ described in [Table 3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2). The Elem
 3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2) references the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
+When the Organization represents a Jurisdiction and is paired with a Location, the FHIR Organization Resource shall be further constrained as described in [Table 3.90.4.2.2.1-3](ITI-90.html#table2.3.90.4.2.2.1-3). The Element column in [Table 3.90.4.2.2.1-3](ITI-90.html#table2.3.90.4.2.2.1-3) references the object model defined at [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
+
 ###### 2:3.91.4.2.2.2 FHIR Location Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
@@ -141,9 +143,14 @@ described in [Table 3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2). The Elem
 3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2) references the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
+When the Location represents a Jurisdiction and is paired with an Organization, the FHIR Location Resource 
+shall be further constrained as described in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3). The Element column in 
+[Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3) 
+references the object model defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
+
 When supporting the Location Distance Option, the FHIR Location Resource
-shall be further constrained as described in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3). The
-Element column in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3) references the object model
+shall be further constrained as described in [Table 3.90.4.2.2.2-4](ITI-90.html#table2.3.90.4.2.2.2-4). The
+Element column in [Table 3.90.4.2.2.2-4](ITI-90.html#table2.3.90.4.2.2.2-4) references the object model
 defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 ###### 2:3.91.4.2.2.3 FHIR Practitioner Resource Constraints

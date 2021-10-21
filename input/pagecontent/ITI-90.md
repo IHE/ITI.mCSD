@@ -293,6 +293,17 @@ Facilities**
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 {: .grid .table-striped}
 
+A Care Services Selective Consumer may query on Organization Resources when working with Jurisdictions. A Care Services Selective Supplier shall return a Bundle of matching Organization Resources when working with Jurisdictions. In addition to the constraints in [Table 3.90.4.2.2.1-1](#table2.3.90.4.2.2.1-1), the FHIR Organization Resource shall be further constrained as described in [Table 3.90.4.2.2.1-3](#table2.3.90.4.2.2.1-3). The Element column in [Table 3.90.4.2.2.1-3](#table2.3.90.4.2.2.1-3) references the object model defined at [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
+
+<a name="table2.3.90.4.2.2.1-3"></a>**Table 2:3.90.4.2.2.1-3: Additional Organization Resource Constraints for
+Jurisdictions**
+
+| Element &amp; Cardinality | Data Type
+| ------------------------- | --------- |
+| `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_JurisdictionOrganization` |
+| `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:jurisdiction"` |
+{: .grid .table-striped}
+
 ###### 2:3.90.4.2.2.2 FHIR Location Resource Constraints
 
 A Care Services Selective Consumer may query on Location Resources. A
@@ -307,7 +318,7 @@ as described in [Table 2:3.90.4.2.2.2-1](#table2.3.90.4.2.2.2-1). The Element co
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
 | `meta.profile`<br />`[1..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location` |
-<| `type`<br />`[1..*]` | A code that describes the type of Organization.<br />`CodeableConcept` |
+| `type`<br />`[1..*]` | A code that describes the type of Organization.<br />`CodeableConcept` |
 | `physicalType`<br />`[1..1]` | A code that describes the physical type of Organization.<br />`CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
 | `status`<br />`[1..1]` | `code (active| suspended| inactive)` |
@@ -330,16 +341,38 @@ Facilities**
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
 | `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation` |
-</| `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
+| `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 | `managingOrganization`<br />`[1..1]` | The reference to the Organization resource for this facility.<br />`Reference(Organization)` |
 {: .grid .table-striped}
 
+When the resource is a Jurisdiction, the Location Resource shall be paired with an Organization
+Resource using the managingOrganization element in Location. A Care Services Selective Consumer 
+may query on Location Resources when working with Jurisdictions. A Care Services Selective Supplier 
+shall return a Bundle of matching Location Resources when working with Jurisdictions. In addition to 
+the constraints in [Table 3.90.4.2.2.2-1](#table2.3.90.4.2.2.2-1), the FHIR Location Resource shall be further constrained as 
+described in [Table 3.90.4.2.2.2-3](#table2.3.90.4.2.2.2-3). The Element column in [Table 3.90.4.2.2.2-3](#table2.3.90.4.2.2.2-3) references the object 
+model defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).  
+
+When a geographic boundary is available for the Jurisdiction Location, the location-boundary-geojson extension defined at 
+[http://hl7.org/fhir/extension-location-boundary-geojson.html](http://hl7.org/fhir/extension-location-boundary-geojson.html) shall be used to store this information.
+
+<a name="table2.3.90.4.2.2.2-3"></a>**Table 2:3.90.4.2.2.2-3: Additional Location Resource Constraints for
+Jurisdictions**
+
+| Element &amp; Cardinality | Data Type
+| ------------------------- | --------- |
+| `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_JurisdictionLocation` |
+| `extension`<br />`[0..*]` | When a boundary is available, the location-boundary-geojson extension should be used with the given url, contentType, and data:<br />`url = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson`<br />`valueAttachment.contentType = "application/geo+json"`<br />`valueAttachment.data = base64 encoded GeoJSON boundary data` |
+| `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facijurisdictionlity"` |
+| `managingOrganization`<br />`[1..1]` | The reference to the Organization resource for this jurisdiction.<br />`Reference(Organization)` |
+{: .grid .table-striped}
+
 When supporting the Location Distance Option. The Location Resource
-shall be further constrained as described in [Table 2:3.90.4.2.2.2-3](#table2.3.90.4.2.2.2-3). The
-Element column in [Table 2:3.90.4.2.2.2-3](#table2.3.90.4.2.2.2-3) references the object model
+shall be further constrained as described in [Table 2:3.90.4.2.2.2-4](#table2.3.90.4.2.2.2-4). The
+Element column in [Table 2:3.90.4.2.2.2-4](#table2.3.90.4.2.2.2-4) references the object model
 defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
-<a name="table2.3.90.4.2.2.2-3"></a>**Table 2:3.90.4.2.2.2-3: Location Resource Constraints with Location
+<a name="table2.3.90.4.2.2.2-4"></a>**Table 2:3.90.4.2.2.2-4: Location Resource Constraints with Location
 Distance Option**
 
 | Element &amp; Cardinality | Data Type
