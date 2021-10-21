@@ -70,9 +70,9 @@ menu:
   mCSD Home: index.html
   Volume 1:
     Introduction: volume-1.html
-    Actors and Transactions: volume-1.html#1461-mcsd-actors-and-transactions
+    Actors, Transactions, and Content Modules: volume-1.html#1461-mcsd-actors-transactions-and-content-modules
     Actor Options: volume-1.html#1462-mcsd-actor-options
-    Required Groupings: volume-1.html#1463-mcsd-required-actor-grouping
+    Required Groupings: volume-1.html#1463-mcsd-required-actor-groupings
     Overview: volume-1.html#1464-mcsd-overview
     Security Considerations: volume-1.html#1465-mcsd-security-considerations
     Cross-Profile Considerations: volume-1.html#1466-mcsd-cross-profile-considerations

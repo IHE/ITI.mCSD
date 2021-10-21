@@ -19,10 +19,10 @@ architectures and support a wide array of care workflows.
 ### Organization of This Guide
 This guide is organized into three main sections:
 
-1. Volume 1 [46 mCSD Introduction](volume-1.html)
-    1. [46.1 mCSD Actors and Transactions](volume-1.html#1461-mcsd-actors-and-transactions)
+1. Volume 1: [46 mCSD Introduction](volume-1.html)
+    1. [46.1 mCSD Actors, Transactions, and Content Modules](volume-1.html#1461-mcsd-actors-transactions-and-content-modules)
     2. [46.2 mCSD Actor Options](volume-1.html#1462-mcsd-actor-options)
-    3. [46.3 mCSD Required Groupings](volume-1.html#1463-mcsd-required-actor-grouping)
+    3. [46.3 mCSD Required Groupings](volume-1.html#1463-mcsd-required-actor-groupings)
     4. [46.4 mCSD Overview](volume-1.html#1464-mcsd-overview)
     5. [46.5 mCSD Security Considerations](volume-1.html#1465-mcsd-security-considerations)
     6. [46.6 mCSD Cross-Profile Considerations](volume-1.html#1466-mcsd-cross-profile-considerations)

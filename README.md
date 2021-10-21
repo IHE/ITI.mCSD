@@ -8,7 +8,7 @@ Mobile Care Services Discovery
 * https://profiles.ihe.net/ITI/
 * https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf
 
-* continuous build http://ihe.github.io/ITI.mCSD/
+* continuous build https://build.fhir.org/ig/IHE/ITI.mCSD/branches/main/
 
 
 ## Notes for changes as part of migration
