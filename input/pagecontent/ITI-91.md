@@ -12,7 +12,7 @@ Services Update Supplier.
 | ----- | ---- |
 | Care Services Update Consumer | Requests a list of updated resources from the Care Services Update Supplier. |
 | Care Services Update Supplier | Accepts the update request and returns a list of updated resources.          |
-
+{: .grid}
 
 ### 2:3.91.3 Referenced Standards
 
@@ -55,7 +55,7 @@ support the following parameters.
 _since
 ```
 
-They shall also support the requirements in ITI TF-2x: Z.6, Populating
+They shall also support the requirements in [ITI TF-2x: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating
 the Expected Response Format.
 
 A Care Services Update Supplier shall support receiving a request for
@@ -63,14 +63,14 @@ both the JSON and the XML messaging formats as defined in FHIR. A Care
 Services Update Consumer shall accept either the JSON or the XML
 messaging formats as defined in FHIR.
 
-See ITI TF-2x: Appendix W for informative implementation material for
+See [ITI TF-2x: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for
 this transaction.
 
 ##### 2:3.91.4.1.3 Expected Actions
 
 The Care Services Update Supplier shall process the query to discover
 the resources that match the search parameters given, and gives a
-response as per Section 2:3.91.4.2 or an error as per
+response as per [Section 2:3.91.4.2](#239142-request-care-services-updates-response-message) or an error as per
 [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
 #### 2:3.91.4.2 Request Care Services Updates Response Message
@@ -116,50 +116,50 @@ following Resources:
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return an Organization Resource. The Organization
-Resource shall be further constrained as described in Table
-3.90.4.2.2.1-1. The Element column in Table 3.90.4.2.2.1-1 references
+Resource shall be further constrained as described in [Table
+3.90.4.2.2.1-1](ITI-90.html#table2.3.90.4.2.2.1-1). The Element column in [Table 3.90.4.2.2.1-1](ITI-90.html#table2.3.90.4.2.2.1-1) references
 the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 When the Organization represents a Facility and is paired with a
 Location, the FHIR Organization Resource shall be further constrained as
-described in Table 3.90.4.2.2.1-2. The Element column in Table
-3.90.4.2.2.1-2 references the object model defined at
+described in [Table 3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2). The Element column in [Table
+3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2) references the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 ###### 2:3.91.4.2.2.2 FHIR Location Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a Location Resource. The Location Resource shall
-be further constrained as described in Table 3.90.4.2.2.2-1. The Element
-column in Table 3.90.4.2.2.2-1 references the object model defined at
+be further constrained as described in [Table 3.90.4.2.2.2-1](ITI-90.html#table2.3.90.4.2.2.2-1). The Element
+column in [Table 3.90.4.2.2.2-1](ITI-90.html#table2.3.90.4.2.2.2-1) references the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 When the Location represents a Facility and is paired with an
 Organization, the FHIR Location Resource shall be further constrained as
-described in Table 3.90.4.2.2.2-2. The Element column in Table
-3.90.4.2.2.2-2 references the object model defined at
+described in [Table 3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2). The Element column in [Table
+3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2) references the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 When supporting the Location Distance Option, the FHIR Location Resource
-shall be further constrained as described in Table 3.90.4.2.2.2-3. The
-Element column in Table 3.90.4.2.2.2-3 references the object model
+shall be further constrained as described in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3). The
+Element column in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3) references the object model
 defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 ###### 2:3.91.4.2.2.3 FHIR Practitioner Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a Practitioner Resource. The Practitioner Resource
-shall be further constrained as described in Table 3.90.4.2.2.3-1. The
-Element column in Table 3.90.4.2.2.3-1 references the object model
+shall be further constrained as described in [Table 3.90.4.2.2.3-1](ITI-90.html#table2.3.90.4.2.2.3-1). The
+Element column in [Table 3.90.4.2.2.3-1](ITI-90.html#table2.3.90.4.2.2.3-1) references the object model
 defined at [http://hl7.org/fhir/R4/practitioner.html#resource](http://hl7.org/fhir/R4/practitioner.html#resource).
 
 ###### 2:3.91.4.2.2.4 FHIR PractitionerRole Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a PractitionerRole Resource. The PractitionerRole
-Resource shall be further constrained as described in Table
-3.90.4.2.2.4-1. The Element column in Table 3.90.4.2.2.4-1 references
+Resource shall be further constrained as described in [Table
+3.90.4.2.2.4-1](ITI-90.html#table2.3.90.4.2.2.4-1). The Element column in [Table 3.90.4.2.2.4-1](ITI-90.html#table2.3.90.4.2.2.4-1) references
 the object model defined at
 [http://hl7.org/fhir/R4/practitionerrole.html#resource](http://hl7.org/fhir/R4/practitionerrole.html#resource).
 
@@ -168,7 +168,7 @@ the object model defined at
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a HealthcareService Resource. The
 HealthcareService Resource shall be further constrained as described in
-Table 3.90.4.2.2.5-1. The Element column in Table 3.90.4.2.2.5-1
+[Table 3.90.4.2.2.5-1](ITI-90.html#table2.3.90.4.2.2.5-1). The Element column in [Table 3.90.4.2.2.5-1](ITI-90.html#table2.3.90.4.2.2.5-1)
 references the object model defined at
 [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.org/fhir/R4/healthcareservice.html#resource).
 
@@ -179,6 +179,6 @@ continues with its workflow.
 
 ### 2:3.91.5 Security Considerations
 
-See ITI TF-1: 46.5 for security considerations for the mCSD Profile.
+See [ITI TF-1: 46.5](volume-1.html#1465-mcsd-security-considerations) for security considerations for the mCSD Profile.
 
-See ITI TF-2x: Appendix Z.8 for common mobile security considerations.
+See [ITI TF-2x: Appendix Z.8](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations) for common mobile security considerations.
