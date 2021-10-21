@@ -28,7 +28,6 @@ way defined. If there is concern with the removal of these options,
 please submit a Public Comment.
 
 
-
 ### Closed Issues
 
 *mCSD\_1. Should we include the FreeBusy transaction and use cases or
