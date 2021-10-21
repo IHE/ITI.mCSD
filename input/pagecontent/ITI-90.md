@@ -92,7 +92,7 @@ parameters on the Organization Resource as defined at
 modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
 The `ihe-mcsd-hierarchy-\*` search parameters query the hierarchy
 extension identified by the following canonical URI
-`http://ihe.net/fhir/StructureDefinition/IHE\_mCSD\_hierarchy\_extension`.
+`http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`.
 
 ```
 active
@@ -270,7 +270,7 @@ Table 2:3.90.4.2.2.1-1 references the object model defined at
 | `type`<br />`[1..*]` | A code that describes the type of Organization.<br />`CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
 | `partOf`<br />`[0..1]` | If the Organization belongs to a single hierarchy, the partOf element shall be used.<br />`Reference (Organization)` |
-| `extension`<br />`[0..*]` | If there are additional hierarchies (such as funding source), include them in the extension with the following details:<br />Set the url to the canonical URI for this extension<br />`url = "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_hierarchy_extension"`<br />Set the sub-extension values<br />`hierarchy-type = valueCodeableConcept`<br />`part-of = valueReference(Organization)` |
+| `extension`<br />`[0..*]` | If there are additional hierarchies (such as funding source), include them in the extension with the following details:<br />Set the url to the canonical URI for this extension<br />`url = "http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy"`<br />Set the sub-extension values<br />`hierarchy-type = valueCodeableConcept`<br />`part-of = valueReference(Organization)` |
 {: .grid .table-striped}
 
 A Care Services Selective Consumer may query on Organization Resources
