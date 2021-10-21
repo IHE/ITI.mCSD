@@ -9,7 +9,7 @@
   </text> 
   <url value="http://profiles.ihe.net/ITI/mCSD/CapabilityStatement/IHE.mCSD.CareServicesSelectiveConsumer"/> 
   <version value="20190619"/> 
-  <name value="IHE mCSD - Care Services Selective Consumer"/> 
+  <name value="IHE_mCSD_Care_Services_Selective_Consumer"/> 
   <title value="IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer"/> 
   <status value="draft"/> 
   <experimental value="true"/> 
@@ -26,8 +26,6 @@
   <copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
   <kind value="requirements"/> 
   <fhirVersion value="4.0.0"/> 
-  <!--    this system accepts unknown content in the resources    -->
-  <acceptUnknown value="no"/> 
   <!--    this system can do either xml or json. (Listing both implies full support for either,
    with interconversion)    -->
   <format value="application/fhir+xml"/> 
@@ -327,9 +325,7 @@
     </resource> 
     <resource> 
       <type value="PractitionerRole"/> 
-      <supporteProfile> 
-        <reference value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PractitionerRole"/> 
-      </supporteProfile> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PractitionerRole"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="search-type"/> 
@@ -341,10 +337,6 @@
       </searchParam> 
       <searchParam> 
         <name value="location"/> 
-        <type value="reference"/> 
-      </searchParam> 
-      <searchParam> 
-        <name value="organization"/> 
         <type value="reference"/> 
       </searchParam> 
       <searchParam> 

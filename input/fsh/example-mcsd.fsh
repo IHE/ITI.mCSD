@@ -1,72 +1,92 @@
-Alias: $mcsd = https://github.com/ihe/ITI.mCSD
-
 // jurisdiction pair
 
 Instance: MCSDJurisdictionOrganization-Example
 InstanceOf: MCSDJurisdictionOrganization
+Title: "Example mCSD Jurisdiction Organization"
+Description: "Organization resource for an example mCSD Jurisdiction"
 Usage: #example
 * name = "MCSDJurisdictionOrganization-Example"
 * active = true
-* type[+] = #govt
-* type[+] = $mcsd#Jurisdiction
+* type[jurisdiction] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
+* type[@default] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 Instance: MCSDJurisdictionLocation-Example
 InstanceOf: MCSDJurisdictionLocation
+Title: "Example mCSD Jurisdiction Location"
+Description: "Location resource for an example mCSD Jurisdiction"
 Usage: #example
 * name = "MCSDJurisdictionLocation-Example"
 * status = #active
 * managingOrganization = Reference(MCSDJurisdictionOrganization-Example)
-* physicalType = #PC
-* type[+] = #govt
-* type[+] = $mcsd#Jurisdiction
+* physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#jdn
+* type[jurisdiction] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
+* type[@default] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 // another department
 
 Instance: MCSDOrganization-ExamplePartner
 InstanceOf: MCSDOrganization
+Title: "Example Partner Organization"
+Description: "Example Organization for a Partner Organization"
 Usage: #example
 * name = "Organization-ExamplePartner"
 * active = true
-* type[+] = #govt
+* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
+
+// Hierarchy Code System Example
+CodeSystem:  MCSDExampleHierarchy
+Id: mcsd-example-hierarchy
+Title: "mCSD Example Hierarchy Code System"
+Description:  "An example vocabulary of hierarchies."
+* #supply "Supply Chain"
+* #admin "Administrative"
 
 // facility pair which is part of a jurisdiction and has one other external org attached
 
 Instance: MCSDFacilityOrganization-Example
 InstanceOf: MCSDFacilityOrganization
+Title: "Example mCSD Facility Organization"
+Description: "Organization resource for an example mCSD Facility"
 Usage: #example
 * name = "MCSDFacilityOrganization-Example"
 * active = true
-* type[+] = #govt
-* type[+] = $mcsd#Facility
+* type[facility] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
+* type[@default] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 * partOf = Reference(MCSDJurisdictionOrganization-Example)
 // extensions to allow for additional hierarchy
-* extension[MCSDOrganizationHierarchy].extension[hierarchy-type].valueCodeableConcept = #ihe-mcsd-hierarchy-type
-* extension[MCSDOrganizationHierarchy].extension[part-of].valueReference = Reference(MCSDOrganization-ExamplePartner)
+* extension[hierarchy].extension[hierarchy-type].valueCodeableConcept = MCSDExampleHierarchy#admin
+* extension[hierarchy].extension[part-of].valueReference = Reference(MCSDOrganization-ExamplePartner)
 
 Instance: MCSDFacilityLocation-Example
 InstanceOf: MCSDFacilityLocation
+Title: "Example mCSD Facility Location"
+Description: "Location resource for an example mCSD Facility"
 Usage: #example
 * name = "MCSDFacilityLocation-Example"
 * status = #active
 * managingOrganization = Reference(MCSDFacilityOrganization-Example)
 * partOf = Reference(MCSDJurisdictionLocation-Example)
-* physicalType = #PC
-* type[+] = #HOSP
-* type[+] = $mcsd#Facility
+* physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
+* type[facility] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
+* type[@default] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
 
 // service, role, practitioner
 
 Instance: MCSDHealthcareService-Example
 InstanceOf: MCSDHealthcareService
+Title: "Example mCSD HealthcareService"
+Description: "HealthcareService resource example for mCSD."
 Usage: #example
 * name = "ANC"
-* type = #124 "General Practice"
+* type = http://terminology.hl7.org/CodeSystem/service-type#124 "General Practice"
 * location = Reference(MCSDFacilityLocation-Example)
 
 Instance: MCSDPractitionerRole-Example
 InstanceOf: MCSDPractitionerRole
+Title: "Example mCSD PractitionerRole"
+Description: "PractitionerRole resource example for mCSD."
 Usage: #example
-* code = #nurse
+* code = http://terminology.hl7.org/CodeSystem/practitioner-role#nurse
 * location = Reference(MCSDFacilityLocation-Example)
 * healthcareService = Reference(MCSDHealthcareService-Example)
 * organization = Reference(MCSDFacilityOrganization-Example)
@@ -74,13 +94,17 @@ Usage: #example
 
 Instance: MCSDPractitioner-Example
 InstanceOf: MCSDPractitioner
+Title: "Example mCSD Practitioner"
+Description: "Practitioner resource example for mCSD."
 Usage: #example
-* name.text = "Wil E. Coyote" 
+* name.text = "John Galt" 
 
 // bundler
 
 Instance: Example-MCSD
 InstanceOf: Bundle
+Title: "Example Bundle of mCSD Resources"
+Description: "Example Bundle of Core mCSD Resources: Organization, Location, HealthcareService, Practitioner, and PractitionerRole with Facility and Jursidiction."
 Usage: #example
 * type = #transaction
 

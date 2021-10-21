@@ -261,8 +261,8 @@ A Care Services Selective Consumer may query on Organization Resources.
 A Care Services Selective Supplier shall return a Bundle of matching
 Organization Resources. The Organization Resource shall be further
 constrained as described in Table 2:3.90.4.2.2.1-1 and in the
-[Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html). The Element column in
-Table 2:3.90.4.2.2.1-1 references the object model defined at
+[Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
+The Element column in Table 2:3.90.4.2.2.1-1 references the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 <a name="table2.3.90.4.2.2.1-1"></a>**Table 2:3.90.4.2.2.1-1: Organization Resource Constraints**
@@ -324,8 +324,8 @@ The Element column in Table
 
 | Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
-| `type`<br />`[1..*]` | A code that describes the type of Organization.<br />`CodeableConcept` |
-| `physicalType`<br />`[1..1]` | A code that describes the physical type of Organization.<br />`CodeableConcept` |
+| `type`<br />`[1..*]` | A code that describes the type of Location.<br />`CodeableConcept` |
+| `physicalType`<br />`[1..1]` | A code that describes the physical type of Location.<br />`CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
 | `status`<br />`[1..1]` | `code (active| suspended| inactive)` |
 {: .grid .table-striped}
@@ -367,13 +367,13 @@ Jurisdictions**
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `extension`<br />`[0..*]` | When a boundary is available, the location-boundary-geojson extension should be used with the given url, contentType, and data:<br />`url = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson`<br />`valueAttachment.contentType = "application/geo+json"`<br />`valueAttachment.data = base64 encoded GeoJSON boundary data` |
-| `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facijurisdictionlity"` |
+| `extension`<br />`[0..1]` | When a boundary is available, the location-boundary-geojson extension should be used with the given url, contentType, and data:<br />`url = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson`<br />`valueAttachment.contentType = "application/geo+json"`<br />`valueAttachment.data = base64 encoded GeoJSON boundary data` |
+| `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:jurisdiction"` |
 | `managingOrganization`<br />`[1..1]` | The reference to the Organization resource for this jurisdiction.<br />`Reference(Organization)` |
 {: .grid .table-striped}
 
 When supporting the Location Distance Option. The Location Resource
-shall be further constrained as described in Table 2:3.90.4.2.2.2-4  and in the 
+shall be further constrained as described in Table 2:3.90.4.2.2.2-4 and in the 
 [Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
 The Element column in Table 2:3.90.4.2.2.2-4 references the object model
 defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
@@ -425,7 +425,7 @@ The Element column in Table 2:3.90.4.2.2.4-1 references the object model defined
 A Care Services Selective Consumer may query on HealthcareService
 Resources. A Care Services Selective Supplier shall return a Bundle of
 matching HealthcareService Resources. The HealthcareService Resource
-shall be further constrained as described in Table 2:3.90.4.2.2.5-1 and 
+shall be further constrained as described in Table 2:3.90.4.2.2.5-1 and
 in the [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
 The Element column in Table 2:3.90.4.2.2.5-1 references the object model
 defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.org/fhir/R4/healthcareservice.html#resource).

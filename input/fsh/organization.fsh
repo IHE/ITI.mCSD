@@ -16,7 +16,7 @@ Title:        "mCSD Additional Hierarchies extension for mCSD Organization."
 Description:  "If there are additional hierarchies (such as funding source),then use this extension."
 
 * ^context.type = #element
-* ^context.expression = "MCSDOrganization"
+* ^context.expression = "Organization"
 * extension contains
             hierarchy-type 1..1 MS and
             part-of 1..1 MS
@@ -31,7 +31,7 @@ Title:        "Search on the IHE defined extension for hierarchy type."
 * url = "http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyType"
 * id = "IHE.mCSD.Organization.HierarchyType"
 * description = "This Search Parameter enables finding Organizations by the hierarchy type."
-* name = "ihe-mcsd-hierarchy-type"
+* name = "IHE_mCSD_Hierarchy_Type"
 * status = #active
 * code = #ihe-mcsd-hierarchy-type
 * base = #Organization
@@ -44,7 +44,7 @@ Title:        "Search on the IHE defined extension for hierarchy part of."
 * url = "http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"
 * id = "IHE.mCSD.Organization.HierarchyPartOf"
 * description = "This Search Parameter enables finding Organizations by the hierarchy part of."
-* name = "ihe-mcsd-hierarchy-partof"
+* name = "IHE_mCSD_Hierarchy_PartOf"
 * status = #active
 * code = #ihe-mcsd-hierarchy-partof
 * base = #Organization

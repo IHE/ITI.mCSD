@@ -150,7 +150,7 @@ addition to*** ***<span class="underline">all</span>*** of the
 requirements for the grouped actor (Column 2).
 
 [Section 1:46.5](#1465-mcsd-security-considerations) describes some optional groupings that may be of interest
-for security considerations and [Section 1:46.6](##1466-mcsd-cross-profile-considerations) describes some optional
+for security considerations and [Section 1:46.6](#1466-mcsd-cross-profile-considerations) describes some optional
 groupings in other related profiles.
 
 **Table 1:46.3-1: mCSD - Required Actor Groupings**
