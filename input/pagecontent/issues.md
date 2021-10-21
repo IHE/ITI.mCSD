@@ -27,15 +27,7 @@ all of the FHIR Resources, the clients can use the FHIR Resources in the
 way defined. If there is concern with the removal of these options,
 please submit a Public Comment.
 
-mCSD\_9. We have added a requirement to include a meta.profile tag for
-all compliant resources. This is so that in a mixed server that has
-these resources as well as others, a Care Services Selective Consumer
-can limit the results of Find Matching Care Service \[ITI-90\] to only
-mCSD resources using the \_profile parameter. Since this type of
-parameter isn’t allowed for the \_history transaction for Request Care
-Services Updates \[ITI-91\] the Care Services Update Consumer may have
-to filter results if required. Is this a common configuration and is
-this step necessary?
+
 
 ### Closed Issues
 
@@ -120,5 +112,17 @@ period and we have created a CP to add an entry to the use field:
 [GF\#13265](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemEdit&tracker_item_id=13265).*
 
 FHIR has added an additional Identifier.use code of “old” for this case.
+
+*mCSD\_9. We have added a requirement to include a meta.profile tag for
+all compliant resources. This is so that in a mixed server that has
+these resources as well as others, a Care Services Selective Consumer
+can limit the results of Find Matching Care Service \[ITI-90\] to only
+mCSD resources using the \_profile parameter. Since this type of
+parameter isn’t allowed for the \_history transaction for Request Care
+Services Updates \[ITI-91\] the Care Services Update Consumer may have
+to filter results if required. Is this a common configuration and is
+this step necessary?*
+
+Removed the references to meta.profile.
 
 </div>
