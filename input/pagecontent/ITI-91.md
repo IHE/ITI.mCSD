@@ -117,56 +117,80 @@ following Resources:
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return an Organization Resource. The Organization
 Resource shall be further constrained as described in [Table
-3.90.4.2.2.1-1](ITI-90.html#table2.3.90.4.2.2.1-1). The Element column in [Table 3.90.4.2.2.1-1](ITI-90.html#table2.3.90.4.2.2.1-1) references
+3.90.4.2.2.1-1](ITI-90.html#table2.3.90.4.2.2.1-1) and in the
+[Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
+The Element column in [Table 3.90.4.2.2.1-1](ITI-90.html#table2.3.90.4.2.2.1-1) references
 the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 When the Organization represents a Facility and is paired with a
 Location, the FHIR Organization Resource shall be further constrained as
-described in [Table 3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2). The Element column in [Table
-3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2) references the object model defined at
+described in [Table 3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2) and in the 
+[Organization for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
+The Element column in [Table 3.90.4.2.2.1-2](ITI-90.html#table2.3.90.4.2.2.1-2)
+references the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
-When the Organization represents a Jurisdiction and is paired with a Location, the FHIR Organization Resource shall be further constrained as described in [Table 3.90.4.2.2.1-3](ITI-90.html#table2.3.90.4.2.2.1-3). The Element column in [Table 3.90.4.2.2.1-3](ITI-90.html#table2.3.90.4.2.2.1-3) references the object model defined at [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
+When the Organization represents a Jurisdiction and is paired with a Location,
+the FHIR Organization Resource shall be further constrained as described in
+[Table 3.90.4.2.2.1-3](ITI-90.html#table2.3.90.4.2.2.1-3)and in the
+[Organization for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
+The Element column in [Table 3.90.4.2.2.1-3](ITI-90.html#table2.3.90.4.2.2.1-3) references the 
+object model defined at [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 ###### 2:3.91.4.2.2.2 FHIR Location Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a Location Resource. The Location Resource shall
-be further constrained as described in [Table 3.90.4.2.2.2-1](ITI-90.html#table2.3.90.4.2.2.2-1). The Element
-column in [Table 3.90.4.2.2.2-1](ITI-90.html#table2.3.90.4.2.2.2-1) references the object model defined at
+be further constrained as described in [Table 3.90.4.2.2.2-1](ITI-90.html#table2.3.90.4.2.2.2-1)
+and in the [Location Profile for mCSD](StructureDefinition-IHE.mCSD.Location.html).
+The Element column in [Table 3.90.4.2.2.2-1](ITI-90.html#table2.3.90.4.2.2.2-1) references
+the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 When the Location represents a Facility and is paired with an
 Organization, the FHIR Location Resource shall be further constrained as
-described in [Table 3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2). The Element column in [Table
-3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2) references the object model defined at
+described in [Table 3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2) and in the 
+[Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html).
+The Element column in [Table 3.90.4.2.2.2-2](ITI-90.html#table2.3.90.4.2.2.2-2)
+references the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
-When the Location represents a Jurisdiction and is paired with an Organization, the FHIR Location Resource 
-shall be further constrained as described in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3). The Element column in 
-[Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3) 
-references the object model defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
+When the Location represents a Jurisdiction and is paired with an Organization, the FHIR 
+Location Resource shall be further constrained as described in 
+[Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3)
+and in the [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html).
+The Element column in [Table 3.90.4.2.2.2-3](ITI-90.html#table2.3.90.4.2.2.2-3)
+references the object model defined at
+[http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 When supporting the Location Distance Option, the FHIR Location Resource
-shall be further constrained as described in [Table 3.90.4.2.2.2-4](ITI-90.html#table2.3.90.4.2.2.2-4). The
-Element column in [Table 3.90.4.2.2.2-4](ITI-90.html#table2.3.90.4.2.2.2-4) references the object model
-defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
+shall be further constrained as described in 
+[Table 3.90.4.2.2.2-4](ITI-90.html#table2.3.90.4.2.2.2-4) and in the
+[Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
+The Element column in [Table 3.90.4.2.2.2-4](ITI-90.html#table2.3.90.4.2.2.2-4)
+references the object model defined at 
+[http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 ###### 2:3.91.4.2.2.3 FHIR Practitioner Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a Practitioner Resource. The Practitioner Resource
-shall be further constrained as described in [Table 3.90.4.2.2.3-1](ITI-90.html#table2.3.90.4.2.2.3-1). The
-Element column in [Table 3.90.4.2.2.3-1](ITI-90.html#table2.3.90.4.2.2.3-1) references the object model
-defined at [http://hl7.org/fhir/R4/practitioner.html#resource](http://hl7.org/fhir/R4/practitioner.html#resource).
+shall be further constrained as described in 
+[Table 3.90.4.2.2.3-1](ITI-90.html#table2.3.90.4.2.2.3-1) and in the 
+[Practitioner Profile for mCSD](StructureDefinition-IHE.mCSD.Practitioner.html).
+The Element column in [Table 3.90.4.2.2.3-1](ITI-90.html#table2.3.90.4.2.2.3-1)
+references the object model defined at
+[http://hl7.org/fhir/R4/practitioner.html#resource](http://hl7.org/fhir/R4/practitioner.html#resource).
 
 ###### 2:3.91.4.2.2.4 FHIR PractitionerRole Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a PractitionerRole Resource. The PractitionerRole
-Resource shall be further constrained as described in [Table
-3.90.4.2.2.4-1](ITI-90.html#table2.3.90.4.2.2.4-1). The Element column in [Table 3.90.4.2.2.4-1](ITI-90.html#table2.3.90.4.2.2.4-1) references
+Resource shall be further constrained as described in
+[Table 3.90.4.2.2.4-1](ITI-90.html#table2.3.90.4.2.2.4-1) and in the
+[PractitionerRole Profile for mCSD](StructureDefinition-IHE.mCSD.PractitionerRole.html).
+The Element column in [Table 3.90.4.2.2.4-1](ITI-90.html#table2.3.90.4.2.2.4-1) references
 the object model defined at
 [http://hl7.org/fhir/R4/practitionerrole.html#resource](http://hl7.org/fhir/R4/practitionerrole.html#resource).
 
@@ -175,7 +199,9 @@ the object model defined at
 A Care Services Update Consumer and a Care Services Update Supplier
 shall query or return a HealthcareService Resource. The
 HealthcareService Resource shall be further constrained as described in
-[Table 3.90.4.2.2.5-1](ITI-90.html#table2.3.90.4.2.2.5-1). The Element column in [Table 3.90.4.2.2.5-1](ITI-90.html#table2.3.90.4.2.2.5-1)
+[Table 3.90.4.2.2.5-1](ITI-90.html#table2.3.90.4.2.2.5-1) and in the
+[HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+The Element column in [Table 3.90.4.2.2.5-1](ITI-90.html#table2.3.90.4.2.2.5-1)
 references the object model defined at
 [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.org/fhir/R4/healthcareservice.html#resource).
 

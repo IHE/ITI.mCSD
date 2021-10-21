@@ -90,8 +90,9 @@ The Care Services Selective Supplier shall support the following search
 parameters on the Organization Resource as defined at
 [http://hl7.org/fhir/R4/organization.html#search](http://hl7.org/fhir/R4/organization.html#search). String parameter
 modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
-The `ihe-mcsd-hierarchy-\*` search parameters query the hierarchy
-extension identified by the following canonical URI
+The [`ihe-mcsd-hierarchy-type` search parameter](SearchParameter-IHE.mCSD.Organization.HierarchyType.html) and 
+[`ihe-mcsd-hierarchy-partof` search parameter](SearchParameter-IHE.mCSD.Organization.HierarchyPartOf.html) query the [hierarchy
+extension](StructureDefinition-IHE.mCSD.OrganizationHierarchy.html) identified by the following canonical URI
 `http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`.
 
 ```
@@ -259,7 +260,8 @@ to the client.
 A Care Services Selective Consumer may query on Organization Resources.
 A Care Services Selective Supplier shall return a Bundle of matching
 Organization Resources. The Organization Resource shall be further
-constrained as described in Table 2:3.90.4.2.2.1-1. The Element column in
+constrained as described in Table 2:3.90.4.2.2.1-1 and in the
+[Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html). The Element column in
 Table 2:3.90.4.2.2.1-1 references the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
@@ -278,7 +280,8 @@ when working with Facilities. A Care Services Selective Supplier shall
 return a Bundle of matching Organization Resources when working with
 Facilities. In addition to the constraints in Table 2:3.90.4.2.2.1-1, the
 FHIR Organization Resource shall be further constrained as described in
-Table 2:3.90.4.2.2.1-2. The Element column in Table 2:3.90.4.2.2.1-2
+Table 2:3.90.4.2.2.1-2 and in the [Organization for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
+The Element column in Table 2:3.90.4.2.2.1-2
 references the object model defined at
 [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
@@ -290,7 +293,14 @@ Facilities**
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 {: .grid .table-striped}
 
-A Care Services Selective Consumer may query on Organization Resources when working with Jurisdictions. A Care Services Selective Supplier shall return a Bundle of matching Organization Resources when working with Jurisdictions. In addition to the constraints in Table 3.90.4.2.2.1-1, the FHIR Organization Resource shall be further constrained as described in Table 3.90.4.2.2.1-3. The Element column in Table 3.90.4.2.2.1-3 references the object model defined at [http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
+A Care Services Selective Consumer may query on Organization Resources when 
+working with Jurisdictions. A Care Services Selective Supplier shall return a 
+Bundle of matching Organization Resources when working with Jurisdictions. In 
+addition to the constraints in Table 3.90.4.2.2.1-1, the FHIR Organization Resource 
+shall be further constrained as described in Table 3.90.4.2.2.1-3
+and in the [Organization for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
+The Element column in Table 3.90.4.2.2.1-3 references the object model defined at 
+[http://hl7.org/fhir/R4/organization.html#resource](http://hl7.org/fhir/R4/organization.html#resource).
 
 <a name="table2.3.90.4.2.2.1-3"></a>**Table 2:3.90.4.2.2.1-3: Additional Organization Resource Constraints for
 Jurisdictions**
@@ -305,7 +315,8 @@ Jurisdictions**
 A Care Services Selective Consumer may query on Location Resources. A
 Care Services Selective Supplier shall return a Bundle of matching
 Location Resources. The Location Resource shall be further constrained
-as described in Table 2:3.90.4.2.2.2-1. The Element column in Table
+as described in Table 2:3.90.4.2.2.2-1 and in the [Location Profile for mCSD](StructureDefinition-IHE.mCSD.Location.html).
+The Element column in Table
 2:3.90.4.2.2.2-1 references the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
@@ -326,8 +337,8 @@ Resources when working with Facilities. A Care Services Selective
 Supplier shall return a Bundle of matching Location Resources when
 working with Facilities. In addition to the constraints in Table
 2:3.90.4.2.2.2-1, the FHIR Location Resource shall be further constrained
-as described in Table 2:3.90.4.2.2.2-2. The Element column in Table
-2:3.90.4.2.2.2-2 references the object model defined at
+as described in Table 2:3.90.4.2.2.2-2 and in the [Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html).
+The Element column in Table 2:3.90.4.2.2.2-2 references the object model defined at
 [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 <a name="table2.3.90.4.2.2.2-2"></a>**Table 2:3.90.4.2.2.2-2: Additional Location Resource Constraints for
@@ -344,7 +355,8 @@ Resource using the managingOrganization element in Location. A Care Services Sel
 may query on Location Resources when working with Jurisdictions. A Care Services Selective Supplier 
 shall return a Bundle of matching Location Resources when working with Jurisdictions. In addition to 
 the constraints in Table 3.90.4.2.2.2-1, the FHIR Location Resource shall be further constrained as 
-described in Table 3.90.4.2.2.2-3. The Element column in Table 3.90.4.2.2.2-3 references the object 
+described in Table 3.90.4.2.2.2-3 and in the [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html).
+The Element column in Table 3.90.4.2.2.2-3 references the object 
 model defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).  
 
 When a geographic boundary is available for the Jurisdiction Location, the location-boundary-geojson extension defined at 
@@ -361,8 +373,9 @@ Jurisdictions**
 {: .grid .table-striped}
 
 When supporting the Location Distance Option. The Location Resource
-shall be further constrained as described in Table 2:3.90.4.2.2.2-4. The
-Element column in Table 2:3.90.4.2.2.2-4 references the object model
+shall be further constrained as described in Table 2:3.90.4.2.2.2-4  and in the 
+[Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
+The Element column in Table 2:3.90.4.2.2.2-4 references the object model
 defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R4/location.html#resource).
 
 <a name="table2.3.90.4.2.2.2-4"></a>**Table 2:3.90.4.2.2.2-4: Location Resource Constraints with Location
@@ -378,8 +391,9 @@ Distance Option**
 A Care Services Selective Consumer may query on Practitioner Resources.
 A Care Services Selective Supplier shall return a Bundle of matching
 Practitioner Resources. The Practitioner Resource shall be further
-constrained as described in Table 2:3.90.4.2.2.3-1. The Element column in
-Table 2:3.90.4.2.2.3-1 references the object model defined at
+constrained as described in Table 2:3.90.4.2.2.3-1 and in the 
+[Practitioner Profile for mCSD](StructureDefinition-IHE.mCSD.Practitioner.html).
+The Element column in Table 2:3.90.4.2.2.3-1 references the object model defined at
 [http://hl7.org/fhir/R4/practitioner.html#resource](http://hl7.org/fhir/R4/practitioner.html#resource).
 
 <a name="table2.3.90.4.2.2.3-1"></a>**Table 2:3.90.4.2.2.3-1: Practitioner Resource Constraints**
@@ -394,8 +408,9 @@ Table 2:3.90.4.2.2.3-1 references the object model defined at
 A Care Services Selective Consumer may query on PractitionerRole
 Resources. A Care Services Selective Supplier shall return a Bundle of
 matching PractitionerRole Resources. The PractitionerRole Resource shall
-be further constrained as described in Table 2:3.90.4.2.2.4-1. The Element
-column in Table 2:3.90.4.2.2.4-1 references the object model defined at
+be further constrained as described in Table 2:3.90.4.2.2.4-1 and in the 
+[PractitionerRole Profile for mCSD](StructureDefinition-IHE.mCSD.PractitionerRole.html).
+The Element column in Table 2:3.90.4.2.2.4-1 references the object model defined at
 [http://hl7.org/fhir/R4/practitionerrole.html#resource](http://hl7.org/fhir/R4/practitionerrole.html#resource).
 
 <a name="table2.3.90.4.2.2.4-1"></a>**Table 2:3.90.4.2.2.4-1: PractitionerRole Resource Constraints**
@@ -410,8 +425,9 @@ column in Table 2:3.90.4.2.2.4-1 references the object model defined at
 A Care Services Selective Consumer may query on HealthcareService
 Resources. A Care Services Selective Supplier shall return a Bundle of
 matching HealthcareService Resources. The HealthcareService Resource
-shall be further constrained as described in Table 2:3.90.4.2.2.5-1. The
-Element column in Table 2:3.90.4.2.2.5-1 references the object model
+shall be further constrained as described in Table 2:3.90.4.2.2.5-1 and 
+in the [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+The Element column in Table 2:3.90.4.2.2.5-1 references the object model
 defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.org/fhir/R4/healthcareservice.html#resource).
 
 <a name="table2.3.90.4.2.2.5-1"></a>**Table 2:3.90.4.2.2.5-1: HealthcareService Resource Constraints**
