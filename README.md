@@ -12,8 +12,9 @@ Mobile Care Services Discovery
 
 
 ## Notes for changes as part of migration
-* Add Facilities and Jurisdictions to Concepts
+* Add Facilities and Jurisdictions to Concepts - Done as part of CP 1236
 * Clarify that facilities and jurisdictions are a combination of 
 Organization and Location under the Organization constraint tables with 
-link to Concepts.
-* Remove meta.profile constraints in tables as this is duplicative.
+link to Concepts. - Done as part of CP 1236
+* Remove meta.profile constraints in tables as this is duplicative. - Done and added to Changes
+* TODO: Make sure canonical URLs are set correctly (specifically update extension definition and reference in ITI-90)
