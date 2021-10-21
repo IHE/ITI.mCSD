@@ -2,10 +2,10 @@
 This section modifies other IHE profiles, and is not a part of the mCSD profile. The content here will be incorporated into the target narrative at a future time, usually when mCSD goes narrative.
 </div>
 
-## Appendix A – Actor Summary Definitions
+## IHE Technical Frameworks General Introduction Appendix A – Actor Summary Definitions
 
 |------------------------------------------------|
-| Editor, Add the following new or modified actors to the [https://profiles.ihe.net/GeneralIntro/ch-A.html IHE Technical Frameworks General Introduction Appendix A]: |
+| Editor, Add the following new or modified actors to the [IHE Technical Frameworks General Introduction Appendix A](https://profiles.ihe.net/GeneralIntro/ch-A.html): |
 {:.grid .bg-info}
 
 
@@ -18,10 +18,10 @@ This section modifies other IHE profiles, and is not a part of the mCSD profile.
 {:.grid .table-striped}
 
 
-## Appendix B – Transaction Summary Definitions
+## IHE Technical Frameworks General Introduction Appendix B – Transaction Summary Definitions
 
 |------------------------------------------------|
-| Editor, Add the following new or modified transactions to the [https://profiles.ihe.net/GeneralIntro/ch-B.html IHE Technical Frameworks General Introduction Appendix B]: |
+| Editor, Add the following new or modified transactions to the [IHE Technical Frameworks General Introduction Appendix B](https://profiles.ihe.net/GeneralIntro/ch-B.html): |
 {:.grid .bg-info}
 
 
