@@ -427,6 +427,15 @@ defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.o
 The Care Services Selective Consumer has received the response and
 continues with its workflow.
 
+##### 2:3.90.4.2.4 CapabilityStatement Resource
+Care Services Selective Suppliers implementing [ITI-90] shall provide a CapabilityStatement Resource as described 
+in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating 
+the query interaction for the implemented Resources has been implemented and shall include all query parameters implemented for 
+the Patient Resource.  The following are two examples: 
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance.html)
+
 ### 2:3.90.5 Security Considerations
 
 See [ITI TF-1: 46.5](volume-1.html#1465-mcsd-security-considerations) for security considerations for the mCSD Profile.
