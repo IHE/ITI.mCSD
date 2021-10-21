@@ -172,7 +172,8 @@ organizations, locations, facilities, practitioners, and healthcare
 services. The relationship between these entities is illustrated in
 Figure 1:46.4.1-1.
 
-![](mCSDRelationships.png)
+![Top-level Relationships between Care Services Entities](mCSDRelationships.png)
+<div style="clear: left;"/>
 
 **Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities**
 
@@ -284,6 +285,12 @@ organizations). The project needs to receive indicator submissions from
 pre-existing data systems hosted by these organizations. This data
 exchange requires a way to share site lists and implement identifier
 mapping between the sites in these lists. 
+
+
+<div>
+{%include usecase3-diagram.svg%}
+</div>
+<br clear="all">
 
 **Figure 1:46.4.2.3.1-1: Cross-Jurisdictional Data Exchange**
 
@@ -443,6 +450,11 @@ Supplier (or Care Services Update Supplier) to send search results back
 to one or more Care Services Selective Consumers (or Care Services
 Update Consumer). See Figure 1:46.7.1-1.
 
+<div>
+{%include simple-deployment.svg%}
+</div>
+<br clear="all">
+
 **Figure 1:46.7.1-1: Simple Deployment**
 
 ### 1:46.7.2 Federated and Cross-Jurisdictional Deployments
@@ -482,6 +494,9 @@ conflicts before sharing this information as either a Care Services
 Update Supplier or a Care Services Selective Supplier. The way in which
 these conflicts are resolved is defined by the implementing jurisdiction
 of the Care Services Update Consumer.
+
+![Federated and Cross Jurisdictional Deployment](FederatedDeployment.png)
+<div style="clear: left;"/>
 
 **Figure 1:46.7.2-1: Federated and Cross Jurisdictional Deployment**
 

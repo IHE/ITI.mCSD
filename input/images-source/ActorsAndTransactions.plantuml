@@ -1,4 +1,5 @@
 @startuml
+hide footbox
 agent "Care Services Selective Supplier" as SelectiveSupplier
 agent "Care Services Selective Consumer" as SelectiveConsumer
 agent "Care Services Update Supplier" as UpdateSupplier
