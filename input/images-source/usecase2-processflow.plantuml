@@ -1,0 +1,30 @@
+@startuml
+hide footbox
+participant "Health Worker" as HW
+participant "Emergency Responder\nCare Services Selective Consumer" as ER
+participant "National HIE\nCare Services Update Consumer\nCare Services Selective Supplier" as NHIE
+participant "State HIE\nCare Services Update Supplier" as SHIE
+
+loop Regular update of practitioner information
+activate NHIE
+activate SHIE
+NHIE -> SHIE : Request Care Services Updates request [ITI-91]
+SHIE -> NHIE : Request Care Services Updates response [ITI-91]\nFHIR Bundle of Updated resources
+deactivate NHIE
+deactivate SHIE
+end
+
+activate HW
+activate ER
+HW -> ER : Reports for volunteer duty
+
+activate NHIE
+ER -> NHIE : Find Matching Care Services request [ITI-90]
+NHIE -> ER : Find Matching Care Services response [ITI-90]\nFHIR Bundle of matching resources
+deactivate NHIE
+
+ER -> HW : Allow or deny access
+deactivate HW
+deactivate ER
+
+@enduml

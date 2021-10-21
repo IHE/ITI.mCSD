@@ -1,11 +1,25 @@
 @startuml
 hide footbox
-participant "Client" as Client
-participant "Server" as Server
-activate "Client"
-"Client" -> "Server" : 1. Go Query [domain-Y]
-activate "Server"
-"Server" --> "Client" : 2. Go Response [domain-Y]
-deactivate "Client"
-deactivate "Server"
+participant "Vera" as Patient
+participant "Dr. West" as Doctor
+participant "EMR (Care Services Selective Consumer)" as EMR
+participant "HWR (Care Services Selective Supplier)" as HWR
+
+activate Patient
+activate Doctor
+Patient -> Doctor: My knee hurts
+Doctor -> Doctor: diagnosis = torn ACL
+activate EMR
+Doctor -> EMR: use EMR's custom query tool \nsearch for orthopedic surgeons, \nwithin 30km of Vera's home
+activate HWR
+EMR-> HWR: Find Matching Care Services [ITI-90] request
+HWR -> EMR: Find Matching Care Services [ITI-90] response\ncontaining PractitionerRole list
+deactivate HWR
+EMR -> EMR: Resolve References
+EMR -> Doctor : Review results\nwith office address, hours of operation
+Doctor -> Patient: Review and discuss options
+deactivate Patient
+Doctor -> EMR: create Referral
+deactivate Doctor
+deactivate EMR
 @enduml

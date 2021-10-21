@@ -215,44 +215,12 @@ surgeon.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.1.2-1.
 
-![Untitled (6)](image3.png)
+<div>
+{%include usecase1-processflow.svg%}
+</div>
+<br clear="all">
 
 **Figure 1:46.4.2.1.2-1: Provider Query Use Case**
-
-The text in Figure 1:46.4.2.1.2-2 was used to generate the diagram in
-Figure 1:46.4.2.1.2-1. Readers will generally find the diagram more
-informative. The text is included here to facilitate editing.
-
-@startuml
-
-Vera -\> Dr. West: My knee hurts
-
-Dr. West -\> Dr. West: diagnosis = torn ACL
-
-Dr. West -\> EMR (Care Services Selective Consumer): use EMR's custom
-query tool \\nsearch for orthopedic surgeons, \\nwithin 30km of Vera's
-home
-
-EMR (Care Services Selective Consumer) -\> HWR (Care Services Selective
-Supplier): Find Matching Care Services \[ITI-90\] request
-
-HWR (Care Services Selective Supplier) -\> EMR (Care Services Selective
-Consumer): Find Matching Care Services \[ITI-90\] response\\ncontaining
-PractitionerRole list
-
-EMR (Care Services Selective Consumer) -\> EMR (Care Services Selective
-Consumer) : Resolve References
-
-EMR (Care Services Selective Consumer) -\> Dr. West : Review
-results\\nwith office address, hours of operation
-
-Dr. West -\> Vera: Review and discuss options
-
-Dr. West -\> EMR (Care Services Selective Consumer): create Referral
-
-@enduml
-
-**Figure 1:46.4.2.1.2-2: Provider Query Use Case Diagram Pseudocode**
 
 #### 1:46.4.2.2 Use Case \#2: Provider Lookup During an Emergency Event
 
@@ -293,57 +261,12 @@ health worker.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.2.2-1.
 
-![Untitled (7)](image4.png)
+<div>
+{%include usecase2-processflow.svg%}
+</div>
+<br clear="all">
 
 **Figure 1:46.4.2.2.2-1: Federated Data Site Management Workflow**
-
-The text in Figure 1:46.4.2.2.2-2 was used to generate the diagram in
-Figure 1:46.4.2.2.2-1. Readers will generally find the diagram more
-informative. The text is included here to facilitate editing.
-
-@startuml
-
-participant Health Worker
-
-participant Emergency Responder\\nCare Services Selective Consumer
-
-participant National HIE\\nCare Services Update Consumer\\nCare Services
-Selective Supplier
-
-participant State HIE\\nCare Services Update Supplier
-
-loop Regular update of practitioner information
-
-National HIE\\nCare Services Update Consumer\\nCare Services Selective
-Supplier -\> State HIE\\nCare Services Update Supplier : Request Care
-Services Updates request \[ITI-91\]
-
-State HIE\\nCare Services Update Supplier -\> National HIE\\nCare
-Services Update Consumer\\nCare Services Selective Supplier : Request
-Care Services Updates response \[ITI-91\]\\nFHIR Bundle of Updated
-resources
-
-end
-
-Health Worker -\> Emergency Responder\\nCare Services Selective Consumer
-: Reports for volunteer duty
-
-Emergency Responder\\nCare Services Selective Consumer -\> National
-HIE\\nCare Services Update Consumer\\nCare Services Selective Supplier :
-Find Matching Care Services request \[ITI-90\]
-
-National HIE\\nCare Services Update Consumer\\nCare Services Selective
-Supplier -\> Emergency Responder\\nCare Services Selective Consumer :
-Find Matching Care Services response \[ITI-90\]\\nFHIR Bundle of
-matching resources
-
-Emergency Responder\\nCare Services Selective Consumer -\> Health Worker
-: Allow or deny access
-
-@enduml
-
-**Figure 1:46.4.2.2.2-2: Federated Data Site Management Workflow Diagram
-Pseudocode**
 
 #### 1:46.4.2.3 Use Case \#3: Cross-jurisdictional Site Management 
 
@@ -388,49 +311,12 @@ data for the sites managed by the OU.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.3.2-1.
 
-![](image5.png)
+<div>
+{%include usecase3-processflow.svg%}
+</div>
+<br clear="all">
 
 **Figure 1:46.4.2.3.2-1: Cross-jurisdictional Site Management Workflow**
-
-The text in Figure 1:46.4.2.3.2-2 was used to generate the diagram in
-Figure 1:46.4.2.3.2-1. Readers will generally find the diagram more
-informative. The text is included here to facilitate editing.
-
-@startuml
-
-participant OU Reviewer
-
-participant Operating Unit\\nCare Services Update Consumer
-
-participant MOH\\nCare Services Update Supplier
-
-participant Partner\\nCare Services Update Supplier
-
-Operating Unit\\nCare Services Update Consumer-\>MOH\\nCare Services
-Update Supplier: Request Care Services Updates \[ITI-91\] request
-
-MOH\\nCare Services Update Supplier-\>Operating Unit\\nCare Services
-Update Consumer: Request Care Services Updates \[ITI-91\] response
-
-Operating Unit\\nCare Services Update Consumer-\>Partner\\nCare Services
-Update Supplier: Request Care Services Updates \[ITI-91\] request
-
-Partner\\nCare Services Update Supplier-\>Operating Unit\\nCare Services
-Update Consumer: Request Care Services Updates \[ITI-91\] response
-
-Operating Unit\\nCare Services Update Consumer-\>Operating Unit\\nCare
-Services Update Consumer: Flag possible duplicates for review
-
-OU Reviewer-\>Operating Unit\\nCare Services Update Consumer: Look at
-flagged Locations
-
-OU Reviewer-\>Operating Unit\\nCare Services Update Consumer: Resolve
-flagged Locations
-
-@enduml
-
-**Figure 1:46.4.2.3.2-2: Cross-jurisdictional Site Management Workflow
-Diagram Pseudocode**
 
 #### 1:46.4.2.4 Use Case \#4: Master Facility List 
 
@@ -470,37 +356,12 @@ retrieve the list of facilities.
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.4.1-1.
 
-![](image6.png)
+<div>
+{%include usecase4-processflow.svg%}
+</div>
+<br clear="all">
 
 **Figure 1:46.4.2.4.2-1: Master Facility List Workflow**
-
-The text in Figure 1:46.4.2.4.2-2 was used to generate the diagram in
-Figure 1:46.4.2.4.2-1. Readers will generally find the diagram more
-informative. The text is included here to facilitate editing.
-
-@startuml
-
-participant MFL\\nCare Services Update Supplier
-
-participant HRIS\\nCare Services Update Consumer
-
-participant LMIS\\nCare Services Update Consumer
-
-HRIS\\nCare Services Update Consumer-\>MFL\\nCare Services Update
-Supplier: Request Care Services Updates \[ITI-91\] request
-
-MFL\\nCare Services Update Supplier-\>HRIS\\nCare Services Update
-Consumer: Request Care Services Updates \[ITI-91\] response
-
-LMIS\\nCare Services Update Consumer-\>MFL\\nCare Services Update
-Supplier: Request Care Services Updates \[ITI-91\] request
-
-MFL\\nCare Services Update Supplier-\>LMIS\\nCare Services Update
-Consumer: Request Care Services Updates \[ITI-91\] response
-
-@enduml
-
-**Figure 1:46.4.2.4.2-2: Master Facility List Workflow Diagram Pseudocode**
 
 ## 1:46.5 mCSD Security Considerations
 

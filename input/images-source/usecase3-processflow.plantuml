@@ -1,0 +1,28 @@
+@startuml
+hide footbox
+participant "OU Reviewer" as Reviewer
+participant "Operating Unit\nCare Services Update Consumer" as OU
+participant "MOH\nCare Services Update Supplier" as MOH
+participant "Partner\nCare Services Update Supplier" as Partner
+
+activate OU
+
+activate MOH
+OU -> MOH: Request Care Services Updates [ITI-91] request
+MOH -> OU: Request Care Services Updates [ITI-91] response
+deactivate MOH
+
+activate Partner
+OU -> Partner: Request Care Services Updates [ITI-91] request
+Partner -> OU: Request Care Services Updates [ITI-91] response
+deactivate Partner
+
+OU -> OU: Flag possible duplicates for review
+
+activate Reviewer
+Reviewer -> OU: Look at flagged Locations
+Reviewer -> OU: Resolve flagged Locations
+deactivate Reviewer
+deactivate OU
+
+@enduml
