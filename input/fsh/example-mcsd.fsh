@@ -49,6 +49,7 @@ Usage: #example
 * name = "MCSDFacilityLocation-Example"
 * status = #active
 * managingOrganization = Reference(MCSDFacilityOrganization-Example)
+* partOf = Reference(MCSDJurisdictionLocation-Example)
 * physicalType = #PC
 * type[+] = #HOSP
 * type[+] = $mcsd#Facility
