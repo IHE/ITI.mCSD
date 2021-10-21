@@ -2,6 +2,8 @@
 
 ### Significant changes from PDQm, Rev 3.3:
 - FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
+- Removed inline UML text and moved it to images-source/
+- Removed reference to setting meta.profile as it is redundant
 
 ### Open Issues and Questions
 

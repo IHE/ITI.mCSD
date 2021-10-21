@@ -79,7 +79,6 @@ parameters as defined at [http://hl7.org/fhir/R4/search.html#all](http://hl7.org
 ```
 _id
 _lastUpdated
-_profile
 ```
 
 The Care Services Selective Supplier shall also support the following
@@ -268,7 +267,6 @@ constrained as described in [Table 2:3.90.4.2.2.1-1](#table2.3.90.4.2.2.1-1). Th
 
 | Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
-| `meta.profile`<br />`[1..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Organization` |
 | `type`<br />`[1..*]` | A code that describes the type of Organization.<br />`CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
 | `partOf`<br />`[0..1]` | If the Organization belongs to a single hierarchy, the partOf element shall be used.<br />`Reference (Organization)` |
@@ -289,7 +287,6 @@ Facilities**
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityOrganization` |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 {: .grid .table-striped}
 
@@ -300,7 +297,6 @@ Jurisdictions**
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_JurisdictionOrganization` |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:jurisdiction"` |
 {: .grid .table-striped}
 
@@ -317,7 +313,6 @@ as described in [Table 2:3.90.4.2.2.2-1](#table2.3.90.4.2.2.2-1). The Element co
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[1..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Location` |
 | `type`<br />`[1..*]` | A code that describes the type of Organization.<br />`CodeableConcept` |
 | `physicalType`<br />`[1..1]` | A code that describes the physical type of Organization.<br />`CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
@@ -340,7 +335,6 @@ Facilities**
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_FacilityLocation` |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 | `managingOrganization`<br />`[1..1]` | The reference to the Organization resource for this facility.<br />`Reference(Organization)` |
 {: .grid .table-striped}
@@ -361,7 +355,6 @@ Jurisdictions**
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[2..*]` | In addition, there shall be one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_JurisdictionLocation` |
 | `extension`<br />`[0..*]` | When a boundary is available, the location-boundary-geojson extension should be used with the given url, contentType, and data:<br />`url = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson`<br />`valueAttachment.contentType = "application/geo+json"`<br />`valueAttachment.data = base64 encoded GeoJSON boundary data` |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facijurisdictionlity"` |
 | `managingOrganization`<br />`[1..1]` | The reference to the Organization resource for this jurisdiction.<br />`Reference(Organization)` |
@@ -377,7 +370,6 @@ Distance Option**
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[2..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_LocationDistance` |
 | `position`<br />`[1..1]` | `BackboneElement` |
 {: .grid .table-striped}
 
@@ -394,7 +386,6 @@ constrained as described in [Table 2:3.90.4.2.2.3-1](#table2.3.90.4.2.2.3-1). Th
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[1..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_Practitioner` |
 | `name`<br />`[1..*]` | `HumanName` |
 {: .grid .table-striped}
 
@@ -411,7 +402,6 @@ column in [Table 2:3.90.4.2.2.4-1](#table2.3.90.4.2.2.4-1) references the object
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[1..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_PractitionerRole` |
 | `code`<br />`[1..*]` | `CodeableConcept` |
 {: .grid .table-striped}
 
@@ -428,7 +418,6 @@ defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.o
 
 | Element &amp; Cardinality | Data Type
 | ------------------------- | --------- |
-| `meta.profile`<br />`[1..*]` | There shall be at least one entry with the value:<br />`http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService` |
 | `type`<br />[1..*]` | `CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
 {: .grid .table-striped}
