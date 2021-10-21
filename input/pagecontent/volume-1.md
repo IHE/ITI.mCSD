@@ -172,7 +172,7 @@ organizations, locations, facilities, practitioners, and healthcare
 services. The relationship between these entities is illustrated in
 Figure 1:46.4.1-1.
 
-![](image2.png)
+![](mCSDRelationships.png)
 
 **Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities**
 
