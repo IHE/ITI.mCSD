@@ -95,15 +95,15 @@ the mCSD Profile. To claim compliance with this profile, an actor shall
 support all required transactions (labeled “R”) and may support the
 optional transactions (labeled “O”).
 
-Table 1:46.1-1: mCSD Profile - Actors and Transactions
+**Table 1:46.1-1: mCSD Profile - Actors and Transactions**
 
-|                                  |                                          |                        |             |                 |
-| -------------------------------- | ---------------------------------------- | ---------------------- | ----------- | --------------- |
 | Actors                           | Transactions                             | Initiator or Responder | Optionality | Reference       |
-| Care Services Selective Consumer | Find Matching Care Services \[ITI-90\]   | Initiator              | R           | ITI TF-2c: 3.90 |
-| Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | ITI TF-2c: 3.90 |
-| Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | ITI TF-2c: 3.91 |
-| Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | ITI TF-2c: 3.91 |
+| -------------------------------- | ---------------------------------------- | ---------------------- | ----------- | --------------- |
+| Care Services Selective Consumer | Find Matching Care Services \[ITI-90\]   | Initiator              | R           | [ITI TF-2: 3.90](ITI-90.html) |
+| Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
+| Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+| Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+{: .grid .table-striped}
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
 
@@ -121,15 +121,15 @@ Options that may be selected for each actor in this profile, if any, are
 listed in the Table 1:46.2-1. Dependencies between options when applicable
 are specified in notes.
 
-Table 1:46.2-1: mCSD - Actors and Options
+**Table 1:46.2-1: mCSD - Actors and Options**
 
-|                                  |                          |                |
-| -------------------------------- | ------------------------ | -------------- |
 | Actor                            | Option Name              | Reference      |
-| Care Services Selective Consumer | Location Distance Option | Section 1:46.2.1 |
-| Care Services Selective Supplier | Location Distance Option | Section 1:46.2.1 |
+| -------------------------------- | ------------------------ | -------------- |
+| Care Services Selective Consumer | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
+| Care Services Selective Supplier | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
 | Care Services Update Consumer    | No options defined       | \--            |
 | Care Services Update Supplier    | No options defined       | \--            |
+{: .grid .table-striped}
 
 ### 1:46.2.1 Location Distance Option
 
@@ -139,21 +139,21 @@ on relative distances.
 A Care Services Selective Consumer or Care Services Selective Supplier
 that supports the Location Distance Option will implement the semantics
 for the Location Distance Option of the Find Matching Care Services
-\[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html) and [ITI TF-2:
-2:3.90.4.2.2.2](ITI-90.html).
+\[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2:
+2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
 
-## 1:46.3 mCSD Required Actor Groupings 
+## 1:46.3 mCSD Required Actor Groupings
 
 An actor from this profile (Column 1) shall implement all of the
 required transactions and/or content modules in this profile ***in
 addition to*** ***<span class="underline">all</span>*** of the
 requirements for the grouped actor (Column 2).
 
-[Section 1:46.5](1465_security_considerations.html) describes some optional groupings that may be of interest
-for security considerations and [Section 1:46.6](1466_cross_profile_considerations.html) describes some optional
+[Section 1:46.5](#1465-mcsd-security-considerations) describes some optional groupings that may be of interest
+for security considerations and [Section 1:46.6](##1466-mcsd-cross-profile-considerations) describes some optional
 groupings in other related profiles.
 
-Table 1:46.3-1: mCSD - Required Actor Groupings
+**Table 1:46.3-1: mCSD - Required Actor Groupings**
 
 | mCSD Actor                       | Actor to be grouped with | Reference | Content Bindings Reference |
 | -------------------------------- | ------------------------ | --------- | -------------------------- |
@@ -161,7 +161,7 @@ Table 1:46.3-1: mCSD - Required Actor Groupings
 | Care Services Selective Supplier | None                     | \--       | \--                        |
 | Care Services Update Consumer    | None                     | \--       | \--                        |
 | Care Services Update Supplier    | None                     | \--       | \--                        |
-
+{: .grid .table-striped}
 
 ## 1:46.4 mCSD Overview
 
@@ -197,21 +197,21 @@ surgeon.
 
 ##### 1:46.4.2.1.2 Practitioner Query Process Flow
 
-  - Vera Brooks sees her family physician, Dr. West, regarding a recent
-    knee injury.
+- Vera Brooks sees her family physician, Dr. West, regarding a recent
+  knee injury.
 
-  - Dr. West diagnoses the problem as a torn ACL and decides to refer
-    Vera to an orthopedic surgeon.
+- Dr. West diagnoses the problem as a torn ACL and decides to refer
+  Vera to an orthopedic surgeon.
 
-  - Dr. West uses her EMR query tool, which implements a Care Services
-    Selective Consumer to search for orthopedic surgeons within 30km of
-    Vera’s home.
+- Dr. West uses her EMR query tool, which implements a Care Services
+  Selective Consumer to search for orthopedic surgeons within 30km of
+  Vera’s home.
 
-  - The EMR retrieves the information from a Healthcare Worker Registry
-    (HWR) and displays it to Dr. West.
+- The EMR retrieves the information from a Healthcare Worker Registry
+  (HWR) and displays it to Dr. West.
 
-  - Vera and Dr. West decide on an orthopedic surgeon; Dr. West prepares
-    a referral.
+- Vera and Dr. West decide on an orthopedic surgeon; Dr. West prepares
+  a referral.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.1.2-1.
@@ -351,14 +351,14 @@ Consumer to retrieve the list of facilities. A Logistics Management
 Information System (LMIS) will run a Care Services Update Consumer to
 retrieve the list of facilities.
 
-  - An HRIS will query the MFL for an updated list of facilities where
-    Practitioners can provide care.
+- An HRIS will query the MFL for an updated list of facilities where
+  Practitioners can provide care.
 
-  - An LMIS will query the MFL for an updated list of facilities for the
-    supply chain to deliver health care supplies.
+- An LMIS will query the MFL for an updated list of facilities for the
+  supply chain to deliver health care supplies.
 
-  - The MFL will return updated facilities to each of these systems with
-    multiple hierarchies.
+- The MFL will return updated facilities to each of these systems with
+  multiple hierarchies.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.4.1-1.
@@ -382,8 +382,8 @@ public access there will be if any.
 There are many reasonable methods of security for interoperability
 transactions which can be implemented without modifying the
 characteristics of the transactions in the mCSD Profile. The use of TLS
-is encouraged, specifically the use of the ATNA Profile (see ITI TF-1:
-9).
+is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1:
+9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
 
 User authentication on mobile devices and browsers is typically handled
 by more lightweight authentication schemes such as HTTP Authentication,
@@ -514,29 +514,29 @@ servers) cached content to be able to serve its role as an interlinked
 data source, the following conditions should be met by Care Services
 Update Suppliers who maintain content.
 
-1.  Implementing jurisdictions may mandate terminologies for
-    Organization Type, Service Type, Location Type, Location Status,
-    Practitioner Type, Practitioner Status, Contact Point Type,
-    Credential Type, Specialization Code, and language code. Care
-    Services Update Suppliers would be configurable to use these
-    terminologies, where mandated. In the case of a cross jurisdictional
-    deployment, mapping between the terminology used by the various
-    jurisdictions may need to be maintained.
+1. Implementing jurisdictions may mandate terminologies for
+  Organization Type, Service Type, Location Type, Location Status,
+  Practitioner Type, Practitioner Status, Contact Point Type,
+  Credential Type, Specialization Code, and language code. Care
+  Services Update Suppliers would be configurable to use these
+  terminologies, where mandated. In the case of a cross jurisdictional
+  deployment, mapping between the terminology used by the various
+  jurisdictions may need to be maintained.
 
-2.  Implementing jurisdictions may mandate conventions regarding the
-    types, components and formatting of Name, Address and Address Line
-    elements. Care Services Update Suppliers would be configurable to
-    use these formatting conventions, where mandated.
+2. Implementing jurisdictions may mandate conventions regarding the
+  types, components and formatting of Name, Address and Address Line
+  elements. Care Services Update Suppliers would be configurable to
+  use these formatting conventions, where mandated.
 
-3.  Implementing jurisdictions may mandate the source of truth regarding
-    Organization ID, Healthcare Service ID, Location ID and Practitioner
-    ID. Care Services Update Suppliers would ensure that all
-    cross-referenced IDs match corresponding resources in the
-    jurisdictionally mandated sources of truth.
+3. Implementing jurisdictions may mandate the source of truth regarding
+  Organization ID, Healthcare Service ID, Location ID and Practitioner
+  ID. Care Services Update Suppliers would ensure that all
+  cross-referenced IDs match corresponding resources in the
+  jurisdictionally mandated sources of truth.
 
 For guidance on handling challenges regarding the representation of
 names across multiple languages and in different cultures, refer to the
-ITI TF-2a: 3.24.5.2.3.1. This section in the ITI Technical Framework
+[ITI TF-2: 3.24.5.2.3.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-24.html#3.24.5.2.3.1). This section in the ITI Technical Framework
 describes the use of the language tag as documented in IETF RFC1766 and
 the HL7 XCN name data type.
 

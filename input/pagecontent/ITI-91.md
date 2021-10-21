@@ -55,7 +55,7 @@ support the following parameters.
 _since
 ```
 
-They shall also support the requirements in [ITI TF-2x: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating
+They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating
 the Expected Response Format.
 
 A Care Services Update Supplier shall support receiving a request for
@@ -63,7 +63,7 @@ both the JSON and the XML messaging formats as defined in FHIR. A Care
 Services Update Consumer shall accept either the JSON or the XML
 messaging formats as defined in FHIR.
 
-See [ITI TF-2x: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for
+See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for
 this transaction.
 
 ##### 2:3.91.4.1.3 Expected Actions
@@ -188,4 +188,4 @@ continues with its workflow.
 
 See [ITI TF-1: 46.5](volume-1.html#1465-mcsd-security-considerations) for security considerations for the mCSD Profile.
 
-See [ITI TF-2x: Appendix Z.8](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations) for common mobile security considerations.
+See [ITI TF-2: Appendix Z.8](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations) for common mobile security considerations.
