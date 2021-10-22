@@ -1,6 +1,6 @@
 <div markdown="1" class="stu-note">
 
-### Significant changes from PDQm, Rev 3.3:
+## Significant changes from mCSD, Rev 3.3:
 - FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
 - Removed inline UML text and moved it to images-source/
 - Removed reference to setting meta.profile as it is redundant
@@ -9,7 +9,24 @@
 - Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
 - Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing.
 
+## Issues
+
+IHE welcomes [New Issues](https://github.com/IHE/ITI.mCSD/issues/new/choose)
+from the GitHub community.  For those without GitHub access, issues may be
+submitted to the [Public Comment form](https://www.ihe.net/resources/public_comment/).
+
+As issues are submitted they will be managed on the
+[mCSD GitHub Issues](https://github.com/IHE/ITI.mCSD/issues), where discussion and
+workarounds may be found. These issues, when critical, will be processed using the normal
+[IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting.
+It is important to note that as soon as a Change Proposal is approved, it carries the same
+weight as a published Implementation Guide (i.e., it is testable at an 
+[IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is
+approved, even if it will not be integrated until several months later).
+
+
 ### Open Issues and Questions
+These issues were known as part of the publication, and IHE invites comments.
 
 mCSD\_7. Should there be additional required search parameters? Should
 we also require any reverse chaining (\_has) options for the search?
@@ -30,6 +47,7 @@ please submit a Public Comment.
 
 
 ### Closed Issues
+These issues have been decided and documented in the publication.
 
 *mCSD\_1. Should we include the FreeBusy transaction and use cases or
 just remove them?*
