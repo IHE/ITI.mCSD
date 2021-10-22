@@ -18,7 +18,7 @@ Organization and Location under the Organization constraint tables with
 link to Concepts. - Done as part of CP 1236
 * Remove meta.profile constraints in tables as this is duplicative. - Done and added to Changes
 * Remove references to TF-2a/b/c/x - done 
-* TODO: Make sure canonical URLs are set correctly (specifically update extension definition and reference in ITI-90)
+* Make sure canonical URLs are set correctly (specifically update extension definition and reference in ITI-90) - done
 
 ### Pending Questions
 * Should Table references in text be links to the table if it is close?

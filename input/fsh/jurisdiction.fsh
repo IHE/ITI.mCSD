@@ -1,19 +1,16 @@
+Invariant:    mcsd-type-2
+Description:  "One type must be set as an mCSD Jurisdiction."
+Expression:   "type.where( coding.system = 'urn:ietf:rfc:3986' and coding.code = 'urn:ihe:iti:mcsd:2019:jurisdiction' ).exists()"
+Severity:     #error
+
 Profile:      MCSDJurisdictionOrganization
 Parent:       MCSDOrganization
 Id:           IHE.mCSD.JurisdictionOrganization
 Title:        "mCSD Organization for Jurisdictions"
 Description:  "A profile on the mCSD Organization for mCSD Jurisdictions"
 
+* obeys mcsd-type-2
 * type 2..*
-* type ^slicing.discriminator[+].type = #pattern
-* type ^slicing.discriminator[=].path = "coding.system"
-* type ^slicing.discriminator[+].type = #pattern
-* type ^slicing.discriminator[=].path = "coding.code"
-* type ^slicing.rules = #closed
-* type ^slicing.description = "Slicing based on the code."
-* type contains jurisdiction 1..1 and @default 1..*
-* type[jurisdiction] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction (exactly)
-* type[@default].coding 1..*
 
 Profile:      MCSDJurisdictionLocation
 Parent:       MCSDLocation
@@ -21,16 +18,8 @@ Id:           IHE.mCSD.JurisdictionLocation
 Title:        "mCSD Location for Jurisdictions"
 Description:  "A profile on the mCSD Location for mCSD Jurisdictions"
 
+* obeys mcsd-type-2
 * type 2..*
-* type ^slicing.discriminator[+].type = #pattern
-* type ^slicing.discriminator[=].path = "coding.system"
-* type ^slicing.discriminator[+].type = #pattern
-* type ^slicing.discriminator[=].path = "coding.code"
-* type ^slicing.rules = #closed
-* type ^slicing.description = "Slicing based on the code."
-* type contains jurisdiction 1..1 and @default 1..*
-* type[jurisdiction] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction (exactly)
-* type[@default].coding 1..*
 * managingOrganization 1..1 
 * managingOrganization only Reference(MCSDJurisdictionOrganization)
 * extension contains $BOUNDARY named boundary 0..1

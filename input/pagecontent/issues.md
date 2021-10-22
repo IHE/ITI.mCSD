@@ -7,6 +7,7 @@
 - Added section in transactions describing the requirement of providing a capability statement [ITI-90](ITI-90.html#2390424-capabilitystatement-resource) and [ITI-91](ITI-91.html#2391424-capabilitystatement-resource).  Should this be in the response or request message section?
 - Updated the canonical URL for the organization hierarchy extension to `http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
 - Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
+- Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing.
 
 ### Open Issues and Questions
 

@@ -7,8 +7,8 @@ Description: "Organization resource for an example mCSD Jurisdiction"
 Usage: #example
 * name = "MCSDJurisdictionOrganization-Example"
 * active = true
-* type[jurisdiction] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
-* type[@default] = http://terminology.hl7.org/CodeSystem/organization-type#govt
+* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
+* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 Instance: MCSDJurisdictionLocation-Example
 InstanceOf: MCSDJurisdictionLocation
@@ -19,8 +19,8 @@ Usage: #example
 * status = #active
 * managingOrganization = Reference(MCSDJurisdictionOrganization-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#jdn
-* type[jurisdiction] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
-* type[@default] = http://terminology.hl7.org/CodeSystem/organization-type#govt
+* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
+* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 // another department
 
@@ -50,8 +50,8 @@ Description: "Organization resource for an example mCSD Facility"
 Usage: #example
 * name = "MCSDFacilityOrganization-Example"
 * active = true
-* type[facility] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
-* type[@default] = http://terminology.hl7.org/CodeSystem/organization-type#govt
+* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
+* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 * partOf = Reference(MCSDJurisdictionOrganization-Example)
 // extensions to allow for additional hierarchy
 * extension[hierarchy].extension[hierarchy-type].valueCodeableConcept = MCSDExampleHierarchy#admin
@@ -67,8 +67,31 @@ Usage: #example
 * managingOrganization = Reference(MCSDFacilityOrganization-Example)
 * partOf = Reference(MCSDJurisdictionLocation-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
-* type[facility] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
-* type[@default] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
+* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
+* type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
+
+Instance: MCSDLocation-Example
+InstanceOf: MCSDLocation
+Title: "Example mCSD Location"
+Description: "Location resource for an example of an mCSD Location (Ward)"
+Usage: #example
+* name = "MCSDLocation-Example"
+* status = #active
+* partOf = Reference(MCSDFacilityLocation-Example)
+* type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#RNEU
+* physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#wa
+
+Instance: MCSDLocationDistance-Example
+InstanceOf: MCSDLocationDistance
+Title: "Example mCSD Location with Distance Option"
+Description: "Location resource for an example of an mCSD Location with Distance Option"
+Usage: #example
+* name = "MCSDLocationDistance-Example"
+* status = #active
+* type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
+* physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
+* position.latitude = -1.46929510804737
+* position.longitude = -78.81700744576973
 
 // service, role, practitioner
 
