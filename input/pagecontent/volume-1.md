@@ -32,7 +32,7 @@ The profile supports querying for:
     to one Organization. A location may have a hierarchical relationship
     with other locations.
 
-4.	**Jurisdiction** – Jurisdictions are political administrative units or 
+4.  **Jurisdiction** – Jurisdictions are political administrative units or 
     other territories over which authority is exercised.  A Jurisdiction has 
     a unique identifier, geographic attributes, etc.  Jurisdictions include 
     political administrative units such as village districts or regions.  
@@ -87,7 +87,7 @@ mandatory grouping are shown in conjoined boxes.
 <div>
 {%include ActorsAndTransactions.svg%}
 </div>
-<div style="clear: left;"/>
+<div style="clear: left;"></div>
 **Figure 1:46.1-1: mCSD Actor Diagram**
 
 Table 1:46.1-1 lists the transactions for each actor directly involved in
@@ -173,7 +173,7 @@ services. The relationship between these entities is illustrated in
 Figure 1:46.4.1-1.
 
 ![Top-level Relationships between Care Services Entities](mCSDRelationships.png)
-<div style="clear: left;"/>
+<div style="clear: left;"></div>
 
 **Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities**
 
@@ -219,7 +219,7 @@ in Figure 1:46.4.2.1.2-1.
 <div>
 {%include usecase1-processflow.svg%}
 </div>
-<br clear="all">
+<div style="clear: left;"/>
 
 **Figure 1:46.4.2.1.2-1: Provider Query Use Case**
 
@@ -265,7 +265,7 @@ in Figure 1:46.4.2.2.2-1.
 <div>
 {%include usecase2-processflow.svg%}
 </div>
-<br clear="all">
+<div style="clear: left;"/>
 
 **Figure 1:46.4.2.2.2-1: Federated Data Site Management Workflow**
 
@@ -290,7 +290,7 @@ mapping between the sites in these lists.
 <div>
 {%include usecase3-diagram.svg%}
 </div>
-<br clear="all">
+<div style="clear: left;"/>
 
 **Figure 1:46.4.2.3.1-1: Cross-Jurisdictional Data Exchange**
 
@@ -321,7 +321,7 @@ in Figure 1:46.4.2.3.2-1.
 <div>
 {%include usecase3-processflow.svg%}
 </div>
-<br clear="all">
+<div style="clear: left;"/>
 
 **Figure 1:46.4.2.3.2-1: Cross-jurisdictional Site Management Workflow**
 
@@ -366,7 +366,7 @@ in Figure 1:46.4.2.4.1-1.
 <div>
 {%include usecase4-processflow.svg%}
 </div>
-<br clear="all">
+<div style="clear: left;"/>
 
 **Figure 1:46.4.2.4.2-1: Master Facility List Workflow**
 
@@ -453,7 +453,7 @@ Update Consumer). See Figure 1:46.7.1-1.
 <div>
 {%include simple-deployment.svg%}
 </div>
-<br clear="all">
+<div style="clear: left;"/>
 
 **Figure 1:46.7.1-1: Simple Deployment**
 
