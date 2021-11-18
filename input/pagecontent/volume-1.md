@@ -115,6 +115,42 @@ Practitioner, and Healthcare Service. However, a Care Services Selective
 Supplier or Care Service Update Supplier is not required to contain data
 on all of these.
 
+#### 1:46.1.1.1 Care Services Selective Consumer
+
+No additional requirements.  The following are two example capability statement resources that a Care Services Selective Consumer could support:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.LocationDistance.html)
+
+#### 1:46.1.1.2 Care Services Selective Supplier
+
+The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
+All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and 
+[message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
+
+This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples: 
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance.html)
+
+#### 1:46.1.1.3 Care Services Update Consumer
+
+No additional requirements.  The following are two example capability statement resources that a Care Services Update Consumer could support:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.LocationDistance.html)
+
+#### 1:46.1.1.4 Care Services Update Supplier
+
+The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
+All supported interactions shall be specified. The [search parameters](ITI-91.html#2391412-message-semantics) and [message semantics](ITI-91.html#2391422-message-semantics) 
+defined in \[ITI-91\] shall be supported, other parameters may be supported.
+
+This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
+
 ## 1:46.2 mCSD Actor Options
 
 Options that may be selected for each actor in this profile, if any, are

@@ -210,15 +210,6 @@ references the object model defined at
 The Care Services Update Consumer has received the response and
 continues with its workflow.
 
-##### 2:3.91.4.2.4 CapabilityStatement Resource
-Care Services Update Suppliers implementing [ITI-90] shall provide a CapabilityStatement Resource as described
-in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating
-the history interaction for the implemented Resources has been implemented and shall include all query parameters implemented for
-the Patient Resource.  The following are two examples:
-
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
-
 ### 2:3.91.5 Security Considerations
 
 See [ITI TF-1: 46.5](volume-1.html#1465-mcsd-security-considerations) for security considerations for the mCSD Profile.

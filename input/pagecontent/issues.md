@@ -4,7 +4,7 @@
 - FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
 - Removed inline UML text and moved it to images-source/
 - Removed reference to setting meta.profile as it is redundant
-- Added section in transactions describing the requirement of providing a capability statement [ITI-90](ITI-90.html#2390424-capabilitystatement-resource) and [ITI-91](ITI-91.html#2391424-capabilitystatement-resource).  Should this be in the response or request message section?
+- Added sections in actor requirements describing the requirement of providing a capability statement [Volume 1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
 - Updated the canonical URL for the organization hierarchy extension to `http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
 - Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
 - Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing.
@@ -33,17 +33,6 @@ we also require any reverse chaining (\_has) options for the search?
 Should we require any reverse includes (\_revinclude)? These would add
 complexity to the server and most will have similar options through
 include and normal chaining.
-
-mCSD\_8. IHE has updated mCSD to add support for organizational
-facilities. As part of this revision of mCSD, we have removed the
-“Organization Option”, “Location Option”, “Practitioner Option”, and
-“Healthcare Services Option”. These options existed to enable servers
-to focus only on a small subset of the resources. The actual burden to
-support all resources is small and set of options seems to add
-unnecessary complexity. The result would be that servers shall support
-all of the FHIR Resources, the clients can use the FHIR Resources in the
-way defined. If there is concern with the removal of these options,
-please submit a Public Comment.
 
 
 ### Closed Issues
@@ -130,6 +119,19 @@ period and we have created a CP to add an entry to the use field:
 [GF\#13265](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemEdit&tracker_item_id=13265).*
 
 FHIR has added an additional Identifier.use code of “old” for this case.
+
+*mCSD\_8. IHE has updated mCSD to add support for organizational
+facilities. As part of this revision of mCSD, we have removed the
+“Organization Option”, “Location Option”, “Practitioner Option”, and
+“Healthcare Services Option”. These options existed to enable servers
+to focus only on a small subset of the resources. The actual burden to
+support all resources is small and set of options seems to add
+unnecessary complexity. The result would be that servers shall support
+all of the FHIR Resources, the clients can use the FHIR Resources in the
+way defined. If there is concern with the removal of these options,
+please submit a Public Comment.*
+
+No comments received so changes are being kept, but any additional comments are welcome.
 
 *mCSD\_9. We have added a requirement to include a meta.profile tag for
 all compliant resources. This is so that in a mixed server that has
