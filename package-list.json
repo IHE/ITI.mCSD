@@ -1,20 +1,22 @@
 {
- "package-id" : "hl7.fhir.uv.myig",
- "title" : "Your User Friendly Name for MyIG Here", 
- "canonical" : "http://hl7.org/fhir/uv/myig", 
- "introduction" : "The introduction that should appear in the FHIR IG registry",
+ "package-id" : "ihe.iti.mcsd",
+ "title" : "IHE ITI Mobile Care Services Discovery", 
+ "canonical" : "http://profiles.ihe.net/ITI/mCSD", 
+ "introduction" : "## The IHE Mobile Care Services Discovery (mCSD)\r\nThis IG provides a transaction for mobile and lightweight browser-based applications to find and update care services resources.",
  "list" : [{
   "version" : "current",
   "desc" : "Continuous Integration Build (latest in version control)",
-  "path" : "http://hl7.org/fhir/ig/HL7/myig",
+  "path" : "http://build.fhir.org/ig/IHE/ITI.mCSD/branches/main",
   "status" : "ci-build",
   "current" : true
  },{
-  "version" : "0.1.0",  
-  "date" : "2099-01-01", 
-  "desc" : "Initial STU ballot (Mmm yyyy Ballot)",   
-  "path" : "http://hl7.org/fhir/yyyyMmm/myig.html",   
-  "status" : "ballot",   
-  "sequence" : "DSTU 1"
+  "version" : "3.3.1",  
+  "date" : "2021-12-16", 
+  "desc" : "Trial Implementation",
+  "path" : "http://profiles.ihe.net/ITI/mCSD/3.3.1",
+  "status" : "trial-use",   
+  "fhirversion": "4.0.1",
+  "sequence" : "Trial Implementation",
+  "current": true
  }]
 }
