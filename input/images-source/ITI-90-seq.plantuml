@@ -8,4 +8,12 @@ Client -> Server : 1. Find Matching Care Services Request [ITI-90]
 Server --> Client : 2. Find Matching Care Services Response [ITI-90]
 deactivate Client
 deactivate Server
+
+Client -[hidden]> Server
+activate Client
+activate Server
+Client -> Server : 3. Retrieve Care Services Resource Request [ITI-90]
+Server --> Client : 4. Retrieve Care Services Resource Response [ITI-90]
+deactivate Client
+deactivate Server
 @enduml
