@@ -43,9 +43,10 @@ of this transaction.
 ##### 2:3.90.4.1.2 Message Semantics
 
 A Care Services Selective Consumer initiates a search request using HTTP
-GET as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the
+GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search on the
 Organization, Location, Practitioner, PractitionerRole, or
-HealthcareService Resources. The query parameters are identified below.
+HealthcareService Resources. The Care Services Selective Supplier shall support 
+both GET and POST based searches. The query parameters are identified below.
 A Care Services Selective Consumer may query any combination or subset
 of the parameters.
 
@@ -288,7 +289,7 @@ references the object model defined at
 <a name="table2.3.90.4.2.2.1-2"></a>**Table 2:3.90.4.2.2.1-2: Additional Organization Resource Constraints for
 Facilities**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 {: .grid .table-striped}
@@ -305,7 +306,7 @@ The Element column in Table 3.90.4.2.2.1-3 references the object model defined a
 <a name="table2.3.90.4.2.2.1-3"></a>**Table 2:3.90.4.2.2.1-3: Additional Organization Resource Constraints for
 Jurisdictions**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:jurisdiction"` |
 {: .grid .table-striped}
@@ -344,7 +345,7 @@ The Element column in Table 2:3.90.4.2.2.2-2 references the object model defined
 <a name="table2.3.90.4.2.2.2-2"></a>**Table 2:3.90.4.2.2.2-2: Additional Location Resource Constraints for
 Facilities**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:facility"` |
 | `managingOrganization`<br />`[1..1]` | The reference to the Organization resource for this facility.<br />`Reference(Organization)` |
@@ -365,7 +366,7 @@ When a geographic boundary is available for the Jurisdiction Location, the locat
 <a name="table2.3.90.4.2.2.2-3"></a>**Table 2:3.90.4.2.2.2-3: Additional Location Resource Constraints for
 Jurisdictions**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `extension`<br />`[0..1]` | When a boundary is available, the location-boundary-geojson extension should be used with the given url, contentType, and data:<br />`url = http://hl7.org/fhir/StructureDefinition/location-boundary-geojson`<br />`valueAttachment.contentType = "application/geo+json"`<br />`valueAttachment.data = base64 encoded GeoJSON boundary data` |
 | `type`<br />`[2..*]` | In addition, there shall be one type with the following value:<br />`system = "urn:ietf:rfc:3986"`<br />`code = "urn:ihe:iti:mcsd:2019:jurisdiction"` |
@@ -381,7 +382,7 @@ defined at [http://hl7.org/fhir/R4/location.html#resource](http://hl7.org/fhir/R
 <a name="table2.3.90.4.2.2.2-4"></a>**Table 2:3.90.4.2.2.2-4: Location Resource Constraints with Location
 Distance Option**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `position`<br />`[1..1]` | `BackboneElement` |
 {: .grid .table-striped}
@@ -398,7 +399,7 @@ The Element column in Table 2:3.90.4.2.2.3-1 references the object model defined
 
 <a name="table2.3.90.4.2.2.3-1"></a>**Table 2:3.90.4.2.2.3-1: Practitioner Resource Constraints**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `name`<br />`[1..*]` | `HumanName` |
 {: .grid .table-striped}
@@ -415,7 +416,7 @@ The Element column in Table 2:3.90.4.2.2.4-1 references the object model defined
 
 <a name="table2.3.90.4.2.2.4-1"></a>**Table 2:3.90.4.2.2.4-1: PractitionerRole Resource Constraints**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `code`<br />`[1..*]` | `CodeableConcept` |
 {: .grid .table-striped}
@@ -432,7 +433,7 @@ defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.o
 
 <a name="table2.3.90.4.2.2.5-1"></a>**Table 2:3.90.4.2.2.5-1: HealthcareService Resource Constraints**
 
-| Element &amp; Cardinality | Data Type
+| Element &amp; Cardinality | Data Type |
 | ------------------------- | --------- |
 | `type`<br />[1..*]` | `CodeableConcept` |
 | `name`<br />`[1..1]` | `string` |
@@ -442,6 +443,97 @@ defined at [http://hl7.org/fhir/R4/healthcareservice.html#resource](http://hl7.o
 
 The Care Services Selective Consumer has received the response and
 continues with its workflow.
+
+
+
+#### 2:3.90.4.3 Retrieve Care Services Resource message
+This message represents an HTTP GET from the Care Services Selective Consumer to the Care Services Selective
+Supplier and provides a mechanism for retrieving a single Care Services Resource with a known resource identifier.
+
+##### 2:3.90.4.3.1 Trigger Events
+When the Care Services Selective Consumer possesses a Care Services Resource identifier (either through query,
+database lookup, or other mechanism) for which it requires additional or new information, it issues a Retrieve
+Care Services Resource interaction.
+
+##### 2:3.90.4.3.2  Message Semantics
+The Retrieve Care Services Resource is conducted by executing an HTTP GET against the Care Services Selective
+Supplier’s Care Services Resource URL, providing the resource id of the resource being retrieved. The target is
+formatted as:
+
+```    GET [base]/[resource]/[resourceId]```
+
+The Care Services Selective Supplier shall respond to this query by sending a single Care Services Resource instance.
+
+The `resourceId` included in the request always represents the unique identifier for the Resource within the scope of
+the URL. For example, while `http://example1.org/ihe/Practitioner/1` and `http://example2.com/ihe/Practitioner/1` both
+contain the same `[resourceId]`, they reference two different resource instances.
+
+Note: The use of "http" or "https" in URL does not override requirements to use TLS for security purposes.
+
+##### 2:3.90.4.3.3 Expected Actions
+The Care Services Selective Supplier shall retrieve the record indicated by the Resource identifier on the HTTP GET
+supplied by the Care Services Selective Consumer. The Care Services Selective Supplier shall respond to the retrieve
+request as described by the following cases:
+
+**Case 1**: The Care Services Selective Supplier finds the care services record matching the `resourceId` sent in the
+HTTP request.
+
+`HTTP 200` (OK) is returned as the HTTP status code.
+
+A Care Services Resource is returned representing the result.
+
+**Case 2**: The Care Services Selective Supplier fails to find the care services record matching the `resourceId` sent
+in the HTTP request.
+
+`HTTP 404` (Not Found) is returned as the HTTP status code
+
+An `OperationOutcome` Resource is returned indicating that the Care Services Resource could not be found, in an issue having:
+
+Attribute|Value
+---|---
+severity|error
+code|not-found
+{:.grid}
+
+The Care Services Selective Supplier may return other HTTP status codes to represent specific error conditions. When HTTP
+error status codes are returned by the Care Services Selective Supplier, they shall conform to the HTTP standard
+[RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
+
+#### 2:3.90.4.4 Retrieve Care Services Resource Response message
+
+The Care Services Selective Supplier’s response to a successful Retrieve Care Services Resource message shall be an `HTTP 200`
+(OK) Status code with a Care Services Resource, or an appropriate error code.
+
+##### 2:3.90.4.4.1 Trigger Events
+The Care Services Selective Supplier found a record matching the Resource identifier specified by the Care Services Selective
+Consumer.
+
+##### 2:3.90.4.4.2 Message Semantics
+The Retrieve Care Services Resource response is sent from the Care Services Selective Supplier to the Care Services Selective
+Consumer as a single Care Services Resource. 
+
+See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for
+more details on response format handling. See [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results)
+for guidance on Access Denied.
+
+If the Care Services Selective Supplier is unable to produce a response in the requested format, it shall respond with an
+`HTTP 400` error indicating that it was unable to fulfill the request. The Care Services Selective Supplier may be capable
+of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
+
+###### 2:3.90.4.4.2.1 Care Services Resource Definition in the Context of Care Services Resource Response
+The Care Services Resource definition in the context of a retrieve interaction is the FHIR definition of the 
+various Care Services Resources. Table 2:3.90.4.4.2.1-1 lists the resources with where to find the additional constraints.
+
+<a name="table2.3.90.4.4.2.1-1"></a>**Table 2:3.90.4.4.2.1-1: Care Services Resource Constraints**
+
+| Resource | Section |
+| ------------------- | --------- |
+| `Organization`      | [2:3.90.4.2.2.1 FHIR Organization Resource Constraints](#23904221-fhir-organization-resource-constraints) |
+| `Location`          | [2:3.90.4.2.2.2 FHIR Location Resource Constraints](#23904222-fhir-location-resource-constraints) |
+| `Practitioner`      | [2:3.90.4.2.2.3 FHIR Practitioner Resource Constraints](#23904223-fhir-practitioner-resource-constraints) |
+| `PractitionerRole`  | [2:3.90.4.2.2.4 FHIR PractitionerRole Resource Constraints](#23904224-fhir-practitionerrole-resource-constraints) |
+| `HealthcareService` | [2:3.90.4.2.2.5 FHIR HealthcareService Resource Constraints](#23904225-fhir-healthcareservice-resource-constraints) |
+{: .grid .table-striped}
 
 ### 2:3.90.5 Security Considerations
 
