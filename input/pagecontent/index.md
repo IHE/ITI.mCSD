@@ -36,7 +36,7 @@ This guide is organized into three main sections:
 
 4. [Changes to other Profiles](other.html)
 
-Click on any of the links above, head on over the [table of contents](toc.html), or
+Click on any of the links above, go to the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
 ### Conformance Expectations
