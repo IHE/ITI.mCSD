@@ -15,7 +15,7 @@
 
 IHE welcomes [New Issues](https://github.com/IHE/ITI.mCSD/issues/new/choose)
 from the GitHub community.  For those without GitHub access, issues may be
-submitted to the [Public Comment form](https://www.ihe.net/resources/public_comment/).
+submitted at [ITI Public Comments](https://www.ihe.net/ITI_Public_Comments/).
 
 As issues are submitted they will be managed on the
 [mCSD GitHub Issues](https://github.com/IHE/ITI.mCSD/issues), where discussion and
