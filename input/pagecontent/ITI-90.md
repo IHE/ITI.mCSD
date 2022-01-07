@@ -11,7 +11,7 @@ against a Care Services Selective Supplier.
 | **Actor** | **Role** |
 | ----- | ---- |
 | Care Services Selective Consumer  | Requests a list of resources from the Care Services Selective Supplier based on query parameters |
-| Care Services Selective Supplier  | Accepts the query request and returns a list of matching resources.                              |
+| Care Services Selective Supplier  | Accepts the query request and returns a list of matching resources                              |
 {: .grid}
 
 ### 2:3.90.3 Referenced Standards
