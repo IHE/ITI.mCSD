@@ -135,7 +135,7 @@ This capabilities response will typically include all of the capabilities inclus
 
 #### 1:46.1.1.3 Care Services Update Consumer
 
-No additional requirements.  The following are two example capability statement resources that a Care Services Update Consumer could support:
+No additional requirements. The following are two example capability statement resources that a Care Services Update Consumer could support:
 
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.html)
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.LocationDistance.html)
@@ -153,9 +153,7 @@ This capabilities response will typically include all of the capabilities inclus
 
 ## 1:46.2 mCSD Actor Options
 
-Options that may be selected for each actor in this profile, if any, are
-listed in the Table 1:46.2-1. Dependencies between options when applicable
-are specified in notes.
+Options that may be selected for each actor in this profile, if any, are listed in Table 1:46.2-1. Dependencies between options when applicable are specified in notes.
 
 **Table 1:46.2-1: mCSD - Actors and Options**
 
@@ -220,7 +218,7 @@ retrieval of, a set of resources. The creation, update, deletion and
 other maintenance activities of those resources is out of the scope of
 this profile.
 
-### 1:46.4.2 Use Cases**
+### 1:46.4.2 Use Cases
 
 #### 1:46.4.2.1 Use Case \#1: Practitioner Query
 
@@ -349,7 +347,7 @@ data for the sites managed by the OU.
   - The OU Update Consumer will use entity matching to determine if
     there are duplicated sites in the combined data and flag them for
     review. (See
-    [https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service](https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service))
+    [https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service](https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service).)
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.3.2-1.
