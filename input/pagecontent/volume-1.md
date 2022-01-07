@@ -201,7 +201,7 @@ groupings in other related profiles.
 
 ## 1:46.4 mCSD Overview
 
-### **1:46.4.1 Concepts**
+### 1:46.4.1 Concepts
 
 The Mobile Care Services Discovery (mCSD) Profile supports queries for
 organizations, locations, facilities, practitioners, and healthcare
@@ -220,7 +220,7 @@ retrieval of, a set of resources. The creation, update, deletion and
 other maintenance activities of those resources is out of the scope of
 this profile.
 
-### **1:46.4.2 Use Cases**
+### 1:46.4.2 Use Cases**
 
 #### 1:46.4.2.1 Use Case \#1: Practitioner Query
 
