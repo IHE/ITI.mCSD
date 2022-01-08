@@ -9,14 +9,26 @@
   "path" : "http://build.fhir.org/ig/IHE/ITI.mCSD/branches/main",
   "status" : "ci-build",
   "current" : true
- },{
-  "version" : "3.3.1",  
-  "date" : "2021-12-16", 
-  "desc" : "Trial Implementation",
-  "path" : "http://profiles.ihe.net/ITI/mCSD/3.3.1",
-  "status" : "trial-use",   
+ },
+ {
+  "version" : "3.4.0",  
+  "date" : "2022-01-08", 
+  "desc" : "Public Comment - Converted to IG publisher",
+  "path" : "http://profiles.ihe.net/ITI/mCSD/3.4.0",
+  "status" : "ballot",   
   "fhirversion": "4.0.1",
-  "sequence" : "Trial Implementation",
+  "sequence" : "Public-Comment",
   "current": true
- }]
+ },
+ {
+  "version" : "3.3.0",
+  "date" : "2021-07-02",
+  "desc" : "Last PDF Trial Implementation",
+  "path" : "https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf",
+  "status" : "trial-use",
+  "fhirversion" : "4.0.1",
+  "sequence" : "Trial Implementation",
+  "current" : false
+ }
+ ]
 }
