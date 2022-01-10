@@ -15,7 +15,7 @@ contact:
     telecom:
       - system: email
         value: iti@ihe.net
-description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
+description: The IHE Mobile Care Services Discovery (mCSD) IG provides a transaction for mobile and lightweight browser-based applications to find and update care services resources.
 license:  CC-BY-SA-4.0
 fhirVersion: 4.0.1
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
