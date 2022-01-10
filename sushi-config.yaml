@@ -4,6 +4,7 @@ version: 3.4.0
 name: IHE_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
 releaseLabel: public-comment
+date: 2022-01-12
 status: active
 publisher:
   - name: IHE IT Infrastructure Technical Committee
