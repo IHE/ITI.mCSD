@@ -58,8 +58,8 @@ The profile supports querying for:
    mechanism.
 
 8. **OrganizationAffiliation** - An Organization may have relationships with
-   other organizations that are not of the strict parent-child type represented
-   by Organization.partOf. These relationships may indicate an electronic routing
+   other organizations that are not hierarchical (i.e. represented
+   by Organization.partOf). These relationships may indicate an electronic routing
    path to other organizations that cannot be reached directly.
 
 The capabilities detailed in this profile support consumer-centric
