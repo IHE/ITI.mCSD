@@ -52,6 +52,15 @@ The profile supports querying for:
     services, or primary care services. The combination of a Healthcare
     Service offered at a Location may have specific attributes including
     contact person, hours of operation, etc.
+    
+7. **Endpoint** - An Organization may be reachable through electronic endpoint(s).
+   An endpoint may be a FHIR server, an IHE web services actor, or some other
+   mechanism.
+
+8. **OrganizationAffiliation** - An Organization may have relationships with
+   other organizations that are not of the strict parent-child type represented
+   by Organization.partOf. These relationships may indicate an electronic routing
+   path to other organizations that cannot be reached directly.
 
 The capabilities detailed in this profile support consumer-centric
 queries such as finding “where is the closest youth mental health
@@ -66,6 +75,8 @@ Office of the National Coordinator as part of the Standards and
 Interoperability Framework ([http://wiki.siframework.org/file/view/ESI
 Query and
 Response.pdf](http://wiki.siframework.org/file/view/ESI%20Query%20and%20Response.pdf)).
+In addition, mCSD can enable connectivity by providing service endpoint lookup, such as
+"What is the FHIR server for this organization?".
 
 The loosely coupled design and flexible querying capability of the mCSD
 Profile means it can be deployed within a variety of eHealth
@@ -403,6 +414,26 @@ in Figure 1:46.4.2.4.1-1.
 <div style="clear: left;"/>
 
 **Figure 1:46.4.2.4.2-1: Master Facility List Workflow**
+
+#### 1:46.4.2.5 Use Case \#5: Service Endpoint Discovery 
+
+##### 1:46.4.2.5.1 Service Endpoint Discovery Description
+
+A healthcare information exchange (HIE) publishes a directory that
+contains all of its member organizations and their electronic endpoints.
+
+- Organizations may have a single endpoint for a technical mechanism like
+  FHIR (i.e. a single FHIRBase URL), or multiple endpoints (e.g. IHE XCPD,
+  IHE XCA Query Responding Gateway, IHE XCA Retrieve Responding Gateway, etc.)
+- An organiztion may not be reachable directly, but rather through a related
+  organization, for example, a parent organization related by partOf, or
+  an affiliated organization related by OrganizationAffiliation.
+
+##### 1:46.4.2.5.2 Service Endpoint Discovery Process Flow
+
+TBD
+
+**Figure 1:46.4.2.5.2-1: Service Endpoint Discovery Workflow**
 
 ## 1:46.5 mCSD Security Considerations
 
