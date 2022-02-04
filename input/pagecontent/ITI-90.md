@@ -245,11 +245,15 @@ modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.
 ```
 active
 date
-endpoint
+endpoint.connection-type
+endpoint.payload-type
 identifier
 participating-organization
 primary-organization
 role
+_include=OrganizationAffiliation.organization
+_include=OrganizationAffiliation.participatingOrganization
+_include=OrganizationAffiliation.endpoint
 ```
 
 ##### 2:3.90.4.1.3 Expected Actions
