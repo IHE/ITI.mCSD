@@ -30,8 +30,8 @@ against a Care Services Selective Supplier.
 #### 2:3.90.4.1 Find Matching Care Services Request Message
 
 The Find Matching Care Services message is a FHIR search operation on
-the Organization, Location, Practitioner, PractitionerRole, and/or
-HealthcareService Resources.
+the Organization, Location, Practitioner, PractitionerRole,
+HealthcareService, Endpoint, and/or OrganizationAffiliation Resources.
 
 ##### 2:3.90.4.1.1 Trigger Events
 
@@ -44,8 +44,8 @@ of this transaction.
 
 A Care Services Selective Consumer initiates a search request using HTTP
 GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search on the
-Organization, Location, Practitioner, PractitionerRole, or
-HealthcareService Resources. The Care Services Selective Supplier shall support 
+Organization, Location, Practitioner, PractitionerRole, HealthcareService,
+Endpoint, or OrganizationAffiliation Resources. The Care Services Selective Supplier shall support 
 both GET and POST based searches. The query parameters are identified below.
 A Care Services Selective Consumer may query any combination or subset
 of the parameters.
@@ -106,7 +106,11 @@ partof:below
 type
 partof.identifier
 partof.name
+endpoint.connection-type
+endpoint.payload-type
+_include=Organization.endpoint
 _revInclude=Location:organization
+_revInclude=OrganizationAffiliation:participatingOrganization
 ihe-mcsd-hierarchy-type
 ihe-mcsd-hierarchy-partof
 ihe-mcsd-hierarchy-partof:above
@@ -216,6 +220,38 @@ Resource as defined at [http://hl7.org/fhir/R4/location.html#search](http://hl7.
 near
 ```
 
+###### 2:3.90.4.1.2.8 Endpoint Resource Message Semantics
+
+The Care Services Selective Supplier shall support the following search
+parameters on the Endpoint Resource as defined at
+[http://hl7.org/fhir/R4/endpoint.html#search](http://hl7.org/fhir/R4/endpoint.html#search). String parameter
+modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+
+```
+connection-type
+identifier
+organization
+payload-type
+status
+```
+
+###### 2:3.90.4.1.2.9 OrganizationAffiliation Resource Message Semantics
+
+The Care Services Selective Supplier shall support the following search
+parameters on the OrganizationAffiliation Resource as defined at
+[http://hl7.org/fhir/R4/organizationaffiliation.html#search](http://hl7.org/fhir/R4/organizationaffiliation.html#search). String parameter
+modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+
+```
+active
+date
+endpoint
+identifier
+participating-organization
+primary-organization
+role
+```
+
 ##### 2:3.90.4.1.3 Expected Actions
 
 The Care Services Selective Supplier shall process the query to discover
@@ -250,6 +286,12 @@ following Resources.
 
   - HealthcareService, as defined at
     [http://hl7.org/fhir/R4/healthcareservice.html](http://hl7.org/fhir/R4/healthcareservice.html)
+    
+  - Endpoint, as defined at
+    [http://hl7.org/fhir/R4/endpoint.html](http://hl7.org/fhir/R4/endpoint.html
+    
+  - OrganizationAffiliation, as defined at
+    [http://hl7.org/fhir/R4/organizationaffiliation.html](http://hl7.org/fhir/R4/organizationaffiliation.html)
     
 All References (reference.reference element) to Resources defined in
 this transaction shall be populated with an accessible URL (see
