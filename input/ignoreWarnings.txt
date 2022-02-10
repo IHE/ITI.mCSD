@@ -1,3 +1,5 @@
 == Suppressed Messages ==
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
+
+The system "General Practice" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from http://tx.fhir.org/r4) for 'http://terminology.hl7.org/CodeSystem/service-type#124'
