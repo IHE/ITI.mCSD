@@ -1,3 +1,6 @@
 == Suppressed Messages ==
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
+
+# used in examples
+Code System URI 'urn:ihe:iti:xca:2010' is unknown so the code cannot be validated
