@@ -12,6 +12,16 @@
   "current" : true
  },
  {
+  "version" : "3.4.1",  
+  "date" : "2022-01-12", 
+  "desc" : "Public Comment - Converted to IG publisher",
+  "path" : "http://profiles.ihe.net/ITI/mCSD/3.4.0",
+  "status" : "ballot",   
+  "fhirversion": "4.0.1",
+  "sequence" : "Public-Comment",
+  "current": true
+ },
+ {
   "version" : "3.4.0",  
   "date" : "2022-01-12", 
   "desc" : "Public Comment - Converted to IG publisher",
