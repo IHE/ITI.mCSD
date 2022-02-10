@@ -38,6 +38,8 @@ CodeSystem:  MCSDExampleHierarchy
 Id: mcsd-example-hierarchy
 Title: "mCSD Example Hierarchy Code System"
 Description:  "An example vocabulary of hierarchies."
+* ^caseSensitive = false
+* ^content = #example
 * #supply "Supply Chain"
 * #admin "Administrative"
 
