@@ -41,7 +41,7 @@ Description:  "An example vocabulary of hierarchies."
 * ^caseSensitive = false
 * ^content = #complete
 * ^experimental = true
-* ^url = http://example.org/IHE/CodeSystem/mcsd-example-hierarchy
+// * ^url = http://example.org/IHE/CodeSystem/mcsd-example-hierarchy
 * #supply "Supply Chain"
 * #admin "Administrative"
 
