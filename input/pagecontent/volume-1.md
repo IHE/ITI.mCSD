@@ -53,12 +53,13 @@ The profile supports querying for:
     Service offered at a Location may have specific attributes including
     contact person, hours of operation, etc.
     
-7. **Endpoint** - An Organization may be reachable through electronic endpoint(s).
-   An endpoint may be a FHIR server, an IHE web services actor, or some other
-   mechanism.
+7. **Endpoint** - An Organization may be reachable through electronic Endpoint(s).
+   An Endpoint may be a FHIR server, an IHE web services actor, or some other
+   mechanism. If an Organization does not have an Endpoint, it may still be
+   reachable via an Endpoint at its parent Organization (Organization.partOf).
 
 8. **OrganizationAffiliation** - An Organization may have relationships with
-   other organizations that are not hierarchical (i.e. represented
+   other organizations that are not hierarchical (i.e. not represented
    by Organization.partOf). These relationships may indicate an electronic routing
    path to other organizations that cannot be reached directly.
 
@@ -419,19 +420,48 @@ in Figure 1:46.4.2.4.1-1.
 
 ##### 1:46.4.2.5.1 Service Endpoint Discovery Description
 
-A healthcare information exchange (HIE) publishes a directory that
+A Health Information Exchange (HIE) publishes a directory that
 contains all of its member organizations and their electronic endpoints.
 
 - Organizations may have a single endpoint for a technical mechanism like
   FHIR (i.e. a single FHIRBase URL), or multiple endpoints (e.g. IHE XCPD,
   IHE XCA Query Responding Gateway, IHE XCA Retrieve Responding Gateway, etc.)
-- An organiztion may not be reachable directly, but rather through a related
+- An organization may not be reachable directly, but rather through a related
   organization, for example, a parent organization related by partOf, or
   an affiliated organization related by OrganizationAffiliation.
+  
+<div>
+{%include usecase5-diagram.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.4.2.5.1-1: Health Information Exchange**
 
 ##### 1:46.4.2.5.2 Service Endpoint Discovery Process Flow
 
-TBD
+A Master Facility List (MFL) will run a Care Services Update Supplier
+and Care Services Selective Supplier for an entire country. A Human
+Resources Information System (HRIS) will run a Care Services Update
+Consumer to retrieve the list of facilities. A Logistics Management
+Information System (LMIS) will run a Care Services Update Consumer to
+retrieve the list of facilities.
+
+- An HRIS will query the MFL for an updated list of facilities where
+  Practitioners can provide care.
+
+- An LMIS will query the MFL for an updated list of facilities for the
+  supply chain to deliver health care supplies.
+
+- The MFL will return updated facilities to each of these systems with
+  multiple hierarchies.
+
+The interactions between the various actors in this use case are shown
+in Figure 1:46.4.2.5.2-1.
+
+<div>
+{%include usecase5-processflow.svg%}
+</div>
+<div style="clear: left;"/>
 
 **Figure 1:46.4.2.5.2-1: Service Endpoint Discovery Workflow**
 
