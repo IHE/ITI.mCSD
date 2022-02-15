@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+
+title Health Information Exchange
+
+object "EMR:\nCare Services Selective Consumer,\nMHD Document Consumer" as EMR
+object "HIE Endpoint Directory:\nCare Services Selective Supplier" as Directory
+object "HIE Participant A:\nOrganization" as Organization
+object "Participant A ITI-67 Endpoint:\nMHD Document Responder" as Responder67
+Responder67 : connectionType = MHD [ITI-67]
+object "Participant A ITI-68 Endpoint:\nMHD Document Responder" as Responder68
+Responder68 : connectionType = MHD [ITI-68]
+
+Directory --> Organization
+Organization --> Responder67
+Organization --> Responder68
+
+EMR --> Directory
+EMR --> Responder67
+EMR --> Responder68
+
+@enduml
