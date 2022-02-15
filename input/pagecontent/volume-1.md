@@ -468,6 +468,23 @@ in Figure 1:46.4.2.5.2-1.
 
 **Figure 1:46.4.2.5.2-1: Service Endpoint Discovery Workflow**
 
+##### 1:46.4.2.5.3 Service Endpoint Discovery Variation: Organization-specific Endpoints
+
+The simplest usage model for clients is Endpoints in Organization.endpoint.
+Because these Endpoints are Organization-specific, it does not matter to the client who hosts them.
+
+Besides the Organization hosting its own Endpoints, the diagram below shows a few variations on this basic idea:
+- Organization A is reachable by an endpoint hosted by its parent Organization B.
+- Organization C is reachable by an endpoint hosted by its affiliated Organization D.
+- Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
+
+<div>
+{%include usecase5-org-specific-endpoints.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.4.2.5.3-1: Organization-specific Endpoints**
+
 ## 1:46.5 mCSD Security Considerations
 
 The resources exchanged in this profile may contain information which
