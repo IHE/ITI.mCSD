@@ -292,7 +292,7 @@ following Resources.
     [http://hl7.org/fhir/R4/healthcareservice.html](http://hl7.org/fhir/R4/healthcareservice.html)
     
   - Endpoint, as defined at
-    [http://hl7.org/fhir/R4/endpoint.html](http://hl7.org/fhir/R4/endpoint.html
+    [http://hl7.org/fhir/R4/endpoint.html](http://hl7.org/fhir/R4/endpoint.html)
     
   - OrganizationAffiliation, as defined at
     [http://hl7.org/fhir/R4/organizationaffiliation.html](http://hl7.org/fhir/R4/organizationaffiliation.html)
