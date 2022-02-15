@@ -485,6 +485,17 @@ Besides the Organization hosting its own Endpoints, the diagram below shows a fe
 
 **Figure 1:46.4.2.5.3-1: Organization-specific Endpoints**
 
+##### 1:46.4.2.5.4 Service Endpoint Discovery Variation: Federated Endpoints
+
+TBD
+
+<div>
+{%include usecase5-federated-endpoints.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.4.2.5.4-1: Federated Endpoints**
+
 ## 1:46.5 mCSD Security Considerations
 
 The resources exchanged in this profile may contain information which
