@@ -1,0 +1,31 @@
+@startuml
+hide footbox
+participant "Health Worker" as HW
+participant "EMR\nCare Services Selective Consumer\nMHD Document Consumer" as EMR
+participant "HIE Endpoint Directory\nCare Services Selective Supplier" as Directory
+participant "Participant A ITI-67 Endpoint:\nMHD Document Responder" as Responder67
+participant "Participant A ITI-68 Endpoint:\nMHD Document Responder" as Responder68
+
+activate HW
+HW -> HW: Prepare for patient visit
+activate EMR
+HW -> EMR: use EMR's search tool \nsearch for care organizations\nidentify document types of interest
+activate Directory
+EMR-> Directory: Find Matching Care Services [ITI-90] request
+Directory -> EMR: Find Matching Care Services [ITI-90] response\ncontaining Organizations with their Endpoints
+deactivate Directory
+loop each Organization
+EMR -> EMR: Check for MHD Endpoints
+activate Responder67
+EMR-> Responder67: Find Document References [ITI-67] request
+Responder67 -> EMR: Find Document References [ITI-67] response\ncontaining DocumentReferences of interest
+deactivate Responder67
+activate Responder68
+EMR-> Responder68: Retrieve Document [ITI-68] request
+Responder68 -> EMR: Retrieve Document [ITI-68] response\ncontaining documents of interest
+deactivate Responder68
+end
+EMR -> HW : Review obtained documents
+deactivate HW
+deactivate EMR
+@enduml
