@@ -3,8 +3,8 @@ hide footbox
 participant "Health Worker" as HW
 participant "EMR\nCare Services Selective Consumer\nMHD Document Consumer" as EMR
 participant "HIE Endpoint Directory\nCare Services Selective Supplier" as Directory
-participant "Participant A ITI-67 Endpoint:\nMHD Document Responder" as Responder67
-participant "Participant A ITI-68 Endpoint:\nMHD Document Responder" as Responder68
+participant "Participant ITI-67 Endpoint:\nEndpoint\nMHD Document Responder" as Responder67
+participant "Participant ITI-68 Endpoint:\nEndpoint\nMHD Document Responder" as Responder68
 
 activate HW
 HW -> HW: Prepare for patient visit

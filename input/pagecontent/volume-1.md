@@ -429,7 +429,15 @@ contains all of its member organizations and their electronic endpoints.
 - An organization may not be reachable directly, but rather through a related
   organization, for example, a parent organization related by partOf, or
   an affiliated organization related by OrganizationAffiliation.
-  
+
+The diagram below shows:
+- An EMR that is an MHD Document Consumer. It wishes to
+use the HIE directory to find Organizations of interest and suitable MHD
+Endpoints to electronically query them.
+- An excerpt of the HIE directory, showing one participant in the HIE that has two MHD Endpoints.
+Each Endpoint implements a specific MHD transaction. Note that these Endpoints may
+share the same URL.
+
 <div>
 {%include usecase5-diagram.svg%}
 </div>
@@ -439,21 +447,16 @@ contains all of its member organizations and their electronic endpoints.
 
 ##### 1:46.4.2.5.2 Service Endpoint Discovery Process Flow
 
-A Master Facility List (MFL) will run a Care Services Update Supplier
-and Care Services Selective Supplier for an entire country. A Human
-Resources Information System (HRIS) will run a Care Services Update
-Consumer to retrieve the list of facilities. A Logistics Management
-Information System (LMIS) will run a Care Services Update Consumer to
-retrieve the list of facilities.
+- In preparation for a patient visit, a Healthcare Worker uses the EMR's
+search tool to search for organizations that have provided care for this patient,
+as well as document types of interest.
 
-- An HRIS will query the MFL for an updated list of facilities where
-  Practitioners can provide care.
+- The EMR will query the HIE directory for the relevant organizations and their endpoints.
 
-- An LMIS will query the MFL for an updated list of facilities for the
-  supply chain to deliver health care supplies.
+- For each organization obtained, the EMR will check for endpoints that support the needed
+MHD transactions, and make requests against these endpoints to obtain clinical documents.
 
-- The MFL will return updated facilities to each of these systems with
-  multiple hierarchies.
+- The MHD presents the obtained documents to the Healthcare Worker, who reviews them.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.5.2-1.
