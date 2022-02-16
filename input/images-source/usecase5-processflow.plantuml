@@ -1,31 +1,19 @@
 @startuml
 hide footbox
 participant "Health Worker" as HW
-participant "EMR\nCare Services Selective Consumer\nMHD Document Consumer" as EMR
-participant "HIE Endpoint Directory\nCare Services Selective Supplier" as Directory
-participant "Participant ITI-67 Endpoint:\nEndpoint\nMHD Document Responder" as Responder67
-participant "Participant ITI-68 Endpoint:\nEndpoint\nMHD Document Responder" as Responder68
+participant "EMR\nCare Services Selective Consumer" as EMR
+participant "HIE Directory\nCare Services Selective Supplier" as Directory
 
 activate HW
-HW -> HW: Prepare for patient visit
 activate EMR
-HW -> EMR: use EMR's search tool \nsearch for care organizations\nidentify document types of interest
+HW -> EMR: show me active members of the\nState/Province HIE added since 2017
 activate Directory
-EMR-> Directory: Find Matching Care Services [ITI-90] request
-Directory -> EMR: Find Matching Care Services [ITI-90] response\ncontaining Organizations with their Endpoints
+EMR-> Directory: Find Matching Care Services [ITI-90] request:\nOrganizationAffiliation
+Directory --> EMR: Find Matching Care Services [ITI-90] response
+EMR-> Directory: Find Matching Care Services [ITI-90] request:\nOrganization
+Directory --> EMR: Find Matching Care Services [ITI-90] response
 deactivate Directory
-loop each Organization
-EMR -> EMR: Check for MHD Endpoints
-activate Responder67
-EMR-> Responder67: Find Document References [ITI-67] request
-Responder67 -> EMR: Find Document References [ITI-67] response\ncontaining DocumentReferences of interest
-deactivate Responder67
-activate Responder68
-EMR-> Responder68: Retrieve Document [ITI-68] request
-Responder68 -> EMR: Retrieve Document [ITI-68] response\ncontaining documents of interest
-deactivate Responder68
-end
-EMR -> HW : Review obtained documents
+EMR -> HW : Review list
 deactivate HW
 deactivate EMR
 @enduml
