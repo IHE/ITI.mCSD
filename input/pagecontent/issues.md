@@ -10,6 +10,17 @@
 - Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing.
 - Added in text to show that searches can use GET or POST [ITI-90 Message Semantics](ITI-90.html#2390412-message-semantics).
 - Added in retrieve (GET RESOURCE/ID) message section starting at [ITI-90](ITI-90.html#239043-retrieve-care-services-resource-message)
+- Removed tables:
+  - Table 2:3.90.4.2.2.1-1 to [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html)
+  - Table 2:3.90.4.2.2.1-2 to [Organization for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityOrganization.html)
+  - Table 2:3.90.4.2.2.1-3 to [Organization for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html)
+  - Table 2:3.90.4.2.2.2-1 to [Location Profile for mCSD](StructureDefinition-IHE.mCSD.Location.html)
+  - Table 2:3.90.4.2.2.2-2 to [Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html)
+  - Table 2:3.90.4.2.2.2-3 to [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html)
+  - Table 2:3.90.4.2.2.2-4 to [Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html)
+  - Table 2:3.90.4.2.2.3-1 to [Practitioner Profile for mCSD](StructureDefinition-IHE.mCSD.Practitioner.html)
+  - Table 2:3.90.4.2.2.4-1 to [PractitionerRole Profile for mCSD](StructureDefinition-IHE.mCSD.PractitionerRole.html)
+  - Table 2:3.90.4.2.2.5-1 to [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html)
 
 ## Issues
 
