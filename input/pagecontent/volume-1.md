@@ -421,7 +421,7 @@ in Figure 1:46.4.2.4.1-1.
 
 The Organization.partOf element reflects a hierarchical relationship
 between "parent" and "child" organizations. By contrast, the
-[http://hl7.org/fhir/R4/organizationaffiliation.html](OrganizationAffiliation)
+[http://hl7.org/fhir/R4/organizationaffiliation.html](http://hl7.org/fhir/R4/organizationaffiliation.html)
 resource allows for organizations to relate to each other in non-hierarchical
 ways, for example, in more dynamic business relationships. Unlike partOf,
 the relationship is itself a resource, so it can be categorized with codes, status, etc.
