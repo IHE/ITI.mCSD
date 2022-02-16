@@ -1,0 +1,18 @@
+@startuml
+hide footbox
+
+title Health Information Exchange Directory Excerpt
+
+object "Organization" as Organization
+Organization : name = "Participant A"
+object "Endpoint" as Responder38
+Responder38 : connectionType = XCA-RespGateway-Query
+Responder38 : address = http://example.org/xca/
+object "Endpoint" as Responder39
+Responder39 : connectionType = XCA-RespGateway-Retrieve
+Responder39 : address = http://example.org/xca/
+
+Organization *--> Responder38
+Organization *--> Responder39
+
+@enduml
