@@ -56,12 +56,11 @@ The profile supports querying for:
 7. **Endpoint** - An Organization may be reachable through electronic Endpoint(s).
    An Endpoint may be a FHIR server, an IHE web services actor, or some other
    mechanism. If an Organization does not have an Endpoint, it may still be
-   reachable via an Endpoint at its parent Organization (Organization.partOf).
+   reachable via an Endpoint at its parent Organization or an affiliated Organization.
 
 8. **OrganizationAffiliation** - An Organization may have relationships with
-   other organizations that are not hierarchical (i.e. not represented
-   by Organization.partOf). These relationships may indicate an electronic routing
-   path to other organizations that cannot be reached directly.
+   other organizations that are not hierarchical. These relationships may indicate
+   an electronic routing path to other organizations that cannot be reached directly.
 
 The capabilities detailed in this profile support consumer-centric
 queries such as finding “where is the closest youth mental health
@@ -416,47 +415,37 @@ in Figure 1:46.4.2.4.1-1.
 
 **Figure 1:46.4.2.4.2-1: Master Facility List Workflow**
 
-#### 1:46.4.2.5 Use Case \#5: Service Endpoint Discovery 
+#### 1:46.4.2.5 Use Case \#5: Organization Affiliation 
 
-##### 1:46.4.2.5.1 Service Endpoint Discovery Description
+##### 1:46.4.2.5.1 Organization Affiliation Description
 
-A Health Information Exchange (HIE) publishes a directory that
-contains all of its member organizations and their electronic endpoints.
+The Organization.partOf element reflects a hierarchical relationship
+between "parent" and "child" organizations. By contrast, the
+[http://hl7.org/fhir/R4/organizationaffiliation.html](OrganizationAffiliation)
+resource allows for organizations to relate to each other in non-hierarchical
+ways, for example, in more dynamic business relationships. Unlike partOf,
+the relationship is itself a resource, so it can be categorized with codes, status, etc.
 
-- Organizations may have a single endpoint for a technical mechanism like
-  FHIR (i.e. a single FHIRBase URL), or multiple endpoints (e.g. IHE XCPD,
-  IHE XCA Query Responding Gateway, IHE XCA Retrieve Responding Gateway, etc.)
-- An organization may not be reachable directly, but rather through a related
-  organization, for example, a parent organization related by partOf, or
-  an affiliated organization related by OrganizationAffiliation.
-
-The diagram below shows:
-- An EMR that is an MHD Document Consumer. It wishes to
-use the HIE directory to find Organizations of interest and suitable MHD
-Endpoints to electronically query them.
-- An excerpt of the HIE directory, showing one participant in the HIE that has two MHD Endpoints.
-Each Endpoint implements a specific MHD transaction. Note that these Endpoints may
-share the same URL.
+In the example below:
+- Organization B has a parent Organization A.
+- Organization B has been a part of its State/Province HIE since 2018
+and is a member in good standing.
 
 <div>
 {%include usecase5-diagram.svg%}
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.4.2.5.1-1: Health Information Exchange**
+**Figure 1:46.4.2.5.1-1: Organization.partOf vs. Affiliation**
 
-##### 1:46.4.2.5.2 Service Endpoint Discovery Process Flow
+##### 1:46.4.2.5.2 Organization Affiliation Process Flow
 
-- In preparation for a patient visit, a Healthcare Worker uses the EMR's
-search tool to search for organizations that have provided care for this patient,
-as well as document types of interest.
-
-- The EMR will query the HIE directory for the relevant organizations and their endpoints.
-
-- For each organization obtained, the EMR will check for endpoints that support the needed
-MHD transactions, and make requests against these endpoints to obtain clinical documents.
-
-- The MHD presents the obtained documents to the Healthcare Worker, who reviews them.
+- A Healthcare Worker searches for organizations active in the State/Province HIE
+that have been added since 2017.
+- The EMR searches for OrganizationAffiliations where the .organization is the HIE,
+the state is active, and the period.start is 2017 or later.
+- The EMR searches for details on the participating Organizations.
+- The EMR presents the results to the Healthcare Worker.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.5.2-1.
@@ -466,35 +455,50 @@ in Figure 1:46.4.2.5.2-1.
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.4.2.5.2-1: Service Endpoint Discovery Workflow**
+**Figure 1:46.4.2.5.2-1: Organization Affiliation Workflow**
 
-##### 1:46.4.2.5.3 Service Endpoint Discovery Variation: Organization-specific Endpoints
+#### 1:46.4.2.6 Use Case \#6: Service Endpoint Discovery 
 
-The simplest usage model for clients is Endpoints in Organization.endpoint.
-Because these Endpoints are Organization-specific, it does not matter to the client who hosts them.
+##### 1:46.4.2.6.1 Service Endpoint Discovery Description
 
-Besides the Organization hosting its own Endpoints, the diagram below shows a few variations on this basic idea:
-- Organization A is reachable by an endpoint hosted by its parent Organization B.
-- Organization C is reachable by an endpoint hosted by its affiliated Organization D.
-- Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
+A Health Information Exchange (HIE) publishes a directory that
+contains all of its member organizations and their electronic endpoints.
+
+- Organizations may have a single endpoint for a technical mechanism like
+  FHIR (i.e. a single FHIRBase URL), or multiple endpoints (e.g. IHE XCPD,
+  IHE XCA Query Responding Gateway, IHE XCA Retrieve Responding Gateway, etc.)
+
+The diagram below shows an excerpt of the HIE directory, showing one
+participant in the HIE that has two IHE XCA Endpoints.
+Each Endpoint implements a specific XCA transaction. Note that these Endpoints
+share the same URL.
 
 <div>
-{%include usecase5-org-specific-endpoints.svg%}
+{%include usecase6-diagram.svg%}
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.4.2.5.3-1: Organization-specific Endpoints**
+**Figure 1:46.4.2.6.1-1: Health Information Exchange**
 
-##### 1:46.4.2.5.4 Service Endpoint Discovery Variation: Federated Endpoints
+##### 1:46.4.2.6.2 Service Endpoint Discovery Process Flow
 
-TBD
+- In preparation for a patient visit, a Healthcare Worker knows and identifies
+the organizations that have provided care for this patient,
+and identifies document types of interest.
+- The EMR will query the HIE directory for the relevant organizations and their endpoints.
+- For each organization obtained, the EMR will check for endpoints that support the needed
+XCA transactions, and make requests against these endpoints to obtain clinical documents. ^^^
+- The EMR presents the obtained documents to the Healthcare Worker, who reviews them. ^^^
+
+The interactions between the various actors in this use case are shown
+in Figure 1:46.4.2.6.2-1.
 
 <div>
-{%include usecase5-federated-endpoints.svg%}
+{%include usecase6-processflow.svg%}
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.4.2.5.4-1: Federated Endpoints**
+**Figure 1:46.4.2.6.2-1: Service Endpoint Discovery Workflow**
 
 ## 1:46.5 mCSD Security Considerations
 
@@ -675,3 +679,45 @@ scope of the mCSD Profile to define the means of interacting with a
 terminology service, this could be provided, for example, through the
 Sharing Value Sets (SVS) Profile or using appropriate FHIR resources
 (e.g., ValueSet).
+
+## 1:46.8 mCSD Service Endpoint Directory Deployment and Usage
+
+TBD
+
+##### 1:46.8.1 Service Endpoint Discovery Variation: Organization-specific Endpoints
+
+The simplest usage model for clients is Endpoints in Organization.endpoint.
+Because these Endpoints are Organization-specific, it does not matter to the client who hosts them.
+
+Besides the Organization hosting its own Endpoints, the diagram below shows a few variations on this basic idea:
+- Organization A is reachable by an endpoint hosted by its parent Organization B.
+- Organization C is reachable by an endpoint hosted by its affiliated Organization D.
+- Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
+
+<div>
+{%include deployment-specific-endpoints.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.8.1-1: Organization-specific Endpoints**
+
+##### 1:46.8.2 Service Endpoint Discovery Variation: Federated Endpoints
+
+TBD
+
+<div>
+{%include deployment-federated-endpoints.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.8.2-1: Federated Endpoints**
+
+##### 1:46.8.2 Service Endpoint Discovery Usage
+
+A recommended usage model for Care Services Selective Consumers navigating a service endpoint directory:
+- Locate a desired organization.
+- Check if it has a suitable endpoint. If not found, check the following in this order:
+- Check OrganizationAffiliations of the desired organization.
+- Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
+- Check OrganizationAffiliations of parents.
+- Check parents of the parents.
