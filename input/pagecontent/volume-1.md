@@ -487,8 +487,8 @@ the organizations that have provided care for this patient,
 and identifies document types of interest.
 - The EMR will query the HIE directory for the relevant organizations and their endpoints.
 - For each organization obtained, the EMR will check for endpoints that support the needed
-XCA transactions, and make requests against these endpoints to obtain clinical documents. ^^^
-- The EMR presents the obtained documents to the Healthcare Worker, who reviews them. ^^^
+XCA transactions, and make requests against these endpoints to obtain clinical documents.
+- The EMR presents the obtained documents to the Healthcare Worker, who reviews them.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.6.2-1.
@@ -695,7 +695,7 @@ Besides the Organization hosting its own Endpoints, the diagram below shows a fe
 - Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
 
 <div>
-{%include deployment-specific-endpoints.svg%}
+{%include deployment-org-specific-endpoints.svg%}
 </div>
 <div style="clear: left;"/>
 
