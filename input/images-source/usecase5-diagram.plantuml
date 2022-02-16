@@ -1,22 +1,21 @@
 @startuml
 hide footbox
 
-title Health Information Exchange
+title Organization.partOf vs. Affiliation
 
-object "EMR:\nCare Services Selective Consumer,\nMHD Document Consumer" as EMR
-object "HIE Endpoint Directory:\nCare Services Selective Supplier" as Directory
-object "HIE Participant A:\nOrganization" as Organization
-object "Participant A ITI-67 Endpoint:\nEndpoint\nMHD Document Responder" as Responder67
-Responder67 : connectionType = MHD [ITI-67]
-object "Participant A ITI-68 Endpoint:\nEndpoint\nMHD Document Responder" as Responder68
-Responder68 : connectionType = MHD [ITI-68]
+object "Organization B" as OrganizationB
+object "Parent Organization A" as OrganizationA
 
-Directory --> Organization
-Organization --> Responder67
-Organization --> Responder68
+OrganizationB --> OrganizationA : partOf
 
-EMR --> Directory
-EMR --> Responder67
-EMR --> Responder68
+object "State/Province HIE" as OrganizationD
+OrganizationD : identifier = 1.2.3
+object ":OrganizationAffiliation" as OrgAff
+OrgAff : code = HIE/HIO
+OrgAff : active = true
+OrgAff : period.start = 3/1/2018
+
+OrgAff --> OrganizationB : participatingOrganization
+OrgAff --> OrganizationD : organization
 
 @enduml
