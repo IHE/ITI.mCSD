@@ -22,7 +22,7 @@
       <value value="http://ihe.net"/>
     </telecom>
   </contact>
-  <description value="CapabilityStatement for Care Services Update Consumer Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD. See http://wiki.ihe.net/index.php/Mobile_Care_Services_Discovery_(mCSD).  The IHE Profile text is Normative, this conformance resource is Informative." />
+  <description value="CapabilityStatement for Care Services Update Consumer Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD. See https://profiles.ihe.net/ITI/mCSD." />
   <copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
   <kind value="requirements"/> 
   <fhirVersion value="4.0.0"/> 
