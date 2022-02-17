@@ -10,7 +10,6 @@ Each healthcare service has a unique identifier. Examples include surgical servi
 care services, or primary care services. The combination of a Healthcare Service offered at a
 [Location](StructureDefinition-IHE.mCSD.Location.html) may have specific attributes including
 contact person, hours of operation, etc.
-
 """
 
 * type 1..*

@@ -14,7 +14,6 @@ Jurisdictions are political administrative units or other territories over which
 has a unique identifier, geographic attributes, etc. Jurisdictions include political administrative units such as village
 districts or regions.  Each Jurisdiction is defined by a pairing of [Location](StructureDefinition-IHE.mCSD.JurisdictionLocation.html)
 and [Organization](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
-
 """
 
 * obeys mcsd-type-2
@@ -33,7 +32,6 @@ Jurisdictions are political administrative units or other territories over which
 has a unique identifier, geographic attributes, etc. Jurisdictions include political administrative units such as village
 districts or regions.  Each Jurisdiction is defined by a pairing of [Location](StructureDefinition-IHE.mCSD.JurisdictionLocation.html)
 and [Organization](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
-
 """
 
 * obeys mcsd-type-2
