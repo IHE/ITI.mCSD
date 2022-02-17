@@ -682,7 +682,20 @@ Sharing Value Sets (SVS) Profile or using appropriate FHIR resources
 
 ## 1:46.8 mCSD Service Endpoint Directory Deployment and Usage
 
-TBD
+This section provides guidance for populating and using a service endpoint directory,
+in other words, a directory that enables electronic communication. This has all the
+existing capabilities of any mCSD Care Services Selective Supplier, but additionally:
+- Includes Endpoint resources.
+- Usually defines a Health Information Exchange (HIE) that enables disparate
+  clinical data-holding organizations/enterprises to interoperate.
+- Often is owned/deployed by a separate organization from the clinical data-holding organizations.
+- Sometimes allows for the listed organizations to maintain their own sub-trees.
+
+Some of these additional capabilities are profiled in the VhDir IG.
+
+Although multiple resource types can have Endpoint resources, current practice
+is to create a structure of Organization resources (using .partOf) and use Organization.endpoint.
+This guidance adopts that practice and adds the use of OrganizationAffiliation.endpoint.
 
 ##### 1:46.8.1 Service Endpoint Discovery Variation: Organization-specific Endpoints
 
