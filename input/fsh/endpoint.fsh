@@ -6,10 +6,17 @@
 // VhDir is a very complex extension. Not clear to me if this complexity is needed. Not clear who advised this structure.
 
 
+Extension: EndpointSpecificType
+Id: ihe-endpointspecifictype
+Title: "Endpoint Specific Type"
+Description: """
+The specific endpoint type. Given that the FHIR R4 Endpoint.connectionType is limited to a one value from a valueSet given by FHIR core and that valueSet includes XCA thus by Extensible rules one is forced to pick that value, we choose to add an additional codeableConcept for a more detailed code(s).
+"""
+* value[x] only CodeableConcept
+* valueCodeableConcept from 	MCSDEndpointTypesDocShareVS (preferred)
 
 
 
-//TODO: This codesystem should likely use child concepts with parent being the profile. But this is not supported in sushi, and I didn't want to convert this to a json file yet.
 CodeSystem:  MCSDEndpointTypes
 Title: "mCSD Endpoint Types"
 Description:  """
@@ -28,33 +35,40 @@ Code pattern: `{Profile}-{Actor}-{Transaction}[-{option}]`
 Note that this codeSystem contains only endpoints needed for Some IHE profiles, and only for the synchronous communication pattern. When Async is supported additional entries will be needed on these actors, and the peer actor will also need to be described. Async is not in scope at this time.
 """
 * ^caseSensitive = true
+* ^hierarchyMeaning = #part-of
 // XCA Actor transactions for Synchronous use https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html
-* #XCA-RespGateway-Query "XCA RespondingGateway ITI-38 Query Synchronous"
-* #XCA-RespGateway-Retrieve "XCA RespondingGateway ITI-39 Retrieve Synchronous"
+* #ihe-xca "XCA"
+  * #XCA-RespGateway-Query "XCA RespondingGateway ITI-38 Query Synchronous"
+  * #XCA-RespGateway-Retrieve "XCA RespondingGateway ITI-39 Retrieve Synchronous"
 // XCPD Actor transactions for Synchronous use https://profiles.ihe.net/ITI/TF/Volume1/ch-27.html
-* #XCPD-RespGateway-PatientDiscovery "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery"
+* #ihe-xcpd "XCPD"
+  * #XCPD-RespGateway-PatientDiscovery "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery"
 // XDS Actor transactions for Synchronous use https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html
-* #XDS-Registry-Feed "XDS Registry ITI-8 Patient Identity Feed"
-* #XDS-Registry-Feed-v3 "XDS Registry ITI-44 Patient Identity Feed HL7v3"
-* #XDS-Registry-Register "XDS Registry ITI-42 Register Document Set-b"
-* #XDS-Registry-Query "XDS Registry ITI-18 Registry Stored Query"
-* #XDS-Registry-RegOnDemand "XDS Registry ITI-61 Register On-Demand Document Entry"
-* #XDS-Repository-ProvideReg "XDS Repository ITI-41 Provide&Register Document Set-b"
-* #XDS-Repository-Retrieve "XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set"
-* #XDS-OnDemandSource-Retrieve "XDS OnDemandSource ITI-43 Retrieve Document Set"
+* #ihe-xds "XDS"
+  * #XDS-Registry-Feed "XDS Registry ITI-8 Patient Identity Feed"
+  * #XDS-Registry-Feed-v3 "XDS Registry ITI-44 Patient Identity Feed HL7v3"
+  * #XDS-Registry-Register "XDS Registry ITI-42 Register Document Set-b"
+  * #XDS-Registry-Query "XDS Registry ITI-18 Registry Stored Query"
+  * #XDS-Registry-RegOnDemand "XDS Registry ITI-61 Register On-Demand Document Entry"
+  * #XDS-Repository-ProvideReg "XDS Repository ITI-41 Provide&Register Document Set-b"
+  * #XDS-Repository-Retrieve "XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set"
+  * #XDS-OnDemandSource-Retrieve "XDS OnDemandSource ITI-43 Retrieve Document Set"
 // PDQ Actor transactions https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html
-* #PDQ-Supplier-Query "PDQ Patient Demographics Supplier ITI-21 Patient Demographics Query"
-* #PDQ-Supplier-VisitQuery "PDQ Patient Demographics Supplier ITI-22 Patient Demographics and Visit Query"
+* #ihe-pdq "PDQ"
+  * #PDQ-Supplier-Query "PDQ Patient Demographics Supplier ITI-21 Patient Demographics Query"
+  * #PDQ-Supplier-VisitQuery "PDQ Patient Demographics Supplier ITI-22 Patient Demographics and Visit Query"
 // PIX Actor transactions https://profiles.ihe.net/ITI/TF/Volume1/ch-5.html
-* #PIX-Xmanager-Feed "PIX Patient Identity Cross-Reference Manager ITI-8 Patient Identity Feed"
-* #PIX-Xmanager-Feed-v3 "PIX Patient Identity Cross-Reference Manager ITI-30 Patient Identity Management"
-* #PIX-Xmanager-Query "PIX Patient Identity Cross-Reference Manager ITI-9 PIX Query"
-* #PIX-Consumer "PIX Patient Identifier Cross-referenc Consumer ITI-10 PIX Update Notification"
+* #ihe-pix "PIX"
+  * #PIX-Xmanager-Feed "PIX Patient Identity Cross-Reference Manager ITI-8 Patient Identity Feed"
+  * #PIX-Xmanager-Feed-v3 "PIX Patient Identity Cross-Reference Manager ITI-30 Patient Identity Management"
+  * #PIX-Xmanager-Query "PIX Patient Identity Cross-Reference Manager ITI-9 PIX Query"
+  * #PIX-Consumer "PIX Patient Identifier Cross-referenc Consumer ITI-10 PIX Update Notification"
 // XDR Actor transactions https://profiles.ihe.net/ITI/TF/Volume1/ch-15.html
-* #XDR-Recipient-ProvideReg "XDR Document Recipient ITI-41 Provide and Register Document Set-B"
+* #ihe-xdr "XDR"
+  * #XDR-Recipient-ProvideReg "XDR Document Recipient ITI-41 Provide and Register Document Set-B"
 // MHD Actor transactions https://profiles.ihe.net/ITI/MHD/index.html
-* #MHD-Recipient-ProvideReg "MHD Document Recipient ITI-65 Provide Document Bundle"
-
+* #ihe-mhd "MHD"
+  * #MHD-Recipient-ProvideReg "MHD Document Recipient ITI-65 Provide Document Bundle"
 // MHD Document Responder is RESTful, so should it have one or many?
 //* #MHD-Responder "MHD Document Responder ITI-66/ITI-67/ITI-68"
 
@@ -64,6 +78,18 @@ Title: "mCSD Endpoint Document Sharing Types ValueSet"
 Description: "ValueSet of the Document Sharing Endpint types allowed"
 //Note that when MCSDEndpointTypes has more than Document Sharing in it, this will need to be more explicit. 
 * codes from system MCSDEndpointTypes
+
+ValueSet: MCSDEndpointTypesCoreDocShareVS
+Title: "mCSD Endpoint Document Sharing Types ValueSet"
+Description: "ValueSet of the Document Sharing Endpint types allowed"
+* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xcpd
+* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
+* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xds
+* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xdr
+* MCSDEndpointTypes#ihe-pdq
+* MCSDEndpointTypes#ihe-pix
+* MCSDEndpointTypes#ihe-mhd
+
 
 
 
@@ -78,7 +104,7 @@ Title:        "mCSD Endpoint"
 Description:  """
 A profile on the mCSD Endpoint.
 
-Given that in FHIR R4 the .connnectionType is 1..1, each type of endpoint will be indicated with an independent Endpoint resource. 
+Given that in FHIR R4 the .connnectionType is 1..1, each type of endpoint will be indicated with an independent Endpoint resource.
 """
 * status MS
 * status ^short = "represents the current status of this endpoint."
@@ -121,7 +147,8 @@ Open-Issues:
 * identifier 0..*
 * identifier ^short = "should be the homeCommunityId(s)"
 * identifier ^definition = "For simple single depth XCA communites."
-* connectionType from MCSDEndpointTypesDocShareVS (extensible)
+* extension contains EndpointSpecificType named specificType 0..* MS
+* connectionType from MCSDEndpointTypesCoreDocShareVS (required)
 * name 0..0 
 * name ^short = "Nothing useful to put in the name"
 * payloadType MS
@@ -150,7 +177,8 @@ This is an example of an XCA Retrieve endpoint for OrgA
 * identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
 * identifier.value = "urn:uuid:cadbf8d0-5493-11ec-bf63-0242ac130002" // OrgA
 * status = #active
-* connectionType = MCSDEndpointTypes#XCA-RespGateway-Query
+* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
+* extension[specificType].valueCodeableConcept = MCSDEndpointTypes#XCA-RespGateway-Query
 // no name
 * managingOrganization = Reference(Organization/ex-OrgA)
 // no contact, use the managing Org
@@ -176,7 +204,8 @@ This is an example of an XCA Retrieve endpoint
 * identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
 * identifier.value = "urn:uuid:cadbf8d0-5493-11ec-bf63-0242ac130002" // OrgA
 * status = #active
-* connectionType = MCSDEndpointTypes#XCA-RespGateway-Retrieve
+* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
+* extension[specificType].valueCodeableConcept = MCSDEndpointTypes#XCA-RespGateway-Retrieve
 // no name
 * managingOrganization = Reference(Organization/ex-OrgA)
 // no contact, use the managing Org
@@ -195,7 +224,7 @@ Instance: ex-endpointDicom
 InstanceOf: MCSDEndpoint
 Title: "Example of an Endpoint that is not constrained by mCSD XCA constraints."
 Description: """
-This is an example of a DICOM WADO-RS endpoint. 
+This is an example of a DICOM WADO-RS endpoint.
 """
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #active
