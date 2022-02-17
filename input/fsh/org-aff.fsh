@@ -1,4 +1,6 @@
 // Need to clarify that Karen's Cross does not need OrgAff. Karen's Cross is supported simplistically with simply Organization->Endpoint(s); where each endpoint expresses the various protocols supported. Where Document Sharing OrgAff is needed is when a network service is made available to mediate between originating Org-A needing to talk to Org-B where either (a) they don't have a common protocol (spirit of Karen's cross service), or (b) don't have a common direct link (proxy service). The Document Sharing OrgAff enables both (a) and (b). The OrgAff resource links a network endpoint hosting organization (OrgAff.organization and .participatingOrganization) and that organizations endpoint (OrgAff.endpoint and/or OrgAff.organization.endpoint, which is on the network) with a destination (push destination, or query/retrieve destination) organization (OrgAff.network) that does not have an endpoint present on the network.
+// Jira ticket filed on unclear .network -- https://jira.hl7.org/browse/FHIR-36019
+// Jira ticket filed on unclear .participatingOrganization -- https://jira.hl7.org/browse/FHIR-25406
 
 
 CodeSystem:  MCSDOrgAffTypes
@@ -30,10 +32,11 @@ Description:  "A profile on the OrganizationAffiliation resource for mCSD."
 * organization 1..1
 * organization only Reference(MCSDOrganization)
 * organization ^short = "Organization hosting endpoints on behalf of the ParticipaintOrganization."
+* participatingOrganization 1..1
+* participatingOrganization only Reference(MCSDOrganization)
+* participatingOrganization ^short = "The Organization who is served by the hosting Organization."
 // TODO. Not clear what to say about the participatingOrganization... it seems this is duplicate of the .organization.
-* network 1..
-* network only Reference(MCSDOrganization)
-* network ^short = "The participating organizations within the Affiliation."
+* network 0..0
 * specialty MS
 * location MS
 * telecom MS
@@ -49,17 +52,13 @@ A profile on the OrganizationAffiliation resource for mCSD in Document Sharing. 
 Not used for direct connected mesh networks of depth 2 as that is handled fine with Organization->Endpoint. 
 
 Affiliation is used to show Document Sharing network linkage to a set of communities that are not directly addressible.  
-The set of communities (participants) are in the 'network' of the affiliation. 
-The participating organizations would not have Organization->Endpoint advertised in the network directory. 
-There will be many OrganizationAffiliations, one for each pathway provided on the network by the serving organization (.organization) to another organization (.network).
+The participating organization would not have Organization->Endpoint advertised in the network directory. 
+There will be many OrganizationAffiliations, one for each pathway provided on the network by the serving organization (.organization) to another organization (.participatingOrganization).
 """
 * identifier 1..* MS
 * identifier ^short = "the homeCommunityId(s)"
 * identifier ^definition = "Shall be all the homeCommunityId(s) of all the communities in the affiliation network."
 * identifier ^comment = "Open-Issue: should this be mandated, recommended, or forbidden?"
-* network 1..
-* network only Reference(MCSDOrganization)
-* network ^short = "The Organizations in the affiliation network supported by the affiliation."
 * code = MCSDOrgAffTypes#DocShare-federate
 * endpoint only Reference(MCSDEndpointDocShare)
 
@@ -75,7 +74,7 @@ This is a simple OrganizationAffiliation for an HIE. This is NOT representative 
 * active = true
 * period.start = 2022-02-10
 * organization = Reference(MCSDOrganization-ExamplePartner)
-* network = Reference(Organization/ex-OrgA)
+* participatingOrganization = Reference(Organization/ex-OrgA)
 * code = 	http://hl7.org/fhir/organization-role#HIE/HIO
 
 
@@ -140,7 +139,7 @@ Usage: #example
 * active = true
 * code = MCSDOrgAffTypes#DocShare-federate
 * organization = Reference(Organization/ex-OrgC)
-* network[+] = Reference(Organization/ex-OrgB)
+* participatingOrganization = Reference(Organization/ex-OrgB)
 * endpoint[+] = Reference(Endpoint/ex-endpointXCAquery)
 
 // TODO: Second use-case would show how multiple OrgAff can point at the same endpoint resources

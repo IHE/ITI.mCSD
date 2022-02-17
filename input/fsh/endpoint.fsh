@@ -16,6 +16,19 @@ The specific endpoint type. Given that the FHIR R4 Endpoint.connectionType is li
 * valueCodeableConcept from 	MCSDEndpointTypesDocShareVS (preferred)
 
 
+Instance: Endpoint-EndpointSpecificType
+InstanceOf: SearchParameter
+Title: "search on the IHE defined extension for Endpoint specificType"
+Usage: #definition
+* url = "http://profiles.ihe.net/ITI/mCSD/SearchParameter/Endpoint-EndpointSpecificType"
+* description = "This SearchParameter enables finding Endpoints by the specificType code."
+* name = "EndpointSpecificType"
+* status = #active
+* code = #specificType
+* base = #Endpoint
+* expression = "(extension('http://profiles.ihe.net/ITI/mCSD/StructureDefinition/EndpointSpecificType').value as CodeableConcept)"
+* type = #token
+
 
 CodeSystem:  MCSDEndpointTypes
 Title: "mCSD Endpoint Types"
@@ -123,8 +136,6 @@ This managing organization relationship is potentially independent of if the org
 * period MS
 * period ^short = "Overall deployment lifetime for this endpoint."
 * period ^comment = "usually indicating when the endpoint was deployed, and may indicate when this endpoint will be decommissioned."
-
-
 
 
 
