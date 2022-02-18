@@ -27,7 +27,7 @@ This guide is organized into three main sections:
     5. [46.5 mCSD Security Considerations](volume-1.html#1465-mcsd-security-considerations)
     6. [46.6 mCSD Cross-Profile Considerations](volume-1.html#1466-mcsd-cross-profile-considerations)
     7. [46.7 mCSD Deployment Considerations](volume-1.html#1467-mcsd-deployment-considerations)
-    8. [46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-considerations)
+    8. [46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations)
 2. Volume 2: Transaction Detail
     1. [3.90 Find Matching Care Services \[ITI-90\]](ITI-90.html)
     2. [3.91 Request Care Services Updates \[ITI-91\]](ITI-91.html)
