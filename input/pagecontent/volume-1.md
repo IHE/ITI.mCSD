@@ -705,39 +705,73 @@ This guidance adopts that practice and adds the use of OrganizationAffiliation.e
 The simplest usage model for clients is Endpoints in Organization.endpoint.
 Because these Endpoints are Organization-specific, it does not matter to the client who hosts them. Some examples follow.
 
-- Organization A is reachable by an endpoint hosted by its parent Organization B.
+Organization A is reachable by an endpoint hosted by its parent Organization B:
 <div>
 {%include dir-org-specific-endpoint-parent.svg%}
 </div>
 <div style="clear: left;"/>
-- Organization C is reachable by an endpoint hosted by its affiliated Organization D.
+**Figure 1:46.8.1-1: Organization-specific Endpoint Hosted by Parent**
+Organization C is reachable by an endpoint hosted by its affiliated Organization D:
 <div>
 {%include dir-org-specific-endpoint-affil.svg%}
 </div>
 <div style="clear: left;"/>
-- Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
+**Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Affiliation**
+Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F:
 <div>
 {%include dir-org-specific-endpoint-inter.svg%}
 </div>
 <div style="clear: left;"/>
+**Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Hidden Intermediary**
 
 Note: The conceptual hosting relationships shown are not represented in the directory.
 They may correspond to Endpoint.managingOrganization.
 
-**Figure 1:46.8.1-1: Organization-specific Endpoints**
+##### 1:46.8.2 Service Endpoint Discovery Variation: Endpoint to a Structure
 
-##### 1:46.8.2 Service Endpoint Discovery Variation: Federated Endpoints
-
-TBD
+When an Organization with an Endpoint has a complex structure, for example,
+sub-organizations, clients can often make use of this structure:
 
 <div>
-{%include deployment-federated-endpoints.svg%}
+{%include dir-endpoint-to-org-hierarchy.svg%}
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.8.2-1: Federated Endpoints**
+**Figure 1:46.8.2-1: Endpoint to Organizational Hierarchy**
 
-##### 1:46.8.2 Service Endpoint Discovery Usage
+Typical directories will take an organizational hierarchy to imply
+accessibility to parts of the structure, for example:
+- Querying Organization A's XCA endpoint for documents (e.g. using ITI-38) will
+return documents from organizations B, C, D and E. If these organizations
+have identifiers of type Home Community ID, clients can expect to see these
+identifiers in the returned document metadata.
+- Sending a Provide and Register Document Set-b (ITI-41) or Provide Document Bundle (ITI-65)
+request to Organization A's XDR or MHD endpoint, 
+
+Examples of this kind of federated structure are shown in [ITI-TF Volume 1,
+Appendix E.9](https://profiles.ihe.net/ITI/TF/Volume1/ch-E.html#E.9.3),
+for XCA Responding Gateways.
+
+By contrast, OrganizationAffiliations by themselves do not necessarily imply
+this kind of electronic accessibility. For this reason, this IG defines the code
+"DocShare-federate", which explicitly declares that the participatingOrganization
+is accessible as a federated organization via the OrganizationAffiliation.endpoint.
+
+<div>
+{%include dir-endpoint-to-org-affiliates.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.8.2-2: Endpoint to Organizational Affiliates**
+
+<div>
+{%include dir-endpoint-to-hybrid-org-structure.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.8.2-3: Endpoint to Hybrid Organizational Structure**
+
+##### 1:46.8.3 Service Endpoint Discovery Usage
 
 A recommended usage model for Care Services Selective Consumers navigating a service endpoint directory:
 - Locate a desired organization.
