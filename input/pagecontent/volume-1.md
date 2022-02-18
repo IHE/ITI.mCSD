@@ -700,7 +700,7 @@ Although multiple resource types can have Endpoint resources, typical directorie
 focus on Organization.endpoint.
 This guidance adopts that practice and adds the use of OrganizationAffiliation.endpoint.
 
-##### 1:46.8.1 Service Endpoint Discovery Variation: Organization-specific Endpoints
+##### 1:46.8.1 Service Endpoint Discovery Variation: Endpoint to an Organization
 
 The simplest usage model for clients is Endpoints in Organization.endpoint.
 Because these Endpoints are Organization-specific, it does not matter to the client who hosts them. Some examples follow.
@@ -743,13 +743,17 @@ sub-organizations, clients can often make use of this structure:
 
 Typical directories will take an organizational hierarchy to imply
 accessibility to parts of the structure, for example:
-- Querying Organization A's XCA endpoint for documents (e.g. using ITI-38) will
-return documents from organizations B, C, D and E. If these organizations
-have identifiers of type Home Community ID, clients can expect to see these
-identifiers in the returned document metadata.
-- Sending a Provide and Register Document Set-b (ITI-41) or Provide Document Bundle (ITI-65)
-request to Organization A's XDR or MHD endpoint, clients can specify
-organizations B, C, D and/or E in intendedRecipient.
+- For FHIR REST endpoints, the URL is simply the Service Base URL as specified in
+[FHIR R4 3.1.0.1.2](http://hl7.org/fhir/R4/http.html#general). Clients can expect
+to find resources related to Organizations A, B and C.
+- For XCA endpoints, a client querying Organization A for documents (e.g. using ITI-38)
+may receive documents from Organizations A, B and C. If these organizations
+have identifiers of type Home Community ID in the directory, clients can expect
+to see these identifiers in the returned document metadata.
+- For XDR endpoints, a client sending a Provide and Register Document Set-b (ITI-41)
+request to Organization A can optionally specify Organizations B and/or C in intendedRecipient.
+- For MHD endpoints, a client sending a Provide Document Bundle (ITI-65)
+request to Organization A can optionally specify Organizations B and/or C in intendedRecipient.
 
 Specific details of addressing to federated recipients are out of the scope of this IG.
 
@@ -762,7 +766,7 @@ this kind of electronic accessibility. For this reason, this IG defines the code
 "DocShare-federate", which explicitly declares that the participatingOrganization
 is accessible as a federated organization via the OrganizationAffiliation.endpoint.
 
-The following diagram shows a similar structure, but using OrganizationAffiliation.
+The following diagram shows the same accessibility, but using OrganizationAffiliation.
 
 <div>
 {%include dir-endpoint-to-org-affiliates.svg%}
