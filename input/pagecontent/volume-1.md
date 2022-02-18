@@ -785,7 +785,33 @@ when adding an existing organizational structure to an HIE.
 
 **Figure 1:46.8.2-3: Endpoint to Hybrid Organizational Structure**
 
-##### 1:46.8.3 Service Endpoint Discovery Usage
+##### 1:46.8.3 Service Endpoint Discovery Variation: Grouping Actors
+
+Grouped actors may be represented as well, although not explicitly. In the following example,
+Participant A is reachable by either an MHD endpoint or XDR endpoints. The directory
+does not reflect which endpoint is the adapter or the adaptee.
+
+<div>
+{%include dir-endpoint-xdr-mhd.svg%}
+</div>
+<div style="clear: left;"/>
+
+**Figure 1:46.8.3-1: Endpoints to Grouped Actors**
+
+##### 1:46.8.4 Service Endpoint Discovery Variation: Organizations reachable Via Multiple Paths
+
+An Organization may have multiple Endpoints that can reach it, for example:
+- Directly to the Organization and to a parent Organization. In this case, the client may choose
+based on how broad it wishes the request to be.
+- Via equivalent mechanisms, e.g. XDR and MHD. In this case, the client may choose
+a supported or preferred transaction.
+- Via different parent or affiliation relationships, for example, via two different HIEs.
+This case may become more common as directories grow and consolidate. In this case, the client
+may choose based on other criteria, for example fees or authorization differences.
+
+##### 1:46.8.5 Service Endpoint Discovery Usage
+
+TBD: Doubt we can come up with a general flow.
 
 A recommended usage model for Care Services Selective Consumers navigating a service endpoint directory:
 - Locate a desired organization.
