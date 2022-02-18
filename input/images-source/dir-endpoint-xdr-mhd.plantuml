@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+
+object ":Organization" as Organization
+Organization : name = "Participant A"
+object ":Endpoint" as Responder38
+Responder38 : connectionType = XDR-DocRecipient
+object ":Endpoint" as Responder39
+Responder39 : connectionType = hl7-fhir-rest
+
+Organization *--> Responder38
+Organization *--> Responder39
+note "MHD support shown in CapabilityStatement" as N1
+N1 .. Responder39
+
+@enduml
