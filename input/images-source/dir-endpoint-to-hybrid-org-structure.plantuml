@@ -12,7 +12,9 @@ OrgAff : code = DocShare-federate
 OrgAff -> OrganizationB : participatingOrganization
 OrganizationA <-- OrgAff : organization
 
-EndpointA <- OrganizationA : endpoint
+OrganizationA --> EndpointA : endpoint
+EndpointA <- OrgAff : endpoint
+
 OrganizationB <-- OrganizationC : partOf
 OrganizationB <-- OrganizationD : partOf
 OrganizationB <-- OrganizationE : partOf
