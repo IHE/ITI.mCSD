@@ -5,13 +5,9 @@ object "Organization A" as OrganizationA
 object "Organization B" as OrganizationB
 object "Endpoint" as EndpointA
 object "Organization C" as OrganizationC
-object "Organization D" as OrganizationD
-object "Organization E" as OrganizationE
 
 OrganizationA <-- OrganizationB : partOf
-EndpointA <- OrganizationA : endpoint
-OrganizationB <-- OrganizationC : partOf
-OrganizationB <-- OrganizationD : partOf
-OrganizationB <-- OrganizationE : partOf
+EndpointA <-- OrganizationA : endpoint
+OrganizationA <-- OrganizationC : partOf
 
 @enduml
