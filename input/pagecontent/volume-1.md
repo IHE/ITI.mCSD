@@ -62,10 +62,8 @@ health human resource capacities, by facility, by cadre,” “what are all
 the services offered at this facility,” or conversely, “where are all
 the facilities that offer this service.” The mCSD Profile may be
 employed to support, for example, the Provider Queries listed by the US
-Office of the National Coordinator as part of the Standards and
-Interoperability Framework ([http://wiki.siframework.org/file/view/ESI
-Query and
-Response.pdf](http://wiki.siframework.org/file/view/ESI%20Query%20and%20Response.pdf)).
+Office of the National Coordinator as part of the [Standards and
+Interoperability Framework](https://www.healthit.gov/topic/interoperability/standards-interoperability-si-framework).
 
 The loosely coupled design and flexible querying capability of the mCSD
 Profile means it can be deployed within a variety of eHealth

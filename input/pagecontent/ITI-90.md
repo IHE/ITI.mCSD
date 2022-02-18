@@ -43,7 +43,7 @@ of this transaction.
 ##### 2:3.90.4.1.2 Message Semantics
 
 A Care Services Selective Consumer initiates a search request using HTTP
-GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search on the
+GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the
 Organization, Location, Practitioner, PractitionerRole, or
 HealthcareService Resources. The Care Services Selective Supplier shall support 
 both GET and POST based searches. The query parameters are identified below.
