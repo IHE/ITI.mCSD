@@ -705,19 +705,21 @@ This guidance adopts that practice and adds the use of OrganizationAffiliation.e
 The simplest usage model for clients is Endpoints in Organization.endpoint.
 Because these Endpoints are Organization-specific, it does not matter to the client who hosts them. Some examples follow.
 
-Organization A is reachable by an endpoint hosted by its parent Organization B:
+Organization A is directly reachable by an endpoint hosted by its parent Organization B:
 <div>
 {%include dir-org-specific-endpoint-parent.svg%}
 </div>
 <div style="clear: left;"/>
 **Figure 1:46.8.1-1: Organization-specific Endpoint Hosted by Parent**
-Organization C is reachable by an endpoint hosted by its affiliated Organization D:
+
+Organization C is directly reachable by an endpoint hosted by its affiliated Organization D:
 <div>
 {%include dir-org-specific-endpoint-affil.svg%}
 </div>
 <div style="clear: left;"/>
 **Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Affiliation**
-Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F:
+
+Organization E is directly reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F:
 <div>
 {%include dir-org-specific-endpoint-inter.svg%}
 </div>
