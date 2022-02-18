@@ -47,6 +47,14 @@ Should we require any reverse includes (\_revinclude)? These would add
 complexity to the server and most will have similar options through
 include and normal chaining.
 
+mCSD\_10. Should we allow federation of (i.e. connectivity to) child
+organizations when related by .partOf to be assumed? Currently the IG does
+(see section 1:46.8.2), and we believe this is what is done in practice.
+The downside is that there is no way to represent a hierarchical relationship that does not imply routing.
+
+mCSD\_11. Should we specify details of addressing to federated recipients, at least for some
+profiles (see section 1:46.8.2)? For example, with MHD ITI-65 we could pass the Organization.identifier
+in the intendedRecipient field. There is already an IG for passing a Direct address in an XDR ITI-41.
 
 ### Closed Issues
 These issues have been decided and documented in the publication.
