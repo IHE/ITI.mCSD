@@ -14,6 +14,8 @@ OrgAff2 : code = DocShare-federate
 OrgAff2 -> OrganizationC : participatingOrganization
 OrganizationB <-- OrgAff2 : organization
 
-EndpointA <- OrganizationA : endpoint
+OrganizationA -> EndpointA : endpoint
+EndpointA <- OrgAff : endpoint
+EndpointA <- OrgAff2 : endpoint
 
 @enduml
