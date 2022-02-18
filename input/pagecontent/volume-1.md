@@ -748,7 +748,10 @@ return documents from organizations B, C, D and E. If these organizations
 have identifiers of type Home Community ID, clients can expect to see these
 identifiers in the returned document metadata.
 - Sending a Provide and Register Document Set-b (ITI-41) or Provide Document Bundle (ITI-65)
-request to Organization A's XDR or MHD endpoint, 
+request to Organization A's XDR or MHD endpoint, clients can specify
+organizations B, C, D and/or E in intendedRecipient.
+
+Specific details of addressing to federated recipients are out of the scope of this IG.
 
 Examples of this kind of federated structure are shown in [ITI-TF Volume 1,
 Appendix E.9](https://profiles.ihe.net/ITI/TF/Volume1/ch-E.html#E.9.3),
@@ -759,12 +762,17 @@ this kind of electronic accessibility. For this reason, this IG defines the code
 "DocShare-federate", which explicitly declares that the participatingOrganization
 is accessible as a federated organization via the OrganizationAffiliation.endpoint.
 
+The following diagram shows a similar structure, but using OrganizationAffiliation.
+
 <div>
 {%include dir-endpoint-to-org-affiliates.svg%}
 </div>
 <div style="clear: left;"/>
 
 **Figure 1:46.8.2-2: Endpoint to Organizational Affiliates**
+
+In addition, these mechanisms may be combined. This may be useful, for example,
+when adding an existing organizational structure to an HIE.
 
 <div>
 {%include dir-endpoint-to-hybrid-org-structure.svg%}
