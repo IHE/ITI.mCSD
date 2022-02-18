@@ -1,8 +1,6 @@
 @startuml
 hide footbox
 
-title Organization-specific Endpoint Hosted by Affiliation
-
 object "Organization C" as OrganizationC
 object "Affiliated Organization D" as OrganizationD
 object "OrganizationAffiliation" as OrgAff
