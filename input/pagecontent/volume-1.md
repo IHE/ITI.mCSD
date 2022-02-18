@@ -431,6 +431,9 @@ In the example below:
 - Organization B has been a part of its State/Province HIE since 2018
 and is a member in good standing.
 
+The .organization defines a role for the relationship, e.g. "HIE/HIO" or "member",
+and the .participatingOrganization fills the role.
+
 <div>
 {%include usecase5-diagram.svg%}
 </div>
@@ -691,26 +694,35 @@ existing capabilities of any mCSD Care Services Selective Supplier, but addition
 - Often is owned/deployed by a separate organization from the clinical data-holding organizations.
 - Sometimes allows for the listed organizations to maintain their own sub-trees.
 
-Some of these additional capabilities are profiled in the VhDir IG.
+Some of these additional capabilities are profiled in the HL7 VhDir IG: [https://hl7.org/fhir/uv/vhdir/](https://hl7.org/fhir/uv/vhdir/).
 
-Although multiple resource types can have Endpoint resources, current practice
-is to create a structure of Organization resources (using .partOf) and use Organization.endpoint.
+Although multiple resource types can have Endpoint resources, typical directories
+focus on Organization.endpoint.
 This guidance adopts that practice and adds the use of OrganizationAffiliation.endpoint.
 
 ##### 1:46.8.1 Service Endpoint Discovery Variation: Organization-specific Endpoints
 
 The simplest usage model for clients is Endpoints in Organization.endpoint.
-Because these Endpoints are Organization-specific, it does not matter to the client who hosts them.
+Because these Endpoints are Organization-specific, it does not matter to the client who hosts them. Some examples follow.
 
-Besides the Organization hosting its own Endpoints, the diagram below shows a few variations on this basic idea:
 - Organization A is reachable by an endpoint hosted by its parent Organization B.
-- Organization C is reachable by an endpoint hosted by its affiliated Organization D.
-- Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
-
 <div>
-{%include deployment-org-specific-endpoints.svg%}
+{%include dir-org-specific-endpoint-parent.svg%}
 </div>
 <div style="clear: left;"/>
+- Organization C is reachable by an endpoint hosted by its affiliated Organization D.
+<div>
+{%include dir-org-specific-endpoint-affil.svg%}
+</div>
+<div style="clear: left;"/>
+- Organization E is reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F.
+<div>
+{%include dir-org-specific-endpoint-inter.svg%}
+</div>
+<div style="clear: left;"/>
+
+Note: The conceptual hosting relationships shown are not represented in the directory.
+They may correspond to Endpoint.managingOrganization.
 
 **Figure 1:46.8.1-1: Organization-specific Endpoints**
 
