@@ -1,8 +1,6 @@
 @startuml
 hide footbox
 
-title Organization-specific Endpoint Hosted by Hidden Intermediary
-
 object "Organization E" as OrganizationE
 object "Endpoint for E" as EndpointE
 EndpointE : address = https://intermediaryF.org/orgE
