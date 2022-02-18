@@ -1,8 +1,6 @@
 @startuml
 hide footbox
 
-title Organization-specific Endpoint Hosted by Parent
-
 object "Organization A" as OrganizationA
 object "Parent Organization B" as OrganizationB
 object "Endpoint for A" as EndpointA
