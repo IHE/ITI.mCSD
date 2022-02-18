@@ -683,7 +683,7 @@ terminology service, this could be provided, for example, through the
 Sharing Value Sets (SVS) Profile or using appropriate FHIR resources
 (e.g., ValueSet).
 
-## 1:46.8 mCSD Service Endpoint Directory Deployment and Usage
+## 1:46.8 mCSD Endpoint Usage Considerations
 
 This section provides guidance for populating and using a service endpoint directory,
 in other words, a directory that enables electronic communication. This has all the
