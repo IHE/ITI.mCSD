@@ -7,14 +7,14 @@ object "Endpoint" as EndpointA
 object "Organization C" as OrganizationC
 object ":OrganizationAffiliation" as OrgAff
 OrgAff : code = DocShare-federate
-OrgAff -> OrganizationB : participatingOrganization
+OrgAff --> OrganizationB : participatingOrganization
 OrganizationA <-- OrgAff : organization
 object ":OrganizationAffiliation" as OrgAff2
 OrgAff2 : code = DocShare-federate
-OrgAff2 -> OrganizationC : participatingOrganization
-OrganizationB <-- OrgAff2 : organization
+OrgAff2 --> OrganizationC : participatingOrganization
+OrganizationA <-- OrgAff2 : organization
 
-OrganizationA -> EndpointA : endpoint
+EndpointA <-- OrganizationA : endpoint
 EndpointA <- OrgAff : endpoint
 EndpointA <- OrgAff2 : endpoint
 
