@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+
+title Organization-specific Endpoint Hosted by Affiliation
+
+object "Organization C" as OrganizationC
+object "Affiliated Organization D" as OrganizationD
+object "OrganizationAffiliation" as OrgAff
+object "Endpoint for C" as EndpointC
+EndpointC : address = https://orgD.org/orgC
+
+OrgAff --> OrganizationC : participatingOrganization
+OrganizationD <-- OrgAff : organization
+OrganizationC -> EndpointC : endpoint
+OrganizationD ..> EndpointC : hosts
+
+@enduml
