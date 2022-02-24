@@ -1,5 +1,5 @@
 id: ihe.iti.mcsd
-canonical: http://profiles.ihe.net/ITI/mCSD
+canonical: https://profiles.ihe.net/ITI/mCSD
 version: 3.5.0
 name: IHE_ITI_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
