@@ -122,9 +122,9 @@ Most requirements are documented in ITI TF-2: Transactions. This section
 documents any additional requirements on mCSD actors.
 
 mCSD supports querying for Organization, Facility, Location,
-Practitioner, and Healthcare Service. However, a Care Services Selective
-Supplier or Care Service Update Supplier is not required to contain data
-on all of these.
+Practitioner, Healthcare Service, OrganizationAffiliation, and Endpoint.
+However, a Care Services Selective Supplier or Care Service Update Supplier
+is not required to contain data on all of these.
 
 #### 1:46.1.1.1 Care Services Selective Consumer
 
