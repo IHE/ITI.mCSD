@@ -3,13 +3,15 @@ hide footbox
 
 title Health Information Exchange Directory Excerpt
 
-object "Organization" as Organization
+object "Participant A:Organization" as Organization
 Organization : name = "Participant A"
-object "Endpoint" as Responder38
-Responder38 : connectionType = XCA-RespGateway-Query
+object ":Endpoint" as Responder38
+Responder38 : connectionType = ihe-xca
+Responder38 : extension:specificType = XCA-RespGateway-Query
 Responder38 : address = http://example.org/xca/
-object "Endpoint" as Responder39
-Responder39 : connectionType = XCA-RespGateway-Retrieve
+object ":Endpoint" as Responder39
+Responder39 : connectionType = ihe-xca
+Responder39 : extension:specificType = XCA-RespGateway-Retrieve
 Responder39 : address = http://example.org/xca/
 
 Organization *--> Responder38
