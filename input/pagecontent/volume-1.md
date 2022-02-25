@@ -72,7 +72,7 @@ architectures and support a wide array of care workflows.
 ## 1:46.1 mCSD Actors, Transactions, and Content Modules
 
 This section defines the actors, transactions, and/or content modules in
-this profile. Further information about actor and transaction definitions can be in the Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html](Appendix) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
+this profile. Further information about actor and transaction definitions can be in the Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
 
 Figure 1:46.1-1 shows the actors directly involved in the mCSD Profile and
 the relevant transactions between them. If needed for context, other
