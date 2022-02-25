@@ -460,13 +460,19 @@ in Figure 1:46.4.2.5.2-1.
 
 **Figure 1:46.4.2.5.2-1: Organization Affiliation Workflow**
 
-#### 1:46.4.2.6 Use Case \#6: Service Endpoint Discovery 
+#### 1:46.4.2.6 Use Case \#6: Health Information Exchange (HIE) Endpoint Discovery 
 
-##### 1:46.4.2.6.1 Service Endpoint Discovery Description
+##### 1:46.4.2.6.1 Health Information Exchange (HIE) Endpoint Discovery Description
 
 A Health Information Exchange (HIE) publishes a directory that
 contains all of its member organizations and their electronic endpoints.
+Note: Guidance for usage of endpoints in directories is provided
+[here](#1468-mcsd-endpoint-usage-considerations).
 
+- Endpoints are not limited to RESTful FHIR servers; they may point to systems
+  that implement other mechanisms. This IG provides two profiles:
+  [a general endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), and
+  [an endpoint to an IHE Document Sharing actor](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
 - Organizations may have a single endpoint for a technical mechanism like
   FHIR (i.e. a single FHIRBase URL), or multiple endpoints (e.g. IHE XCPD,
   IHE XCA Query Responding Gateway, IHE XCA Retrieve Responding Gateway, etc.)
@@ -483,7 +489,7 @@ share the same URL.
 
 **Figure 1:46.4.2.6.1-1: Health Information Exchange**
 
-##### 1:46.4.2.6.2 Service Endpoint Discovery Process Flow
+##### 1:46.4.2.6.2 Health Information Exchange (HIE) Endpoint Discovery Process Flow
 
 - In preparation for a patient visit, a Healthcare Worker knows and identifies
 the organizations that have provided care for this patient,
@@ -501,7 +507,7 @@ in Figure 1:46.4.2.6.2-1.
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.4.2.6.2-1: Service Endpoint Discovery Workflow**
+**Figure 1:46.4.2.6.2-1: Health Information Exchange (HIE) Endpoint Discovery Workflow**
 
 ## 1:46.5 mCSD Security Considerations
 
