@@ -474,8 +474,9 @@ Note: Guidance for usage of endpoints in directories is provided
   [a general endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), and
   [an endpoint to an IHE Document Sharing actor](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
 - Organizations may have a single endpoint for a technical mechanism like
-  FHIR (i.e. a single FHIRBase URL), or multiple endpoints (e.g. IHE XCPD,
-  IHE XCA Query Responding Gateway, IHE XCA Retrieve Responding Gateway, etc.)
+  FHIR (e.g. a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)),
+  or multiple endpoints (e.g. IHE XCPD, IHE XCA Query Responding Gateway,
+  IHE XCA Retrieve Responding Gateway, etc.)
 
 The diagram below shows an excerpt of the HIE directory, showing one
 participant in the HIE that has two IHE XCA Endpoints.
@@ -691,20 +692,37 @@ Sharing Value Sets (SVS) Profile or using appropriate FHIR resources
 
 ## 1:46.8 mCSD Endpoint Usage Considerations
 
-This section provides guidance for populating and using a service endpoint directory,
-in other words, a directory that enables electronic communication. This has all the
-existing capabilities of any mCSD Care Services Selective Supplier, but additionally:
-- Includes Endpoint resources.
-- Usually defines a Health Information Exchange (HIE) that enables disparate
-  clinical data-holding organizations/enterprises to interoperate.
-- Often is owned/deployed by a separate organization from the clinical data-holding organizations.
-- Sometimes allows for the listed organizations to maintain their own sub-trees.
+This section provides guidance for populating and using Endpoint resources
+in an mCSD directory to enable electronic communication, for example defining
+local points of connectivity within a community, or defining a Health Information
+Exchange (HIE) that allows multiple communities to interoperate.
 
-Some of these additional capabilities are profiled in the HL7 VhDir IG: [https://hl7.org/fhir/uv/vhdir/](https://hl7.org/fhir/uv/vhdir/).
+Many current Endpoint directories based on FHIR are purpose-built, which is to say they
+are deployed to a server that only hosts Organization and Endpoint resources,
+and only for the use case of Endpoint lookup. For this reason, directories
+often reflect network details directly in the Organization resource, such as:
+- The organization's role in the network, like participant or sub-participant,
+  expressed as the type of organization.
+- The organization's relationship to its connectivity vendor, expressed as the
+  organization hierarchy (i.e. partOf).
+- The organization's connectivity state as an extension.
+- Supported profiles, purposes of use, etc. as extensions.
+- The organization's identity as a home community ID, for use in IHE Document Sharing profiles.
 
-Although multiple resource types can have Endpoint resources, typical directories
-focus on Organization.endpoint.
-This guidance adopts that practice and adds the use of OrganizationAffiliation.endpoint.
+When the organization and its network capabilities need to diverge (e.g. an
+organization uses two connectivity vendors), directories typically
+handle this by creating copies of the Organization resource.
+
+We anticipate these conflicts increasing over time due to many forces:
+- Implementers taking advantage of profiles like mCSD 
+  to represent more comprehensive organizational and personnel structures.
+- Implementers scaling by delegating maintenance of organization sub-trees
+  to the organizations themselves.
+- Directories consolidating over time into more comprehensive "phonebooks",
+  where a given organization participated in multiple HIEs.
+
+In this guidance, we address these forces by moving network details out of the
+Organization and into the Endpoint and OrganizationAffiliation resources.
 
 ##### 1:46.8.1 Service Endpoint Discovery Variation: Endpoint to an Organization
 
