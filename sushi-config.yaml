@@ -1,10 +1,11 @@
 id: ihe.iti.mcsd
-canonical: http://profiles.ihe.net/ITI/mCSD
-version: 3.4.1
-name: IHE_mCSD
+canonical: https://profiles.ihe.net/ITI/mCSD
+version: 3.5.0
+name: IHE_ITI_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
-releaseLabel: ci-build
-#date: 2022-01-12
+#releaseLabel: ci-build
+releaseLabel: Trial-Implementation
+date: 2022-03-01
 status: active
 publisher:
   - name: IHE IT Infrastructure Technical Committee
