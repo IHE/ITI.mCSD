@@ -5,8 +5,8 @@ Advanced work on converting mCSD to an IG build. This is NOT normative or approv
 Currently conformance resources have been created, but no text has been migrated.
 
 Mobile Care Services Discovery
-* https://profiles.ihe.net/ITI/
-* https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf
+* https://profiles.ihe.net/ITI/mCSD
+* historic https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf
 
 * continuous build https://build.fhir.org/ig/IHE/ITI.mCSD/branches/main/
 
@@ -23,3 +23,4 @@ link to Concepts. - Done as part of CP 1236
 ### Pending Questions
 * Should Table references in text be links to the table if it is close?
 
+.
