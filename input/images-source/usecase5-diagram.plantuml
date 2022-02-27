@@ -1,0 +1,23 @@
+@startuml
+hide footbox
+
+title Organization.partOf vs. Affiliation
+
+object "Organization B" as OrganizationB
+object "Parent Organization A" as OrganizationA
+
+OrganizationA <-- OrganizationB : partOf
+
+object "State/Province HIE" as OrganizationD
+OrganizationD : identifier = 1.2.3
+object ":OrganizationAffiliation" as OrgAff
+
+OrgAff : code = HIE/HIO
+OrgAff : active = true
+OrgAff : period.start = 3/1/2018
+
+
+OrganizationB <- OrgAff : participatingOrganization
+OrganizationD <-- OrgAff : organization
+
+@enduml

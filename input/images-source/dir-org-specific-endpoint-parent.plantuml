@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+object "Organization A" as OrganizationA
+object "Parent Organization B" as OrganizationB
+object "Endpoint for A" as EndpointA
+EndpointA : address = https://orgB.org/orgA
+
+OrganizationB <-- OrganizationA : partOf
+OrganizationA -> EndpointA : endpoint
+OrganizationB ..> EndpointA : hosts
+
+@enduml
