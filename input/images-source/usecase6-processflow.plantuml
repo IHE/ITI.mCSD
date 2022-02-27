@@ -1,0 +1,26 @@
+@startuml
+hide footbox
+participant "Health Worker" as HW
+participant "EMR\nCare Services Selective Consumer\nXCA Initiating Gateway" as EMR
+participant "HIE Endpoint Directory\nCare Services Selective Supplier" as Directory
+participant "Participant\nXCA Responding Gateway" as Responder67
+
+activate HW
+HW -> HW: Prepare for patient visit
+activate EMR
+HW -> EMR: identify care organizations\nidentify document types of interest
+activate Directory
+EMR-> Directory: Find Matching Care Services [ITI-90] request
+Directory --> EMR: Find Matching Care Services [ITI-90] response\ncontaining Organizations with their Endpoints
+deactivate Directory
+loop each Organization
+EMR -> EMR: Check for XCA Endpoints
+activate Responder67
+EMR-> Responder67: Query [ITI-38] and Retrieve [ITI-39] documents of interest
+Responder67 --> EMR: return documents
+deactivate Responder67
+end
+EMR -> HW : Review obtained documents
+deactivate HW
+deactivate EMR
+@enduml

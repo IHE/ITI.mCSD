@@ -1,0 +1,19 @@
+@startuml
+hide footbox
+participant "Health Worker" as HW
+participant "EMR\nCare Services Selective Consumer" as EMR
+participant "HIE Directory\nCare Services Selective Supplier" as Directory
+
+activate HW
+activate EMR
+HW -> EMR: show me active members of the\nState/Province HIE added since 2017
+activate Directory
+EMR-> Directory: Find Matching Care Services [ITI-90] request:\nOrganizationAffiliation
+Directory --> EMR: Find Matching Care Services [ITI-90] response
+EMR-> Directory: Find Matching Care Services [ITI-90] request:\nOrganization
+Directory --> EMR: Find Matching Care Services [ITI-90] response
+deactivate Directory
+EMR -> HW : Review list
+deactivate HW
+deactivate EMR
+@enduml

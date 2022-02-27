@@ -1,6 +1,6 @@
 id: ihe.iti.mcsd
 canonical: https://profiles.ihe.net/ITI/mCSD
-version: 3.5.0
+version: 3.6.0-comment
 name: IHE_ITI_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
 #releaseLabel: ci-build
@@ -79,6 +79,7 @@ menu:
     Security Considerations: volume-1.html#1465-mcsd-security-considerations
     Cross-Profile Considerations: volume-1.html#1466-mcsd-cross-profile-considerations
     Deployment Considerations: volume-1.html#1467-mcsd-deployment-considerations  
+    Endpoint Usage Considerations: volume-1.html#1468-mcsd-endpoint-usage-considerations
   Volume 2:
     "Find Matching Care Services [ITI-90]": ITI-90.html
     "Request Care Services Updates [ITI-91]": ITI-91.html 

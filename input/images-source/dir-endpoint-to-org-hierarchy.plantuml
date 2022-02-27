@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+
+object "Organization A" as OrganizationA
+object "Organization B" as OrganizationB
+object "Endpoint" as EndpointA
+object "Organization C" as OrganizationC
+
+OrganizationA <-- OrganizationB : partOf
+EndpointA <-- OrganizationA : endpoint
+OrganizationA <-- OrganizationC : partOf
+
+@enduml
