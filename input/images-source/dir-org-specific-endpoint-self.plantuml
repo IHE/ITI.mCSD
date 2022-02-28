@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+
+object "Organization A" as OrganizationA
+object "Endpoint for A" as EndpointA
+EndpointA : address = https://orgA.org
+
+OrganizationA -> EndpointA : endpoint
+OrganizationA <- EndpointA : managingOrganization
+
+@enduml
