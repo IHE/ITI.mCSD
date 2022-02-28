@@ -751,21 +751,21 @@ Organization A is directly reachable by an endpoint hosted by its parent Organiz
 {%include dir-org-specific-endpoint-parent.svg%}
 </div>
 <div style="clear: left;"/>
-**Figure 1:46.8.1-1: Organization-specific Endpoint Hosted by Parent**
+**Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Parent**
 
 Organization C is directly reachable by an endpoint hosted by its affiliated Organization D:
 <div>
 {%include dir-org-specific-endpoint-affil.svg%}
 </div>
 <div style="clear: left;"/>
-**Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Affiliation**
+**Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Affiliation**
 
 Organization E is directly reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F:
 <div>
 {%include dir-org-specific-endpoint-inter.svg%}
 </div>
 <div style="clear: left;"/>
-**Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Hidden Intermediary**
+**Figure 1:46.8.1-4: Organization-specific Endpoint Hosted by Hidden Intermediary**
 
 Note: The conceptual hosting relationships shown are not represented in the directory.
 They may correspond to Endpoint.managingOrganization.
@@ -846,10 +846,10 @@ to find an electronic service endpoint, it may adopt something like the followin
 - Locate a desired organization.
 - Check if it has a suitable endpoint (connectionType, extension:specificType, payloadType, payloadMimeType, status).
   If not found, check the following in this order:
-- Check OrganizationAffiliations of the desired organization.
-- Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
-- Check OrganizationAffiliations of parents.
-- Check parents of the parents.
+  - Check OrganizationAffiliations of the desired organization.
+  - Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
+  - Check OrganizationAffiliations of parents.
+  - Check parents of the parents.
 
 The reason this is not a deterministic algorithm is that there may be multiple electronic paths
 to the same organization. Clients may rank these paths based on multiple considerations, for example:
