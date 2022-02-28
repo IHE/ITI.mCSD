@@ -7,8 +7,8 @@
 - Added sections in actor requirements describing the requirement of providing a capability statement [Volume 1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
 - Updated the canonical URL for the organization hierarchy extension to `http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
 - Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
-- Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing.
-- Added in text to show that searches can use GET or POST [ITI-90 Message Semantics](ITI-90.html#2390412-message-semantics).
+- Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing
+- Added in text to show that searches can use GET or POST [ITI-90 Message Semantics](ITI-90.html#2390412-message-semantics)
 - Added in retrieve (GET RESOURCE/ID) message section starting at [ITI-90](ITI-90.html#239043-retrieve-care-services-resource-message)
 - Removed tables:
   - Table 2:3.90.4.2.2.1-1 to [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html)
@@ -25,7 +25,7 @@
 ## Issues
 
 IHE welcomes [New Issues](https://github.com/IHE/ITI.mCSD/issues/new/choose)
-from the GitHub community.  For those without GitHub access, issues may be
+from the GitHub community. For those without GitHub access, issues may be
 submitted at [ITI Public Comments](https://www.ihe.net/ITI_Public_Comments/).
 
 As issues are submitted they will be managed on the
