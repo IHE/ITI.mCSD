@@ -707,51 +707,70 @@ often reflect network details directly in the Organization resource, such as:
 - Supported profiles, purposes of use, etc. as extensions.
 - The organization's identity as a home community ID, for use in IHE Document Sharing profiles.
 
-When the organization and its network capabilities need to diverge (e.g. an
-organization uses two connectivity vendors), directories typically
-handle this by creating copies of the Organization resource.
+When the organization's structure and its network capabilities need to 
+vary independently (e.g. an organization uses two connectivity vendors),
+directories typically handle this by creating parallel instances of the
+Organization resource that then have to be merged by custom code to display.
 
 We anticipate these conflicts increasing over time due to many forces:
 - Implementers taking advantage of profiles like mCSD 
   to represent more comprehensive organizational and personnel structures.
 - Implementers scaling by delegating maintenance of organization sub-trees
   to the organizations themselves.
-- Directories consolidating over time into more comprehensive "phonebooks",
-  where a given organization participated in multiple HIEs.
+- Directories consolidating/federating over time into more comprehensive
+  "phonebooks", where a given organization participates in multiple HIEs.
+  One example would be the USA ONC TEFCA Recognized Coordinating Entity, which will be
+  maintaining a directory that consists of entries supplied by each Qualified
+  Health Information Network (QHIN).
 
-In this guidance, we address these forces by moving network details out of the
+In this guidance, we allow organization structure and network details to vary independently
+by moving network details out of the
 Organization and into the Endpoint and OrganizationAffiliation resources.
 
-##### 1:46.8.1 Service Endpoint Discovery Variation: Endpoint to an Organization
+##### 1:46.8.1 Endpoint to an Organization
 
-The simplest usage model for clients is Endpoints in Organization.endpoint.
-Because these Endpoints are Organization-specific, it does not matter to the client who hosts them. Some examples follow.
+The simplest usage model for a client is when the organization it needs to
+contact has a dedicated Endpoint resource in Organization.endpoint.
+Because this Endpoint is Organization-specific, it does not matter to the client
+who hosts it. Some examples follow.
+
+Note: The managingOrganization of an Endpoint is who users need to contact for
+support. It may or may not be the same as the organization that hosts it.
+Since hosting is not reflected in the directory, we are indicating it in the
+diagrams below by the URLs.
+
+Organization A hosts its own Endpoint:
+<div>
+{%include dir-org-specific-endpoint-self.svg%}
+</div>
+<div style="clear: left;"/>
+**Figure 1:46.8.1-1: Organization-specific Endpoint Hosted by the Organization**
 
 Organization A is directly reachable by an endpoint hosted by its parent Organization B:
 <div>
 {%include dir-org-specific-endpoint-parent.svg%}
 </div>
 <div style="clear: left;"/>
-**Figure 1:46.8.1-1: Organization-specific Endpoint Hosted by Parent**
+**Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Parent**
 
 Organization C is directly reachable by an endpoint hosted by its affiliated Organization D:
 <div>
 {%include dir-org-specific-endpoint-affil.svg%}
 </div>
 <div style="clear: left;"/>
-**Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Affiliation**
+**Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Affiliation**
 
 Organization E is directly reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F:
 <div>
 {%include dir-org-specific-endpoint-inter.svg%}
 </div>
 <div style="clear: left;"/>
-**Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Hidden Intermediary**
+**Figure 1:46.8.1-4: Organization-specific Endpoint Hosted by Hidden Intermediary**
 
 Note: The conceptual hosting relationships shown are not represented in the directory.
 They may correspond to Endpoint.managingOrganization.
 
-##### 1:46.8.2 Service Endpoint Discovery Variation: Endpoint to a Structure
+##### 1:46.8.2 Endpoint to a Structure
 
 When an Organization with an Endpoint has a complex structure, for example,
 sub-organizations, clients can often make use of this structure:
@@ -807,7 +826,7 @@ when adding an existing organizational structure to an HIE.
 
 **Figure 1:46.8.2-3: Endpoint to Hybrid Organizational Structure**
 
-##### 1:46.8.3 Service Endpoint Discovery Variation: Grouping Actors
+##### 1:46.8.3 Grouping Actors
 
 Grouped actors may be represented as well, although not explicitly. In the following example,
 Participant A is reachable by either an MHD endpoint or XDR endpoints. The directory
@@ -820,25 +839,22 @@ does not reflect which endpoint is the adapter or the adaptee.
 
 **Figure 1:46.8.3-1: Endpoints to Grouped Actors**
 
-##### 1:46.8.4 Service Endpoint Discovery Variation: Organizations reachable Via Multiple Paths
+##### 1:46.8.4 Endpoint Discovery Usage
 
-An Organization may have multiple Endpoints that can reach it, for example:
-- Directly to the Organization and to a parent Organization. In this case, the client may choose
-based on how broad it wishes the request to be.
-- Via equivalent mechanisms, e.g. XDR and MHD. In this case, the client may choose
-a supported or preferred transaction.
-- Via different parent or affiliation relationships, for example, via two different HIEs.
-This case may become more common as directories grow and consolidate. In this case, the client
-may choose based on other criteria, for example fees or authorization differences.
-
-##### 1:46.8.5 Service Endpoint Discovery Usage
-
-TBD: Doubt we can come up with a general flow.
-
-A recommended usage model for Care Services Selective Consumers navigating a service endpoint directory:
+When a Care Services Selective Consumer wishes to navigate a directory
+to find an electronic service endpoint, it may adopt something like the following:
 - Locate a desired organization.
-- Check if it has a suitable endpoint. If not found, check the following in this order:
+- Check if it has a suitable endpoint (connectionType, extension:specificType, payloadType, payloadMimeType, status).
+  If not found, check the following in this order:
   - Check OrganizationAffiliations of the desired organization.
   - Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
   - Check OrganizationAffiliations of parents.
   - Check parents of the parents.
+
+The reason this is not a deterministic algorithm is that there may be multiple electronic paths
+to the same organization. Clients may rank these paths based on multiple considerations, for example:
+- How broad it wishes the request to be: the closer to the target organization the narrower.
+- If there are equivalent mechanisms, e.g. XDR and MHD are supported, the client may choose
+a preferred transaction.
+- If an organization is accessible via two different HIEs, the client
+may choose based on other criteria, for example fees or authorization differences.
