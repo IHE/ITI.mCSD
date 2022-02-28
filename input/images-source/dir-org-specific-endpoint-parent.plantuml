@@ -8,6 +8,6 @@ EndpointA : address = https://orgB.org/orgA
 
 OrganizationB <-- OrganizationA : partOf
 OrganizationA -> EndpointA : endpoint
-OrganizationB ..> EndpointA : hosts
+OrganizationB <- EndpointA : managingOrganization
 
 @enduml
