@@ -10,6 +10,6 @@ EndpointC : address = https://orgD.org/orgC
 OrgAff --> OrganizationC : participatingOrganization
 OrganizationD <-- OrgAff : organization
 OrganizationC -> EndpointC : endpoint
-OrganizationD ..> EndpointC : hosts
+OrganizationD <- EndpointC : managingOrganization
 
 @enduml
