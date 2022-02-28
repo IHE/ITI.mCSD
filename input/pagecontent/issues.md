@@ -93,7 +93,7 @@ of “DocShare-federate” to be explicitly related to any parent-child relation
 We did not choose this because its impact on existing directory structures would be substantial.
 
 mCSD\_14. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
-we say that a hierarchy formed by the mCSD Additional Hierarchies extension
+we say that a hierarchy formed by the [mCSD Additional Hierarchies extension](StructureDefinition-IHE.mCSD.OrganizationHierarchy.html)
 does not imply federation of (i.e. connectivity to) child organizations. Should it?
 
 mCSD\_15. Should we specify details of addressing federated recipients, at least for some
@@ -103,17 +103,16 @@ in the intendedRecipient field. There is already an IG for passing a Direct addr
 
 mCSD\_16. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 why do we use OrganizationAffiliation for
-an organization's membership in an HIE, as opposed to the mCSD Additional Hierarchies extension?
+an organization's membership in an HIE, as opposed to the [mCSD Additional Hierarchies extension](StructureDefinition-IHE.mCSD.OrganizationHierarchy.html)?
 Because we don't wish to constrain the use of resources that define organizational structure,
   rather just reflect how best to use Endpoints in these structures. OrganizationAffiliation
   is already used in other use cases, and in fact, shows HIE/HIO membership as one of
   its examples.
 
 mCSD\_17. There is minimal usage guidance for REST endpoints.
-Figure [1:46.8.3-1](volume-1.html#14683-grouping-actors) says all you need to specify
-is connectionType = hl7-fhir-rest, and clients can then discover anything they need to
-know from the CapabilityStatement. Is this sufficient, or should we also include a
-code like MHD-Recipient-ProvideReg to use in the [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html)? That code is defined in this IG.
+Figure [1:46.8.3-1](volume-1.html#14683-grouping-actors) shows connectionType = hl7-fhir-rest and
+extension:specificType = MHD-Recipient-ProvideReg. Is this necessary? Couldn't 
+clients discover anything they need to know about REST from the CapabilityStatement?
 
 mCSD\_18. This profile says very little about home community ID, yet it is called out
 in [mCSD issue #2](https://github.com/IHE/ITI.mCSD/issues/2).
