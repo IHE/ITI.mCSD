@@ -84,7 +84,7 @@ mCSD\_12. In [section 1:46.8](volume-1.html#1468-mcsd-endpoint-usage-considerati
 we mention the US TEFCA RCE maintaining a consolidated
 directory spanning multiple networks. Can we identify an international example?
 
-mCSD\_13. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure)),
+mCSD\_13. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 we say that a hierarchy formed by Organization.partOf implies federation of (i.e. connectivity to) child
 organizations. Should we? We believe this is what is done in practice. The downside is that
 there would be no way to represent a hierarchical relationship that does not imply routing.
@@ -92,16 +92,16 @@ An alternative proposed design would require OrganizationAffiliation with a code
 of “DocShare-federate” to be explicitly related to any parent-child relationship to imply connectivity.
 We did not choose this because its impact on existing directory structures would be substantial.
 
-mCSD\_14. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure)),
+mCSD\_14. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 we say that a hierarchy formed by the mCSD Additional Hierarchies extension
 does not imply federation of (i.e. connectivity to) child organizations. Should it?
 
 mCSD\_15. Should we specify details of addressing federated recipients, at least for some
-profiles (see [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure)))?
+profiles (see [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure))?
 For example, with MHD ITI-65 we could pass the Organization.identifier
 in the intendedRecipient field. There is already an IG for passing a Direct address in an XDR ITI-41.
 
-mCSD\_16. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure)),
+mCSD\_16. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 why do we use OrganizationAffiliation for
 an organization's membership in an HIE, as opposed to the mCSD Additional Hierarchies extension?
 Because we don't wish to constrain the use of resources that define organizational structure,
@@ -117,7 +117,7 @@ code like MHD-Recipient-ProvideReg to use in the [extension for Endpoint Specifi
 
 mCSD\_18. This profile says very little about home community ID, yet it is called out
 in [mCSD issue #2](https://github.com/IHE/ITI.mCSD/issues/2).
-[Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure)) talks about
+[Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure) talks about
 "identifiers of type Home Community ID". The [profile on Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html) says to put the HCID in the Endpoint.identifier. The
 [Example of an mCSD XCA Query Endpoint](Endpoint-ex-endpointXCAquery.json.html) shows
 an Endpoint.identifier.type with coding for a HCID. But this is not specified
@@ -156,7 +156,7 @@ should payloadType and payloadMimeType be specified for an XCA Query endpoint? I
 
 mCSD\_23. In the [Resource Profile: mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html), would a Proxy service that is supporting OrgAff be a good example of NOT putting a homeCommunityId in the endpoint.identifier?
 
-mCSD\_24. Need to align and flesh out the examples better with the guidance in [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure)).
+mCSD\_24. Need to align and flesh out the examples better with the guidance in [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure).
 
 ### Open Issues and Questions
 These issues were known as part of the publication, and IHE invites comments.
