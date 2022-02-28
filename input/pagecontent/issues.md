@@ -155,7 +155,7 @@ should payloadType and payloadMimeType be specified for an XCA Query endpoint? I
 
 mCSD\_23. In the [Resource Profile: mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html), would a Proxy service that is supporting OrgAff be a good example of NOT putting a homeCommunityId in the endpoint.identifier?
 
-mCSD\_24. Need to align and flesh out the examples better with the guidance in [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure).
+mCSD\_24. Need to align and flesh out the examples better with the guidance in [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure). For example, could we see an example for an organization accessible via two different exchanges?
 
 ### Open Issues and Questions
 These issues were known as part of the publication, and IHE invites comments.
