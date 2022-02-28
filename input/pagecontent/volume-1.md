@@ -767,9 +767,6 @@ Organization E is directly reachable by an endpoint hosted by a hidden (i.e. not
 <div style="clear: left;"/>
 **Figure 1:46.8.1-4: Organization-specific Endpoint Hosted by Hidden Intermediary**
 
-Note: The conceptual hosting relationships shown are not represented in the directory.
-They may correspond to Endpoint.managingOrganization.
-
 ##### 1:46.8.2 Endpoint to a Structure
 
 When an Organization with an Endpoint has a complex structure, for example,
