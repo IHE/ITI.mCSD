@@ -838,7 +838,7 @@ TBD: Doubt we can come up with a general flow.
 A recommended usage model for Care Services Selective Consumers navigating a service endpoint directory:
 - Locate a desired organization.
 - Check if it has a suitable endpoint. If not found, check the following in this order:
-- Check OrganizationAffiliations of the desired organization.
-- Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
-- Check OrganizationAffiliations of parents.
-- Check parents of the parents.
+  - Check OrganizationAffiliations of the desired organization.
+  - Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
+  - Check OrganizationAffiliations of parents.
+  - Check parents of the parents.
