@@ -33,8 +33,8 @@ The profile supports querying for:
     with other locations.
 
 4.  **Jurisdiction** – Jurisdictions are political administrative units or 
-    other territories over which authority is exercised.  A Jurisdiction has 
-    a unique identifier, geographic attributes, etc.  Jurisdictions include 
+    other territories over which authority is exercised. A Jurisdiction has 
+    a unique identifier, geographic attributes, etc. Jurisdictions include 
     political administrative units such as village districts or regions.  
     Each Jurisdiction is defined by a pairing of Location and Organization.
 
@@ -429,7 +429,7 @@ In the example below:
 - Organization B has been a part of its State/Province HIE since 2018
 and is a member in good standing.
 
-The .organization defines a role for the relationship, e.g. "HIE/HIO" or "member",
+The .organization defines a role for the relationship, e.g., "HIE/HIO" or "member",
 and the .participatingOrganization fills the role.
 
 <div>
@@ -472,9 +472,9 @@ Note: Guidance for usage of endpoints in directories is provided
   [a general endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), and
   [an endpoint to an IHE Document Sharing actor](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
 - Organizations may have a single endpoint for a technical mechanism like
-  FHIR (e.g. a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)),
-  or multiple endpoints (e.g. IHE XCPD, IHE XCA Query Responding Gateway,
-  IHE XCA Retrieve Responding Gateway, etc.)
+  FHIR (e.g., a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)),
+  or multiple endpoints (e.g., IHE XCPD, IHE XCA Query Responding Gateway,
+  IHE XCA Retrieve Responding Gateway, etc.).
 
 The diagram below shows an excerpt of the HIE directory, showing one
 participant in the HIE that has two IHE XCA Endpoints.
@@ -702,13 +702,13 @@ often reflect network details directly in the Organization resource, such as:
 - The organization's role in the network, like participant or sub-participant,
   expressed as the type of organization.
 - The organization's relationship to its connectivity vendor, expressed as the
-  organization hierarchy (i.e. partOf).
+  organization hierarchy (i.e., partOf).
 - The organization's connectivity state as an extension.
 - Supported profiles, purposes of use, etc. as extensions.
 - The organization's identity as a home community ID, for use in IHE Document Sharing profiles.
 
 When the organization's structure and its network capabilities need to 
-vary independently (e.g. an organization uses two connectivity vendors),
+vary independently (e.g., an organization uses two connectivity vendors),
 directories typically handle this by creating parallel instances of the
 Organization resource that then have to be merged by custom code to display.
 
@@ -760,7 +760,7 @@ Organization C is directly reachable by an endpoint hosted by its affiliated Org
 <div style="clear: left;"/>
 **Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Affiliation**
 
-Organization E is directly reachable by an endpoint hosted by a hidden (i.e. not in the directory) Intermediary F:
+Organization E is directly reachable by an endpoint hosted by a hidden (i.e., not in the directory) Intermediary F:
 <div>
 {%include dir-org-specific-endpoint-inter.svg%}
 </div>
@@ -784,7 +784,7 @@ accessibility to parts of the structure, for example:
 - For FHIR REST endpoints, the URL is simply the Service Base URL as specified in
 [FHIR R4 3.1.0.1.2](http://hl7.org/fhir/R4/http.html#general). Clients can expect
 to find resources related to Organizations A, B and C.
-- For XCA endpoints, a client querying Organization A for documents (e.g. using ITI-38)
+- For XCA endpoints, a client querying Organization A for documents (e.g., using ITI-38)
 may receive documents from Organizations A, B and C. If these organizations
 have identifiers of type Home Community ID in the directory, clients can expect
 to see these identifiers in the returned document metadata.
@@ -851,7 +851,7 @@ to find an electronic service endpoint, it may adopt something like the followin
 The reason this is not a deterministic algorithm is that there may be multiple electronic paths
 to the same organization. Clients may rank these paths based on multiple considerations, for example:
 - How broad it wishes the request to be: the closer to the target organization the narrower.
-- If there are equivalent mechanisms, e.g. XDR and MHD are supported, the client may choose
+- If there are equivalent mechanisms, e.g., XDR and MHD are supported, the client may choose
 a preferred transaction.
 - If an organization is accessible via two different HIEs, the client
 may choose based on other criteria, for example fees or authorization differences.
