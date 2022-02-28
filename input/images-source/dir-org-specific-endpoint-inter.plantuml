@@ -8,5 +8,6 @@ EndpointE : address = https://intermediaryF.org/orgE
 OrganizationE -> EndpointE : endpoint
 note "Intermediary F\nnot listed in directory." as N1
 N1 .. EndpointE
+OrganizationE <- EndpointE : managingOrganization
 
 @enduml
