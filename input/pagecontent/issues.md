@@ -157,6 +157,77 @@ mCSD\_23. In the [Resource Profile: mCSD Endpoint for Document Sharing](Structur
 
 mCSD\_24. Need to align and flesh out the examples better with the guidance in [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure). For example, could we see an example for an organization accessible via two different exchanges?
 
+mCSD\_25. Grouping of actors is mentioned in [section 1:46.8.3](volume-1.html#14683-grouping-actors).
+Does Karen's Cross apply here? If so, how? Should OrganizationAffiliation be required?
+
+[Karen's Cross](https://wiki.directproject.org/w/images/3/3e/2011-03-09_PDF_-_XDR_and_XDM_for_Direct_Messaging_Specification_FINAL.pdf#page=6)
+(see 3.0 Interaction Patterns. Also described [here](https://healthcaresecprivacy.blogspot.com/2012/08/karens-cross-or-just-minimal-metadata.html))
+is a mapping table defined by the [Direct Project](https://wiki.directproject.org/Main_Page) (not by IHE),
+that tells how to get to and from different flavors of IHE Document Sharing "Push" (XDR, XDM) and the Direct Protocol.
+It was done at a "whiteboard" level of detail, and resulted in specific requirements for transforming
+messages more or less isomorphically from one flavor to another. Later, [additional requirements](https://docs.google.com/document/d/1U0h_mB5AQGNgSwZKRHHqg8JVFPp1MW6ptIWxYR6Mtyg/edit#heading=h.o5yl9ti9jyak)
+were added for encoding Direct addresses in XDR SubmissionSet.intendedRecipient. It should be noted
+that the Cross is incomplete; neither Direct nor IHE has any analogous requirements for transforming,
+say, an XCA Query and Retrieve response into an XDM file. XCDR and MHD Push and Pull are also missing. 
+That said, IHE Document Sharing profiles (not counting Direct) are generally considered similar enough that
+transformations should be obvious.
+
+So, when would Karen's Cross (or an expanded version) apply? Potentially anywhere two systems
+need to translate between different Doc Sharing actors, but it's really only needed if transformations
+are not obvious. Maybe it needs to be documented by IHE (especially if it's between IHE actors).
+We'll look into this in a second.
+
+But first, OrganizationAffiliation shouldn't be required, because it's orthogonal
+to whether translation is needed. For example: In the directory, Org A has two Endpoints:
+an MHD Document Responder and an XDS Document
+Registry/Repository. Behind the scenes, the MHD actor is an adapter over the XDS actors.
+This is simply two APIs to the same organization. The HCID and any other
+organization or author identifiers are simply copied; there is no translation needed.
+
+Now let's consider the other cases where there's federation to other organizations/entities
+not directly reachable. OrganizationAffiliation is just one case:
+- An Org allows access to others related with partOf
+- An Org allows access to others related with OrganizationAffiliation
+- An Org allows access to Practitioners related via mCSD links
+
+In these cases, there might be a translation layer behind the exposed Endpoint to get to those
+other entities, or there might be some other proprietary mechanism: internal EHR messaging,
+direct DB access, etc.
+
+So would Karen's Cross (or an expanded version) potentially apply? Yes, but likely only in making
+sure that addressing of federated organizations/entities is clear. We have that as issue mCSD\_15.
+
+mCSD\_26. Is OrganizationAffiliation sufficiently mature to base this profile on?
+Is it appropriate to say the .organization is the "parent-like" org that rolls up content from
+.participatingOrganization orgs? There is a .network field; should that be used
+instead?
+
+We believe we are using it appropriately, but there are a couple of issues we are tracking:
+- [FHIR-25406: definition of organization and participatingOrganization in OrganizationAffiliation is not clear](https://jira.hl7.org/browse/FHIR-25406)
+- [FHIR-36019: OrganizationAffiliation.network unclear](https://jira.hl7.org/browse/FHIR-36019)
+
+mCSD\_27. Currently there is one code in [mCSD Organization Affiliation Types](https://build.fhir.org/ig/IHE/ITI.mCSD/branches/main/CodeSystem-MCSDOrgAffTypes.html). Should there be at least two, one for transparent federation vs opaque federation?
+The expectations would be different: with transparent federation, federated identifiers would be
+preserved in responses and respected in requests. With opaque federation, identifiers would be
+consolidated/overwritten with the identifiers of the "parent" organization.
+
+Probably, but the implications of opaque federation are complex. Some aspects may be consolidated
+(e.g. golden patient record) while others are not (separate documents). Perhaps we could limit scope
+to whether federated communities (Organizations with an ID of type HCID) are addressable in
+requests and responses. Seeking input from reviewers.
+
+mCSD\_28. Currently, only synchronous XDS/XCA/XDR and MHD Push are supported. This scope was limited
+for the public-comment deadline. After public comment, we plan to add in asynchronous (WS-A and AS4)
+and full MHD. One area that needs work is Digital Certificates to support async end-to-end security
+(Not needed for sync that uses TLS).
+- Currently, base FHIR doesn't include a publicKey, and recommends a local extension
+[https://jira.hl7.org/browse/FHIR-10764](https://jira.hl7.org/browse/FHIR-10764). We will add an extension.
+- Note VhDir has an extension http://hl7.org/fhir/uv/vhdir/StructureDefinition/digitalcertificate, 
+but it is very complex. Not clear if this complexity is needed.
+
+mCSD\_29. In [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), rather than managingOrganization 1..1, create an invariant so that
+either managingOrganization or contact must be populated.
+
 ### Open Issues and Questions
 These issues were known as part of the publication, and IHE invites comments.
 
