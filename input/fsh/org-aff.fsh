@@ -7,9 +7,13 @@ CodeSystem:  MCSDOrgAffTypes
 Title: "mCSD Organization Affiliation Types"
 Description:  "mCSD OrganizationAffiliation types beyond those in the FHIR core."
 * ^caseSensitive = true
-* #DocShare-federate "Federation to any Document Sharing exchange"
+* #DocShare-federate "Federation to any Document Sharing exchange. This code states that the
+.participatingOrganization is accessible via the OrganizationAffiliation.endpoint. This endpoint
+may be shared with other participatingOrganizations (via their own OrganizationAffiliations).
+So, for example, when pulling documents (e.g. ITI-38), results of the .participatingOrganization
+will be aggregated in the responses, and when pushing documents (e.g. ITI-41) the
+.participatingOrganization may be specified as an intendedRecipient."
 
-//TODO Define what an Document Sharing Federation means -- Joe --> It means if org A is a "parent" of org B through OrgAff and it has this code, then when doing doc sharing, when pulling, that results of Org B will be aggregated in Org A's responses, and when pushing, that Org B can be specified as intendedRecipient in a push to Org A.
 // Unclear if there needs to be many codes, or just one. Do we need a code for transparent fed vs opaque fed? 
 
 
