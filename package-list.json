@@ -12,6 +12,16 @@
   "current" : true
  },
  {
+  "version" : "3.6.0-comment",  
+  "date" : "2022-03-01", 
+  "desc" : "Public-Comment: addition of Endpoint and OrganizationAffiliation",
+  "path" : "https://profiles.ihe.net/ITI/mCSD/3.6.0-comment",
+  "status" : "ballot",   
+  "fhirversion": "4.0.1",
+  "sequence" : "Public-Comment",
+  "current": true
+ },
+ {
   "version" : "3.5.0",  
   "date" : "2022-03-01", 
   "desc" : "Normative release for Trial Implementation - Converted to IG publisher and google analytics",
@@ -29,7 +39,7 @@
   "status" : "ballot",   
   "fhirversion": "4.0.1",
   "sequence" : "Public-Comment",
-  "current": true
+  "current": false
  },
  {
   "version" : "3.3.0",
