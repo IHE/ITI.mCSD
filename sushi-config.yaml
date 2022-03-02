@@ -1,6 +1,6 @@
 id: ihe.iti.mcsd
 canonical: https://profiles.ihe.net/ITI/mCSD
-version: 3.6.0-comment
+version: 3.6.1
 name: IHE_ITI_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
 #releaseLabel: ci-build
