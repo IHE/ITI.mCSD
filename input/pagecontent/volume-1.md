@@ -3,6 +3,9 @@ The Mobile Care Services Discovery (mCSD) Profile supports discovery of
 care services resources using a RESTful interface in interrelated,
 federated environments.
 
+Use cases and solutions using mCSD are outlined in the 
+[mCSD Whitepaper](https://profiles.ihe.net/ITI/papers/mCSD/index.html).
+
 The profile supports querying for:
 
 1.  **Organization** – Organizations are “umbrella” entities; these may
