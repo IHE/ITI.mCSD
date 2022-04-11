@@ -104,5 +104,32 @@
         <type value="date"/> 
       </searchParam> 
     </resource> 
+    <resource> 
+      <type value="Endpoint"/> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint"/> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint.DocShare"/> 
+      <documentation value="."/> 
+      <interaction> 
+        <code value="history-type"/> 
+      </interaction> 
+      <!--<searchInclude value=""/> -->
+      <searchParam> 
+        <name value="_since"/> 
+        <type value="date"/> 
+      </searchParam> 
+    </resource> 
+    <resource> 
+      <type value="OrganizationAffiliation"/> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation"/> 
+      <documentation value="."/> 
+      <interaction> 
+        <code value="history-type"/> 
+      </interaction> 
+      <!--<searchInclude value=""/> -->
+      <searchParam> 
+        <name value="_since"/> 
+        <type value="date"/> 
+      </searchParam> 
+    </resource> 
   </rest> 
 </CapabilityStatement> 

@@ -25,20 +25,29 @@ Profile:      MCSDOrganizationAffiliation
 Parent:       OrganizationAffiliation
 Id:           IHE.mCSD.OrganizationAffiliation
 Title:        "mCSD Organization Affiliation"
-Description:  "A profile on the OrganizationAffiliation resource for mCSD."
+Description:  """
+A profile on the OrganizationAffiliation resource for mCSD.
+
+An Organization may have relationships with
+other organizations that are not hierarchical. These relationships may indicate
+an electronic routing path to other organizations that cannot be reached directly.
+OrganizationAffiliation can be used to specify relationships such as supply chains 
+or administrative reporting structures.
+"""
 * active 1..1
 * endpoint only Reference(MCSDEndpoint)
-* code ^short = "the type of affiliation"
+* code 1..*
+* code ^short = "The type of affiliation"
 * organization 1..1
 * organization only Reference(MCSDOrganization)
-* organization ^short = "Organization hosting endpoints on behalf of the ParticipaintOrganization."
+* organization ^short = "Organization where the role is available."
 * participatingOrganization 1..1
 * participatingOrganization only Reference(MCSDOrganization)
-* participatingOrganization ^short = "The Organization who is served by the hosting Organization."
-// TODO. Not clear what to say about the participatingOrganization... it seems this is duplicate of the .organization.
+* participatingOrganization ^short = "The Organization providing the role."
 * network 0..0
 * specialty MS
 * location MS
+* location only Reference(MCSDLocation)
 * telecom MS
 
 

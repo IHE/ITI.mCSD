@@ -125,7 +125,7 @@
       <interaction> 
         <code value="search-type"/> 
       </interaction> 
-      <!--<searchInclude value=""/> -->
+      <searchInclude value="Location:organization"/>
       <searchParam> 
         <name value="identifier"/> 
         <type value="token"/> 
@@ -204,7 +204,9 @@
       <interaction> 
         <code value="search-type"/> 
       </interaction> 
-      <!--<searchInclude value=""/> -->
+      <searchInclude value="Organization.endpoint"/>
+      <searchRevInclude value="OrganizationAffiliation:participating-organization"/>
+      <searchRevInclude value="OrganizationAffiliation:primary-organization"/>
       <searchParam> 
         <name value="active"/> 
         <type value="token"/> 
@@ -249,26 +251,6 @@
         <name value="partof.name:exact"/> 
         <type value="string"/> 
       </searchParam> 
-      <searchParam>
-        <name value="ihe-mcsd-hierarchy-type"/>
-        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyType"/>
-        <type value="token"/>
-      </searchParam>
-      <searchParam>
-        <name value="ihe-mcsd-hierarchy-partof"/>
-        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"/>
-        <type value="reference"/>
-      </searchParam>
-      <searchParam>
-        <name value="ihe-mcsd-hierarchy-partof:below"/>
-        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"/>
-        <type value="reference"/>
-      </searchParam>
-      <searchParam>
-        <name value="ihe-mcsd-hierarchy-partof:above"/>
-        <definition value="http://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Organization.HierarchyPartOf"/>
-        <type value="reference"/>
-      </searchParam>
     </resource> 
     <resource> 
       <type value="Practitioner"/> 
@@ -330,7 +312,7 @@
       <interaction> 
         <code value="search-type"/> 
       </interaction> 
-      <searchInclude value="Practitioner"/> 
+      <searchInclude value="PractitionerRole:practitioner"/> 
       <searchParam> 
         <name value="active"/> 
         <type value="token"/> 
@@ -464,6 +446,79 @@
         <type value="reference"/> 
       </searchParam> 
     </resource> 
+    <resource> 
+      <type value="Endpoint"/> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint"/> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint.DocShare"/> 
+      <documentation value="."/> 
+      <interaction> 
+        <code value="search-type"/> 
+      </interaction> 
+      <!--<searchInclude value=""/> -->
+      <searchParam> 
+        <name value="connection-type"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="identifier"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="organization"/> 
+        <type value="reference"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="payload-type"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="status"/> 
+        <type value="token"/> 
+      </searchParam> 
+    </resource> 
+    <resource> 
+      <type value="OrganizationAffiliation"/> 
+      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation"/> 
+      <documentation value="."/> 
+      <interaction> 
+        <code value="search-type"/> 
+      </interaction> 
+      <searchInclude value="OrganizationAffiliation.primary-organization"/>
+      <searchInclude value="OrganizationAffiliation.participating-organization"/>
+      <searchInclude value="OrganizationAffiliation.endpoint"/>
+      <searchParam> 
+        <name value="active"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="date"/> 
+        <type value="date"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="endpoint.connection-type"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="endpoint.payload-type"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="identifier"/> 
+        <type value="token"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="participating-organization"/> 
+        <type value="reference"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="primary-organization"/> 
+        <type value="reference"/> 
+      </searchParam> 
+      <searchParam> 
+        <name value="role"/> 
+        <type value="token"/> 
+      </searchParam> 
+    </resource>
     <searchParam> 
       <name value="_id"/> 
       <type value="token"/> 

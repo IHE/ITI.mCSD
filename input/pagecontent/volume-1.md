@@ -61,6 +61,8 @@ The profile supports querying for:
 8. **OrganizationAffiliation** - An Organization may have relationships with
    other organizations that are not hierarchical. These relationships may indicate
    an electronic routing path to other organizations that cannot be reached directly.
+   OrganizationAffiliation can be used to specify relationships such as supply chains 
+   or administrative reporting structures.
 
 The capabilities detailed in this profile support consumer-centric
 queries such as finding “where is the closest youth mental health
@@ -418,19 +420,19 @@ in Figure 1:46.4.2.4.1-1.
 ##### 1:46.4.2.5.1 Organization Affiliation Description
 
 The Organization.partOf element reflects a hierarchical relationship
-between "parent" and "child" organizations. By contrast, the
-[http://hl7.org/fhir/R4/organizationaffiliation.html](http://hl7.org/fhir/R4/organizationaffiliation.html)
+between "parent" and "child" organizations. By contrast, the 
+[OrganizationAffiliation](http://hl7.org/fhir/R4/organizationaffiliation.html)
 resource allows for organizations to relate to each other in non-hierarchical
 ways, for example, in more dynamic business relationships. Unlike partOf,
-the relationship is itself a resource, so it can be categorized with codes, status, etc.
+the relationship is itself a resource, so it can be categorized with codes, status, etc.  
 
 In the example below:
 - Organization B has a parent Organization A.
 - Organization B has been a part of its State/Province HIE since 2018
 and is a member in good standing.
 
-The .organization defines a role for the relationship, e.g., "HIE/HIO" or "member",
-and the .participatingOrganization fills the role.
+The `organization` defines a role for the relationship, e.g., "HIE/HIO" or "member",
+and the `participatingOrganization` fills the role.
 
 <div>
 {%include usecase5-diagram.svg%}
@@ -443,8 +445,8 @@ and the .participatingOrganization fills the role.
 
 - A Healthcare Worker searches for organizations active in the State/Province HIE
 that have been added since 2017.
-- The EMR searches for OrganizationAffiliations where the .organization is the HIE,
-the state is active, and the period.start is 2017 or later.
+- The EMR searches for OrganizationAffiliations where the `organization` is the HIE,
+`active` is true, and `period.start` is 2017 or later.
 - The EMR searches for details on the participating Organizations.
 - The EMR presents the results to the Healthcare Worker.
 
@@ -844,7 +846,7 @@ to find an electronic service endpoint, it may adopt something like the followin
 - Check if it has a suitable endpoint (connectionType, extension:specificType, payloadType, payloadMimeType, status).
   If not found, check the following in this order:
   - Check OrganizationAffiliations of the desired organization.
-  - Check parents (partOf, alternative mCSD hierarchies) of the desired organization.
+  - Check parents (partOf) of the desired organization.
   - Check OrganizationAffiliations of parents.
   - Check parents of the parents.
 

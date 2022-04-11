@@ -57,9 +57,16 @@ Usage: #example
 * type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
 * type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 * partOf = Reference(MCSDJurisdictionOrganization-Example)
-// extensions to allow for additional hierarchy
-* extension[hierarchy].extension[hierarchy-type].valueCodeableConcept = MCSDExampleHierarchy#admin
-* extension[hierarchy].extension[part-of].valueReference = Reference(MCSDOrganization-ExamplePartner)
+
+Instance: MCSDFacilityOrganizationAffiliation-Example
+InstanceOf: MCSDOrganizationAffiliation
+Title: "Example mCSD Facility Admin Organization Affiliation"
+Description: "Organization Affiliation resource for an example administrative relationship for a facility."
+Usage: #example
+* active = true
+* organization = Reference(MCSDOrganization-ExamplePartner)
+* participatingOrganization = Reference(MCSDFacilityOrganization-Example)
+* code = MCSDExampleHierarchy#admin
 
 Instance: MCSDFacilityLocation-Example
 InstanceOf: MCSDFacilityLocation
