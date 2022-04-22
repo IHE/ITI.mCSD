@@ -59,7 +59,7 @@ messaging formats as defined in FHIR. See [ITI TF-2: Z.6](https://profiles.ihe.n
 more details.
 
 A Care Services Selective Supplier shall implement the parameters
-described below. A Care Services Selective Supplier may choose to
+described below for the mCSD resources it supports. A Care Services Selective Supplier may choose to
 support additional query parameters beyond the subset listed below. Any
 additional query parameters supported shall be supported according to
 the core FHIR specification.
