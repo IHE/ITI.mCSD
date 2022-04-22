@@ -213,9 +213,8 @@ groupings in other related profiles.
 ### 1:46.4.1 Concepts
 
 The Mobile Care Services Discovery (mCSD) Profile supports queries for
-organizations, locations, facilities, practitioners, and healthcare
-services. The relationship between these entities is illustrated in
-Figure 1:46.4.1-1.
+resources related to care services discovery. The relationship between 
+these entities is illustrated in Figure 1:46.4.1-1.
 
 ![Top-level Relationships between Care Services Entities](mCSDRelationships.png)
 <div style="clear: left;"></div>
@@ -583,9 +582,8 @@ list of practitioners.
 
 ### 1:46.7.1 Simple Deployment
 
-A deployment may only have a single server that will maintain data
-(Organization, Location, Facility, Practitioner, and/or Healthcare
-Service). In this case, you would only need the Care Services Selective
+A deployment may only have a single server that will maintain data.
+In this case, you would only need the Care Services Selective
 Supplier (or Care Services Update Supplier) to send search results back
 to one or more Care Services Selective Consumers (or Care Services
 Update Consumer). See Figure 1:46.7.1-1.

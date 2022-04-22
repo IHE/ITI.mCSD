@@ -30,8 +30,7 @@ against a Care Services Selective Supplier.
 #### 2:3.90.4.1 Find Matching Care Services Request Message
 
 The Find Matching Care Services message is a FHIR search operation on
-the Organization, Location, Practitioner, PractitionerRole,
-HealthcareService, Endpoint, and/or OrganizationAffiliation Resources.
+the mCSD Resources.
 
 ##### 2:3.90.4.1.1 Trigger Events
 
@@ -44,8 +43,7 @@ of this transaction.
 
 A Care Services Selective Consumer initiates a search request using HTTP
 GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search on the
-Organization, Location, Practitioner, PractitionerRole, HealthcareService,
-Endpoint, or OrganizationAffiliation Resources. The Care Services Selective Supplier shall support 
+mCSD Resources. The Care Services Selective Supplier shall support 
 both GET and POST based searches. The query parameters are identified below.
 A Care Services Selective Consumer may query any combination or subset
 of the parameters.

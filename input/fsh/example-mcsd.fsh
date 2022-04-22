@@ -138,7 +138,7 @@ Usage: #example
 Instance: Example-MCSD
 InstanceOf: Bundle
 Title: "Example Bundle of mCSD Resources"
-Description: "Example Bundle of Core mCSD Resources: Organization, Location, HealthcareService, Practitioner, and PractitionerRole with Facility and Jursidiction."
+Description: "Example Bundle of Core mCSD Resources."
 Usage: #example
 * type = #transaction
 
