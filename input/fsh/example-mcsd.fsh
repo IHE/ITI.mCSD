@@ -144,43 +144,81 @@ Usage: #example
 
 
 * entry[+].fullUrl = "http://www.example.org/fhir/Organization/MCSDJurisdictionOrganization-Example"
-* entry[=].request.url = "Organization"
+* entry[=].request.url = "Organization/MCSDJurisdictionOrganization-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDJurisdictionOrganization-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/Location/MCSDJurisdictionLocation-Example"
-* entry[=].request.url = "Location"
+* entry[=].request.url = "Location/MCSDJurisdictionLocation-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDJurisdictionLocation-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/Organization/MCSDOrganization-ExamplePartner"
-* entry[=].request.url = "Organization"
+* entry[=].request.url = "Organization/MCSDOrganization-ExamplePartner"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDOrganization-ExamplePartner
 
 * entry[+].fullUrl = "http://www.example.org/fhir/Organization/MCSDFacilityOrganization-Example"
-* entry[=].request.url = "Organization"
+* entry[=].request.url = "Organization/MCSDFacilityOrganization-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDFacilityOrganization-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/Location/MCSDFacilityLocation-Example"
-* entry[=].request.url = "Location"
+* entry[=].request.url = "Location/MCSDFacilityLocation-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDFacilityLocation-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/HealthcareService/MCSDHealthcareService-Example"
-* entry[=].request.url = "HealthcareService"
+* entry[=].request.url = "HealthcareService/MCSDHealthcareService-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDHealthcareService-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/PractitionerRole/MCSDPractitionerRole-Example"
-* entry[=].request.url = "PractitionerRole"
+* entry[=].request.url = "PractitionerRole/MCSDPractitionerRole-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDPractitionerRole-Example
 
 * entry[+].fullUrl = "http://www.example.org/fhir/Practitioner/MCSDPractitioner-Example"
-* entry[=].request.url = "Practitioner"
+* entry[=].request.url = "Practitioner/MCSDPractitioner-Example"
 * entry[=].request.method = #PUT
 * entry[=].resource = MCSDPractitioner-Example
 
+* entry[+].fullUrl = "http://www.example.org/fhir/OrganizationAffiliation/ex-OrgAff"
+* entry[=].request.url = "OrganizationAffiliation/ex-OrgAff"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-OrgAff
 
+* entry[+].fullUrl = "http://www.example.org/fhir/Organization/ex-OrgA"
+* entry[=].request.url = "Organization/ex-OrgA"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-OrgA
+
+* entry[+].fullUrl = "http://www.example.org/fhir/Organization/ex-OrgB"
+* entry[=].request.url = "Organization/ex-OrgB"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-OrgB
+
+* entry[+].fullUrl = "http://www.example.org/fhir/Organization/ex-OrgC"
+* entry[=].request.url = "Organization/ex-OrgC"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-OrgC
+
+* entry[+].fullUrl = "http://www.example.org/fhir/OrganizationAffiliation/ex-OrgAffC"
+* entry[=].request.url = "OrganizationAffiliation/ex-OrgAffC"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-OrgAffC
+
+* entry[+].fullUrl = "http://www.example.org/fhir/Endpoint/ex-endpointXCAquery"
+* entry[=].request.url = "Endpoint/ex-endpointXCAquery"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-endpointXCAquery
+
+* entry[+].fullUrl = "http://www.example.org/fhir/Endpoint/ex-endpointXCAretrieve"
+* entry[=].request.url = "Endpoint/ex-endpointXCAretrieve"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-endpointXCAretrieve
+
+* entry[+].fullUrl = "http://www.example.org/fhir/Endpoint/ex-endpointDicom"
+* entry[=].request.url = "Endpoint/ex-endpointDicom"
+* entry[=].request.method = #PUT
+* entry[=].resource = ex-endpointDicom
