@@ -367,6 +367,31 @@ matching HealthcareService Resources. The HealthcareService Resource
 shall be further constrained as described in the
 [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
 
+###### 2:3.90.4.2.2.6 FHIR OrganizationAffiliation Resource Constraints
+
+A Care Services Selective Consumer may query on OrganizationAffiliation
+Resources. A Care Services Selective Supplier shall return a Bundle of
+matching OrganizationAffiliation Resources. The OrganizationAffiliation Resource
+shall be further constrained as described in the
+[OrganizationAffiliation Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html).
+
+When the OrganizationAffiliation is to be used in a document sharing environment,
+it shall further be constrained as described in the
+[OrganizationAffiliation for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html).
+
+###### 2:3.90.4.2.2.7 FHIR Endpoint Resource Constraints
+
+A Care Services Selective Consumer may query on Endpoint
+Resources. A Care Services Selective Supplier shall return a Bundle of
+matching Endpoint Resources. The Endpoint Resource
+shall be further constrained as described in the
+[Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
+
+When the Endpoint is to be used in a document sharing environment,
+it shall further be constrained as described in the
+[Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
+
+
 ##### 2:3.90.4.2.3 Expected Actions
 
 The Care Services Selective Consumer has received the response and
