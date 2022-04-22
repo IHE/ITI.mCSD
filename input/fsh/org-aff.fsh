@@ -48,6 +48,7 @@ or administrative reporting structures.
 * specialty MS
 * location MS
 * location only Reference(MCSDLocation)
+* healthcareService only Reference(MCSDHealthcareService)
 * telecom MS
 
 
