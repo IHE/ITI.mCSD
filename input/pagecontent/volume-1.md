@@ -126,15 +126,6 @@ Practitioner, Healthcare Service, OrganizationAffiliation, and Endpoint.
 However, a Care Services Selective Supplier or Care Service Update Supplier
 is not required to contain data on all of these.
 
-
-
-| Care Services Selective Consumer |                                                                                                                  |
-| Care Services Selective Supplier |                                                                                     |
-| Care Services Update Consumer    |                                                                   |
-| Care Services Update Supplier    |  |
-
-
-
 #### 1:46.1.1.1 Care Services Selective Consumer
 
 The Care Services Selective Consumer queries the Care Services Selective Supplier for information about mCSD resources.
