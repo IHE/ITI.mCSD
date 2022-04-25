@@ -456,12 +456,12 @@ and the `participatingOrganization` fills the role.
 
 ##### 1:46.4.2.5.2 Organization Affiliation Process Flow
 
-- A Healthcare Worker searches for organizations active in the State/Province HIE
+- A healthcare worker searches for organizations active in the State/Province HIE
 that have been added since 2017.
 - The EMR searches for OrganizationAffiliations where the `organization` is the HIE,
 `active` is true, and `period.start` is 2017 or later.
 - The EMR searches for details on the participating Organizations.
-- The EMR presents the results to the Healthcare Worker.
+- The EMR presents the results to the healthcare worker.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.5.2-1.
@@ -505,13 +505,13 @@ share the same URL.
 
 ##### 1:46.4.2.6.2 Health Information Exchange (HIE) Endpoint Discovery Process Flow
 
-- In preparation for a patient visit, a Healthcare Worker knows and identifies
+- In preparation for a patient visit, a healthcare worker knows and identifies
 the organizations that have provided care for this patient,
 and identifies document types of interest.
 - The EMR will query the HIE directory for the relevant organizations and their endpoints.
 - For each organization obtained, the EMR will check for endpoints that support the needed
 XCA transactions, and make requests against these endpoints to obtain clinical documents.
-- The EMR presents the obtained documents to the Healthcare Worker, who reviews them.
+- The EMR presents the obtained documents to the healthcare worker, who reviews them.
 
 The interactions between the various actors in this use case are shown
 in Figure 1:46.4.2.6.2-1.
