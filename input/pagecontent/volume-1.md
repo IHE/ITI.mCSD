@@ -3,6 +3,9 @@ The Mobile Care Services Discovery (mCSD) Profile supports discovery of
 care services resources using a RESTful interface in interrelated,
 federated environments.
 
+Use cases and solutions using mCSD are outlined in the 
+[mCSD Whitepaper](https://profiles.ihe.net/ITI/papers/mCSD/index.html).
+
 The profile supports querying for:
 
 1.  **Organization** – Organizations are “umbrella” entities; these may
@@ -685,8 +688,7 @@ Care Services Update Supplier may be pre-coordinated or they may be
 resolvable from one or more terminology services. Though it is out of
 scope of the mCSD Profile to define the means of interacting with a
 terminology service, this could be provided, for example, through the
-Sharing Value Sets (SVS) Profile or using appropriate FHIR resources
-(e.g., ValueSet).
+[Sharing Valuesets, Codes, and Maps (SVCM) Profile](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_SVCM.pdf).
 
 ## 1:46.8 mCSD Endpoint Usage Considerations
 
