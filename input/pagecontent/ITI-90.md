@@ -30,8 +30,7 @@ against a Care Services Selective Supplier.
 #### 2:3.90.4.1 Find Matching Care Services Request Message
 
 The Find Matching Care Services message is a FHIR search operation on
-the Organization, Location, Practitioner, PractitionerRole,
-HealthcareService, Endpoint, and/or OrganizationAffiliation Resources.
+the mCSD Resources.
 
 ##### 2:3.90.4.1.1 Trigger Events
 
@@ -44,8 +43,7 @@ of this transaction.
 
 A Care Services Selective Consumer initiates a search request using HTTP
 GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search on the
-Organization, Location, Practitioner, PractitionerRole, HealthcareService,
-Endpoint, or OrganizationAffiliation Resources. The Care Services Selective Supplier shall support 
+mCSD Resources. The Care Services Selective Supplier shall support 
 both GET and POST based searches. The query parameters are identified below.
 A Care Services Selective Consumer may query any combination or subset
 of the parameters.
@@ -61,7 +59,7 @@ messaging formats as defined in FHIR. See [ITI TF-2: Z.6](https://profiles.ihe.n
 more details.
 
 A Care Services Selective Supplier shall implement the parameters
-described below. A Care Services Selective Supplier may choose to
+described below for the mCSD resources it supports. A Care Services Selective Supplier may choose to
 support additional query parameters beyond the subset listed below. Any
 additional query parameters supported shall be supported according to
 the core FHIR specification.
@@ -368,6 +366,31 @@ Resources. A Care Services Selective Supplier shall return a Bundle of
 matching HealthcareService Resources. The HealthcareService Resource
 shall be further constrained as described in the
 [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+
+###### 2:3.90.4.2.2.6 FHIR OrganizationAffiliation Resource Constraints
+
+A Care Services Selective Consumer may query on OrganizationAffiliation
+Resources. A Care Services Selective Supplier shall return a Bundle of
+matching OrganizationAffiliation Resources. The OrganizationAffiliation Resource
+shall be further constrained as described in the
+[OrganizationAffiliation Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html).
+
+When the OrganizationAffiliation contains an Endpoint to an IHE document sharing environment,
+it shall further be constrained as described in the
+[OrganizationAffiliation for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html).
+
+###### 2:3.90.4.2.2.7 FHIR Endpoint Resource Constraints
+
+A Care Services Selective Consumer may query on Endpoint
+Resources. A Care Services Selective Supplier shall return a Bundle of
+matching Endpoint Resources. The Endpoint Resource
+shall be further constrained as described in the
+[Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
+
+When the Endpoint is to an IHE document sharing environment,
+it shall further be constrained as described in the
+[Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
+
 
 ##### 2:3.90.4.2.3 Expected Actions
 

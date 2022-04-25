@@ -31,8 +31,7 @@ Services Update Supplier.
 #### 2:3.91.4.1 Request Care Services Updates Request Message
 
 A Request Care Services Updates message is a FHIR history operation,
-optionally using the ```_since``` parameter, on the Organization, Location,
-Practitioner, PractitionerRole, or HealthcareService Resources.
+optionally using the ```_since``` parameter, on the mCSD Resources.
 
 ##### 2:3.91.4.1.1 Trigger Events
 
@@ -45,8 +44,7 @@ transaction.
 
 A Care Services Update Consumer initiates a history request using HTTP
 GET as defined at [http://hl7.org/fhir/R4/http.html#history](http://hl7.org/fhir/R4/http.html#history) on the
-Organization, Location, Practitioner, PractitionerRole, or
-HealthcareService Resources.
+mCSD Resources.
 
 A Care Services Update Supplier and Care Services Update Consumer shall
 support the following parameters.
