@@ -91,10 +91,6 @@ The Care Services Selective Supplier shall support the following search
 parameters on the Organization Resource as defined at
 [http://hl7.org/fhir/R4/organization.html#search](http://hl7.org/fhir/R4/organization.html#search). String parameter
 modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
-The [`ihe-mcsd-hierarchy-type` search parameter](SearchParameter-IHE.mCSD.Organization.HierarchyType.html) and 
-[`ihe-mcsd-hierarchy-partof` search parameter](SearchParameter-IHE.mCSD.Organization.HierarchyPartOf.html) query the [hierarchy
-extension](StructureDefinition-IHE.mCSD.OrganizationHierarchy.html) identified by the following canonical URI
-`http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`.
 
 ```
 active
@@ -110,11 +106,10 @@ endpoint.connection-type
 endpoint.payload-type
 _include=Organization.endpoint
 _revInclude=Location:organization
-_revInclude=OrganizationAffiliation:participatingOrganization
-ihe-mcsd-hierarchy-type
-ihe-mcsd-hierarchy-partof
-ihe-mcsd-hierarchy-partof:above
-ihe-mcsd-hierarchy-partof:below
+_revInclude=OrganizationAffiliation:participating-organization
+_revInclude=OrganizationAffiliation:primary-organization
+_revInclude:iterate=OrganizationAffiliation:participating-organization
+_revInclude:iterate=OrganizationAffiliation:primary-organization
 ```
 
 ###### 2:3.90.4.1.2.3 Location Resource Message Semantics
@@ -251,8 +246,8 @@ identifier
 participating-organization
 primary-organization
 role
-_include=OrganizationAffiliation.organization
-_include=OrganizationAffiliation.participatingOrganization
+_include=OrganizationAffiliation.primary-organization
+_include=OrganizationAffiliation.participating-organization
 _include=OrganizationAffiliation.endpoint
 ```
 

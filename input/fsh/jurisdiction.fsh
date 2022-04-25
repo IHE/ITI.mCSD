@@ -1,6 +1,6 @@
-Invariant:    mcsd-type-2
+Invariant:    mcsd-type-jurisdiction
 Description:  "One type must be set as an mCSD Jurisdiction."
-Expression:   "type.where( coding.system = 'urn:ietf:rfc:3986' and coding.code = 'urn:ihe:iti:mcsd:2019:jurisdiction' ).exists()"
+Expression:   "$this.where( coding.system = 'urn:ietf:rfc:3986' and coding.code = 'urn:ihe:iti:mcsd:2019:jurisdiction' ).exists()"
 Severity:     #error
 
 Profile:      MCSDJurisdictionOrganization
@@ -14,9 +14,12 @@ Jurisdictions are political administrative units or other territories over which
 has a unique identifier, geographic attributes, etc. Jurisdictions include political administrative units such as village
 districts or regions.  Each Jurisdiction is defined by a pairing of [Location](StructureDefinition-IHE.mCSD.JurisdictionLocation.html)
 and [Organization](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
+
+In addition to the base requirements of [mCSD Organization](StructureDefinition-IHE.mCSD.Organization.html),
+one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction`.
 """
 
-* obeys mcsd-type-2
+* type obeys mcsd-type-jurisdiction
 * type 2..*
   * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
   * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
@@ -32,9 +35,12 @@ Jurisdictions are political administrative units or other territories over which
 has a unique identifier, geographic attributes, etc. Jurisdictions include political administrative units such as village
 districts or regions.  Each Jurisdiction is defined by a pairing of [Location](StructureDefinition-IHE.mCSD.JurisdictionLocation.html)
 and [Organization](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
+
+In addition to the base requirements of [mCSD Location](StructureDefinition-IHE.mCSD.Location.html),
+one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction`.
 """
 
-* obeys mcsd-type-2
+* type obeys mcsd-type-jurisdiction
 * type 2..*
   * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
   * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
