@@ -525,12 +525,22 @@ in Figure 1:46.4.2.6.2-1.
 
 ## 1:46.5 mCSD Security Considerations
 
+Actors are expected to follow the recommendations and requirements found in [ITI TF-2: Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
+
 The resources exchanged in this profile may contain information which
 pose a privacy risk, or in some cases, a safety risk, to providers and
 other personnel, as well as patients. For example, practitioner phone
 numbers and home addresses may be conveyed. Implementers should
 determine what data will be exposed by the system and what level of
 public access there will be if any.
+
+The Endpoint Resources exchanged in this profile will expose information 
+about the particular APIs and web services running on the underlying host 
+systems. This might attract malicious activity or provide hints to potential 
+attackers on how to attack a particular host system. Implementers should consider 
+this when determining the access policies for these Resources. System administrators 
+for the underlying host systems must follow industry best practices for authentication,
+authorization, auditing, timely application of software patches, etc. 
 
 There are many reasonable methods of security for interoperability
 transactions which can be implemented without modifying the
