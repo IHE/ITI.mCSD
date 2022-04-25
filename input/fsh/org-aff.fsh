@@ -69,7 +69,7 @@ There will be many OrganizationAffiliations, one for each pathway provided on th
 * identifier ^short = "the homeCommunityId(s)"
 * identifier ^definition = "Shall be all the homeCommunityId(s) of all the communities in the affiliation network."
 * identifier ^comment = "Open-Issue: should this be mandated, recommended, or forbidden?"
-* code = MCSDOrgAffTypes#DocShare-federate
+* insert requireAtLeastOneMatch( code, docshare, MCSDOrgAffTypes#DocShare-federate)
 * endpoint only Reference(MCSDEndpointDocShare)
 
 
