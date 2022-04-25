@@ -522,6 +522,14 @@ numbers and home addresses may be conveyed. Implementers should
 determine what data will be exposed by the system and what level of
 public access there will be if any.
 
+The Endpoint Resources exchanged in this profile will expose information 
+about the particular APIs and web services running on the underlying host 
+systems. This might attract malicious activity or provide hints to potential 
+attackers on how to attack a particular host system. Implementers should consider 
+this when determining the access policies for these Resources. System administrators 
+for the underlying host systems must follow industry best practices for authentication,
+authorization, auditing, timely application of software patches, etc. 
+
 There are many reasonable methods of security for interoperability
 transactions which can be implemented without modifying the
 characteristics of the transactions in the mCSD Profile. The use of TLS
