@@ -515,6 +515,8 @@ in Figure 1:46.4.2.6.2-1.
 
 ## 1:46.5 mCSD Security Considerations
 
+Actors are expected to follow the recommendations and requirements found in [ITI TF-2: Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
+
 The resources exchanged in this profile may contain information which
 pose a privacy risk, or in some cases, a safety risk, to providers and
 other personnel, as well as patients. For example, practitioner phone
