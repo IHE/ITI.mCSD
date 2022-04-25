@@ -1,8 +1,3 @@
-Invariant:    mcsd-type-facility
-Description:  "One type must be set as an mCSD Facility."
-Expression:   "$this.where( coding.system = 'urn:ietf:rfc:3986' and coding.code = 'urn:ihe:iti:mcsd:2019:facility' ).exists()"
-Severity:     #error
-
 Profile:      MCSDFacilityOrganization
 Parent:       MCSDOrganization
 Id:           IHE.mCSD.FacilityOrganization
@@ -20,7 +15,7 @@ In addition to the base requirements of [mCSD Organization](StructureDefinition-
 one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility`.
 """
 
-* type obeys mcsd-type-facility
+* insert requireAtLeastOneMatch( type, facility, MCSDOrganizationLocationTypes#facility)
 * type 2..*
   * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
   * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
@@ -44,7 +39,7 @@ In addition to the base requirements of [mCSD Location](StructureDefinition-IHE.
 one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility`.
 """
 
-* type obeys mcsd-type-facility
+* insert requireAtLeastOneMatch( type, facility, MCSDOrganizationLocationTypes#facility)
 * type 2..*
   * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
   * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"

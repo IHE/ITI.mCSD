@@ -1,8 +1,3 @@
-Invariant:    mcsd-type-jurisdiction
-Description:  "One type must be set as an mCSD Jurisdiction."
-Expression:   "$this.where( coding.system = 'urn:ietf:rfc:3986' and coding.code = 'urn:ihe:iti:mcsd:2019:jurisdiction' ).exists()"
-Severity:     #error
-
 Profile:      MCSDJurisdictionOrganization
 Parent:       MCSDOrganization
 Id:           IHE.mCSD.JurisdictionOrganization
@@ -19,7 +14,7 @@ In addition to the base requirements of [mCSD Organization](StructureDefinition-
 one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction`.
 """
 
-* type obeys mcsd-type-jurisdiction
+* insert requireAtLeastOneMatch( type, jurisdiction, MCSDOrganizationLocationTypes#jurisdiction)
 * type 2..*
   * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
   * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
@@ -40,7 +35,7 @@ In addition to the base requirements of [mCSD Location](StructureDefinition-IHE.
 one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction`.
 """
 
-* type obeys mcsd-type-jurisdiction
+* insert requireAtLeastOneMatch( type, jurisdiction, MCSDOrganizationLocationTypes#jurisdiction)
 * type 2..*
   * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
   * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
