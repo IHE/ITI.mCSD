@@ -375,7 +375,7 @@ matching OrganizationAffiliation Resources. The OrganizationAffiliation Resource
 shall be further constrained as described in the
 [OrganizationAffiliation Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html).
 
-When the OrganizationAffiliation is to be used in a document sharing environment,
+When the OrganizationAffiliation contains an Endpoint to an IHE document sharing environment,
 it shall further be constrained as described in the
 [OrganizationAffiliation for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html).
 
@@ -387,7 +387,7 @@ matching Endpoint Resources. The Endpoint Resource
 shall be further constrained as described in the
 [Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
 
-When the Endpoint is to be used in a document sharing environment,
+When the Endpoint is to an IHE document sharing environment,
 it shall further be constrained as described in the
 [Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
 
