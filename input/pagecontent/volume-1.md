@@ -432,12 +432,16 @@ in Figure 1:46.4.2.4.1-1.
 
 ##### 1:46.4.2.5.1 Health Information Exchange (HIE) Membership Discovery Description
 
-The Organization.partOf element reflects a hierarchical business relationship
-between "parent" and "child" organizations. By contrast, the 
+In this use case, a healthcare worker needs to identify the organizations active in
+the State/Province Health Information Exchange (HIE) that have been added since 2017,
+to make contact with new organizations and negotiate future clinical exchange.
+
+Membership in an HIE is a more dynamic and transitory business relationship than
+the "parent-child" hierarchy represented by Organization.partOf. For these more
+flexible business relationships, the 
 [OrganizationAffiliation](http://hl7.org/fhir/R4/organizationaffiliation.html)
 resource allows for organizations to relate to each other in non-hierarchical
-and more dynamic business relationships, for example, membership in
-a Health Information Exchange (HIE). Unlike partOf,
+and more dynamic business relationships. Unlike partOf,
 the relationship is itself a resource, so it can be categorized with codes, status, etc.  
 
 In the example below:
