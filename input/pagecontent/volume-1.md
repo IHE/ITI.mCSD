@@ -862,19 +862,21 @@ does not reflect which endpoint is the adapter or the adaptee.
 ##### 1:46.8.4 Endpoint Discovery Usage
 
 When a Care Services Selective Consumer wishes to navigate a directory
-to find an electronic service endpoint, it may adopt something like the following:
+to find an electronic service endpoint, the following is a recommended algorithm,
+with alternatives to follow:
 - Locate a desired organization.
-- Check if it has a suitable endpoint (connectionType, extension:specificType, payloadType, payloadMimeType, status).
-  If not found, check the following in this order:
-  - Check OrganizationAffiliations of the desired organization.
-  - Check parents (partOf) of the desired organization.
-  - Check OrganizationAffiliations of parents.
-  - Check parents of the parents.
+- Check if it has a suitable endpoint (connectionType, extension:specificType, payloadType,
+payloadMimeType, status).
+  If not found, check the following in this order, recursively:
+  - Check for a suitable endpoint from OrganizationAffiliations of the desired organization.
+  - Check for a suitable endpoint from parents (partOf) of the desired organization.
+  - Check for a suitable endpoint from OrganizationAffiliations of parents.
+  - Check for a suitable endpoint from parents of the parents.
 
-The reason this is not a deterministic algorithm is that there may be multiple electronic paths
-to the same organization. Clients may rank these paths based on multiple considerations, for example:
-- How broad it wishes the request to be: the closer to the target organization the narrower.
-- If there are equivalent mechanisms, e.g., XDR and MHD are supported, the client may choose
-a preferred transaction.
-- If an organization is accessible via two different HIEs, the client
-may choose based on other criteria, for example fees or authorization differences.
+The alternatives occur when the Care Services Selective Consumer needs to decide among multiple electronic
+paths to the same organization. A Consumer may rank these paths based on multiple considerations, for example:
+- It may find an endpoint for the target organization, but opt instead to use an endpoint for an organization
+two levels higher to make a broader search for records.
+- It may find endpoints for equivalent mechanisms, e.g., XDR and MHD, and choose MHD as the preferred transaction.
+- It may find endpoints to the same organization via two different HIEs, and prefer one based on fees or
+authorization differences.
