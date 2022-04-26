@@ -428,15 +428,20 @@ in Figure 1:46.4.2.4.1-1.
 
 **Figure 1:46.4.2.4.2-1: Master Facility List Workflow**
 
-#### 1:46.4.2.5 Use Case \#5: Organization Affiliation 
+#### 1:46.4.2.5 Use Case \#5: Health Information Exchange (HIE) Membership Discovery
 
-##### 1:46.4.2.5.1 Organization Affiliation Description
+##### 1:46.4.2.5.1 Health Information Exchange (HIE) Membership Discovery Description
 
-The Organization.partOf element reflects a hierarchical relationship
-between "parent" and "child" organizations. By contrast, the 
+In this use case, a healthcare worker needs to identify the organizations active in
+the State/Province Health Information Exchange (HIE) that have been added since 2017,
+to make contact with new organizations and negotiate future clinical exchange.
+
+Membership in an HIE is a more dynamic and transitory business relationship than
+the "parent-child" hierarchy represented by Organization.partOf. For these more
+flexible business relationships, the 
 [OrganizationAffiliation](http://hl7.org/fhir/R4/organizationaffiliation.html)
 resource allows for organizations to relate to each other in non-hierarchical
-ways, for example, in more dynamic business relationships. Unlike partOf,
+and more dynamic business relationships. Unlike partOf,
 the relationship is itself a resource, so it can be categorized with codes, status, etc.  
 
 In the example below:
@@ -454,7 +459,7 @@ and the `participatingOrganization` fills the role.
 
 **Figure 1:46.4.2.5.1-1: Organization.partOf vs. Affiliation**
 
-##### 1:46.4.2.5.2 Organization Affiliation Process Flow
+##### 1:46.4.2.5.2 Health Information Exchange (HIE) Membership Discovery Process Flow
 
 - A healthcare worker searches for organizations active in the State/Province HIE
 that have been added since 2017.
@@ -471,7 +476,7 @@ in Figure 1:46.4.2.5.2-1.
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.4.2.5.2-1: Organization Affiliation Workflow**
+**Figure 1:46.4.2.5.2-1: Health Information Exchange (HIE) Membership Discovery Workflow**
 
 #### 1:46.4.2.6 Use Case \#6: Health Information Exchange (HIE) Endpoint Discovery 
 
