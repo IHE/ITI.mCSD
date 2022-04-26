@@ -477,7 +477,14 @@ in Figure 1:46.4.2.5.2-1.
 
 ##### 1:46.4.2.6.1 Health Information Exchange (HIE) Endpoint Discovery Description
 
-A Health Information Exchange (HIE) publishes a directory that
+Users in Health IT systems often need to be able to obtain clinical information electronically
+from outside systems, for example, in preparation for an encounter. This use case describes how
+a user in a system identifies the organizations a patient has received care from, as well as
+criteria for the kinds of clinical documents of interest, and then how their EMR queries the directory
+for a Health Information Exchange (HIE) to search for
+each organization and a compatible services endpoint the EMR can use.
+
+An HIE publishes a directory that
 contains all of its member organizations and their electronic endpoints.
 Note: Guidance for usage of endpoints in directories is provided
 [here](#1468-mcsd-endpoint-usage-considerations).
