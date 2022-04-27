@@ -873,20 +873,22 @@ does not reflect which endpoint is the adapter or the adaptee.
 
 ##### 1:46.8.4 Endpoint Discovery Usage
 
-When a Care Services Selective Consumer wishes to navigate a directory
-to find an electronic service endpoint, it may adopt something like the following:
-- Locate a desired organization.
-- Check if it has a suitable endpoint (connectionType, extension:specificType, payloadType, payloadMimeType, status).
-  If not found, check the following in this order:
-  - Check OrganizationAffiliations of the desired organization.
-  - Check parents (partOf) of the desired organization.
-  - Check OrganizationAffiliations of parents.
-  - Check parents of the parents.
+The following example shows the steps used by a Care Services Selective Consumer to
+navigate a directory to find suitable electronic service Endpoints to some desired Organizations.
+In this example, a "suitable" Endpoint means it supports an IHE Document Sharing profile, and is based on .connectionType, .extension:specificType, .payloadType, .payloadMimeType, and status (both Endpoint.status as well as the actual status of the electronic service). The example uses the [mCSD-profiled OrganizationAffiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html) that indicates federated connectivity for Document Sharing (e.g. affiliated organizations may be addressed as intendedRecipient). The pseudocode below uses a depth-first, first-match search, and does not protect against loops.
 
-The reason this is not a deterministic algorithm is that there may be multiple electronic paths
-to the same organization. Clients may rank these paths based on multiple considerations, for example:
-- How broad it wishes the request to be: the closer to the target organization the narrower.
-- If there are equivalent mechanisms, e.g., XDR and MHD are supported, the client may choose
-a preferred transaction.
-- If an organization is accessible via two different HIEs, the client
-may choose based on other criteria, for example fees or authorization differences.
+Until a suitable Endpoint is found or the search is complete, check the following in this order:
+- Locate the desired Organization resource.
+- Check if it has a suitable Organization.endpoint.
+- Find OrganizationAffiliation resources where the Organization is the .participatingOrganization, and OrganizationAffiliation.code = DocShare-federate.
+- For each OrganizationAffiliation found:
+  - Check if it has a suitable OrganizationAffiliation.endpoint.
+  - Check if it has a suitable OrganizationAffiliation.organization.endpoint.
+  - Continue searching for a suitable Endpoint by traversing the OrganizationAffiliation resources recursively (i.e. where the OrganizationAffiliation.organization of the current resource is the .participatingOrganization of the next resource).
+- If there is an Organization.partOf (i.e. a parent), check if it has a suitable Organization.endpoint.
+  - Continue searching for a suitable Endpoint by traversing Organization.partOf recursively.
+
+Rather than a first-match search, the Care Services Selective Consumer might search for and decide among multiple electronic paths to the same Organization. For example:
+- It finds a suitable Endpoint resource for the target Organization, but instead uses an Endpoint for an Organization two levels higher to make a broader search for records.
+- It finds suitable Endpoint resources for equivalent mechanisms, XDR ITI-41 and MHD ITI-65, and chooses MHD as the preferred transaction.
+- It finds suitable Endpoint resources to the same Organization via two different HIEs, and prefers one HIE based on lower fees and authorization differences.
