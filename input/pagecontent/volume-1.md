@@ -498,10 +498,10 @@ Note: Guidance for usage of endpoints in directories is provided
   that implement other mechanisms. This IG provides two profiles:
   [a general endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), and
   [an endpoint to an IHE Document Sharing actor](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
-- Organizations may have a single endpoint for a technical mechanism like
-  FHIR (e.g., a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)),
-  or multiple endpoints (e.g., IHE XCPD, IHE XCA Query Responding Gateway,
-  IHE XCA Retrieve Responding Gateway, etc.).
+- Organizations might support one or many communication channels, each of which
+  might have one or more distinct endpoints. For example, a FHIR communication channel
+  might require only a single endpoint (i.e., a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)),
+  while an IHE XCA communication channel might require separate endpoints for each transaction.
 
 The diagram below shows an excerpt of the HIE directory, showing one
 participant in the HIE that has two IHE XCA Endpoints.
