@@ -109,7 +109,7 @@ Title:          "mCSD Type codes for Endpoint.identifier"
 Description:    "mCSD Type codes for specific business identifiers for Endpoint resources."
 
 * ^caseSensitive = true
-* #DocSourceId "Identifies an Endpoint that is a source or repository of clinical documents. These identifiers may be used in SubmissionSet.sourceId and DocumentEntry.repositoryUniqueId"
+* #DocRepoId "Identifies an Endpoint that is a source or repository of clinical documents."
 
 ValueSet:     MCSDEndpointIdentifierTypeValueSet
 Title:          "mCSD Type codes for Endpoint.identifier"
