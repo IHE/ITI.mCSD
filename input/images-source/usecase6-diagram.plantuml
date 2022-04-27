@@ -8,13 +8,22 @@ Organization : name = "Participant A"
 object ":Endpoint" as Responder38
 Responder38 : connectionType = ihe-xca
 Responder38 : extension:specificType = XCA-RespGateway-Query
-Responder38 : address = http://example.org/xca/
+Responder38 : address = http://exampleA.org/iti-38/
 object ":Endpoint" as Responder39
 Responder39 : connectionType = ihe-xca
 Responder39 : extension:specificType = XCA-RespGateway-Retrieve
-Responder39 : address = http://example.org/xca/
+Responder39 : address = http://exampleA.org/iti-39/
 
 Organization *--> Responder38
 Organization *--> Responder39
+
+object "Participant B:Organization" as OrganizationB
+OrganizationB : name = "Participant B"
+object ":Endpoint" as ResponderB38
+ResponderB38 : connectionType = ihe-xca
+ResponderB38 : extension:specificType = XCA-RespGateway-Query, XCA-RespGateway-Retrieve
+ResponderB38 : address = http://exampleB.org/xca/
+
+OrganizationB *--> ResponderB38
 
 @enduml
