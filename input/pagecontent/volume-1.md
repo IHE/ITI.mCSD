@@ -863,7 +863,7 @@ does not reflect which endpoint is the adapter or the adaptee.
 
 The following example shows the steps used by a Care Services Selective Consumer to
 navigate a directory to find suitable electronic service Endpoints to some desired Organizations.
-In this example, a "suitable" Endpoint means it supports an IHE Document Sharing profile, and is based on .connectionType, .extension:specificType, .payloadType, .payloadMimeType, and status (both Endpoint.status as well as the actual status of the electronic service). The pseudocode below uses a depth-first, first-match search, and does not protect against loops.
+In this example, a "suitable" Endpoint means it supports an IHE Document Sharing profile, and is based on .connectionType, .extension:specificType, .payloadType, .payloadMimeType, and status (both Endpoint.status as well as the actual status of the electronic service). The example uses the [mCSD-profiled OrganizationAffiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html) that indicates federated connectivity for Document Sharing (e.g. affiliated organizations may be addressed as intendedRecipient). The pseudocode below uses a depth-first, first-match search, and does not protect against loops.
 
 Until a suitable Endpoint is found or the search is complete, check the following in this order:
 - Locate the desired Organization resource.
