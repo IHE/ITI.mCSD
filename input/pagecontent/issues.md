@@ -229,6 +229,8 @@ but it is very complex. Not clear if this complexity is needed.
 mCSD\_29. In [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), rather than managingOrganization 1..1, create an invariant so that
 either managingOrganization or contact must be populated.
 
+mCSD\_30. FHIR R5 will allow Endpoint.connectionType to be greater than 1, so we can use the IHE-defined codes in addition to the HL7 ones. We won't need Endpoint.extension:specificType anymore. See [Issue 89](https://github.com/IHE/ITI.mCSD/issues/89).
+
 ### Open Issues and Questions
 These issues were known as part of the publication, and IHE invites comments.
 
