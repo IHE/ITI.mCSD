@@ -56,7 +56,7 @@ The profile supports querying for:
     Service offered at a Location may have specific attributes including
     contact person, hours of operation, etc.
     
-7. **Endpoint** - An Organization may be reachable through electronic Endpoint(s).
+7. **Endpoint** - An Organization may be reachable for electronic data exchange through electronic Endpoint(s).
    An Endpoint may be a FHIR server, an IHE web services actor, or some other
    mechanism. If an Organization does not have an Endpoint, it may still be
    reachable via an Endpoint at its parent Organization or an affiliated Organization.
