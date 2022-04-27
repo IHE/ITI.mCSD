@@ -109,6 +109,7 @@ Title:          "mCSD Type codes for Endpoint.identifier"
 Description:    "mCSD Type codes for specific business identifiers for Endpoint resources."
 
 * ^caseSensitive = true
+* #HCID "Home Community Identifier: Identifies an Endpoint to an IHE community."
 * #DocRepoId "Identifies an Endpoint that is a source or repository of clinical documents."
 
 ValueSet:     MCSDEndpointIdentifierTypeValueSet
