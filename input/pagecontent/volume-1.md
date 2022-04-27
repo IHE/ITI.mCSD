@@ -504,9 +504,7 @@ Note: Guidance for usage of endpoints in directories is provided
   IHE XCA Retrieve Responding Gateway, etc.).
 
 The diagram below shows an excerpt of the HIE directory, showing one
-participant in the HIE that has two IHE XCA Endpoints.
-Each Endpoint implements a specific XCA transaction. Note that these Endpoints
-share the same URL.
+participant in the HIE that implements IHE XCA with two Endpoints, and another that only uses one.
 
 <div>
 {%include usecase6-diagram.svg%}
