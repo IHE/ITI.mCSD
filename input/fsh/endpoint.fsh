@@ -125,7 +125,19 @@ Description: "ValueSet of the Document Sharing Endpint types allowed"
 * MCSDEndpointTypes#ihe-mhd
 
 
+CodeSystem:     MCSDEndpointIdentifierTypes
+Title:          "mCSD Type codes for Endpoint.identifier"
+Description:    "mCSD Type codes for specific business identifiers for Endpoint resources."
 
+* ^caseSensitive = true
+* #HCID "Home Community Identifier: Identifies an Endpoint to an IHE community."
+* #DocRepoId "Identifies an Endpoint that is a source or repository of clinical documents."
+
+ValueSet:     MCSDEndpointIdentifierTypeValueSet
+Title:          "mCSD Type codes for Endpoint.identifier"
+Description:    "mCSD Type codes for specific business identifiers for Endpoint resources."
+
+* codes from system MCSDEndpointIdentifierTypes
 
 // TODO: Create an invariant so that either managingOrganization or contact must be populated. For now we just force manaingOrganization like the other resources in mCSD
 
