@@ -195,65 +195,35 @@ either managingOrganization or contact must be populated.
 ### Closed Issues
 These issues have been decided and documented in the publication.
 
-*mCSD\_1. Should we include the FreeBusy transaction and use cases or
-just remove them?*
+*mCSD\_1. Should we include the FreeBusy transaction and use cases or just remove them?*
 
   - Take this out, and possibly add later if needed as an option.
 
-*mCSD\_2. Should we include the aggregate reporting use case from Care
-Services Discovery (CSD) or remove with a reference to Aggregate Data
-Exchange (ADX) in cross profile considerations? This use case would
-define options for the actors in this use case to return aggregate data.
-*
+*mCSD\_2. Should we include the aggregate reporting use case from Care Services Discovery (CSD) or remove with a reference to Aggregate Data Exchange (ADX) in cross profile considerations? This use case would define options for the actors in this use case to return aggregate data.*
 
   - At this time we do not believe these are key uses cases, but request
     feedback.
 
-*mCSD\_3. How do we capture data about community health workers? In some
-environments, there are community health workers that are associated
-with a facility but don't actually work there. Such a worker might have
-a set area of villages that they rotate through providing
-community-based care. The villages are within the catchment area of a
-Health facility, and the supervisor of the community health worker may
-be based at that facility. *
+*mCSD\_3. How do we capture data about community health workers? In some environments, there are community health workers that are associated with a facility but don't actually work there. Such a worker might have a set area of villages that they rotate through providing community-based care. The villages are within the catchment area of a Health facility, and the supervisor of the community health worker may be based at that facility.*
 
-*Not quite sure the best way to capture this when looking at:*
+*Not quite sure the best way to capture this when looking at:
 
-*[http://build.fhir.org/location.html\#bnr](http://build.fhir.org/location.html#bnr)*
+[http://build.fhir.org/location.html\#bnr](http://build.fhir.org/location.html#bnr)*
 
-*It is clear that we have a hierarchy of locations to capture the
-geographic hierarchy (jurisdictions): *
+*It is clear that we have a hierarchy of locations to capture the geographic hierarchy (jurisdictions): *
 
-  - *The health facility in question would be situated at a location
-    above the village level, say at the county or district level - this
-    we can capture in the parent-child relationship “partOf” in the
-    location resource*
+  - *The health facility in question would be situated at a location above the village level, say at the county or district level - this we can capture in the parent-child relationship “partOf” in the location resource*
 
-  - *The community health worker is providing services at several
-    villages - this we can capture through the location data field of
-    the role in the practitioner resource*
+  - *The community health worker is providing services at several villages - this we can capture through the location data field of the role in the practitioner resource*
 
-  - *The community health worker is associated to a health facility -
-    again we can capture this through the location field but perhaps we
-    would use a different role to indicate that they're community health
-    worker associated to this facility but not directly providing
-    services at the facility, only its catchment area*
+  - *The community health worker is associated to a health facility - again we can capture this through the location field but perhaps we would use a different role to indicate that they're community health worker associated to this facility but not directly providing services at the facility, only its catchment area*
 
-  - *In case a community health worker is reporting to a supervisor -
-    that's not captured anywhere that I can see in FHIR. I think this is
-    a larger that exists beyond the community health worker context*
+  - *In case a community health worker is reporting to a supervisor - that's not captured anywhere that I can see in FHIR. I think this is a larger that exists beyond the community health worker context*
 
-Perhaps the best way to model this is to define each village as a
-location, and associate that worker with each location they rotate
-through. Each village is a partOf the health district. The facility is
-also a location that is partOf the district. The practitioner is related
-to the village locations with a "delivers care to" role; and to the
-facility with a "based out of" role.
+Perhaps the best way to model this is to define each village as a location, and associate that worker with each location they rotate through. Each village is a partOf the health district. The facility is also a location that is partOf the district. The practitioner is related to the village locations with a "delivers care to" role; and to the facility with a "based out of" role.
 
-*mCSD\_4. Do we need to include more geospatial data (such as polygons
-or more complex geometry types) stored with Locations and how? This
-would be so jurisdictions (such as districts or counties) could include
-that data instead of just a position (latitude/longitude).
+*mCSD\_4. Do we need to include more geospatial data (such as polygons or more complex geometry types) stored with Locations and how? This would be so jurisdictions (such as districts or counties) could include that data instead of just a position (latitude/longitude).
+
 [CP\#13391](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemEdit&tracker_item_id=13391)
 has been opened for this.*
 
