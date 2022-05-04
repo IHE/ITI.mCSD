@@ -312,14 +312,14 @@ generalized to allow usage with mCSD as well as other directory IGs like
 Duplicate of mCSD\_10
 
 *mCSD\_17. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
-we say that a hierarchy formed by the [mCSD Additional Hierarchies extension](StructureDefinition-IHE.mCSD.OrganizationHierarchy.html)
+we say that a hierarchy formed by the mCSD Additional Hierarchies extension
 does not imply federation of (i.e. connectivity to) child organizations. Should it?*
 
 Extension has been removed.
 
 *mCSD\_19. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 why do we use OrganizationAffiliation for
-an organization's membership in an HIE, as opposed to the [mCSD Additional Hierarchies extension](StructureDefinition-IHE.mCSD.OrganizationHierarchy.html)?
+an organization's membership in an HIE, as opposed to the mCSD Additional Hierarchies extension?
 Because we don't wish to constrain the use of resources that define organizational structure,
 rather just reflect how best to use Endpoints in these structures. OrganizationAffiliation
 is already used in other use cases, and in fact, shows HIE/HIO membership as one of
@@ -339,7 +339,7 @@ Combined into related open issue 7.
 
 ## Significant changes from mCSD, Rev 3.4:
 - Added OrganizationAffiliation and Endpoint resources to [1:46](volume-1.html#1-46-mobile-care-services-discovery-mcsd) and [1:46.1.1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
-- Added [Use Case #5: Organization Affiliation](volume-1.html#146425-use-case-5-organization-affiliation),
+- Added [Use Case #5: Organization Affiliation](volume-1.html#146425-use-case-5-health-information-exchange-hie-membership-discovery),
   describing how OrganizationAffiliations can represent non-hierarchical relationships between Organizations
 - Added [Use Case #6: Health Information Exchange (HIE) Endpoint Discovery](volume-1.html#146426-use-case-6-health-information-exchange-hie-endpoint-discovery), showing an example of querying a directory with Endpoint resources
 - Added new section [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations),

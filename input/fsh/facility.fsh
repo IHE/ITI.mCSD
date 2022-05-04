@@ -12,13 +12,13 @@ attributes, attributes regarding its hours of operation, etc. Each Facility is d
 [Organization](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
 
 In addition to the base requirements of [mCSD Organization](StructureDefinition-IHE.mCSD.Organization.html),
-one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility`.
+one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility`.
 """
 
 * insert requireAtLeastOneMatch( type, facility, MCSDOrganizationLocationTypes#facility)
 * type 2..*
-  * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
-  * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
+  * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
+  * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
 
 
 
@@ -36,13 +36,13 @@ attributes, attributes regarding its hours of operation, etc. Each Facility is d
 [Organization](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
 
 In addition to the base requirements of [mCSD Location](StructureDefinition-IHE.mCSD.Location.html),
-one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility`.
+one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility`.
 """
 
 * insert requireAtLeastOneMatch( type, facility, MCSDOrganizationLocationTypes#facility)
 * type 2..*
-  * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
-  * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility"
+  * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
+  * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
 * managingOrganization 1..1 
 * managingOrganization only Reference(MCSDFacilityOrganization)
   * ^short = "The reference to the mCSD Organization resource for this facility."

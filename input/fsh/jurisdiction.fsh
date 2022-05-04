@@ -11,13 +11,13 @@ districts or regions.  Each Jurisdiction is defined by a pairing of [Location](S
 and [Organization](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
 
 In addition to the base requirements of [mCSD Organization](StructureDefinition-IHE.mCSD.Organization.html),
-one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction`.
+one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction`.
 """
 
 * insert requireAtLeastOneMatch( type, jurisdiction, MCSDOrganizationLocationTypes#jurisdiction)
 * type 2..*
-  * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
-  * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
+  * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
+  * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
 
 Profile:      MCSDJurisdictionLocation
 Parent:       MCSDLocation
@@ -32,13 +32,13 @@ districts or regions.  Each Jurisdiction is defined by a pairing of [Location](S
 and [Organization](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
 
 In addition to the base requirements of [mCSD Location](StructureDefinition-IHE.mCSD.Location.html),
-one `type` must be set to `urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction`.
+one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction`.
 """
 
 * insert requireAtLeastOneMatch( type, jurisdiction, MCSDOrganizationLocationTypes#jurisdiction)
 * type 2..*
-  * ^short = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
-  * ^definition = "One type must be set to: urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction"
+  * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
+  * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
 * managingOrganization 1..1 
 * managingOrganization only Reference(MCSDJurisdictionOrganization)
   * ^short = "The reference to the mCSD Organization resource for this jurisdiction."

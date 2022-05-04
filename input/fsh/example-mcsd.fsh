@@ -7,7 +7,7 @@ Description: "Organization resource for an example mCSD Jurisdiction"
 Usage: #example
 * name = "MCSDJurisdictionOrganization-Example"
 * active = true
-* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
+* type[+] = MCSDOrganizationLocationTypes#jurisdiction
 * type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 Instance: MCSDJurisdictionLocation-Example
@@ -19,7 +19,7 @@ Usage: #example
 * status = #active
 * managingOrganization = Reference(MCSDJurisdictionOrganization-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#jdn
-* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:jurisdiction
+* type[+] = MCSDOrganizationLocationTypes#jurisdiction
 * type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 // another department
@@ -54,7 +54,7 @@ Description: "Organization resource for an example mCSD Facility"
 Usage: #example
 * name = "MCSDFacilityOrganization-Example"
 * active = true
-* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
+* type[+] = MCSDOrganizationLocationTypes#facility
 * type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 * partOf = Reference(MCSDJurisdictionOrganization-Example)
 
@@ -78,7 +78,7 @@ Usage: #example
 * managingOrganization = Reference(MCSDFacilityOrganization-Example)
 * partOf = Reference(MCSDJurisdictionLocation-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
-* type[+] = urn:ietf:rfc:3986#urn:ihe:iti:mcsd:2019:facility
+* type[+] = MCSDOrganizationLocationTypes#facility
 * type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
 
 Instance: MCSDLocation-Example
