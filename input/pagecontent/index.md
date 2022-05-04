@@ -17,7 +17,7 @@ architectures and support a wide array of care workflows.
 </div>
 
 ### Organization of This Guide
-This guide is organized into three main sections:
+This guide is organized into the following four main sections:
 
 1. Volume 1: [46 mCSD Introduction](volume-1.html)
     1. [46.1 mCSD Actors, Transactions, and Content Modules](volume-1.html#1461-mcsd-actors-transactions-and-content-modules)
