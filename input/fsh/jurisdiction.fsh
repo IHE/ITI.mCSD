@@ -15,7 +15,7 @@ one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD
 """
 
 * insert requireAtLeastOneMatch( type, jurisdiction, MCSDOrganizationLocationTypes#jurisdiction)
-* type 2..*
+* type 1..
   * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
   * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
 
@@ -36,7 +36,7 @@ one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD
 """
 
 * insert requireAtLeastOneMatch( type, jurisdiction, MCSDOrganizationLocationTypes#jurisdiction)
-* type 2..*
+* type 1..
   * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
   * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#jurisdiction"
 * managingOrganization 1..1 

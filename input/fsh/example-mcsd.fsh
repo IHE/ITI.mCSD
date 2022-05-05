@@ -8,7 +8,6 @@ Usage: #example
 * name = "MCSDJurisdictionOrganization-Example"
 * active = true
 * type[+] = MCSDOrganizationLocationTypes#jurisdiction
-* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 Instance: MCSDJurisdictionLocation-Example
 InstanceOf: MCSDJurisdictionLocation
@@ -20,7 +19,6 @@ Usage: #example
 * managingOrganization = Reference(MCSDJurisdictionOrganization-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#jdn
 * type[+] = MCSDOrganizationLocationTypes#jurisdiction
-* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 // another department
 
@@ -55,7 +53,6 @@ Usage: #example
 * name = "MCSDFacilityOrganization-Example"
 * active = true
 * type[+] = MCSDOrganizationLocationTypes#facility
-* type[+] = http://terminology.hl7.org/CodeSystem/organization-type#govt
 * partOf = Reference(MCSDJurisdictionOrganization-Example)
 
 Instance: MCSDFacilityOrganizationAffiliation-Example

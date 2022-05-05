@@ -16,10 +16,9 @@ one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD
 """
 
 * insert requireAtLeastOneMatch( type, facility, MCSDOrganizationLocationTypes#facility)
-* type 2..*
+* type 1..
   * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
   * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
-
 
 
 Profile:      MCSDFacilityLocation
@@ -43,6 +42,8 @@ one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD
 * type 2..*
   * ^short = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
   * ^definition = "One type must be set to: https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD.Organization.Location.Types#facility"
+* type contains service 0..
+* type[service] from http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType
 * managingOrganization 1..1 
 * managingOrganization only Reference(MCSDFacilityOrganization)
   * ^short = "The reference to the mCSD Organization resource for this facility."
