@@ -1,102 +1,35 @@
 
-The Mobile Care Services Discovery (mCSD) Profile supports discovery of
-care services resources using a RESTful interface in interrelated,
-federated environments.
+The Mobile Care Services Discovery (mCSD) Profile supports discovery of care services resources using a RESTful interface in interrelated, federated environments.
 
-Use cases and solutions using mCSD are outlined in the 
-[mCSD Whitepaper](https://profiles.ihe.net/ITI/papers/mCSD/index.html).
+Use cases and solutions using mCSD are outlined in the [mCSD Whitepaper](https://profiles.ihe.net/ITI/papers/mCSD/index.html).
 
 The profile supports querying for:
 
-1.  **Organization** – Organizations are “umbrella” entities; these may
-    be considered the administrative bodies under whose auspices care
-    services are provided such as Healthcare Information Exchanges
-    (HIEs), Integrated Delivery Networks (IDNs), Non-Government
-    Organizations (NGOs), Faith-Based Organizations (FBOs) or even a
-    one-physician family practice. An organization has a unique
-    identifier and may have additional administrative attributes such as
-    contact person, mailing address, etc. Departments of an institution,
-    or other administrative units, may be represented as child
-    Organizations of a parent Organization.
+1.  **Organization** – Organizations are “umbrella” entities; these may be considered the administrative bodies under whose auspices care services are provided such as Healthcare Information Exchanges(HIEs), Integrated Delivery Networks (IDNs), Non-Government Organizations (NGOs), Faith-Based Organizations (FBOs) or even a one-physician family practice. An organization has a unique identifier and may have additional administrative attributes such as contact person, mailing address, etc. Departments of an institution, or other administrative units, may be represented as child Organizations of a parent Organization.
 
-2.  **Facility** – Facilities are physical care delivery sites such as
-    hospitals, clinics, health outposts, physician offices, labs,
-    pharmacies, etc. A Facility has a unique identifier, geographic
-    attributes (address, geocode), contact attributes, attributes
-    regarding its hours of operation, etc. Each Facility is defined by a
-    pairing of Location and Organization.
+2.  **Facility** – Facilities are physical care delivery sites such as hospitals, clinics, health outposts, physician offices, labs, pharmacies, etc. A Facility has a unique identifier, geographic attributes (address, geocode), contact attributes, attributes regarding its hours of operation, etc. Each Facility is defined by a pairing of Location and Organization.
 
-3.  **Location** – Locations are physical places where care can be
-    delivered such as facilities, buildings, wards, rooms, or vehicles.
-    Locations also include jurisdictions such as a
-    village districts or regions. A Location has a unique identifier and
-    may have geographic attributes (address, geocode), attributes
-    regarding its hours of operation, etc. Each Location may be related
-    to one Organization. A location may have a hierarchical relationship
-    with other locations.
+3.  **Location** – Locations are physical places where care can be delivered such as facilities, buildings, wards, rooms, or vehicles. Locations also include jurisdictions such as a village districts or regions. A Location has a unique identifier and may have geographic attributes (address, geocode), attributes regarding its hours of operation, etc. Each Location may be related to one Organization. A location may have a hierarchical relationship with other locations.
 
-4.  **Jurisdiction** – Jurisdictions are political administrative units or 
-    other territories over which authority is exercised. A Jurisdiction has 
-    a unique identifier, geographic attributes, etc. Jurisdictions include 
-    political administrative units such as village districts or regions.  
-    Each Jurisdiction is defined by a pairing of Location and Organization.
+4.  **Jurisdiction** – Jurisdictions are political administrative units or other territories over which authority is exercised. A Jurisdiction has a unique identifier, geographic attributes, etc. Jurisdictions include political administrative units such as village districts or regions. Each Jurisdiction is defined by a pairing of Location and Organization.
 
-5.  **Practitioner** – A Practitioner is a health worker such as defined
-    by WHO ([http://www.who.int/whr/2006/06_chap1_en.pdf](http://www.who.int/whr/2006/06_chap1_en.pdf)); a
-    Practitioner might be a physician, nurse, pharmacist, community
-    health worker, district health manager, etc. Practitioners have
-    contact and demographic attributes. Each Practitioner may be related
-    to one or more Organizations, one or more Locations and one or more
-    Healthcare Services. Specific attributes may be associated with the
-    Practitioner relationship with these other entities.
+5.  **Practitioner** – A Practitioner is a health worker such as defined by WHO ([http://www.who.int/whr/2006/06_chap1_en.pdf](http://www.who.int/whr/2006/06_chap1_en.pdf)); a Practitioner might be a physician, nurse, pharmacist, community health worker, district health manager, etc. Practitioners have contact and demographic attributes. Each Practitioner may be related to one or more Organizations, one or more Locations and one or more Healthcare Services. Specific attributes may be associated with the Practitioner relationship with these other entities.
 
-6. **Healthcare Service** – Each healthcare service has a unique
-    identifier. Examples include surgical services, antenatal care
-    services, or primary care services. The combination of a Healthcare
-    Service offered at a Location may have specific attributes including
-    contact person, hours of operation, etc.
+6. **Healthcare Service** – Each healthcare service has a unique identifier. Examples include surgical services, antenatal care services, or primary care services. The combination of a Healthcare Service offered at a Location may have specific attributes including contact person, hours of operation, etc.
     
-7. **Endpoint** - An Organization may be reachable for electronic data exchange through electronic Endpoint(s).
-   An Endpoint may be a FHIR server, an IHE web services actor, or some other
-   mechanism. If an Organization does not have an Endpoint, it may still be
-   reachable via an Endpoint at its parent Organization or an affiliated Organization.
+7. **Endpoint** - An Organization may be reachable for electronic data exchange through electronic Endpoint(s). An Endpoint may be a FHIR server, an IHE web services actor, or some other mechanism. If an Organization does not have an Endpoint, it may still be reachable via an Endpoint at its parent Organization or an affiliated Organization.
 
-8. **OrganizationAffiliation** - An Organization may have relationships with
-   other organizations that are not hierarchical. These relationships may indicate
-   an electronic routing path to other organizations that cannot be reached directly.
-   OrganizationAffiliation can be used to specify relationships such as supply chains 
-   or administrative reporting structures.
+8. **OrganizationAffiliation** - An Organization may have relationships with other organizations that are not hierarchical. These relationships may indicate an electronic routing path to other organizations that cannot be reached directly. OrganizationAffiliation can be used to specify relationships such as supply chains or administrative reporting structures.
 
-The capabilities detailed in this profile support consumer-centric
-queries such as finding “where is the closest youth mental health
-services clinic” or “what are the hours of a physiotherapist near my
-workplace”. In addition, mCSD supports crucial health system management
-workflows. This can include reporting and analyses, such as “what are my
-health human resource capacities, by facility, by cadre,” “what are all
-the services offered at this facility,” or conversely, “where are all
-the facilities that offer this service.” The mCSD Profile may be
-employed to support, for example, the Provider Queries listed by the US
-Office of the National Coordinator as part of the Standards and
-Interoperability Framework ([http://wiki.siframework.org/file/view/ESI
-Query and
-Response.pdf](http://wiki.siframework.org/file/view/ESI%20Query%20and%20Response.pdf)).
-In addition, mCSD can enable connectivity by providing service endpoint lookup, such as
-"What is the FHIR server for this organization?".
+The capabilities detailed in this profile support consumer-centric queries such as finding “where is the closest youth mental health services clinic” or “what are the hours of a physiotherapist near my workplace”. In addition, mCSD supports crucial health system management workflows. This can include reporting and analyses, such as “what are my health human resource capacities, by facility, by cadre,” “what are all the services offered at this facility,” or conversely, “where are all the facilities that offer this service.” The mCSD Profile may be employed to support, for example, the Provider Queries listed by the US Office of the National Coordinator as part of the Standards and Interoperability Framework ([http://wiki.siframework.org/file/view/ESIQuery and Response.pdf](http://wiki.siframework.org/file/view/ESI%20Query%20and%20Response.pdf)). In addition, mCSD can enable connectivity by providing service endpoint lookup, such as "What is the FHIR server for this organization?".
 
-The loosely coupled design and flexible querying capability of the mCSD
-Profile means it can be deployed within a variety of eHealth
-architectures and support a wide array of care workflows.
+The loosely coupled design and flexible querying capability of the mCSD Profile means it can be deployed within a variety of eHealth architectures and support a wide array of care workflows.
 
 ## 1:46.1 mCSD Actors, Transactions, and Content Modules
 
-This section defines the actors, transactions, and/or content modules in
-this profile. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
+This section defines the actors, transactions, and/or content modules in this profile. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
 
-Figure 1:46.1-1 shows the actors directly involved in the mCSD Profile and
-the relevant transactions between them. If needed for context, other
-actors that may be indirectly involved due to their participation in
-other related profiles are shown in dotted lines. Actors which have a
-mandatory grouping are shown in conjoined boxes.
+Figure 1:46.1-1 shows the actors directly involved in the mCSD Profile and the relevant transactions between them. If needed for context, other actors that may be indirectly involved due to their participation in other related profiles are shown in dotted lines. Actors which have a mandatory grouping are shown in conjoined boxes.
 
 <div>
 {%include ActorsAndTransactions.svg%}
@@ -104,10 +37,7 @@ mandatory grouping are shown in conjoined boxes.
 <div style="clear: left;"></div>
 **Figure 1:46.1-1: mCSD Actor Diagram**
 
-Table 1:46.1-1 lists the transactions for each actor directly involved in
-the mCSD Profile. To claim compliance with this profile, an actor shall
-support all required transactions (labeled “R”) and may support the
-optional transactions (labeled “O”).
+Table 1:46.1-1 lists the transactions for each actor directly involved in the mCSD Profile. To claim compliance with this profile, an actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
 
 **Table 1:46.1-1: mCSD Profile - Actors and Transactions**
 
@@ -121,13 +51,9 @@ optional transactions (labeled “O”).
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
 
-Most requirements are documented in ITI TF-2: Transactions. This section
-documents any additional requirements on mCSD actors.
+Most requirements are documented in ITI TF-2: Transactions. This section documents any additional requirements on mCSD actors.
 
-mCSD supports querying for Organization, Facility, Location,
-Practitioner, Healthcare Service, OrganizationAffiliation, and Endpoint.
-However, a Care Services Selective Supplier or Care Service Update Supplier
-is not required to contain data on all of these.
+mCSD supports querying for Organization, Facility, Location, Practitioner, Healthcare Service, OrganizationAffiliation, and Endpoint. However, a Care Services Selective Supplier or Care Service Update Supplier is not required to contain data on all of these.
 
 #### 1:46.1.1.1 Care Services Selective Consumer
 
@@ -140,12 +66,9 @@ No additional requirements.  The following are two example capability statement 
 
 #### 1:46.1.1.2 Care Services Selective Supplier
 
-The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information 
-about mCSD resources.
+The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information about mCSD resources.
 
-The Care Services Selective Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
-All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and 
-[message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
+The Care Services Selective Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples: 
 
@@ -164,12 +87,10 @@ No additional requirements. The following are two example capability statement r
 
 #### 1:46.1.1.4 Care Services Update Supplier
 
-The Care Services Update Supplier can provide updates about mCSD resources in response to a refresh request from a Care Services 
-Update Consumer. The updates include new or modified information since a previous refresh.
+The Care Services Update Supplier can provide updates about mCSD resources in response to a refresh request from a Care Services Update Consumer. The updates include new or modified information since a previous refresh.
 
 The Care Services Update Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
-All supported interactions shall be specified. The [search parameters](ITI-91.html#2391412-message-semantics) and [message semantics](ITI-91.html#2391422-message-semantics) 
-defined in \[ITI-91\] shall be supported, other parameters may be supported.
+All supported interactions shall be specified. The [search parameters](ITI-91.html#2391412-message-semantics) and [message semantics](ITI-91.html#2391422-message-semantics) defined in \[ITI-91\] shall be supported, other parameters may be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
 
@@ -192,25 +113,15 @@ Options that may be selected for each actor in this profile, if any, are listed 
 
 ### 1:46.2.1 Location Distance Option
 
-The Location Distance Option enables querying Location resources based
-on relative distances.
+The Location Distance Option enables querying Location resources based on relative distances.
 
-A Care Services Selective Consumer or Care Services Selective Supplier
-that supports the Location Distance Option will implement the semantics
-for the Location Distance Option of the Find Matching Care Services
-\[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2:
-2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option will implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
 
 ## 1:46.3 mCSD Required Actor Groupings
 
-An actor from this profile (Column 1) shall implement all of the
-required transactions and/or content modules in this profile ***in
-addition to*** ***<span class="underline">all</span>*** of the
-requirements for the grouped actor (Column 2).
+An actor from this profile (Column 1) shall implement all of the required transactions and/or content modules in this profile ***in addition to*** ***<span class="underline">all</span>*** of the requirements for the grouped actor (Column 2).
 
-[Section 1:46.5](#1465-mcsd-security-considerations) describes some optional groupings that may be of interest
-for security considerations and [Section 1:46.6](#1466-mcsd-cross-profile-considerations) describes some optional
-groupings in other related profiles.
+[Section 1:46.5](#1465-mcsd-security-considerations) describes some optional groupings that may be of interest for security considerations and [Section 1:46.6](#1466-mcsd-cross-profile-considerations) describes some optional groupings in other related profiles.
 
 **Table 1:46.3-1: mCSD - Required Actor Groupings**
 
@@ -226,9 +137,7 @@ groupings in other related profiles.
 
 ### 1:46.4.1 Concepts
 
-The Mobile Care Services Discovery (mCSD) Profile supports queries for
-resources related to care services discovery. The relationship between 
-these entities is illustrated in Figure 1:46.4.1-1.
+The Mobile Care Services Discovery (mCSD) Profile supports queries for resources related to care services discovery. The relationship between these entities is illustrated in Figure 1:46.4.1-1.
 
 ![Top-level Relationships between Care Services Entities](mCSDRelationships.png)
 <div style="clear: left;"></div>
@@ -237,10 +146,7 @@ these entities is illustrated in Figure 1:46.4.1-1.
 
 #### 1:46.4.1.1 Create, Update, and Delete Services
 
-This profile enables tracking of changes to, searching for, and
-retrieval of, a set of resources. The creation, update, deletion and
-other maintenance activities of those resources is out of the scope of
-this profile.
+This profile enables tracking of changes to, searching for, and retrieval of, a set of resources. The creation, update, deletion and other maintenance activities of those resources is out of the scope of this profile.
 
 ### 1:46.4.2 Use Cases
 
@@ -248,31 +154,21 @@ this profile.
 
 ##### 1:46.4.2.1.1 Practitioner Query Use Case Description
 
-The patient, Vera Brooks, consults with her physician who recommends
-surgery. The physician can assist the patient in finding a suitable
-surgeon, taking into consideration the location and specialty of the
-surgeon.
+The patient, Vera Brooks, consults with her physician who recommends surgery. The physician can assist the patient in finding a suitable surgeon, taking into consideration the location and specialty of the surgeon.
 
 ##### 1:46.4.2.1.2 Practitioner Query Process Flow
 
-- Vera Brooks sees her family physician, Dr. West, regarding a recent
-  knee injury.
+- Vera Brooks sees her family physician, Dr. West, regarding a recent knee injury.
 
-- Dr. West diagnoses the problem as a torn ACL and decides to refer
-  Vera to an orthopedic surgeon.
+- Dr. West diagnoses the problem as a torn ACL and decides to refer Vera to an orthopedic surgeon.
 
-- Dr. West uses her EMR query tool, which implements a Care Services
-  Selective Consumer to search for orthopedic surgeons within 30km of
-  Vera’s home.
+- Dr. West uses her EMR query tool, which implements a Care Services Selective Consumer to search for orthopedic surgeons within 30km of Vera’s home.
 
-- The EMR retrieves the information from a Healthcare Worker Registry
-  (HWR) and displays it to Dr. West.
+- The EMR retrieves the information from a Healthcare Worker Registry (HWR) and displays it to Dr. West.
 
-- Vera and Dr. West decide on an orthopedic surgeon; Dr. West prepares
-  a referral.
+- Vera and Dr. West decide on an orthopedic surgeon; Dr. West prepares a referral.
 
-The interactions between the various actors in this use case are shown
-in Figure 1:46.4.2.1.2-1.
+The interactions between the various actors in this use case are shown in Figure 1:46.4.2.1.2-1.
 
 <div>
 {%include usecase1-processflow.svg%}
@@ -285,40 +181,23 @@ in Figure 1:46.4.2.1.2-1.
 
 ##### 1:46.4.2.2.1 Provider Lookup During an Emergency Event Use Case Description
 
-During an emergency event, medical volunteers may report to assist. At
-an emergency site, the mCSD service can be queried to quickly identify
-and grant permission to credentialed providers to enter the scene.
+During an emergency event, medical volunteers may report to assist. At an emergency site, the mCSD service can be queried to quickly identify and grant permission to credentialed providers to enter the scene.
 
-During Hurricane Katrina, health care volunteers were turned away from
-disaster sites because there was no means available to verify their
-credentials. During the Ebola outbreak in West Africa, it was unclear
-which health workers were available and had been trained in clinical
-care techniques.
+During Hurricane Katrina, health care volunteers were turned away from disaster sites because there was no means available to verify their credentials. During the Ebola outbreak in West Africa, it was unclear which health workers were available and had been trained in clinical care techniques.
 
-Resources from jurisdictional areas can be reported up to a central
-location so there is a single point of access. This would make it easier
-for responders on location to verify the credentials of a reporting
-health worker.
+Resources from jurisdictional areas can be reported up to a central location so there is a single point of access. This would make it easier for responders on location to verify the credentials of a reporting health worker.
 
 ##### 1:46.4.2.2.2 Provider Lookup During an Emergency Event Process Flow
 
-  - A jurisdictional (state/district) Care Services Update Supplier will
-    provide data to a central Care Services Update Consumer (National
-    HIE).
+  - A jurisdictional (state/district) Care Services Update Supplier will provide data to a central Care Services Update Consumer (National HIE).
 
-  - The National HIE will be a Care Services Update Consumer grouped
-    with a Care Services Selective Supplier.
+  - The National HIE will be a Care Services Update Consumer grouped with a Care Services Selective Supplier.
 
-  - An emergency responder (e.g., police on site controlling access) can
-    use a Care Services Selective Consumer to validate the credentials
-    of a reporting health worker from the central Care Services Update
-    Supplier.
+  - An emergency responder (e.g., police on site controlling access) can use a Care Services Selective Consumer to validate the credentials of a reporting health worker from the central Care Services Update Supplier.
 
-  - Based on the result, the emergency responder can allow or deny
-    access to the reporting health worker.
+  - Based on the result, the emergency responder can allow or deny access to the reporting health worker.
 
-The interactions between the various actors in this use case are shown
-in Figure 1:46.4.2.2.2-1.
+The interactions between the various actors in this use case are shown in Figure 1:46.4.2.2.2-1.
 
 <div>
 {%include usecase2-processflow.svg%}
@@ -331,18 +210,7 @@ in Figure 1:46.4.2.2.2-1.
 
 ##### 1:46.4.2.3.1 Cross-jurisdictional Site Management Description
 
-Projects like the U.S. President's Emergency Plan for AIDS Relief
-(PEPFAR)’s Data for Accountability, Transparency, and Impact (DATIM)
-need to have public health and service delivery indicators reported from
-a large number of sites (health facilities, communities, warehouses)
-within an Operating Unit (country/region). Within an Operating Unit,
-there are multiple, possibly overlapping, jurisdictions in operation
-which are managed by multiple organizations (e.g., ministries of health
-(MoH), faith-based organizations, international non-governmental
-organizations). The project needs to receive indicator submissions from
-pre-existing data systems hosted by these organizations. This data
-exchange requires a way to share site lists and implement identifier
-mapping between the sites in these lists. 
+Projects like the U.S. President's Emergency Plan for AIDS Relief (PEPFAR)’s Data for Accountability, Transparency, and Impact (DATIM) need to have public health and service delivery indicators reported from a large number of sites (health facilities, communities, warehouses) within an Operating Unit (country/region). Within an Operating Unit, there are multiple, possibly overlapping, jurisdictions in operation which are managed by multiple organizations (e.g., ministries of health (MoH), faith-based organizations, international non-governmental organizations). The project needs to receive indicator submissions from pre-existing data systems hosted by these organizations. This data exchange requires a way to share site lists and implement identifier mapping between the sites in these lists. 
 
 
 <div>
@@ -354,23 +222,13 @@ mapping between the sites in these lists.
 
 ##### 1:46.4.2.3.2 Cross-jurisdictional Site Management Process Flow
 
-An Operating Unit (OU) will run a Care Services Update Consumer and Care
-Services Update Supplier for a specific geographic area (e.g., country).
-This Update Consumer will query other organizations (ministries of
-health, partners) operating in the geographic area to get updated site
-data for the sites managed by the OU.
+An Operating Unit (OU) will run a Care Services Update Consumer and Care Services Update Supplier for a specific geographic area (e.g., country). This Update Consumer will query other organizations (ministries of health, partners) operating in the geographic area to get updated site data for the sites managed by the OU.
 
-  - An OU Update Consumer will query a sub-unit Care Services Update
-    Suppliers (e.g., MoH) to get an updated list of sites under the
-    sub-unit.
+  - An OU Update Consumer will query a sub-unit Care Services Update Suppliers (e.g., MoH) to get an updated list of sites under the sub-unit.
 
-  - An OU Update Consumer will query a subunit Care Services Update
-    Suppliers (e.g., partner) to get an updated list of sites under the
-    subunit.
+  - An OU Update Consumer will query a subunit Care Services Update Suppliers (e.g., partner) to get an updated list of sites under the subunit.
 
-  - The OU Update Consumer will use entity matching to determine if
-    there are duplicated sites in the combined data and flag them for
-    review. (See
+  - The OU Update Consumer will use entity matching to determine if there are duplicated sites in the combined data and flag them for review. (See
     [https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service](https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service).)
 
 The interactions between the various actors in this use case are shown
