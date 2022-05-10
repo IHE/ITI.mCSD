@@ -11,10 +11,10 @@ This section contains modifications to other IHE publications and profiles, and 
 
 | Actor                            | Definition                                                                                                                                                                                                                                                                                |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Care Services Selective Consumer | The Care Services Selective Consumer queries the Care Services Selective Supplier for information about mCSD resources.                                                                                                                 |
-| Care Services Selective Supplier | The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information about mCSD resources.                                                                                    |
-| Care Services Update Consumer    | The Care Services Update Consumer can query for updates since a previous refresh, to information about mCSD resources from one or more Care Services Update Suppliers.                                                                  |
-| Care Services Update Supplier    | The Care Services Update Supplier can provide updates about mCSD resources in response to a refresh request from a Care Services Update Consumer. The updates include new or modified information since a previous refresh. |
+| Care Services Selective Consumer | The Care Services Selective Consumer queries the Care Services Selective Supplier for information about care services resources.                                                                                                                 |
+| Care Services Selective Supplier | The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information about care services resources.                                                                                    |
+| Care Services Update Consumer    | The Care Services Update Consumer can query for updates since a previous refresh, to information about care services resources from one or more Care Services Update Suppliers.                                                                  |
+| Care Services Update Supplier    | The Care Services Update Supplier can provide updates about care services resources in response to a refresh request from a Care Services Update Consumer. The updates include new or modified information since a previous refresh. |
 {:.grid .table-striped}
 
 
