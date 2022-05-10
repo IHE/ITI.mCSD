@@ -245,39 +245,19 @@ in Figure 1:46.4.2.3.2-1.
 
 ##### 1:46.4.2.4.1 Master Facility List Description
 
-A developing country has decided to implement a Master Facility List
-(MFL) based on recommendations from the WHO in the MFL Resource Package
-([https://www.who.int/healthinfo/country_monitoring_evaluation/mfl/en/](https://www.who.int/healthinfo/country_monitoring_evaluation/mfl/en/)).
-This resource includes a minimum data set to uniquely identify,
-locate, and contact a specific facility. Since this will be a single
-source of information for the country, there may be differing
-hierarchies that need to be supported for the facilities. For example,
-one hierarchy would be the administrative hierarchy for the country
-(region, district, county). Another would be the supply chain hierarchy
-where hubs may be located separately from administrative regions. Yet
-another could be a reporting hierarchy used to send data to
-international organizations.
+A developing country has decided to implement a Master Facility List (MFL) based on recommendations from the WHO in the MFL Resource Package ([https://www.who.int/healthinfo/country_monitoring_evaluation/mfl/en/](https://www.who.int/healthinfo/country_monitoring_evaluation/mfl/en/)). This resource includes a minimum data set to uniquely identify, locate, and contact a specific facility. Since this will be a single source of information for the country, there may be differing hierarchies that need to be supported for the facilities. For example, one hierarchy would be the administrative hierarchy for the country (region, district, county). Another would be the supply chain hierarchy where hubs may be located separately from administrative regions. Yet another could be a reporting hierarchy used to send data to international organizations.
 
 ##### 1:46.4.2.4.2 Master Facility List Process Flow
 
-A Master Facility List (MFL) will run a Care Services Update Supplier
-and Care Services Selective Supplier for an entire country. A Human
-Resources Information System (HRIS) will run a Care Services Update
-Consumer to retrieve the list of facilities. A Logistics Management
-Information System (LMIS) will run a Care Services Update Consumer to
-retrieve the list of facilities.
+A Master Facility List (MFL) will run a Care Services Update Supplier and Care Services Selective Supplier for an entire country. A Human Resources Information System (HRIS) will run a Care Services Update Consumer to retrieve the list of facilities. A Logistics Management Information System (LMIS) will run a Care Services Update Consumer to retrieve the list of facilities.
 
-- An HRIS will query the MFL for an updated list of facilities where
-  Practitioners can provide care.
+- An HRIS will query the MFL for an updated list of facilities where Practitioners can provide care.
 
-- An LMIS will query the MFL for an updated list of facilities for the
-  supply chain to deliver health care supplies.
+- An LMIS will query the MFL for an updated list of facilities for the supply chain to deliver health care supplies.
 
-- The MFL will return updated facilities to each of these systems with
-  multiple hierarchies.
+- The MFL will return updated facilities to each of these systems with multiple hierarchies.
 
-The interactions between the various actors in this use case are shown
-in Figure 1:46.4.2.4.1-1.
+The interactions between the various actors in this use case are shown in Figure 1:46.4.2.4.1-1.
 
 <div>
 {%include usecase4-processflow.svg%}
@@ -290,25 +270,15 @@ in Figure 1:46.4.2.4.1-1.
 
 ##### 1:46.4.2.5.1 Health Information Exchange (HIE) Membership Discovery Description
 
-In this use case, a healthcare worker needs to identify the organizations active in
-the State/Province Health Information Exchange (HIE) that have been added since 2017,
-to make contact with new organizations and negotiate future clinical exchange.
+In this use case, a healthcare worker needs to identify the organizations active in the State/Province Health Information Exchange (HIE) that have been added since 2017, to make contact with new organizations and negotiate future clinical exchange.
 
-Membership in an HIE is a more dynamic and transitory business relationship than
-the "parent-child" hierarchy represented by Organization.partOf. For these more
-flexible business relationships, the 
-[OrganizationAffiliation](http://hl7.org/fhir/R4/organizationaffiliation.html)
-resource allows for organizations to relate to each other in non-hierarchical
-and more dynamic business relationships. Unlike partOf,
-the relationship is itself a resource, so it can be categorized with codes, status, etc.  
+Membership in an HIE is a more dynamic and transitory business relationship than the "parent-child" hierarchy represented by Organization.partOf. For these more flexible business relationships, the [OrganizationAffiliation](http://hl7.org/fhir/R4/organizationaffiliation.html) resource allows for organizations to relate to each other in non-hierarchical and more dynamic business relationships. Unlike partOf, the relationship is itself a resource, so it can be categorized with codes, status, etc. 
 
 In the example below:
 - Organization B has a parent Organization A.
-- Organization B has been a part of its State/Province HIE since 2018
-and is a member in good standing.
+- Organization B has been a part of its State/Province HIE since 2018 and is a member in good standing.
 
-The `organization` defines a role for the relationship, e.g., "HIE/HIO" or "member",
-and the `participatingOrganization` fills the role.
+The `organization` defines a role for the relationship, e.g., "HIE/HIO" or "member", and the `participatingOrganization` fills the role.
 
 <div>
 {%include usecase5-diagram.svg%}
@@ -319,15 +289,12 @@ and the `participatingOrganization` fills the role.
 
 ##### 1:46.4.2.5.2 Health Information Exchange (HIE) Membership Discovery Process Flow
 
-- A healthcare worker searches for organizations active in the State/Province HIE
-that have been added since 2017.
-- The EMR searches for OrganizationAffiliations where the `organization` is the HIE,
-`active` is true, and `period.start` is 2017 or later.
+- A healthcare worker searches for organizations active in the State/Province HIE that have been added since 2017.
+- The EMR searches for OrganizationAffiliations where the `organization` is the HIE, `active` is true, and `period.start` is 2017 or later.
 - The EMR searches for details on the participating Organizations.
 - The EMR presents the results to the healthcare worker.
 
-The interactions between the various actors in this use case are shown
-in Figure 1:46.4.2.5.2-1.
+The interactions between the various actors in this use case are shown in Figure 1:46.4.2.5.2-1.
 
 <div>
 {%include usecase5-processflow.svg%}
@@ -340,29 +307,18 @@ in Figure 1:46.4.2.5.2-1.
 
 ##### 1:46.4.2.6.1 Health Information Exchange (HIE) Endpoint Discovery Description
 
-Users in Health IT systems often need to be able to obtain clinical information electronically
-from outside systems, for example, in preparation for an encounter. This use case describes how
-a user in a system identifies the organizations a patient has received care from, as well as
-criteria for the kinds of clinical documents of interest, and then how their EMR queries the directory
-for a Health Information Exchange (HIE) to search for
-each organization and a compatible services endpoint the EMR can use.
+Users in Health IT systems often need to be able to obtain clinical information electronically from outside systems, for example, in preparation for an encounter. This use case describes how a user in a system identifies the organizations a patient has received care from, as well as criteria for the kinds of clinical documents of interest, and then how their EMR queries the directory for a Health Information Exchange (HIE) to search for each organization and a compatible services endpoint the EMR can use.
 
-An HIE publishes a directory that
-contains all of its member organizations and their electronic endpoints.
+An HIE publishes a directory that contains all of its member organizations and their electronic endpoints.
 Note: Guidance for usage of endpoints in directories is provided
 [here](#1468-mcsd-endpoint-usage-considerations).
 
-- Endpoints are not limited to RESTful FHIR servers; they may point to systems
-  that implement other mechanisms. This IG provides two profiles:
+- Endpoints are not limited to RESTful FHIR servers; they may point to systems that implement other mechanisms. This IG provides two profiles:
   [a general endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), and
   [an endpoint to an IHE Document Sharing actor](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
-- Organizations might support one or many communication channels, each of which
-  might have one or more distinct endpoints. For example, a FHIR communication channel
-  might require only a single endpoint (i.e., a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)),
-  while an IHE XCA communication channel might require separate endpoints for each transaction.
+- Organizations might support one or many communication channels, each of which might have one or more distinct endpoints. For example, a FHIR communication channel might require only a single endpoint (i.e., a single [Service Base URL](https://www.hl7.org/fhir/http.html#general)), while an IHE XCA communication channel might require separate endpoints for each transaction.
 
-The diagram below shows an excerpt of the HIE directory, showing one
-participant in the HIE that implements IHE XCA with two Endpoints, and another that only uses one.
+The diagram below shows an excerpt of the HIE directory, showing one participant in the HIE that implements IHE XCA with two Endpoints, and another that only uses one.
 
 <div>
 {%include usecase6-diagram.svg%}
@@ -373,9 +329,7 @@ participant in the HIE that implements IHE XCA with two Endpoints, and another t
 
 ##### 1:46.4.2.6.2 Health Information Exchange (HIE) Endpoint Discovery Process Flow
 
-- In preparation for a patient visit, a healthcare worker knows and identifies
-the organizations that have provided care for this patient,
-and identifies document types of interest.
+- In preparation for a patient visit, a healthcare worker knows and identifies the organizations that have provided care for this patient, and identifies document types of interest.
 - The EMR will query the HIE directory for the relevant organizations and their endpoints.
 - For each organization obtained, the EMR will check for endpoints that support the needed
 XCA transactions, and make requests against these endpoints to obtain clinical documents.
