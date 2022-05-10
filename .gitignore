@@ -9,7 +9,6 @@ www
 # macos
 .DS_Store
 /_genonce.sh
-/_updatePublisher.sh
 /_gencontinuous.bat
 /_gencontinuous.sh
 /_genonce.bat
