@@ -36,8 +36,6 @@ A Care Services Selective Consumer triggers a Find Matching Care Services Reques
 
 A Care Services Selective Consumer initiates a search request using HTTP GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the mCSD Resources. The Care Services Selective Supplier shall support both GET and POST based searches. The query parameters are identified below. A Care Services Selective Consumer may query any combination or subset of the parameters.
 
-A Care Services Selective Supplier shall support combinations of search parameters as defined at [http://hl7.org/fhir/R4/search.html#combining](http://hl7.org/fhir/R4/search.html#combining), “Composite Search Parameters.”
-
 A Care Services Selective Supplier shall support responding to a request for both the JSON and the XML messaging formats as defined in FHIR. A Care Services Selective Consumer shall accept either the JSON or the XML messaging formats as defined in FHIR. See [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details.
 
 A Care Services Selective Supplier shall implement the parameters described below for the mCSD resources it supports. A Care Services Selective Supplier may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification.
