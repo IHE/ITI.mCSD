@@ -45,8 +45,8 @@ or administrative reporting structures.
 * participatingOrganization only Reference(MCSDOrganization)
 * participatingOrganization ^short = "The Organization providing the role."
 * network 0..0
-* specialty MS
-* location MS
+* specialty
+* location
 * location only Reference(MCSDLocation)
 * healthcareService only Reference(MCSDHealthcareService)
 * telecom MS
