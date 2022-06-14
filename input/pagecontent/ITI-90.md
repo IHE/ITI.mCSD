@@ -236,7 +236,7 @@ The Care Services Selective Supplier shall support the search response message a
   - OrganizationAffiliation, as defined at
     [http://hl7.org/fhir/R4/organizationaffiliation.html](http://hl7.org/fhir/R4/organizationaffiliation.html)
     
-All References (reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not present on a server accessible to the client.
+All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
 
 ###### 2:3.90.4.2.2.1 FHIR Organization Resource Constraints
 
