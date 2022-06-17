@@ -1,4 +1,6 @@
         <div id="project-nav">
-          <a id="project-logo" no-external="true" href="http://profiles.ihe.net/ITI/index.html"><img height="70" alt="Visit the ITI website" src="{{site.data.info.assets}}assets/images/ITI.png"/> </a>
+          {% assign canonical = site.data.fhir.canonical | split: "/"  %}
+          {% assign domain = canonical[-2] %}
+            <a id="project-logo" no-external="true" href="http://profiles.ihe.net/{{ domain }}/index.html"><img height="70" alt="Visit the {{ domain }} website" src="{{site.data.info.assets}}assets/images/{{ domain }}.png"/> </a>
         </div>
 
