@@ -14,7 +14,8 @@ and one or more [Healthcare Services](StructureDefinition-IHE.mCSD.HealthcareSer
 [Practitioner Role](StructureDefinition-IHE.mCSD.PractitionerRole.html). Specific attributes may be associated with
 the Practitioner relationship with these other entities.
 """
-
+* implicitRules 0..0
+* modifierExtension 0..0
 * name 1..*
   * ^short = "The name of the Practitioner."
   * ^definition = "The name of the Practitioner."
@@ -31,7 +32,8 @@ health care role to perform [Healthcare Services](StructureDefinition-IHE.mCSD.H
 at a particular [Location](StructureDefinition-IHE.mCSD.Location.html)
 for an [Organization](StructureDefinition-IHE.mCSD.Organization.html)
 """
-
+* implicitRules 0..0
+* modifierExtension 0..0
 * code 1..*
   * ^short = "The roles the Practitioner performs."
   * ^definition = "The roles the Practitioner performs."
