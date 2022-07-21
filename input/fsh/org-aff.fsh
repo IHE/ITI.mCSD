@@ -147,7 +147,7 @@ Usage: #example
 * identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
 * identifier.value = "urn:uuid:4f88dade-42a7-4fb3-b0a6-f877ff6b23b7" // OrgB
 * active = true
-* code = MCSDOrgAffTypes#DocShare-federate
+* code[docshare] = MCSDOrgAffTypes#DocShare-federate
 * organization = Reference(Organization/ex-OrgC)
 * participatingOrganization = Reference(Organization/ex-OrgB)
 * endpoint[+] = Reference(Endpoint/ex-endpointXCAquery)

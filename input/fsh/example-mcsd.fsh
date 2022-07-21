@@ -7,7 +7,7 @@ Description: "Organization resource for an example mCSD Jurisdiction"
 Usage: #example
 * name = "MCSDJurisdictionOrganization-Example"
 * active = true
-* type[+] = MCSDOrganizationLocationTypes#jurisdiction
+* type[jurisdiction] = MCSDOrganizationLocationTypes#jurisdiction
 
 Instance: MCSDJurisdictionLocation-Example
 InstanceOf: MCSDJurisdictionLocation
@@ -18,7 +18,7 @@ Usage: #example
 * status = #active
 * managingOrganization = Reference(MCSDJurisdictionOrganization-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#jdn
-* type[+] = MCSDOrganizationLocationTypes#jurisdiction
+* type[jurisdiction] = MCSDOrganizationLocationTypes#jurisdiction
 
 // another department
 
@@ -52,7 +52,7 @@ Description: "Organization resource for an example mCSD Facility"
 Usage: #example
 * name = "MCSDFacilityOrganization-Example"
 * active = true
-* type[+] = MCSDOrganizationLocationTypes#facility
+* type[facility] = MCSDOrganizationLocationTypes#facility
 * partOf = Reference(MCSDJurisdictionOrganization-Example)
 
 Instance: MCSDFacilityOrganizationAffiliation-Example
@@ -75,8 +75,8 @@ Usage: #example
 * managingOrganization = Reference(MCSDFacilityOrganization-Example)
 * partOf = Reference(MCSDJurisdictionLocation-Example)
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu
-* type[+] = MCSDOrganizationLocationTypes#facility
-* type[+] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
+* type[facility] = MCSDOrganizationLocationTypes#facility
+* type[service] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
 
 Instance: MCSDLocation-Example
 InstanceOf: MCSDLocation
