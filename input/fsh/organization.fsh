@@ -26,7 +26,8 @@ practice. An organization has a unique identifier and may have additional admini
 contact person, mailing address, etc. Departments of an institution, or other administrative units, may be
 represented as child Organizations of a parent Organization.
 """
-
+* implicitRules 0..0
+* modifierExtension 0..0
 * type 1..*
   * ^short = "A code that describes the type of Organization."
   * ^definition = "A code that describes the type of Organization."
