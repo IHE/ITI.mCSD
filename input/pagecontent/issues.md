@@ -191,6 +191,8 @@ either managingOrganization or contact must be populated.
 
 [mCSD\_33](https://github.com/IHE/ITI.mCSD/issues/114). FHIR R5 will allow Endpoint.connectionType to be greater than 1, so we can use the IHE-defined codes in addition to the HL7 ones. We won't need Endpoint.extension:specificType anymore. See [Issue 89](https://github.com/IHE/ITI.mCSD/issues/89).
 
+[mCSD\_34](https://github.com/IHE/ITI.mCSD/issues/58). Should we add a subscription model for receiving updates instead of or in addition to ITI-91 for resource updates?
+
 ### Closed Issues
 These issues have been decided and documented in the publication.
 
