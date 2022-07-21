@@ -9,7 +9,7 @@ Set a purpose of use for an mCSD Endpoint or mCSD Organization.
 * ^context[+].type = #element
 * ^context[=].expression = "MCSDEndpoint"
 * value[x] only CodeableConcept
-* valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse (extensible)
+* valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse (preferred)
 
 Instance: MCSDSearchPurposeOfUse
 InstanceOf: SearchParameter
