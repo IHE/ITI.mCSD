@@ -13,7 +13,7 @@ Description: """
 The specific endpoint type. Given that the FHIR R4 Endpoint.connectionType is limited to a one value from a valueSet given by FHIR core and that valueSet includes XCA thus by Extensible rules one is forced to pick that value, we choose to add an additional codeableConcept for a more detailed code(s).
 """
 * value[x] only CodeableConcept
-* valueCodeableConcept from 	MCSDEndpointTypesDocShareVS (preferred)
+* valueCodeableConcept from 	MCSDEndpointTypesVS (preferred)
 
 
 Instance: Endpoint-EndpointSpecificType
@@ -107,15 +107,15 @@ Note that this codeSystem contains only endpoints needed for Some IHE profiles, 
 //* #MHD-Responder "MHD Document Responder ITI-66/ITI-67/ITI-68"
 
 
-ValueSet: MCSDEndpointTypesDocShareVS
-Title: "mCSD Endpoint Document Sharing Types ValueSet"
-Description: "ValueSet of the Document Sharing Endpint types allowed"
+ValueSet: MCSDEndpointTypesVS
+Title: "mCSD Endpoint Types ValueSet"
+Description: "ValueSet of the Endpoint types allowed"
 //Note that when MCSDEndpointTypes has more than Document Sharing in it, this will need to be more explicit. 
 * codes from system MCSDEndpointTypes
 
 ValueSet: MCSDEndpointTypesCoreDocShareVS
-Title: "mCSD Endpoint Document Sharing Types ValueSet"
-Description: "ValueSet of the Document Sharing Endpint types allowed"
+Title: "mCSD Endpoint Core Document Sharing Types ValueSet"
+Description: "ValueSet of the Core Document Sharing Endpoint types allowed"
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xcpd
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xds
