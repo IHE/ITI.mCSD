@@ -130,6 +130,8 @@
       </interaction> 
       <searchInclude value="Organization.endpoint"/>
       <searchRevInclude value="Location:organization"/>
+      <searchRevInclude value="OrganizationAffiliation:participating-organization"/>
+      <searchRevInclude value="OrganizationAffiliation:primary-organization"/>
       <searchParam> 
         <name value="active"/> 
         <type value="token"/> 
