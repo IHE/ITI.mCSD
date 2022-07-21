@@ -36,3 +36,4 @@ represented as child Organizations of a parent Organization.
 * partOf only Reference(MCSDOrganization)
   * ^short = "If the Organization belongs to a single hierarchy, the partOf element shall be used."
   * ^definition = "If the Organization belongs to a single hierarchy, the partOf element shall be used."
+* extension contains MCSDPurposeOfUse named purposeOfUse 0..*
