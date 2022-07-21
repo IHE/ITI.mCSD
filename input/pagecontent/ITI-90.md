@@ -329,7 +329,7 @@ The Care Services Selective Supplier may return other HTTP status codes to repre
 
 #### 2:3.90.4.4 Retrieve Care Services Resource Response message
 
-The Care Services Selective Supplier’s response to a successful Retrieve Care Services Resource message shall be an `HTTP 200` (OK) Status code with a Care Services Resource, or an appropriate error code.
+The Care Services Selective Supplier’s response to a successful Retrieve Care Services Resource message shall be an `HTTP 200` (OK) Status code with a Care Services Resource, or an appropriate error code.  See the [Retrieve Care Services Resource message expected actions](#2390433-expected-actions) for additional details.
 
 ##### 2:3.90.4.4.1 Trigger Events
 The Care Services Selective Supplier found a record matching the Resource identifier specified by the Care Services Selective Consumer.
