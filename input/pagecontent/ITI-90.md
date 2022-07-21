@@ -67,6 +67,8 @@ partof
 type
 _include=Organization.endpoint
 _revInclude=Location:organization
+_revInclude=OrganizationAffiliation:participating-organization
+_revInclude=OrganizationAffiliation:primary-organization
 ```
 
 ###### 2:3.90.4.1.2.3 Location Resource Message Semantics
