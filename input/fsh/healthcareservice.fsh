@@ -11,7 +11,8 @@ care services, or primary care services. The combination of a Healthcare Service
 [Location](StructureDefinition-IHE.mCSD.Location.html) may have specific attributes including
 contact person, hours of operation, etc.
 """
-
+* implicitRules 0..0
+* modifierExtension 0..0
 * type 1..*
   * ^short = "The type of service being provided."
   * ^definition = "The type of service being provided."
