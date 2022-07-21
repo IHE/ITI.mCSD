@@ -64,19 +64,9 @@ active
 identifier
 name
 partof
-partof:above
-partof:below
 type
-partof.identifier
-partof.name
-endpoint.connection-type
-endpoint.payload-type
 _include=Organization.endpoint
 _revInclude=Location:organization
-_revInclude=OrganizationAffiliation:participating-organization
-_revInclude=OrganizationAffiliation:primary-organization
-_revInclude:iterate=OrganizationAffiliation:participating-organization
-_revInclude:iterate=OrganizationAffiliation:primary-organization
 ```
 
 ###### 2:3.90.4.1.2.3 Location Resource Message Semantics
@@ -88,15 +78,8 @@ identifier
 name
 organization
 partof
-partof:above
-partof:below
 status
 type
-partof.identifier
-partof.name
-organization.active
-organization.identifier
-organization.name
 _include=Location:organization
 ```
 
@@ -124,22 +107,7 @@ practitioner
 role
 service
 specialty
-practitioner.identifier
-practitioner.name
-practitioner.given
-practitioner.family
 _include=PractitionerRole:practitioner
-organization.active
-organization.identifier
-organization.name
-location.status
-location.identifier
-location.name
-service.active
-service.indentifier
-service.location
-service.name
-service.organization
 ```
 
 ###### 2:3.90.4.1.2.6 HealthcareService Resource Message Semantics
@@ -153,12 +121,6 @@ location
 name
 organization
 service-type
-organization.active
-organization.identifier
-organization.name
-location.status
-location.identifier
-location.name
 ```
 
 ###### 2:3.90.4.1.2.7 Location Distance Option Message Semantics
@@ -174,10 +136,8 @@ near
 The Care Services Selective Supplier shall support the following search parameters on the Endpoint Resource as defined at [http://hl7.org/fhir/R4/endpoint.html#search](http://hl7.org/fhir/R4/endpoint.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
 
 ```
-connection-type
 identifier
 organization
-payload-type
 status
 ```
 
@@ -188,14 +148,10 @@ The Care Services Selective Supplier shall support the following search paramete
 ```
 active
 date
-endpoint.connection-type
-endpoint.payload-type
 identifier
 participating-organization
 primary-organization
 role
-_include=OrganizationAffiliation.primary-organization
-_include=OrganizationAffiliation.participating-organization
 _include=OrganizationAffiliation.endpoint
 ```
 

@@ -18,10 +18,10 @@ The specific endpoint type. Given that the FHIR R4 Endpoint.connectionType is li
 
 Instance: Endpoint-EndpointSpecificType
 InstanceOf: SearchParameter
-Title: "search on the IHE defined extension for Endpoint specificType"
+Title: "Search on the IHE defined extension for Endpoint specificType"
 Usage: #definition
 * url = "http://profiles.ihe.net/ITI/mCSD/SearchParameter/Endpoint-EndpointSpecificType"
-* description = "This SearchParameter enables finding Endpoints by the specificType code."
+* description = "This SearchParameter enables finding Endpoints by the specificType code.  This resource is created as informative content."
 * name = "EndpointSpecificType"
 * status = #active
 * code = #specificType
