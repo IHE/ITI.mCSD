@@ -12,6 +12,8 @@ attributes regarding its hours of operation, etc. Each Location may be related t
 A location may have a hierarchical relationship with other locations.
 """
 
+* implicitRules 0..0
+* modifierExtension 0..0
 * type 1..*
   * ^short = "A code that describes the type of Location."
   * ^definition = "A code that describes the type of Location."
