@@ -157,6 +157,8 @@ reachable via an Endpoint at its parent Organization or an affiliated Organizati
 
 Given that in FHIR R4 the .connnectionType is 1..1, each type of endpoint will be indicated with an independent Endpoint resource.
 """
+* implicitRules 0..0
+* modifierExtension 0..0
 * status MS
 * status ^short = "represents the current status of this endpoint."
 * status ^comment = "Should be updated when maintenance or other status changes happen."
