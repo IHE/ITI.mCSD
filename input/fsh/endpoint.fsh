@@ -114,8 +114,8 @@ Description: "ValueSet of the Document Sharing Endpint types allowed"
 * codes from system MCSDEndpointTypes
 
 ValueSet: MCSDEndpointTypesCoreDocShareVS
-Title: "mCSD Endpoint Document Sharing Types ValueSet"
-Description: "ValueSet of the Document Sharing Endpint types allowed"
+Title: "mCSD Endpoint Core Document Sharing Types ValueSet"
+Description: "ValueSet of the Core Document Sharing Endpint types allowed"
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xcpd
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xds
