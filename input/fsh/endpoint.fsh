@@ -176,6 +176,7 @@ This managing organization relationship is potentially independent of if the org
 * period MS
 * period ^short = "Overall deployment lifetime for this endpoint."
 * period ^comment = "usually indicating when the endpoint was deployed, and may indicate when this endpoint will be decommissioned."
+* extension contains MCSDPurposeOfUse named purposeOfUse 0..*
 
 
 
