@@ -34,6 +34,8 @@ an electronic routing path to other organizations that cannot be reached directl
 OrganizationAffiliation can be used to specify relationships such as supply chains 
 or administrative reporting structures.
 """
+* implicitRules 0..0
+* modifierExtension 0..0
 * active 1..1
 * endpoint only Reference(MCSDEndpoint)
 * code 1..*
