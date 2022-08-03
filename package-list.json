@@ -12,16 +12,26 @@
   "current" : true
  },
  {
-  "version" : "3.7.0",  
-  "date" : "2022-04-13", 
-  "desc" : "Public-Comment: comment resolution",
-  "path" : "https://profiles.ihe.net/ITI/mCSD/3.7.0",
-  "status" : "ballot",   
+  "version" : "3.8.0",  
+  "date" : "2022-08-12", 
+  "desc" : "Trial-Implementation",
+  "path" : "https://profiles.ihe.net/ITI/mCSD/3.8.0",
+  "status" : "trial-use",   
   "fhirversion": "4.0.1",
   "sequence" : "Public-Comment",
   "current": true
  },
  {
+    "version" : "3.7.0",  
+    "date" : "2022-04-13", 
+    "desc" : "Public-Comment: comment resolution",
+    "path" : "https://profiles.ihe.net/ITI/mCSD/3.7.0",
+    "status" : "ballot",   
+    "fhirversion": "4.0.1",
+    "sequence" : "Public-Comment",
+    "current": false
+   },
+   {
   "version" : "3.6.1",  
   "date" : "2022-03-01", 
   "desc" : "Public-Comment: addition of Endpoint and OrganizationAffiliation",
@@ -39,7 +49,7 @@
   "status" : "trial-use",   
   "fhirversion": "4.0.1",
   "sequence" : "Trial Implementation",
-  "current": true
+  "current": false
  },
  {
   "version" : "3.4.0",  
