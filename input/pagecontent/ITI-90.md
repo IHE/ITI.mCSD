@@ -318,3 +318,13 @@ The Care Services Resource definition in the context of a retrieve interaction i
 See [ITI TF-1: 46.5](volume-1.html#1465-mcsd-security-considerations) for security considerations for the mCSD Profile.
 
 See [ITI TF-2: Appendix Z.8](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations) for common mobile security considerations.
+
+#### 2:3.90.5.1 Security Audit Considerations
+
+Note that the same audit message is recorded by both Care Services Selective Supplier and Care Services Selective Consumer. The
+difference being the Audit Source element. Both sides record to show consistency
+between the message sent by the Consumer and the action taken at the Supplier.
+
+The actors involved shall record audit events according to the
+[Audit Event for Find Matching Care Services for Read by the Care Services Selective Supplier and Consumer](StructureDefinition-IHE.mCSD.Audit.CareServices.Read.html)
+or the [Audit Event for Find Matching Care Services for Query by the Care Services Selective Supplier and Consumer](StructureDefinition-IHE.mCSD.Audit.CareServices.Query.html).
