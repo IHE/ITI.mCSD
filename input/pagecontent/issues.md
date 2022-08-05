@@ -352,7 +352,7 @@ Combined into related open issue 7.
   (see [FHIR-12342](https://jira.hl7.org/browse/FHIR-12342): need more detail to connect to an IHE Document Sharing endpoint):
   - A code system [mCSD Endpoint Types](CodeSystem-MCSDEndpointTypes.html) to define IHE Endpoint types beyond those in the FHIR core, using the same abstract codes HL7 uses like "ihe-xca", but adds child codes like "XCA-RespGateway-Query"
   - A [core value set](ValueSet-MCSDEndpointTypesCoreDocShareVS.html) to cover the codes at the HL7 level of detail, suitable for use in connectionType
-  - An [expanded value set](ValueSet-MCSDEndpointTypesDocShareVS.html) using the child codes, for use in the following extension
+  - An [expanded value set](ValueSet-MCSDEndpointTypesVS.html) using the child codes, for use in the following extension
   - An [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html) to carry the more-specific IHE code
 - Added a [code system](CodeSystem-MCSDOrgAffTypes.html) and [value set](ValueSet-MCSDOrgAffTypesVS.html) for types of OrganizationAffiliation
 - Added structure definitions for resource profiles:

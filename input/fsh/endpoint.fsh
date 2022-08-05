@@ -226,7 +226,7 @@ This is an example of an XCA Retrieve endpoint for OrgA
 - supports mime-type for FHIR, CDA, and PDF
 """
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
+* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:cadbf8d0-5493-11ec-bf63-0242ac130002" // OrgA
 * status = #active
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
@@ -253,7 +253,7 @@ This is an example of an XCA Retrieve endpoint
 - supports mime-type for FHIR, CDA, and PDF
 """
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
+* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:cadbf8d0-5493-11ec-bf63-0242ac130002" // OrgA
 * status = #active
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
@@ -279,6 +279,7 @@ Description: """
 This is an example of a DICOM WADO-RS endpoint.
 """
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* extension[purposeOfUse].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ActReason#RECORDMGT
 * status = #active
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs
 * name = "The PACS"

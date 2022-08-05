@@ -115,7 +115,7 @@ Example Organization B that is not on the network directly
 """
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
+* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:4f88dade-42a7-4fb3-b0a6-f877ff6b23b7" // OrgB
 * name = "OrgB"
 * active = true
@@ -146,7 +146,7 @@ Example OrganizationAffiliation C that indicates that C will provide communicati
 """
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityIdhomeCommunityId
+* identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:4f88dade-42a7-4fb3-b0a6-f877ff6b23b7" // OrgB
 * active = true
 * code[docshare] = MCSDOrgAffTypes#DocShare-federate
