@@ -1,6 +1,6 @@
 
 The Mobile Care Services Discovery (mCSD) Profile supports RESTful
-queries across related care service resources.
+queries across related care services resources.
 
 The loosely coupled design and flexible querying capability of the mCSD
 Profile means it can be deployed within a variety of eHealth
