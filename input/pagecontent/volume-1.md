@@ -380,7 +380,7 @@ The mACM Profile defines the means to send an alert to practitioners. The mCSD P
 
 ### 1:46.7.1 Simple Deployment
 
-A deployment may only have a single server that will maintain data. In this case, you would only need the Care Services Selective Supplier (or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumer). See Figure 1:46.7.1-1.
+A deployment may only have a single server that will maintain data. In this case, you would only need the Care Services Selective Supplier (or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumer). See Figure 1:46.7.1-1 below.
 
 <div>
 {%include simple-deployment.svg%}
@@ -391,7 +391,7 @@ A deployment may only have a single server that will maintain data. In this case
 
 ### 1:46.7.2 Federated and Cross-Jurisdictional Deployments
 
-A Federated Deployment has multiple levels of the Care Services Update Suppliers linked to Care Services Update Consumers. These Update Consumers may also support being Care Services Update Suppliers so that higher level Update Consumers can receive their updates. They may also support being a Care Services Selective Supplier so that Selective Consumer clients can query that level of information. See Figure 1:46.7.2-1.
+A Federated Deployment has multiple levels of the Care Services Update Suppliers linked to Care Services Update Consumers. These Update Consumers may also support being Care Services Update Suppliers so that higher level Update Consumers can receive their updates. They may also support being a Care Services Selective Supplier so that Selective Consumer clients can query that level of information. See Figure 1:46.7.2-1 below.
 
 Interrelated content is maintained by the Care Services Update Consumer. The Care Services Update Consumer routinely obtains new or updated content from Care Services Update Suppliers by polling them. These updates may refresh a data cache which the Update Consumer maintains. The Update Consumer’s cache is refreshed at an appropriate interval specified by the implementing jurisdiction. The implementing jurisdiction will consider the implications of out of date information when setting the refresh interval between cache updates. The normal delays in updating listings will also be part of this consideration.
 
