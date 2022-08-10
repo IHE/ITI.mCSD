@@ -1,5 +1,5 @@
 <div markdown="1" class="stu-note">
-This section contains modifications to other IHE publications and profiles, and is not a part of the mCSD profile. The content here will be incorporated into the target narrative at a future time, usually when mCSD goes final-text.
+This section contains modifications to other IHE publications and profiles, and is not a part of the mCSD Profile. The content here will be incorporated into the target narrative at a future time, usually when mCSD goes final text.
 </div>
 
 ## IHE Technical Frameworks General Introduction Appendix A: Actors
