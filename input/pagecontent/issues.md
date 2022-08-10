@@ -29,7 +29,7 @@ Should we require any reverse includes (\_revinclude)? These would add
 complexity to the server and most will have similar options through
 include and normal chaining.
 
-In ITI-90, we've added a number of required search parameters to support
+In \[ITI-90\], we've added a number of required search parameters to support
 queries for OrganizationAffiliation and Endpoint. Is it sustainable to require this many
 search parameters? Should we move some to SHOULDs or MAYs? Note that the main use case
 is locating an Organization based on its business, not network, attributes (already
@@ -44,14 +44,14 @@ content be better as a white paper instead?  And could this content be
 generalized to allow usage with mCSD as well as other directory IGs like
 [https://hl7.org/fhir/uv/vhdir/](https://hl7.org/fhir/uv/vhdir/)?
 
-[mCSD\_11](https://github.com/IHE/ITI.mCSD/issues/96). Should we assume federation of (i.e. connectivity to) child
+[mCSD\_11](https://github.com/IHE/ITI.mCSD/issues/96). Should we assume federation of (i.e., connectivity to) child
 organizations when related by .partOf? Currently the IG does
-(see section 1:46.8.2), and we believe this is what is done in practice.
+(see Section 1:46.8.2), and we believe this is what is done in practice.
 The downside is that there is no way to represent a hierarchical relationship that does not imply routing.
 
 [mCSD\_12](https://github.com/IHE/ITI.mCSD/issues/97). Should we specify details of addressing to federated recipients, at least for some
-profiles (see section 1:46.8.2)? For example, with MHD ITI-65 we could pass the Organization.identifier
-in the intendedRecipient field. There is already an IG for passing a Direct address in an XDR ITI-41.
+profiles (see Section 1:46.8.2)? For example, with MHD \[ITI-65\] we could pass the Organization.identifier
+in the intendedRecipient field. There is already an IG for passing a Direct address in an XDR \[ITI-41\].
 
 [mCSD\_14](https://github.com/IHE/ITI.mCSD/issues/98). Consider doing something similar to what
 [HL7 UDAP Security](https://build.fhir.org/ig/HL7/fhir-udap-security-ig/branches/main/) did, and
@@ -61,12 +61,12 @@ where compatibility is assured as well as what each IGs focus is. For example,
 maintenance and validation of the content of directories, while mCSD
 covers how to represent and search complex structures.
 
-[mCSD\_15](https://github.com/IHE/ITI.mCSD/issues/99). In [section 1:46.8](volume-1.html#1468-mcsd-endpoint-usage-considerations),
+[mCSD\_15](https://github.com/IHE/ITI.mCSD/issues/99). In [Section 1:46.8](volume-1.html#1468-mcsd-endpoint-usage-considerations),
 we mention the US TEFCA RCE maintaining a consolidated
 directory spanning multiple networks. Can we identify an international example?
 
-[mCSD\_16](https://github.com/IHE/ITI.mCSD/issues/100). In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
-we say that a hierarchy formed by Organization.partOf implies federation of (i.e. connectivity to) child
+[mCSD\_16](https://github.com/IHE/ITI.mCSD/issues/100). In [Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
+we say that a hierarchy formed by Organization.partOf implies federation of (i.e., connectivity to) child
 organizations. Should we? We believe this is what is done in practice. The downside is that
 there would be no way to represent a hierarchical relationship that does not imply routing.
 An alternative proposed design would require OrganizationAffiliation with a code
@@ -74,9 +74,9 @@ of “DocShare-federate” to be explicitly related to any parent-child relation
 We did not choose this because its impact on existing directory structures would be substantial.
 
 [mCSD\_18](https://github.com/IHE/ITI.mCSD/issues/101). Should we specify details of addressing federated recipients, at least for some
-profiles (see [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure))?
-For example, with MHD ITI-65 we could pass the Organization.identifier
-in the intendedRecipient field. There is already an IG for passing a Direct address in an XDR ITI-41.
+profiles (see [Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure))?
+For example, with MHD \[ITI-65\] we could pass the Organization.identifier
+in the intendedRecipient field. There is already an IG for passing a Direct address in an XDR \[ITI-41\].
 
 [mCSD\_20](https://github.com/IHE/ITI.mCSD/issues/102). There is minimal usage guidance for REST endpoints.
 Figure [1:46.8.3-1](volume-1.html#14683-grouping-actors) shows connectionType = hl7-fhir-rest and
@@ -99,7 +99,7 @@ normatively anywhere.
 We have seen directories add a custom code "HCID" that shows that an identifier is a HCID,
 and have seen them use the system of "urn:ietf:rfc:3986" and a URN-encoded OID.
 In committee discussions, we walked this through, and the general consensus was that
-for identifying an organization to meet the MHD to a Federation use cases (i.e. to
+for identifying an organization to meet the MHD to a Federation use cases (i.e., to
 determine connectivity), whether or not an identifier happened to be a HCID
 was not significant. If we were to get into more detail about addressing federated recipients
 (see issue 15 in this list), we might need to make decisions like whether HCID must be
@@ -109,16 +109,16 @@ a specific identifier type and whether it should be URN-encoded.
 to indicate that the endpoint is not constrained, should payloadType and payloadMimeType be empty, or fully populated?
 
 [mCSD\_24](https://github.com/IHE/ITI.mCSD/issues/105). In the [Resource Profile: mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html), 
-should payloadType and payloadMimeType be required to be the same for Endpoints that reflect grouped actors (i.e. XCA/XDS/MHD Query and XCA/XDS/MHD Retrieve), thus replicating the capability at both endpoints?
+should payloadType and payloadMimeType be required to be the same for Endpoints that reflect grouped actors (i.e., XCA/XDS/MHD Query and XCA/XDS/MHD Retrieve), thus replicating the capability at both endpoints?
 
 [mCSD\_25](https://github.com/IHE/ITI.mCSD/issues/106). In the [Resource Profile: mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html),
 should payloadType and payloadMimeType be specified for an XCA Query endpoint? It did not seem right that Query be indicated with a mimeType of ebRegistry as that is not helpful to the use-case.
 
 [mCSD\_26](https://github.com/IHE/ITI.mCSD/issues/107). In the [Resource Profile: mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html), would a Proxy service that is supporting OrgAff be a good example of NOT putting a homeCommunityId in the endpoint.identifier?
 
-[mCSD\_27](https://github.com/IHE/ITI.mCSD/issues/108). Need to align and flesh out the examples better with the guidance in [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure). For example, could we see an example for an organization accessible via two different exchanges?
+[mCSD\_27](https://github.com/IHE/ITI.mCSD/issues/108). Need to align and flesh out the examples better with the guidance in [Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure). For example, could we see an example for an organization accessible via two different exchanges?
 
-[mCSD\_28](https://github.com/IHE/ITI.mCSD/issues/109). Grouping of actors is mentioned in [section 1:46.8.3](volume-1.html#14683-grouping-actors).
+[mCSD\_28](https://github.com/IHE/ITI.mCSD/issues/109). Grouping of actors is mentioned in [Section 1:46.8.3](volume-1.html#14683-grouping-actors).
 Does Karen's Cross apply here? If so, how? Should OrganizationAffiliation be required?
 
 [Karen's Cross](https://wiki.directproject.org/w/images/3/3e/2011-03-09_PDF_-_XDR_and_XDM_for_Direct_Messaging_Specification_FINAL.pdf#page=6)
@@ -173,7 +173,7 @@ preserved in responses and respected in requests. With opaque federation, identi
 consolidated/overwritten with the identifiers of the "parent" organization.
 
 Probably, but the implications of opaque federation are complex. Some aspects may be consolidated
-(e.g. golden patient record) while others are not (separate documents). Perhaps we could limit scope
+(e.g., golden patient record) while others are not (separate documents). Perhaps we could limit scope
 to whether federated communities (Organizations with an ID of type HCID) are addressable in
 requests and responses. Seeking input from reviewers.
 
@@ -191,7 +191,7 @@ either managingOrganization or contact must be populated.
 
 [mCSD\_33](https://github.com/IHE/ITI.mCSD/issues/114). FHIR R5 will allow Endpoint.connectionType to be greater than 1, so we can use the IHE-defined codes in addition to the HL7 ones. We won't need Endpoint.extension:specificType anymore. See [Issue 89](https://github.com/IHE/ITI.mCSD/issues/89).
 
-[mCSD\_34](https://github.com/IHE/ITI.mCSD/issues/58). Should we add a subscription model for receiving updates instead of or in addition to ITI-91 for resource updates?
+[mCSD\_34](https://github.com/IHE/ITI.mCSD/issues/58). Should we add a subscription model for receiving updates instead of or in addition to \[ITI-91\] for resource updates?
 
 ### Closed Issues
 These issues have been decided and documented in the publication.
@@ -312,13 +312,13 @@ generalized to allow usage with mCSD as well as other directory IGs like
 
 Duplicate of mCSD\_10
 
-*mCSD\_17. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
+*mCSD\_17. In [Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 we say that a hierarchy formed by the mCSD Additional Hierarchies extension
-does not imply federation of (i.e. connectivity to) child organizations. Should it?*
+does not imply federation of (i.e., connectivity to) child organizations. Should it?*
 
 Extension has been removed.
 
-*mCSD\_19. In [section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
+*mCSD\_19. In [Section 1:46.8.2](volume-1.html#14682-endpoint-to-a-structure),
 why do we use OrganizationAffiliation for
 an organization's membership in an HIE, as opposed to the mCSD Additional Hierarchies extension?
 Because we don't wish to constrain the use of resources that define organizational structure,
@@ -328,7 +328,7 @@ its examples.*
 
 Extension has been removed.
 
-*mCSD\_22. In ITI-90, we've added a number of required search parameters to support
+*mCSD\_22. In \[ITI-90\], we've added a number of required search parameters to support
 queries for OrganizationAffiliation and Endpoint. Is it sustainable to require this many
 search parameters? Should we move some to SHOULDs or MAYs? Note that the main use case
 is locating an Organization based on its business, not network, attributes (already
@@ -343,11 +343,11 @@ Combined into related open issue 7.
 - Added [Use Case #5: Organization Affiliation](volume-1.html#146425-use-case-5-health-information-exchange-hie-membership-discovery),
   describing how OrganizationAffiliations can represent non-hierarchical relationships between Organizations
 - Added [Use Case #6: Health Information Exchange (HIE) Endpoint Discovery](volume-1.html#146426-use-case-6-health-information-exchange-hie-endpoint-discovery), showing an example of querying a directory with Endpoint resources
-- Added new section [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations),
+- Added new Section [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations),
   describing how to populate and use a directory with Endpoint resources to enable electronic communications
-- ITI-90: added OrganizationAffiliation and Endpoint resources to [Description and Message Semantics](ITI-90.html#239041-find-matching-care-services-request-message)
-- ITI-90: added expected search parameters for [Organization](ITI-90.html#23904122-organization-resource-message-semantics) to support OrganizationAffiliation and Endpoint resources
-- ITI-90: added sections for expected search parameters for [Endpoint](ITI-90.html#23904128-endpoint-resource-message-semantics) and [OrganizationAffiliation](ITI-90.html#23904129-organizationaffiliation-resource-message-semantics)
+- \[ITI-90\]: added OrganizationAffiliation and Endpoint resources to [Description and Message Semantics](ITI-90.html#239041-find-matching-care-services-request-message)
+- \[ITI-90\]: added expected search parameters for [Organization](ITI-90.html#23904122-organization-resource-message-semantics) to support OrganizationAffiliation and Endpoint resources
+- \[ITI-90\]: added sections for expected search parameters for [Endpoint](ITI-90.html#23904128-endpoint-resource-message-semantics) and [OrganizationAffiliation](ITI-90.html#23904129-organizationaffiliation-resource-message-semantics)
 - Added the following to deal with FHIR R4 Endpoint.connectionType being limited to one value from an HL7 valueSet
   (see [FHIR-12342](https://jira.hl7.org/browse/FHIR-12342): need more detail to connect to an IHE Document Sharing endpoint):
   - A code system [mCSD Endpoint Types](CodeSystem-MCSDEndpointTypes.html) to define IHE Endpoint types beyond those in the FHIR core, using the same abstract codes HL7 uses like "ihe-xca", but adds child codes like "XCA-RespGateway-Query"
@@ -358,7 +358,7 @@ Combined into related open issue 7.
 - Added structure definitions for resource profiles:
   - [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html): general Endpoint
   - [mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html):
-    Endpoint that supports IHE Document Sharing (e.g. XCA, MHD), using the [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html)
+    Endpoint that supports IHE Document Sharing (e.g., XCA, MHD), using the [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html)
   - [mCSD Organization Affiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html): general OrganizationAffiliation.
   - [mCSD Organization Affiliation DocumentSharing](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html): OrganizationAffiliation that supports IHE Document Sharing, using a fixed code "DocShare-federate" that indicates that the affiliation implies electronic access to the participatingOrganization (see [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations))
 - Added [examples](artifacts.html#example-example-instances) for OrganizationAffiliation and Endpoint
