@@ -19,24 +19,23 @@ architectures and support a wide array of care workflows.
 ### Organization of This Guide
 This guide is organized into the following four main sections:
 
-1. Volume 1: [46 mCSD Introduction](volume-1.html)
-    1. [46.1 mCSD Actors, Transactions, and Content Modules](volume-1.html#1461-mcsd-actors-transactions-and-content-modules)
-    2. [46.2 mCSD Actor Options](volume-1.html#1462-mcsd-actor-options)
-    3. [46.3 mCSD Required Groupings](volume-1.html#1463-mcsd-required-actor-groupings)
-    4. [46.4 mCSD Overview](volume-1.html#1464-mcsd-overview)
-    5. [46.5 mCSD Security Considerations](volume-1.html#1465-mcsd-security-considerations)
-    6. [46.6 mCSD Cross-Profile Considerations](volume-1.html#1466-mcsd-cross-profile-considerations)
-    7. [46.7 mCSD Deployment Considerations](volume-1.html#1467-mcsd-deployment-considerations)
-    8. [46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations)
+1. Volume 1: Profiles
+    1. [mCSD Introduction](volume-1.html)
+    2. [mCSD Actors, Transactions, and Content Modules](volume-1.html#1461-mcsd-actors-transactions-and-content-modules)
+    3. [mCSD Actor Options](volume-1.html#1462-mcsd-actor-options)
+    4. [mCSD Required Groupings](volume-1.html#1463-mcsd-required-actor-groupings)
+    5. [mCSD Overview](volume-1.html#1464-mcsd-overview)
+    6. [mCSD Security Considerations](volume-1.html#1465-mcsd-security-considerations)
+    7. [mCSD Cross-Profile Considerations](volume-1.html#1466-mcsd-cross-profile-considerations)
+    8. [mCSD Deployment Considerations](volume-1.html#1467-mcsd-deployment-considerations)
+    9. [mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations)
 2. Volume 2: Transaction Detail
-    1. [3.90 Find Matching Care Services \[ITI-90\]](ITI-90.html)
-    2. [3.91 Request Care Services Updates \[ITI-91\]](ITI-91.html)
-
+    1. [Find Matching Care Services \[ITI-90\]](ITI-90.html)
+    2. [Request Care Services Updates \[ITI-91\]](ITI-91.html)
 3. [Test Plan](testplan.html)
-
 4. [Changes to other Profiles](other.html)
 
-Click on any of the links above, go to the [table of contents](toc.html), or
+Click on any of the links above, navigate the contents using the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
 ### Conformance Expectations
