@@ -302,7 +302,7 @@ If the Care Services Selective Supplier is unable to produce a response in the r
 ###### 2:3.90.4.4.2.1 Care Services Resource Definition in the Context of Care Services Resource Response
 The Care Services Resource definition in the context of a retrieve interaction is the FHIR definition of the various Care Services Resources. Table 2:3.90.4.4.2.1-1 lists the resources with where to find the additional constraints.
 
-<a name="table2.3.90.4.4.2.1-1"></a>**Table 2:3.90.4.4.2.1-1: Care Services Resource Constraints**
+**Table 2:3.90.4.4.2.1-1: Care Services Resource Constraints**
 
 | Resource | Section |
 | ------------------- | --------- |
