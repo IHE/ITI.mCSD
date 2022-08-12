@@ -4,6 +4,33 @@
 - Removed Additional Hierarchy extension due to addition of OrganizationAffiliation which can fulfill that use case.
 - Changed Organization.type and Location.type for Facilities and Jurisdictions to use a defined CodeSystem instead of URNs.
   - Changed the cardinality and slicing of type to fix QA errors.  Additional slices can be made if needed by implementors.
+- Added in AuditEvent structure definitions with examples based on [Basic Audit](https://profiles.ihe.net/ITI/BALP/index.html).
+- Added [Purpose Of Use](StructureDefinition-IHE.mCSD.PurposeOfUse.html) extension for Endpoint and Organization with [Search Parameter](SearchParameter-IHE.mCSD.Search.PurposeOfUse.html).
+
+## Significant changes from mCSD, Rev 3.4:
+- Added OrganizationAffiliation and Endpoint resources to [1:46](volume-1.html#1-46-mobile-care-services-discovery-mcsd) and [1:46.1.1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
+- Added [Use Case #5: Organization Affiliation](volume-1.html#146425-use-case-5-health-information-exchange-hie-membership-discovery),
+  describing how OrganizationAffiliations can represent non-hierarchical relationships between Organizations
+- Added [Use Case #6: Health Information Exchange (HIE) Endpoint Discovery](volume-1.html#146426-use-case-6-health-information-exchange-hie-endpoint-discovery), showing an example of querying a directory with Endpoint resources
+- Added new Section [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations),
+  describing how to populate and use a directory with Endpoint resources to enable electronic communications
+- \[ITI-90\]: added OrganizationAffiliation and Endpoint resources to [Description and Message Semantics](ITI-90.html#239041-find-matching-care-services-request-message)
+- \[ITI-90\]: added expected search parameters for [Organization](ITI-90.html#23904122-organization-resource-message-semantics) to support OrganizationAffiliation and Endpoint resources
+- \[ITI-90\]: added sections for expected search parameters for [Endpoint](ITI-90.html#23904128-endpoint-resource-message-semantics) and [OrganizationAffiliation](ITI-90.html#23904129-organizationaffiliation-resource-message-semantics)
+- Added the following to deal with FHIR R4 Endpoint.connectionType being limited to one value from an HL7 valueSet
+  (see [FHIR-12342](https://jira.hl7.org/browse/FHIR-12342): need more detail to connect to an IHE Document Sharing endpoint):
+  - A code system [mCSD Endpoint Types](CodeSystem-MCSDEndpointTypes.html) to define IHE Endpoint types beyond those in the FHIR core, using the same abstract codes HL7 uses like "ihe-xca", but adds child codes like "XCA-RespGateway-Query"
+  - A [core value set](ValueSet-MCSDEndpointTypesCoreDocShareVS.html) to cover the codes at the HL7 level of detail, suitable for use in connectionType
+  - An [expanded value set](ValueSet-MCSDEndpointTypesVS.html) using the child codes, for use in the following extension
+  - An [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html) to carry the more-specific IHE code
+- Added a [code system](CodeSystem-MCSDOrgAffTypes.html) and [value set](ValueSet-MCSDOrgAffTypesVS.html) for types of OrganizationAffiliation
+- Added structure definitions for resource profiles:
+  - [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html): general Endpoint
+  - [mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html):
+    Endpoint that supports IHE Document Sharing (e.g., XCA, MHD), using the [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html)
+  - [mCSD Organization Affiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html): general OrganizationAffiliation.
+  - [mCSD Organization Affiliation DocumentSharing](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html): OrganizationAffiliation that supports IHE Document Sharing, using a fixed code "DocShare-federate" that indicates that the affiliation implies electronic access to the participatingOrganization (see [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations))
+- Added [examples](artifacts.html#example-example-instances) for OrganizationAffiliation and Endpoint
 
 ## Issues
 
@@ -337,32 +364,6 @@ parents and affiliations for Endpoints is likely an edge case, not one we need t
 in a single request.*
 
 Combined into related open issue 7.
-
-## Significant changes from mCSD, Rev 3.4:
-- Added OrganizationAffiliation and Endpoint resources to [1:46](volume-1.html#1-46-mobile-care-services-discovery-mcsd) and [1:46.1.1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
-- Added [Use Case #5: Organization Affiliation](volume-1.html#146425-use-case-5-health-information-exchange-hie-membership-discovery),
-  describing how OrganizationAffiliations can represent non-hierarchical relationships between Organizations
-- Added [Use Case #6: Health Information Exchange (HIE) Endpoint Discovery](volume-1.html#146426-use-case-6-health-information-exchange-hie-endpoint-discovery), showing an example of querying a directory with Endpoint resources
-- Added new Section [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations),
-  describing how to populate and use a directory with Endpoint resources to enable electronic communications
-- \[ITI-90\]: added OrganizationAffiliation and Endpoint resources to [Description and Message Semantics](ITI-90.html#239041-find-matching-care-services-request-message)
-- \[ITI-90\]: added expected search parameters for [Organization](ITI-90.html#23904122-organization-resource-message-semantics) to support OrganizationAffiliation and Endpoint resources
-- \[ITI-90\]: added sections for expected search parameters for [Endpoint](ITI-90.html#23904128-endpoint-resource-message-semantics) and [OrganizationAffiliation](ITI-90.html#23904129-organizationaffiliation-resource-message-semantics)
-- Added the following to deal with FHIR R4 Endpoint.connectionType being limited to one value from an HL7 valueSet
-  (see [FHIR-12342](https://jira.hl7.org/browse/FHIR-12342): need more detail to connect to an IHE Document Sharing endpoint):
-  - A code system [mCSD Endpoint Types](CodeSystem-MCSDEndpointTypes.html) to define IHE Endpoint types beyond those in the FHIR core, using the same abstract codes HL7 uses like "ihe-xca", but adds child codes like "XCA-RespGateway-Query"
-  - A [core value set](ValueSet-MCSDEndpointTypesCoreDocShareVS.html) to cover the codes at the HL7 level of detail, suitable for use in connectionType
-  - An [expanded value set](ValueSet-MCSDEndpointTypesVS.html) using the child codes, for use in the following extension
-  - An [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html) to carry the more-specific IHE code
-- Added a [code system](CodeSystem-MCSDOrgAffTypes.html) and [value set](ValueSet-MCSDOrgAffTypesVS.html) for types of OrganizationAffiliation
-- Added structure definitions for resource profiles:
-  - [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html): general Endpoint
-  - [mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html):
-    Endpoint that supports IHE Document Sharing (e.g., XCA, MHD), using the [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html)
-  - [mCSD Organization Affiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html): general OrganizationAffiliation.
-  - [mCSD Organization Affiliation DocumentSharing](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html): OrganizationAffiliation that supports IHE Document Sharing, using a fixed code "DocShare-federate" that indicates that the affiliation implies electronic access to the participatingOrganization (see [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations))
-- Added [examples](artifacts.html#example-example-instances) for OrganizationAffiliation and Endpoint
-
 
 ## Significant changes from mCSD, Rev 3.3:
 - FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
