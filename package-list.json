@@ -18,7 +18,7 @@
   "path" : "https://profiles.ihe.net/ITI/mCSD/3.8.0",
   "status" : "trial-use",   
   "fhirversion": "4.0.1",
-  "sequence" : "Public-Comment",
+  "sequence" : "Trial-Implementation",
   "current": true
  },
  {
