@@ -48,7 +48,7 @@ one `type` must be set to `https://profiles.ihe.net/ITI/mCSD/CodeSystem/IHE.mCSD
   * ^short = "When a boundary is available, the location-boundary-geojson extension should be used."
   * ^definition = "When a boundary is available, the location-boundary-geojson extension should be used with the given url, contentType, and data."
 * extension[boundary].valueAttachment 1..1
-* extension[boundary].valueAttachment.contentType = #application/geo+json (exactly)
+* extension[boundary].valueAttachment.contentType = #application/geo+json 
   * ^short = "The boundary contentType shall be application/geo+json."
   * ^definition = "The boundary contentType shall be application/geo+json."
 * extension[boundary].valueAttachment.data 1..1

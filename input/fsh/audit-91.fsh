@@ -13,7 +13,7 @@ for a Care Services Resource updates, as recorded by the Care Services Update Su
 * subtype ^slicing.rules = #open // allow other codes
 * subtype 2..
 * subtype contains anyHistoryT 1..1 and iti91 1..1
-* subtype[anyHistoryT] =  http://hl7.org/fhir/restful-interaction#history-type "history-type" (exactly)
+* subtype[anyHistoryT] =  http://hl7.org/fhir/restful-interaction#history-type "history-type" 
 * subtype[iti91] = urn:ihe:event-type-code#ITI-91 "Request Care Services Updates"
 * action = #E
 * recorded 1..1

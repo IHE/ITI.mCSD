@@ -3,6 +3,8 @@ Title:          "mCSD Type codes for Organization.identifier"
 Description:    "mCSD Type codes for specific business identifiers for Organization resources."
 
 * ^caseSensitive = true
+* ^experimental = false
+
 * #HCID "Home Community Identifier"
 * #AuthOrgId "Organization identifier used in authentication or authorization transactions (e.g. IHE XUA, IUA)"
 
@@ -10,6 +12,7 @@ ValueSet:     MCSDOrganizationIdentifierTypeValueSet
 Title:          "mCSD Type codes for Organization.identifier"
 Description:    "mCSD Type codes for specific business identifiers for Organization resources."
 
+* ^experimental = false
 * codes from system MCSDOrganizationIdentifierTypes
 
 Profile:      MCSDOrganization
