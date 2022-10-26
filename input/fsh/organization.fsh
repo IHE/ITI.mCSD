@@ -4,7 +4,6 @@ Description:    "mCSD Type codes for specific business identifiers for Organizat
 
 * ^caseSensitive = true
 * ^experimental = false
-
 * #HCID "Home Community Identifier"
 * #AuthOrgId "Organization identifier used in authentication or authorization transactions (e.g. IHE XUA, IUA)"
 

@@ -6,3 +6,4 @@
 Code System URI 'urn:ihe:iti:xca:2010' is unknown so the code cannot be validated
 The system "General Practice" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from http://tx.fhir.org/r4) for 'http://terminology.hl7.org/CodeSystem/service-type#124'
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+

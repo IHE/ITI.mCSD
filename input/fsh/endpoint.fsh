@@ -48,6 +48,7 @@ Code pattern: `{Profile}-{Actor}-{Transaction}[-{option}]`
 Note that this codeSystem contains only endpoints needed for Some IHE profiles, and only for the synchronous communication pattern. When Async is supported additional entries will be needed on these actors, and the peer actor will also need to be described. Async is not in scope at this time.
 """
 * ^caseSensitive = true
+* ^experimental = false
 * ^hierarchyMeaning = #part-of
 * ^experimental = false
 
@@ -135,7 +136,6 @@ Description:    "mCSD Type codes for specific business identifiers for Endpoint 
 
 * ^caseSensitive = true
 * ^experimental = false
-
 * #HCID "Home Community Identifier: Identifies an Endpoint to an IHE community."
 * #DocRepoId "Identifies an Endpoint that is a source or repository of clinical documents."
 

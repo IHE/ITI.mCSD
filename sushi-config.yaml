@@ -1,6 +1,6 @@
 id: ihe.iti.mcsd
 canonical: https://profiles.ihe.net/ITI/mCSD
-version: 3.9.0-current
+version: 3.8.1-current
 name: IHE_ITI_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
 releaseLabel: ci-build
@@ -24,7 +24,8 @@ jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 #copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2022+
 dependencies:
-  ihe.iti.balp: current
+  ihe.iti.balp: current # 1.1.1
+
 
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
