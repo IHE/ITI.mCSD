@@ -20,13 +20,13 @@ Instance: Endpoint-EndpointSpecificType
 InstanceOf: SearchParameter
 Title: "Search on the IHE defined extension for Endpoint specificType"
 Usage: #definition
-* url = "http://profiles.ihe.net/ITI/mCSD/SearchParameter/Endpoint-EndpointSpecificType"
+* url = "https://profiles.ihe.net/ITI/mCSD/SearchParameter/Endpoint-EndpointSpecificType"
 * description = "This SearchParameter enables finding Endpoints by the specificType code.  This resource is created as informative content."
 * name = "EndpointSpecificType"
 * status = #active
 * code = #specificType
 * base = #Endpoint
-* expression = "(extension('http://profiles.ihe.net/ITI/mCSD/StructureDefinition/EndpointSpecificType').value as CodeableConcept)"
+* expression = "(extension('https://profiles.ihe.net/ITI/mCSD/StructureDefinition/EndpointSpecificType').value as CodeableConcept)"
 * type = #token
 
 
@@ -48,6 +48,7 @@ Code pattern: `{Profile}-{Actor}-{Transaction}[-{option}]`
 Note that this codeSystem contains only endpoints needed for Some IHE profiles, and only for the synchronous communication pattern. When Async is supported additional entries will be needed on these actors, and the peer actor will also need to be described. Async is not in scope at this time.
 """
 * ^caseSensitive = true
+* ^experimental = false
 * ^hierarchyMeaning = #part-of
 // XCA Actor transactions for Synchronous use https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html
 * #ihe-xca "XCA"
@@ -111,11 +112,13 @@ ValueSet: MCSDEndpointTypesVS
 Title: "mCSD Endpoint Types ValueSet"
 Description: "ValueSet of the Endpoint types allowed"
 //Note that when MCSDEndpointTypes has more than Document Sharing in it, this will need to be more explicit. 
+* ^experimental = false
 * codes from system MCSDEndpointTypes
 
 ValueSet: MCSDEndpointTypesCoreDocShareVS
 Title: "mCSD Endpoint Core Document Sharing Types ValueSet"
 Description: "ValueSet of the Core Document Sharing Endpoint types allowed"
+* ^experimental = false
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xcpd
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
 * http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xds
@@ -130,6 +133,7 @@ Title:          "mCSD Type codes for Endpoint.identifier"
 Description:    "mCSD Type codes for specific business identifiers for Endpoint resources."
 
 * ^caseSensitive = true
+* ^experimental = false
 * #HCID "Home Community Identifier: Identifies an Endpoint to an IHE community."
 * #DocRepoId "Identifies an Endpoint that is a source or repository of clinical documents."
 
@@ -137,6 +141,7 @@ ValueSet:     MCSDEndpointIdentifierTypeValueSet
 Title:          "mCSD Type codes for Endpoint.identifier"
 Description:    "mCSD Type codes for specific business identifiers for Endpoint resources."
 
+* ^experimental = false
 * codes from system MCSDEndpointIdentifierTypes
 
 // TODO: Create an invariant so that either managingOrganization or contact must be populated. For now we just force manaingOrganization like the other resources in mCSD

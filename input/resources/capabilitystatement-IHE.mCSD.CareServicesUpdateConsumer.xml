@@ -7,7 +7,7 @@
          
     </div> 
   </text> 
-  <url value="http://profiles.ihe.net/ITI/mCSD/CapabilityStatement/IHE.mCSD.CareServicesUpdateConsumer"/> 
+  <url value="https://profiles.ihe.net/ITI/mCSD/CapabilityStatement/IHE.mCSD.CareServicesUpdateConsumer"/> 
   <version value="20190619"/> 
   <name value="IHE_mCSD_Care_Services_Update_Consumer"/> 
   <title value="IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer"/>
@@ -37,9 +37,9 @@
     <documentation value="IHE ITI mCSD ITI-91 endpoint"/> 
     <resource> 
       <type value="Organization"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.FacilityOrganization"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionOrganization"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Organization"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.FacilityOrganization"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionOrganization"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -52,9 +52,9 @@
     </resource> 
     <resource> 
       <type value="Location"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.FacilityLocation"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionLocation"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Location"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.FacilityLocation"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionLocation"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -67,7 +67,7 @@
     </resource> 
     <resource> 
       <type value="Practitioner"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Practitioner"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Practitioner"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -80,7 +80,7 @@
     </resource> 
     <resource> 
       <type value="PractitionerRole"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PractitionerRole"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PractitionerRole"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -93,7 +93,7 @@
     </resource> 
     <resource> 
       <type value="HealthcareService"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.HealthcareService"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.HealthcareService"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -106,8 +106,8 @@
     </resource> 
     <resource> 
       <type value="Endpoint"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint.DocShare"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint.DocShare"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 
@@ -120,7 +120,7 @@
     </resource> 
     <resource> 
       <type value="OrganizationAffiliation"/> 
-      <supportedProfile value="http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation"/> 
+      <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation"/> 
       <documentation value="."/> 
       <interaction> 
         <code value="history-type"/> 

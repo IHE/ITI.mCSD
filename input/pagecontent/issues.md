@@ -370,7 +370,7 @@ Combined into related open issue 7.
 - Removed inline UML text and moved it to images-source/
 - Removed reference to setting meta.profile as it is redundant
 - Added sections in actor requirements describing the requirement of providing a capability statement [Volume 1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
-- Updated the canonical URL for the organization hierarchy extension to `http://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
+- Updated the canonical URL for the organization hierarchy extension to `https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
 - Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
 - Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing
 - Added in text to show that searches can use GET or POST [ITI-90 Message Semantics](ITI-90.html#2390412-message-semantics)

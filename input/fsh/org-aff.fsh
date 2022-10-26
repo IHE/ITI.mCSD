@@ -7,6 +7,7 @@ CodeSystem:  MCSDOrgAffTypes
 Title: "mCSD Organization Affiliation Types"
 Description:  "mCSD OrganizationAffiliation types beyond those in the FHIR core."
 * ^caseSensitive = true
+* ^experimental = false
 * #DocShare-federate "Federation to any Document Sharing exchange"
 
 //TODO Define what an Document Sharing Federation means -- Joe --> It means if org A is a "parent" of org B through OrgAff and it has this code, then when doing doc sharing, when pulling, that results of Org B will be aggregated in Org A's responses, and when pushing, that Org B can be specified as intendedRecipient in a push to Org A.
@@ -16,6 +17,7 @@ Description:  "mCSD OrganizationAffiliation types beyond those in the FHIR core.
 ValueSet: MCSDOrgAffTypesVS
 Title: "mCSD Organization Affiliation Types ValueSet"
 Description: "ValueSet of Organization Affiliation types allowed"
+* ^experimental = false
 * codes from system MCSDOrgAffTypes
 * codes from system http://hl7.org/fhir/organization-role
 

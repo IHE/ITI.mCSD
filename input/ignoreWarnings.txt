@@ -8,5 +8,4 @@ The system "General Practice" http://terminology.hl7.org/CodeSystem/service-type
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
 # Validator issue causing the following [error](https://chat.fhir.org/#narrow/stream/179166-implementers/topic/-bundle.20option.20in.20HL7.20Validator/near/291858716)
-The modifier extension https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PurposeOfUse is not allowed to be used at this point (allowed = e:MCSDOrganization, e:MCSDEndpoint; this element is [[Bundle.entry.resource.ofType(Endpoint), BackboneElement.resource, Endpoint])
-The modifier extension https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PurposeOfUse is not allowed to be used at this point (allowed = e:MCSDOrganization, e:MCSDEndpoint; this element is [[Endpoint])
+The modifier extension https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PurposeOfUse is not allowed to be used at this point (allowed = e:MCSDOrganization, e:MCSDEndpoint; this element is [Endpoint])

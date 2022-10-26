@@ -2,7 +2,7 @@
 <!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
   <id value="ihe.mcsd.fhir"/>
-  <url value="http://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.mcsd.fhir" />
+  <url value="https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.mcsd.fhir" />
   <version value="0.2.0" />
   <name value="IHE.mCSD"/>
   <title value="Mobile Care Services Discovery"/>
