@@ -50,6 +50,8 @@ Note that this codeSystem contains only endpoints needed for Some IHE profiles, 
 * ^caseSensitive = true
 * ^experimental = false
 * ^hierarchyMeaning = #part-of
+* ^experimental = false
+
 // XCA Actor transactions for Synchronous use https://profiles.ihe.net/ITI/TF/Volume1/ch-18.html
 * #ihe-xca "XCA"
   * #XCA-InitGateway-Query "XCA InitiatingGateway ITI-18 Registry Stored Query Synchronous"
@@ -119,10 +121,10 @@ ValueSet: MCSDEndpointTypesCoreDocShareVS
 Title: "mCSD Endpoint Core Document Sharing Types ValueSet"
 Description: "ValueSet of the Core Document Sharing Endpoint types allowed"
 * ^experimental = false
-* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xcpd
-* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
-* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xds
-* http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xdr
+* MCSDEndpointTypes#ihe-xcpd
+* MCSDEndpointTypes#ihe-xca
+* MCSDEndpointTypes#ihe-xds
+* MCSDEndpointTypes#ihe-xdr
 * MCSDEndpointTypes#ihe-pdq
 * MCSDEndpointTypes#ihe-pix
 * MCSDEndpointTypes#ihe-mhd
@@ -234,7 +236,7 @@ This is an example of an XCA Retrieve endpoint for OrgA
 * identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:cadbf8d0-5493-11ec-bf63-0242ac130002" // OrgA
 * status = #active
-* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
+* connectionType = MCSDEndpointTypes#ihe-xca
 * extension[specificType].valueCodeableConcept = MCSDEndpointTypes#XCA-RespGateway-Query
 // no name
 * managingOrganization = Reference(Organization/ex-OrgA)
@@ -261,7 +263,7 @@ This is an example of an XCA Retrieve endpoint
 * identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:cadbf8d0-5493-11ec-bf63-0242ac130002" // OrgA
 * status = #active
-* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#ihe-xca
+* connectionType = MCSDEndpointTypes#ihe-xca
 * extension[specificType].valueCodeableConcept = MCSDEndpointTypes#XCA-RespGateway-Retrieve
 // no name
 * managingOrganization = Reference(Organization/ex-OrgA)

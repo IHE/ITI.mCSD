@@ -5,9 +5,9 @@ Description: """
 Set a purpose of use for an mCSD Endpoint or mCSD Organization.
 """
 * ^context[+].type = #element
-* ^context[=].expression = "MCSDOrganization"
+* ^context[=].expression = "Organization"
 * ^context[+].type = #element
-* ^context[=].expression = "MCSDEndpoint"
+* ^context[=].expression = "Endpoint"
 * value[x] only CodeableConcept
 * valueCodeableConcept from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse (preferred)
 
