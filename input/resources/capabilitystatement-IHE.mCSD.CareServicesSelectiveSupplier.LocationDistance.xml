@@ -1,11 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance" />
-  <text> 
-    <status value="generated"/> 
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p> The Server supports the following transactions : search-type</p>
-    </div> 
-  </text> 
+
   <url value="https://profiles.ihe.net/ITI/mCSD/CapabilityStatement/IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance"/> 
   <version value="20190619"/> 
   <name value="IHE_mCSD_Care_Services_Selective_Supplier_Location_Distance_Option"/> 
@@ -21,7 +16,7 @@
       <value value="http://ihe.net"/>
     </telecom> 
   </contact>
-  <description value="CapabilityStatement for Care Services Selective Supplier Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD. See https://profiles.ihe.net/ITI/mCSD." />
+  <description value="CapabilityStatement for Care Services Selective Supplier Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE [mCSD](https://profiles.ihe.net/ITI/mCSD)." />
   <copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
   <kind value="requirements"/> 
   <fhirVersion value="4.0.0"/> 
