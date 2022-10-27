@@ -5,28 +5,17 @@
   <version value="20190619"/> 
   <name value="IHE_mCSD_Care_Services_Selective_Supplier_Location_Distance_Option"/> 
   <title value="IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier Location Distance Option"/>
-  <status value="draft"/> 
-  <experimental value="true"/> 
-  <date value="2021-04-27"/>
-  <publisher value="Integrating the Health Enterprise (IHE)"/>
-  <contact> 
-    <name value="IHE"/>
-    <telecom> 
-      <system value="url"/>
-      <value value="http://ihe.net"/>
-    </telecom> 
-  </contact>
+  <status value="active"/> 
+  <experimental value="false"/> 
   <description value="CapabilityStatement for Care Services Selective Supplier Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE [mCSD](https://profiles.ihe.net/ITI/mCSD)." />
-  <copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property" />
   <kind value="requirements"/> 
-  <fhirVersion value="4.0.0"/> 
+  <fhirVersion value="4.0.1"/> 
   <!--    this system can do either xml or json. (Listing both implies full support for either,
    with interconversion)    -->
   <format value="application/fhir+xml"/> 
   <format value="application/fhir+json"/> 
   <!--    this system supports the -->
   <imports value="https://profiles.ihe.net/ITI/mCSD/CapabilityStatement/IHE.mCSD.CareServicesSelectiveSupplier"/> 
-  <implementationGuide value=""/> 
   <rest> 
     <mode value="server"/> 
     <documentation value="IHE ITI mCSD ITI-90 endpoint"/> 
