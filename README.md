@@ -1,4 +1,8 @@
-# ITI.mCSD
+# MedCom SOR version of ITI.mCSD
+
+* continuous build https://build.fhir.org/ig/medcomdk/MedCom.mCSD/branches/medcom.sor-0.0.1/
+
+The following is cloned from ITI.mCSD:
 
 Advanced work on converting mCSD to an IG build. This is NOT normative or approved work and is still a work in progress.
 
@@ -9,18 +13,5 @@ Mobile Care Services Discovery
 * historic https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf
 
 * continuous build https://build.fhir.org/ig/IHE/ITI.mCSD/branches/main/
-
-
-## Notes for changes as part of migration
-* Add Facilities and Jurisdictions to Concepts - Done as part of CP 1236
-* Clarify that facilities and jurisdictions are a combination of 
-Organization and Location under the Organization constraint tables with 
-link to Concepts. - Done as part of CP 1236
-* Remove meta.profile constraints in tables as this is duplicative. - Done and added to Changes
-* Remove references to TF-2a/b/c/x - done 
-* Make sure canonical URLs are set correctly (specifically update extension definition and reference in ITI-90) - done
-
-### Pending Questions
-* Should Table references in text be links to the table if it is close?
 
 ..

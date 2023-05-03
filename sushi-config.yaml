@@ -1,28 +1,27 @@
-id: ihe.iti.mcsd
-canonical: https://profiles.ihe.net/ITI/mCSD
-version: 3.8.1-current
-name: IHE_ITI_mCSD
-title: "Mobile Care Services Discovery (mCSD)"
+id: medcom.sor.mcsd
+canonical: http://medcomfhir.dk/ig/medcom-sor
+version: 0.0.1-current
+name: MedCom_SOR_mCSD
+title: "MedCom version of Mobile Care Services Discovery (mCSD)"
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
-#releaseLabel: ballot
-#date: 2022-08-12
+#date: 2023-05-01
 status: active
 publisher:
-  - name: IHE IT Infrastructure Technical Committee
-  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
-  - email: iti@ihe.net
+  - name: Medcom (IHE IT Infrastructure Technical Committee)
+  - url: https://www.ehmi.dk/
+  - email: ovi@medcom.dk
 contact:
-  - name: IHE IT Infrastructure Technical Committee
+  - name: MedCom (IHE IT Infrastructure Technical Committee)
     telecom:
       - system: email
-        value: iti@ihe.net
-description: The IHE Mobile Care Services Discovery (mCSD) IG provides a transaction for mobile and lightweight browser-based applications to find and update care services resources.
+        value: ovi@medcom.dk
+description: MedCom embrace of The IHE Mobile Care Services Discovery (mCSD) IG provides a transaction for mobile and lightweight browser-based applications to find and update care services resources.
 license:  CC-BY-4.0
 fhirVersion: 4.0.1
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 #copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
-copyrightYear: 2022+
+copyrightYear: 2023+
 dependencies:
   ihe.iti.balp: current # 1.1.1
 
@@ -73,7 +72,7 @@ pages:
 
 
 menu:
-  mCSD Home: index.html
+  MedCom mCSD Home: index.html
   Volume 1:
     Introduction: volume-1.html
     Actors, Transactions, and Content Modules: volume-1.html#1461-mcsd-actors-transactions-and-content-modules
@@ -89,4 +88,5 @@ menu:
     "Request Care Services Updates [ITI-91]": ITI-91.html 
   Test Plan: testplan.html
   Artifacts: artifacts.html
+  Profiles: profiles.html
   Other: other.html
