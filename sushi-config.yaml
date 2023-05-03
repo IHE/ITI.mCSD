@@ -88,5 +88,5 @@ menu:
     "Request Care Services Updates [ITI-91]": ITI-91.html 
   Test Plan: testplan.html
   Artifacts: artifacts.html
-  Profiles: profiles.html
+#  Profiles: profiles.html
   Other: other.html
