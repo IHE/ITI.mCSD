@@ -1,5 +1,5 @@
 id: medcom.sor.mcsd
-canonical: http://medcomfhir.dk/ig/medcom-sor
+canonical: http://medcomfhir.dk/ig/medcom-sor-mcsd
 version: 0.0.1-current
 name: MedCom_SOR_mCSD
 title: "MedCom version of Mobile Care Services Discovery (mCSD)"
@@ -88,5 +88,4 @@ menu:
     "Request Care Services Updates [ITI-91]": ITI-91.html 
   Test Plan: testplan.html
   Artifacts: artifacts.html
-#  Profiles: profiles.html
   Other: other.html
