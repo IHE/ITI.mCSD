@@ -1,0 +1,20 @@
+current directory: C:/Users/OVI/OneDrive - MedCom/Dokumenter/GitHub/ITI.mCSD/vendor/bundle/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+C:/Ruby32-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: C:/Users/OVI/OneDrive - MedCom/Dokumenter/GitHub/ITI.mCSD/vendor/bundle/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230503-5240-a1j4dw sitelibdir\=./.gem.20230503-5240-a1j4dw clean
+
+current directory: C:/Users/OVI/OneDrive - MedCom/Dokumenter/GitHub/ITI.mCSD/vendor/bundle/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230503-5240-a1j4dw sitelibdir\=./.gem.20230503-5240-a1j4dw
+generating ruby_http_parser-x64-mingw-ucrt.def
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: C:/Users/OVI/OneDrive - MedCom/Dokumenter/GitHub/ITI.mCSD/vendor/bundle/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230503-5240-a1j4dw sitelibdir\=./.gem.20230503-5240-a1j4dw install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20230503-5240-a1j4dw
+
+current directory: C:/Users/OVI/OneDrive - MedCom/Dokumenter/GitHub/ITI.mCSD/vendor/bundle/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230503-5240-a1j4dw sitelibdir\=./.gem.20230503-5240-a1j4dw clean

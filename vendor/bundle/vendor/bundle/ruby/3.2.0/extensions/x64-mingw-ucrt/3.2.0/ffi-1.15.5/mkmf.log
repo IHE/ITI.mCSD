@@ -1,0 +1,150 @@
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" x86_64-w64-mingw32-pkg-config --exists libffi
+package configuration for libffi is not found
+have_header: checking for ffi.h... -------------------- no
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -o conftest.exe -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LC:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64  -c conftest.c"
+conftest.c:5:10: fatal error: ffi.h: No such file or directory
+    5 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ffi.h>
+/* end */
+
+--------------------
+
+find_header: checking for ffi.h in /usr/local/include,/usr/include/ffi,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi... -------------------- no
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64  -c conftest.c"
+conftest.c:5:10: fatal error: ffi.h: No such file or directory
+    5 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ffi.h>
+/* end */
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64 -I/usr/local/include -c conftest.c"
+conftest.c:5:10: fatal error: ffi.h: No such file or directory
+    5 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ffi.h>
+/* end */
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64 -I/usr/include/ffi -c conftest.c"
+conftest.c:5:10: fatal error: ffi.h: No such file or directory
+    5 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ffi.h>
+/* end */
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64 -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi -c conftest.c"
+conftest.c:5:10: fatal error: ffi.h: No such file or directory
+    5 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ffi.h>
+/* end */
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong -m64 -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi -c conftest.c"
+conftest.c:5:10: fatal error: ffi.h: No such file or directory
+    5 | #include <ffi.h>
+      |          ^~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: #include <ffi.h>
+/* end */
+
+--------------------
+
+block in append_ldflags: checking for whether -Wl,--exclude-libs,ALL is accepted as LDFLAGS... -------------------- yes
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -o conftest.exe -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LC:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320 -Wl,--exclude-libs,ALL -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+--------------------
+
+block in append_ldflags: checking for whether -pthread is accepted as LDFLAGS... -------------------- yes
+
+PATH=".;C:/Ruby32-x64/lib;C:\Ruby32-x64\bin;C:\Ruby32-x64\msys64\ucrt64\bin;C:\Ruby32-x64\msys64\usr\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Ruby32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\OVI\AppData\Local\Programs\Python\Python311\;C:\Users\OVI\AppData\Local\Microsoft\WindowsApps;C:\Users\OVI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\OVI\AppData\Local\GitHubDesktop\bin;C:\Users\OVI\AppData\Roaming\npm" "gcc -o conftest.exe -IC:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -IC:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -IC:/Ruby32-x64/include/ruby-3.2.0 -I. -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -LC:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -Wl,--exclude-libs,ALL  -m64   -lx64-ucrt-ruby320 -pthread -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_FFI_PREP_CIF_VAR 1
+4: #define USE_INTERNAL_LIBFFI 1
+5: #endif
+/* end */
+
