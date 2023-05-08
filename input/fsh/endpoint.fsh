@@ -12,6 +12,8 @@ Title: "Endpoint Specific Type"
 Description: """
 The specific endpoint type. Given that the FHIR R4 Endpoint.connectionType is limited to a one value from a valueSet given by FHIR core and that valueSet includes XCA thus by Extensible rules one is forced to pick that value, we choose to add an additional codeableConcept for a more detailed code(s).
 """
+* ^context[+].type = #element
+* ^context[=].expression = "Endpoint"
 * value[x] only CodeableConcept
 * valueCodeableConcept from 	MCSDEndpointTypesVS (preferred)
 
