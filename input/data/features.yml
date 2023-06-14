@@ -4,8 +4,8 @@ feedback:
   - active: true
     dashboard:
       label: New Issue
-      url: https://github.com/IHE/ITI.mCSD/issues/new/choose
+      url: https://github.com/medcomdk/MedCom.SOR.mCSD/issues/new/choose
   - active: true
     dashboard:
       label: Issues
-      url: https://github.com/IHE/ITI.mCSD/issues
+      url: https://github.com/medcomdk/MedCom.SOR.mCSD/issues
