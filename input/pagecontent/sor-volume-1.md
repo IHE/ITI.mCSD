@@ -7,11 +7,21 @@ The profile supports querying for:
 
 1.  **Organization** – Organizations are “umbrella” entities; these may be considered the administrative bodies under whose auspices care services are provided such as Healthcare Information Exchanges(HIEs), Integrated Delivery Networks (IDNs), Non-Government Organizations (NGOs), Faith-Based Organizations (FBOs) or even a one-physician family practice. An organization has a unique identifier and may have additional administrative attributes such as contact person, mailing address, etc. Departments of an institution, or other administrative units, may be represented as child Organizations of a parent Organization.
 
+  1.1.  **SOR IE Organization** – is reflected as a Jurisdiction instead of Organization (see [Jurisdiction](Jurisdiction))
+
+  1.2.  **SOR SI Organization** – is reflected as a Facility instead of Organization (see [Facility](Facility))  
+
+  1.3.  **SOR OE Organization** – is reflected as a real Organization with [Location](Location)s and [Endpoint](Endpoint)s
+
 2.  **Facility** – Facilities are physical care delivery sites such as hospitals, clinics, health outposts, physician offices, labs, pharmacies, etc. A Facility has a unique identifier, geographic attributes (address, geocode), contact attributes, attributes regarding its hours of operation, etc. Each Facility is defined by a pairing of Location and Organization.
+
+  2.1.  **SOR SI Organization** – is reflected as a Facility instead of Organization (see [Facility](Facility))  
 
 3.  **Location** – Locations are physical places where care can be delivered such as facilities, buildings, wards, rooms, or vehicles. Locations also include jurisdictions such as a village districts or regions. A Location has a unique identifier and may have geographic attributes (address, geocode), attributes regarding its hours of operation, etc. Each Location may be related to one Organization. A location may have a hierarchical relationship with other locations.
 
 4.  **Jurisdiction** – Jurisdictions are political administrative units or other territories over which authority is exercised. A Jurisdiction has a unique identifier, geographic attributes, etc. Jurisdictions include political administrative units such as village districts or regions. Each Jurisdiction is defined by a pairing of Location and Organization.
+
+  4.1.  **SOR IE Organization** – is reflected as a Jurisdiction instead of Organization (see [Jurisdiction](Jurisdiction))
 
 5.  **Practitioner** – A Practitioner is a health worker such as defined by WHO (in Chapter 1 of the [World Health Report 2006](http://whqlibdoc.who.int/publications/2006/9241563176_eng.pdf)); a Practitioner might be a physician, nurse, pharmacist, community health worker, district health manager, etc. Practitioners have contact and demographic attributes. Each Practitioner may be related to one or more Organizations, one or more Locations and one or more Healthcare Services. Specific attributes may be associated with the Practitioner relationship with these other entities.
 

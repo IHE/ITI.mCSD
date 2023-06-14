@@ -54,6 +54,9 @@ pages:
   volume-1.md:
     title: 1:46 Mobile Care Services Discovery (mCSD)
     generation: markdown
+  sor-volume-1.md:
+    title: 1:46 SOR mapped as (mCSD)
+    generation: markdown
   ITI-90.md:
     title: 2:3.90 Find Matching Care Services [ITI-90]
     generation: markdown
