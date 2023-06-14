@@ -7,11 +7,11 @@ The profile supports querying for:
 
 1.  **Organization** – Organizations are “umbrella” entities; these may be considered the administrative bodies under whose auspices care services are provided such as Healthcare Information Exchanges(HIEs), Integrated Delivery Networks (IDNs), Non-Government Organizations (NGOs), Faith-Based Organizations (FBOs) or even a one-physician family practice. An organization has a unique identifier and may have additional administrative attributes such as contact person, mailing address, etc. Departments of an institution, or other administrative units, may be represented as child Organizations of a parent Organization.
 
-1.1.  **SOR IE Organization** –  
+  1.1.  **SOR IE Organization** –  
 
-1.2.  **SOR SI Organization** –  
+  1.2.  **SOR SI Organization** –  
 
-1.3.  **SOR OE Organization** –  
+  1.3.  **SOR OE Organization** –  
 
 2.  **Facility** – Facilities are physical care delivery sites such as hospitals, clinics, health outposts, physician offices, labs, pharmacies, etc. A Facility has a unique identifier, geographic attributes (address, geocode), contact attributes, attributes regarding its hours of operation, etc. Each Facility is defined by a pairing of Location and Organization.
 
