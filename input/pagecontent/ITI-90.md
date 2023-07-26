@@ -99,7 +99,7 @@ family
 
 ###### 2:3.90.4.1.2.5 PractitionerRole Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the PractitionerRole Resource as defined at [http://hl7.org/fhir/R4/practitionerrole.html#search] (http://hl7.org/fhir/R4/practitionerrole.html#search).
+The Care Services Selective Supplier shall support the following search parameters on the PractitionerRole Resource as defined at [http://hl7.org/fhir/R4/practitionerrole.html#search](http://hl7.org/fhir/R4/practitionerrole.html#search).
 
 ```
 active
