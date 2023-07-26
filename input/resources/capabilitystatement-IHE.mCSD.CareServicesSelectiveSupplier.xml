@@ -23,7 +23,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.HealthcareService"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <!--<searchInclude value=""/> -->
       <searchParam> 
@@ -66,7 +67,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionLocation"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <searchInclude value="Location:organization"/>
       <searchParam> 
@@ -109,7 +111,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.JurisdictionOrganization"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <searchInclude value="Organization.endpoint"/>
       <searchRevInclude value="Location:organization"/>
@@ -149,7 +152,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Practitioner"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <!--<searchInclude value=""/> -->
       <searchParam> 
@@ -202,7 +206,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PractitionerRole"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <searchInclude value="PractitionerRole:practitioner"/> 
       <searchParam> 
@@ -236,7 +241,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint.DocShare"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <!--<searchInclude value=""/> -->
       <searchParam> 
@@ -257,7 +263,8 @@
       <supportedProfile value="https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationAffiliation"/> 
       <documentation value="."/> 
       <interaction> 
-        <code value="search-type"/> 
+        <code value="search-type"/>
+        <code value="read"/>
       </interaction> 
       <searchInclude value="OrganizationAffiliation.endpoint"/>
       <searchParam> 
