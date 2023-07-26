@@ -56,7 +56,7 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 
 Most requirements are documented in ITI TF-2: Transactions. This section documents any additional requirements on mCSD actors.
 
-mCSD supports querying for Organization, Facility, Location, Practitioner, Healthcare Service, OrganizationAffiliation, and Endpoint. However, a Care Services Selective Supplier or Care Service Update Supplier is not required to contain data on all of these.
+mCSD supports querying for Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint. However, a Care Services Selective Supplier or Care Service Update Supplier is not required to contain data on all of these.
 
 #### 1:46.1.1.1 Care Services Selective Consumer
 
@@ -397,7 +397,7 @@ A Federated Deployment has multiple levels of the Care Services Update Suppliers
 
 Interrelated content is maintained by the Care Services Update Consumer. The Care Services Update Consumer routinely obtains new or updated content from Care Services Update Suppliers by polling them. These updates may refresh a data cache which the Update Consumer maintains. The Update Consumer’s cache is refreshed at an appropriate interval specified by the implementing jurisdiction. The implementing jurisdiction will consider the implications of out of date information when setting the refresh interval between cache updates. The normal delays in updating listings will also be part of this consideration.
 
-The various data sources would maintain definitive data regarding one or more of: Organization, Location, Healthcare Service, or Practitioner and implement the Care Services Update Supplier. These Care Services Update Suppliers would respond to a Care Services Update Consumer’s request for new or updated content since a specified date and time. To support this capability, a Care Services Update Supplier should support time stamped updates. Data elements that are deprecated should not simply be deleted, but rather are updated to an appropriate status indicating their deprecation.
+The various data sources would maintain definitive data regarding one or more Care Services Resources and implement the Care Services Update Supplier. These Care Services Update Suppliers would respond to a Care Services Update Consumer’s request for new or updated content since a specified date and time. To support this capability, a Care Services Update Supplier should support time stamped updates. Data elements that are deprecated should not simply be deleted, but rather are updated to an appropriate status indicating their deprecation.
 
 This deployment may also have cross-jurisdictional considerations if any of the Update Suppliers have overlap in the data they manage. In this instance, the Care Services Update Consumer would need to resolve any conflicts before sharing this information as either a Care Services Update Supplier or a Care Services Selective Supplier. The way in which these conflicts are resolved is defined by the implementing jurisdiction of the Care Services Update Consumer.
 
