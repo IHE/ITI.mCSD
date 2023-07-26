@@ -15,7 +15,7 @@ The profile supports querying for:
 
 5.  **Practitioner** – A Practitioner is a health worker such as defined by WHO (in Chapter 1 of the [World Health Report 2006](http://whqlibdoc.who.int/publications/2006/9241563176_eng.pdf)); a Practitioner might be a physician, nurse, pharmacist, community health worker, district health manager, etc. Practitioners have contact and demographic attributes. 
 
-6. **PractitionerRole** – A PractitionerRole links a Practitioner with the role they perform.  Each Practitioner may be related to one or more Organizations, one or more Locations and one or more Healthcare Services. Specific attributes may be associated with the Practitioner relationship with these other entities.  
+6. **PractitionerRole** – A PractitionerRole links a Practitioner with the role they perform.  Each PractitionerRole may be related to one or more Organizations, one or more Locations, and one or more Healthcare Services. Specific attributes may be associated with the PractitionerRole's relationship with these other entities.  
 
 7. **Healthcare Service** – Each healthcare service has a unique identifier. Examples include surgical services, antenatal care services, or primary care services. The combination of a Healthcare Service offered at a Location may have specific attributes including contact person, hours of operation, etc.
     
