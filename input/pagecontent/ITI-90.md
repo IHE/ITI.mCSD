@@ -65,7 +65,7 @@ identifier
 name
 partof
 type
-_include=Organization.endpoint
+_include=Organization:endpoint
 _revInclude=Location:organization
 _revInclude=OrganizationAffiliation:participating-organization
 _revInclude=OrganizationAffiliation:primary-organization
@@ -154,7 +154,7 @@ identifier
 participating-organization
 primary-organization
 role
-_include=OrganizationAffiliation.endpoint
+_include=OrganizationAffiliation:endpoint
 ```
 
 ##### 2:3.90.4.1.3 Expected Actions
