@@ -1,10 +1,10 @@
 Profile:      AuditMcsdCareServicesRead
 Parent:       https://profiles.ihe.net/ITI/BALP/StructureDefinition/IHE.BasicAudit.Read
 Id:           IHE.mCSD.Audit.CareServices.Read
-Title:        "Audit Event for Find Matching Care Services Transaction by the Care Services Selective Supplier and Care Services Selective Supplier for Read"
+Title:        "Audit Event for Find Matching Care Services Transaction by the Care Services Selective Consumer and Care Services Selective Supplier for Read"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Find Matching Care Services Transaction happens
-to read a Care Services resource, as recorded by the Care Services Selective Supplier or Care Services Selective Supplier.
+to read a Care Services resource, as recorded by the Care Services Selective Consumer or Care Services Selective Supplier.
 """
 * subtype 2..*
 * subtype contains iti90 1..1
