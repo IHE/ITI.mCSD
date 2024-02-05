@@ -114,7 +114,7 @@
         <code value="search-type"/>
         <code value="read"/>
       </interaction> 
-      <searchInclude value="Organization.endpoint"/>
+      <searchInclude value="Organization:endpoint"/>
       <searchRevInclude value="Location:organization"/>
       <searchRevInclude value="OrganizationAffiliation:participating-organization"/>
       <searchRevInclude value="OrganizationAffiliation:primary-organization"/>
@@ -266,7 +266,7 @@
         <code value="search-type"/>
         <code value="read"/>
       </interaction> 
-      <searchInclude value="OrganizationAffiliation.endpoint"/>
+      <searchInclude value="OrganizationAffiliation:endpoint"/>
       <searchParam> 
         <name value="active"/> 
         <type value="token"/> 
