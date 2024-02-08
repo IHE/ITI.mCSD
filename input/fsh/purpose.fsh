@@ -23,5 +23,5 @@ Usage: #definition
 * code = #ihe-mcsd-purpose-of-use
 * base[+] = #Organization
 * base[+] = #Endpoint
-* expression = "(extension('https://profiles.ihe.net/ITI/mCSD/SearchParameter/IHE.mCSD.Search.PurposeOfUse').value as CodeableConcept)"
+* expression = "(extension('https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.PurposeOfUse').value.ofType(CodeableConcept))"
 * type = #token

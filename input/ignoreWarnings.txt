@@ -3,7 +3,15 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem (And include comments like this justifying why)
 
 # used in examples
-Code System URI 'urn:ihe:iti:xca:2010' is unknown so the code cannot be validated
-The system "General Practice" http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code (mode = example) (from http://tx.fhir.org/r4) for 'http://terminology.hl7.org/CodeSystem/service-type#124'
-Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+The system http://terminology.hl7.org/CodeSystem/service-type was found but did not contain enough information to properly validate the code "124" ("General Practice") (mode = example)
+A definition for CodeSystem 'urn:ihe:iti:xca:2010' could not be found, so the code cannot be validated
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/location-physical-type|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-type|0.1.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/service-type|4.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/practitioner-role|0.1.0
+Reference to draft CodeSystem http://hl7.org/fhir/organization-role|4.0.1
+Reference to experimental CodeSystem https://profiles.ihe.net/ITI/mCSD/CodeSystem/mcsd-example-hierarchy|3.8.1-current
+A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/audit-entity-type|0.5.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/object-role|0.5.0
 

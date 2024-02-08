@@ -28,7 +28,7 @@ Usage: #definition
 * status = #active
 * code = #specificType
 * base = #Endpoint
-* expression = "(extension('https://profiles.ihe.net/ITI/mCSD/StructureDefinition/EndpointSpecificType').value as CodeableConcept)"
+* expression = "(extension('https://profiles.ihe.net/ITI/mCSD/StructureDefinition/ihe-endpointspecifictype').value.ofType(CodeableConcept))"
 * type = #token
 
 
