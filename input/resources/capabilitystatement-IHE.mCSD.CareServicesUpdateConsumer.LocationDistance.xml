@@ -7,7 +7,7 @@
   <title value="IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer Location Distance Option"/>
   <status value="active"/> 
   <experimental value="false"/> 
-  <description value="CapabilityStatement for Care Services Update Consumer Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE [mCSD](https://profiles.ihe.net/ITI/mCSD)." />
+  <description value="CapabilityStatement for Care Services Update Consumer Actor with the Location Distance option in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD." />
   <kind value="requirements"/> 
   <fhirVersion value="4.0.1"/> 
   <!--    this system can do either xml or json. (Listing both implies full support for either,
