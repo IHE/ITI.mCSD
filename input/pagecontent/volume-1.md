@@ -49,7 +49,9 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 | Care Services Selective Consumer | Find Matching Care Services \[ITI-90\]   | Initiator              | R           | [ITI TF-2: 3.90](ITI-90.html) |
 | Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
 | Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+|                                  | Care Services Feed \[ITI-YY1\]           | Responder              | O           | [ITI TF-2: 3.YY1](ITI-YY1.html) |
 | Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+|                                  | Care Services Feed \[ITI-YY1\]           | Initiator              | O           | [ITI TF-2: 3.YY1](ITI-YY1.html) |
 {: .grid .table-striped}
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
@@ -110,15 +112,19 @@ Options that may be selected for each actor in this profile, if any, are listed 
 | -------------------------------- | ------------------------ | -------------- |
 | Care Services Selective Consumer | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
 | Care Services Selective Supplier | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
-| Care Services Update Consumer    | No options defined       | \--            |
-| Care Services Update Supplier    | No options defined       | \--            |
+| Care Services Update Consumer    | Feed Option       | [Section 1:46.2.2](#14622-feed-option) |
+| Care Services Update Supplier    | Feed Option       | [Section 1:46.2.2](#14622-feed-option) |
 {: .grid .table-striped}
 
 ### 1:46.2.1 Location Distance Option
 
 The Location Distance Option enables querying Location resources based on relative distances.
 
-A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option will implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option SHALL implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+
+### 1:46.2.2 Feed Option
+
+The Feed option enables the Care Services Update Supplier to push care services resource updates to the Care Services Update Consumer using the [Care Services Feed](ITI-YY1.html) transaction.  When this option is supported the [Care Services Feed](ITI-YY1.html) transaction SHALL be supported.
 
 ## 1:46.3 mCSD Required Actor Groupings
 

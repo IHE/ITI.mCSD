@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+participant "Care Services Update Supplier" as Client
+participant "Care Services Update Consumer" as Server
+==Create Care Services Resource Message==
+activate Client
+activate Server
+Client -> Server : Create Care Services Resource Request [ITI-YY1]
+Server --> Client : Create Care Services Resource Response [ITI-YY1]
+==Update Care Services Resource Message==
+Client -> Server : Update Care Services Resource Request [ITI-YY1]
+Server --> Client : Update Care Services Resource Response [ITI-YY1]
+==Delete Care Services Resource Message==
+Client -> Server : Delete Care Services Resource Request [ITI-YY1]
+Server --> Client : Delete Care Services Resource Response [ITI-YY1]
+==Process Care Services Resources Message==
+Client -> Server : Process Care Services Resources Request [ITI-YY1]
+Server --> Client : Process Care Services Resources Response [ITI-YY1]
+deactivate Client
+deactivate Server
+@enduml

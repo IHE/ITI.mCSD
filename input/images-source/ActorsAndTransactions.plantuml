@@ -1,10 +1,15 @@
 @startuml
 hide footbox
+skinparam linetype polyline
 agent "Care Services Selective Supplier" as SelectiveSupplier
 agent "Care Services Selective Consumer" as SelectiveConsumer
 agent "Care Services Update Supplier" as UpdateSupplier
 agent "Care Services Update Consumer" as UpdateConsumer
+agent "Care Services Update Supplier" as UpdateSupplier2
+agent "Care Services Update Consumer" as UpdateConsumer2
 SelectiveConsumer -> SelectiveSupplier : "Find Matching Care Services [ITI-90]"
 SelectiveConsumer -[hidden]-> UpdateConsumer
 UpdateConsumer -> UpdateSupplier : "Request Care Services Updates [ITI-91]"
+UpdateConsumer -[hidden]-> UpdateSupplier2
+UpdateSupplier2 -> UpdateConsumer2 : "Care Services Feed [ITI-YY1]"
 @enduml

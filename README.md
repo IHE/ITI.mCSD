@@ -23,4 +23,21 @@ link to Concepts. - Done as part of CP 1236
 ### Pending Questions
 * Should Table references in text be links to the table if it is close?
 
+### Add Feed Notes
+* Adding single transaction with messages for:
+  * create
+  * update (and create with ID)
+  * delete
+  * batch/transaction (Message name: \[Process/Bundle/Bulk\] Care Services Resources?)
+* Alternatively, could have a single batch/transaction message that allows for create/update/delete in the Bundle.
+
+#### Add Feed Questions
+* Should there be a batch/transaction message to support multiple updates in one request?
+  * Should this instead be the only message?
+* What should the new version be?
+* Should this require or support conditional create/update?
+* What should the optionality be on the new transaction?  Currently a new option is being added to support it.
+* Should this use new actors or reuse the update actors?
+
+
 ..
