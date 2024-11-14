@@ -1,13 +1,24 @@
 <div markdown="1" class="stu-note">
 
-## Significant changes from mCSD, Rev 3.5:
+## Release notes
+
+The significant changes:
+
+### 3.9
+
+- Integration of CP-ITI-1290 - clarifying Practitioner/PractitionerRole in Volume 1
+- Re-Publish to get better IG Publisher rendering of CapabilityStatement
+
+### 3.8
+
 - Removed Additional Hierarchy extension due to addition of OrganizationAffiliation which can fulfill that use case.
 - Changed Organization.type and Location.type for Facilities and Jurisdictions to use a defined CodeSystem instead of URNs.
   - Changed the cardinality and slicing of type to fix QA errors.  Additional slices can be made if needed by implementors.
 - Added in AuditEvent structure definitions with examples based on [Basic Audit](https://profiles.ihe.net/ITI/BALP/index.html).
 - Added [Purpose Of Use](StructureDefinition-IHE.mCSD.PurposeOfUse.html) extension for Endpoint and Organization with [Search Parameter](SearchParameter-IHE.mCSD.Search.PurposeOfUse.html).
 
-## Significant changes from mCSD, Rev 3.4:
+### 3.7
+
 - Added OrganizationAffiliation and Endpoint resources to [1:46](volume-1.html#1-46-mobile-care-services-discovery-mcsd) and [1:46.1.1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
 - Added [Use Case #5: Organization Affiliation](volume-1.html#146425-use-case-5-health-information-exchange-hie-membership-discovery),
   describing how OrganizationAffiliations can represent non-hierarchical relationships between Organizations
