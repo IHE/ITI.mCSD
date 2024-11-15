@@ -1,0 +1,14 @@
+{
+ "package-id" : "ihe.iti.mcsd",
+ "version" : "3.9.0",
+ "path" : "https://profiles.ihe.net/ITI/mCSD/3.9.0",
+ "mode" : "milestone",
+ "status" : "trial-use",
+ "sequence": "Publication",
+ "desc" : "Trial Implementation - Integration of CP-ITI-1290",
+ "descmd" : "Version 3.9.0
+- Integration of CP-ITI-1290",
+ "changes" : "issues.html"
+}
+
+
