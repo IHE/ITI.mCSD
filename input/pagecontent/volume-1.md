@@ -1,5 +1,5 @@
 
-The Mobile Care Services Discovery (mCSD) Profile supports discovery of care services resources using a RESTful interface in interrelated, federated environments.
+The Mobile Care Services Discovery (mCSD) Profile supports creating, updating, deleting and discovery of care services resources using a RESTful interface in interrelated, federated environments.
 
 Use cases and solutions using mCSD are outlined in the [mCSD White Paper](https://profiles.ihe.net/ITI/papers/mCSD/index.html).
 
@@ -28,6 +28,8 @@ Interoperability Framework](https://www.healthit.gov/topic/interoperability/stan
 
 The loosely coupled design and flexible querying capability of the mCSD Profile means it can be deployed within a variety of eHealth architectures and support a wide array of care workflows.
 
+The profile provides optional support for RESTful transactions to create, update and delete care services resources.
+
 ## 1:46.1 mCSD Actors, Transactions, and Content Modules
 
 This section defines the actors, transactions, and/or content modules in this profile. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
@@ -50,6 +52,8 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 | Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
 | Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
 | Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+| Care Services Source             | Care Services Feed \[ITI-x\]             | Initiator              | O           | [ITI TF-2: 3.x](ITI-x.html) |
+| Care Services Directory          | Care Services Feed \[ITI-x\]             | Responder              | O           | [ITI TF-2: 3.x](ITI-x.html) |
 {: .grid .table-striped}
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
@@ -100,6 +104,26 @@ This capabilities response will typically include all of the capabilities inclus
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
 
+#### 1:46.1.1.5 Care Services Source
+
+The Care Services Source prepares and issues an add, update, or delete request to Care Services resources.
+
+No additional requirements. The following is an example capability statement resources that a Care Services Source could support:
+
+- [IHE ITI Mobile Care Services Source (mCSD) - Care Services Source](TODO.html)
+
+#### 1:46.1.1.6 Care Services Directory
+
+The Care Services Directory Supplier accepts add, update, or delete requests to Care Services resources
+
+The Care Services Update Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
+All supported interactions shall be specified.
+
+This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following is an example:
+
+- [IHE ITI Mobile Care Services Directory (mCSD) - Care Services Directory](TODO)
+
+
 ## 1:46.2 mCSD Actor Options
 
 Options that may be selected for each actor in this profile, if any, are listed in Table 1:46.2-1. Dependencies between options when applicable are specified in notes.
@@ -112,6 +136,8 @@ Options that may be selected for each actor in this profile, if any, are listed 
 | Care Services Selective Supplier | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
 | Care Services Update Consumer    | No options defined       | \--            |
 | Care Services Update Supplier    | No options defined       | \--            |
+| Care Services Source             | Feed Option              | \--            |
+| Care Services Directory          | Feed Option              | \--            |
 {: .grid .table-striped}
 
 ### 1:46.2.1 Location Distance Option
@@ -119,6 +145,11 @@ Options that may be selected for each actor in this profile, if any, are listed 
 The Location Distance Option enables querying Location resources based on relative distances.
 
 A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option will implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+
+
+### 1:46.2.2 Feed Option
+
+TODO
 
 ## 1:46.3 mCSD Required Actor Groupings
 
@@ -149,7 +180,7 @@ The Mobile Care Services Discovery (mCSD) Profile supports queries for resources
 
 #### 1:46.4.1.1 Create, Update, and Delete Services
 
-This profile enables tracking of changes to, searching for, and retrieval of, a set of resources. The creation, update, deletion and other maintenance activities of those resources is out of the scope of this profile.
+This profile enables tracking of changes to, searching for, and retrieval of, a set of resources. The creation, update, deletion and other maintenance activities of those resources is optional.
 
 ### 1:46.4.2 Use Cases
 
