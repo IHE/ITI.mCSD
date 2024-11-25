@@ -1,14 +1,14 @@
 
 ### 2:3.YY1.1 Scope
 
-The Care Services Feed transaction is used to create, update, or delete care services resources. A Care Services Update Supplier initiates a Care Services Feed transaction against a Care Services Update Consumer.
+The Care Services Feed transaction is used to create, update, or delete care services resources. A Care Services Feed Supplier initiates a Care Services Feed transaction against a Care Services Feed Consumer.
 
 ### 2:3.YY1.2 Actor Roles
 
 | Actor | Role |
 | ----- | ---- |
-| Care Services Update Supplier | Sends the update request to the Care Services Update Consumer.          |
-| Care Services Update Consumer | Receives and processes the update request. |
+| Care Services Feed Supplier | Sends the feed request to the Care Services Feed Consumer.          |
+| Care Services Feed Consumer | Receives and processes the feed request. |
 {: .grid}
 
 ### 2:3.YY1.3 Referenced Standards

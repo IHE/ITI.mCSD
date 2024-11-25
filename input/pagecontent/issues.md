@@ -1,5 +1,8 @@
 <div markdown="1" class="stu-note">
 
+## Significant changes from mCSD, Rev 3.8.1:
+- Fixed actor names in Figure 1:46.7.1-1
+
 ## Significant changes from mCSD, Rev 3.5:
 - Removed Additional Hierarchy extension due to addition of OrganizationAffiliation which can fulfill that use case.
 - Changed Organization.type and Location.type for Facilities and Jurisdictions to use a defined CodeSystem instead of URNs.

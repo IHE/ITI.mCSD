@@ -38,6 +38,3 @@ link to Concepts. - Done as part of CP 1236
 * Should this require or support conditional create/update?
 * What should the optionality be on the new transaction?  Currently a new option is being added to support it.
 * Should this use new actors or reuse the update actors?
-
-
-..
