@@ -6,7 +6,7 @@ title: "Mobile Care Services Discovery (mCSD)"
 #releaseLabel: ci-build
 releaseLabel: Trial-Implementation
 #releaseLabel: ballot
-#date: 2022-08-12
+date: 2024-12-12
 status: active
 publisher:
   - name: IHE IT Infrastructure Technical Committee
@@ -24,7 +24,7 @@ jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 #copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2022+
 dependencies:
-  ihe.iti.balp: current # 1.1.1
+  ihe.iti.balp: 1.1.x # 1.1.1
 
 
 
@@ -70,7 +70,9 @@ pages:
   other.md:
     title: Changes to Other Documents
     generation: markdown
-
+  download.md:
+    title: "Download and Analysis"
+    generation: markdown
 
 menu:
   mCSD Home: index.html
@@ -87,6 +89,8 @@ menu:
   Volume 2:
     "Find Matching Care Services [ITI-90]": ITI-90.html
     "Request Care Services Updates [ITI-91]": ITI-91.html 
-  Test Plan: testplan.html
   Artifacts: artifacts.html
-  Other: other.html
+  Other:
+    Changes to Other IHE Specifications: other.html
+    Download and Analysis: download.html
+    Test Plan: testplan.html

@@ -6,7 +6,6 @@ The loosely coupled design and flexible querying capability of the mCSD
 Profile means it can be deployed within a variety of eHealth
 architectures and support a wide array of care workflows.
 
-
 <div markdown="1" class="stu-note">
 
 | [Significant Changes, Open, and Closed Issues](issues.html) |
@@ -17,6 +16,7 @@ architectures and support a wide array of care workflows.
 </div>
 
 ### Organization of This Guide
+
 This guide is organized into the following four main sections:
 
 1. Volume 1: Profiles
@@ -32,8 +32,10 @@ This guide is organized into the following four main sections:
 2. Volume 2: Transaction Detail
     1. [Find Matching Care Services \[ITI-90\]](ITI-90.html)
     2. [Request Care Services Updates \[ITI-91\]](ITI-91.html)
-3. [Test Plan](testplan.html)
-4. [Changes to other Profiles](other.html)
+3. Other
+   1. [Test Plan](testplan.html)
+   2. [Changes to Other IHE Specifications](other.html)
+   3. [Download and Analysis](download.html)
 
 Click on any of the links above, navigate the contents using the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
@@ -43,29 +45,3 @@ if you are looking for a specific artifact, check out the [index](artifacts.html
 IHE uses the normative words: Shall, Should, and May according to [standards conventions](https://profiles.ihe.net/GeneralIntro/ch-E.html).
 
 mCSD uses ```Must Support``` in StructureDefinition profiles. This is equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
-
-### Download 
-
-You can also download:
-
-* [this entire guide](full-ig.zip),
-* the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
-* the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
-
-The source code for this Implementation Guide can be found on [IHE GitHub](https://github.com/IHE/ITI.mCSD).
-
-#### Cross Version Analysis
-
-{% include cross-version-analysis.xhtml %}
-
-#### Dependency Table
-
-{% include dependency-table.xhtml %}
-
-#### Globals Table
-
-{% include globals-table.xhtml %}
-
-#### IP Statements
-
-{% include ip-statements.xhtml %}
