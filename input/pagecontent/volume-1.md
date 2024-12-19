@@ -1,5 +1,5 @@
 
-The Mobile Care Services Discovery (mCSD) Profile supports discovery of care services resources using a RESTful interface in interrelated, federated environments.
+The Mobile Care Services Discovery (mCSD) Profile supports creating, updating, deleting and discovery of care services resources using a RESTful interface in interrelated, federated environments.
 
 Use cases and solutions using mCSD are outlined in the [mCSD White Paper](https://profiles.ihe.net/ITI/papers/mCSD/index.html).
 
@@ -27,6 +27,8 @@ The capabilities detailed in this profile support consumer-centric queries such 
 Interoperability Framework](https://www.healthit.gov/topic/interoperability/standards-interoperability-si-framework). In addition, mCSD can enable connectivity by providing service endpoint lookup, such as "What is the FHIR server for this organization?".
 
 The loosely coupled design and flexible querying capability of the mCSD Profile means it can be deployed within a variety of eHealth architectures and support a wide array of care workflows.
+
+The profile provides optional support for RESTful transactions to create, update and delete care services resources.
 
 ## 1:46.1 mCSD Actors, Transactions, and Content Modules
 
@@ -345,6 +347,16 @@ The interactions between the various actors in this use case are shown in Figure
 <div style="clear: left;"/>
 
 **Figure 1:46.4.2.6.2-1: Health Information Exchange (HIE) Endpoint Discovery Workflow**
+
+#### 1:46.4.2.7 Use Case \#7: Centralized facilities registry allowing updates for health workers and services 
+
+#### 1:46.4.2.7.1 Managing facilities capabilities description
+
+A country or region may have a central facility registry and allow the facilities to directly manage its services and the relationship to its health workers:
+
+- A facility adds, updates or deletes health care service it delivers in the centralized facility registry.
+- A facility adds, updates or removes health care worker from its organization.
+- A facility can manage it's own organization hierarchy.
 
 ## 1:46.5 mCSD Security Considerations
 
