@@ -52,6 +52,8 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 | Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
 | Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
 | Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+| Care Services Feed Consumer      | Care Services Feed \[ITI-YY1\]           | Responder              | R           | [ITI TF-2: 3.YY1](ITI-YY1.html) |
+| Care Services Feed Supplier      | Care Services Feed \[ITI-YY1\]           | Initiator              | R           | [ITI TF-2: 3.YY1](ITI-YY1.html) |
 {: .grid .table-striped}
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
@@ -73,7 +75,7 @@ No additional requirements.  The following are two example capability statement 
 
 The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information about mCSD resources.
 
-The Care Services Selective Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
+The Care Services Selective Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples: 
 
@@ -102,6 +104,27 @@ This capabilities response will typically include all of the capabilities inclus
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
 
+#### 1:46.1.1.5 Care Services Feed Consumer
+
+The Care Services Feed Consumer receives updates to information about mCSD resources from a Care Services Feed Supplier.
+
+The Care Services Feed Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
+All supported interactions SHALL be specified.
+
+This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.LocationDistance.html)
+
+#### 1:46.1.1.6 Care Services Feed Supplier
+
+The Care Services Feed Supplier can provide updates about mCSD resources to a Care Services Feed Consumer. The updates include create, update, or delete requests to individual resources or a batch/transaction request for a bundle of resources.
+
+No additional requirements. The following are two example capability statement resources that a Care Services Feed Consumer could support:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.LocationDistance.html)
+
 ## 1:46.2 mCSD Actor Options
 
 Options that may be selected for each actor in this profile, if any, are listed in Table 1:46.2-1. Dependencies between options when applicable are specified in notes.
@@ -112,15 +135,17 @@ Options that may be selected for each actor in this profile, if any, are listed 
 | -------------------------------- | ------------------------ | -------------- |
 | Care Services Selective Consumer | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
 | Care Services Selective Supplier | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
-| Care Services Update Consumer    | No options defined       | \--            |
-| Care Services Update Supplier    | No options defined       | \--            |
+| Care Services Update Consumer    | No options defined       | -- |
+| Care Services Update Supplier    | No options defined       | -- |
+| Care Services Feed Consumer    | No options defined       | -- |
+| Care Services Feed Supplier    | No options defined       | -- |
 {: .grid .table-striped}
 
 ### 1:46.2.1 Location Distance Option
 
 The Location Distance Option enables querying Location resources based on relative distances.
 
-A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option will implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option SHALL implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
 
 ## 1:46.3 mCSD Required Actor Groupings
 
@@ -136,6 +161,8 @@ An actor from this profile (Column 1) shall implement all of the required transa
 | Care Services Selective Supplier | None                     | \--       | \--                        |
 | Care Services Update Consumer    | None                     | \--       | \--                        |
 | Care Services Update Supplier    | None                     | \--       | \--                        |
+| Care Services Feed Consumer      | None                     | \--       | \--                        |
+| Care Services Feed Supplier      | None                     | \--       | \--                        |
 {: .grid .table-striped}
 
 ## 1:46.4 mCSD Overview
@@ -148,10 +175,6 @@ The Mobile Care Services Discovery (mCSD) Profile supports queries for resources
 <div style="clear: left;"></div>
 
 **Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities**
-
-#### 1:46.4.1.1 Create, Update, and Delete Services
-
-This profile enables tracking of changes to, searching for, and retrieval of, a set of resources. The creation, update, deletion and other maintenance activities of those resources is out of the scope of this profile.
 
 ### 1:46.4.2 Use Cases
 
@@ -392,20 +415,31 @@ The mACM Profile defines the means to send an alert to practitioners. The mCSD P
 
 ## 1:46.7 mCSD Deployment Considerations
 
-### 1:46.7.1 Simple Deployment
+### 1:46.7.1 Basic Deployment
 
-A deployment may only have a single server that will maintain data. In this case, you would only need the Care Services Selective Supplier (or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumer). See Figure 1:46.7.1-1 below.
+A basic deployment may only have a single directory that will maintain data. In this case, you would only need the Care Services Selective Supplier (and/or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumers). See Figure 1:46.7.1-1 below.
+
+<div>
+{%include basic-deployment.svg%}
+</div>
+<div style="clear: left;"/>
+**Figure 1:46.7.1-1: Basic Deployment**
+
+
+### 1:46.7.2 Simple Deployment
+
+A more common deployment may have a single directory with one or more data sources that feed data into the directory. This would also have one or more selective or update consumers to query the data in the directory. See Figure 1:46.7.2-1 below.
 
 <div>
 {%include simple-deployment.svg%}
 </div>
 <div style="clear: left;"/>
 
-**Figure 1:46.7.1-1: Simple Deployment**
+**Figure 1:46.7.2-1: Simple Deployment**
 
-### 1:46.7.2 Federated and Cross-Jurisdictional Deployments
+### 1:46.7.3 Federated and Cross-Jurisdictional Deployments
 
-A Federated Deployment has multiple levels of the Care Services Update Suppliers linked to Care Services Update Consumers. These Update Consumers may also support being Care Services Update Suppliers so that higher level Update Consumers can receive their updates. They may also support being a Care Services Selective Supplier so that Selective Consumer clients can query that level of information. See Figure 1:46.7.2-1 below.
+A Federated Deployment has multiple levels of the Care Services Update Suppliers linked to Care Services Update Consumers. These Update Consumers may also support being Care Services Update Suppliers so that higher level Update Consumers can receive their updates. They may also support being a Care Services Selective Supplier so that Selective Consumer clients can query that level of information. See Figure 1:46.7.3-1 below.
 
 Interrelated content is maintained by the Care Services Update Consumer. The Care Services Update Consumer routinely obtains new or updated content from Care Services Update Suppliers by polling them. These updates may refresh a data cache which the Update Consumer maintains. The Update Consumer’s cache is refreshed at an appropriate interval specified by the implementing jurisdiction. The implementing jurisdiction will consider the implications of out of date information when setting the refresh interval between cache updates. The normal delays in updating listings will also be part of this consideration.
 
@@ -416,9 +450,9 @@ This deployment may also have cross-jurisdictional considerations if any of the 
 ![Federated and Cross Jurisdictional Deployment](FederatedDeployment.png)
 <div style="clear: left;"/>
 
-**Figure 1:46.7.2-1: Federated and Cross Jurisdictional Deployment**
+**Figure 1:46.7.3-1: Federated and Cross Jurisdictional Deployment**
 
-The Care Services Selective Consumer is the actor that queries for information about interrelated care services. These queries are sent to the Care Services Selective Supplier who develops a response based on the content in its local data store. When a Care Services Selective Supplier is combined with a Care Services Update Consumer (Global and Country servers from Figure 1:46.7.2-1), it should maintain a cache of the aggregated information from all the configured Care Services Update Suppliers it is linked to.
+The Care Services Selective Consumer is the actor that queries for information about interrelated care services. These queries are sent to the Care Services Selective Supplier who develops a response based on the content in its local data store. When a Care Services Selective Supplier is combined with a Care Services Update Consumer (Global and Country servers from Figure 1:46.7.3-1), it should maintain a cache of the aggregated information from all the configured Care Services Update Suppliers it is linked to.
 
 In order for the Care Services Update Consumer’s (Global and Country servers) cached content to be able to serve its role as an interlinked data source, the following conditions should be met by Care Services Update Suppliers who maintain content.
 
@@ -430,7 +464,7 @@ In order for the Care Services Update Consumer’s (Global and Country servers) 
 
 For guidance on handling challenges regarding the representation of names across multiple languages and in different cultures, refer to the [ITI TF-2: 3.24.5.2.3.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-24.html#3.24.5.2.3.1). This section in the ITI Technical Framework describes the use of the language tag as documented in IETF RFC1766 and the HL7 XCN name data type.
 
-#### 1:46.7.2.1 Terminology Services
+#### 1:46.7.3.1 Terminology Services
 
 All referenced terminologies from a Care Services Selective Supplier or Care Services Update Supplier may be pre-coordinated or they may be resolvable from one or more terminology services. Though it is out of scope of the mCSD Profile to define the means of interacting with a terminology service, this could be provided, for example, through the
 [Sharing Valuesets, Codes, and Maps (SVCM) Profile](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_SVCM.pdf).

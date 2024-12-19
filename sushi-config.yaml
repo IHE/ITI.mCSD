@@ -1,6 +1,6 @@
 id: ihe.iti.mcsd
 canonical: https://profiles.ihe.net/ITI/mCSD
-version: 3.9.1-current
+version: 4.0.0-current
 name: IHE_ITI_mCSD
 title: "Mobile Care Services Discovery (mCSD)"
 releaseLabel: ci-build
@@ -61,6 +61,9 @@ pages:
   ITI-91.md:
     title: 2:3.91 Request Care Services Updates [ITI-91]
     generation: markdown
+  ITI-YY1.md:
+    title: 2:3.YY1 Care Services Feed [ITI-YY1]
+    generation: markdown
   testplan.md:
     title: mCSD Test Plan
     generation: markdown
@@ -89,6 +92,8 @@ menu:
   Volume 2:
     "Find Matching Care Services [ITI-90]": ITI-90.html
     "Request Care Services Updates [ITI-91]": ITI-91.html 
+    "Care Services Feed [ITI-YY1]": ITI-YY1.html 
+  Test Plan: testplan.html
   Artifacts: artifacts.html
   Other:
     Changes to Other IHE Specifications: other.html
