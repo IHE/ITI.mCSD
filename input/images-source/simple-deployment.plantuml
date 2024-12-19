@@ -14,13 +14,13 @@ frame "Data Source" {
 }
 
 frame Directory {
-agent "Care Services Selective Supplier" as Selective
-agent "Care Services Update Supplier" as Supplier
-agent "Care Services Feed Consumer" as FeedConsumer
+  agent "Care Services Selective Supplier" as Selective
+  agent "Care Services Update Supplier" as Supplier
+  agent "Care Services Feed Consumer" as FeedConsumer
 }
 
 Query --> Selective: Find Matching Care Services\n[ITI-90]
 Consumer --> Supplier: Request Care Services Updates\n[ITI-91]
-FeedSupplier --> FeedConsumer: Care Services Feed\n[ITI-YY1]
+FeedConsumer <-- FeedSupplier: Care Services Feed\n[ITI-YY1]
 
 @enduml

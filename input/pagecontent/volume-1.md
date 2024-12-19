@@ -417,7 +417,7 @@ The mACM Profile defines the means to send an alert to practitioners. The mCSD P
 
 ### 1:46.7.1 Basic Deployment
 
-A basic deployment may only have a single directory that will maintain data. In this case, you would only need the Care Services Selective Supplier (and/or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumers). See Figure 1:46.7.1-1 below.
+A basic deployment may only have a single directory that will maintain data internally. In this case, you would only need the Care Services Selective Supplier (and/or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumers). The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.1-1 below.
 
 <div>
 {%include basic-deployment.svg%}
@@ -428,7 +428,7 @@ A basic deployment may only have a single directory that will maintain data. In 
 
 ### 1:46.7.2 Simple Deployment
 
-A more common deployment may have a single directory with one or more data sources that feed data into the directory. This would also have one or more selective or update consumers to query the data in the directory. See Figure 1:46.7.2-1 below.
+A more common deployment may have a single directory with one or more data sources that feed data into the directory. This would also have one or more selective or update consumers to query the data in the directory. The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.2-1 below.
 
 <div>
 {%include simple-deployment.svg%}
