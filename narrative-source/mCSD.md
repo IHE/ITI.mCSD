@@ -2008,7 +2008,7 @@ ready.
 ##### 3.91.4.2.2 Message Semantics
 
 The Care Services Update Supplier shall support the history response
-message as defined at <http://hl7.org.fhir/R4/http.html#history> on the
+message as defined at <http://hl7.org/fhir/R4/http.html#history> on the
 following Resources:
 
   - Organization, as defined at
