@@ -13,7 +13,7 @@ The Request Care Services Updates transaction is used to return a list of update
 
 ### 2:3.91.3 Referenced Standards
 
-  - [HL7 FHIR standard Release 4](http://hl7.org/fhir/R4/index.html)
+  - [HL7 FHIR standard Release 4]({{site.data.fhir.path}}index.html)
 
 
 ### 2:3.91.4 Messages
@@ -35,13 +35,15 @@ A Care Services Update Consumer triggers a Request Care Services Updates Request
 
 ##### 2:3.91.4.1.2 Message Semantics
 
-A Care Services Update Consumer initiates a history request using HTTP GET as defined at [http://hl7.org/fhir/R4/http.html#history](http://hl7.org/fhir/R4/http.html#history) on the mCSD Resources.
+A Care Services Update Consumer initiates a history request using HTTP GET as defined at [{{site.data.fhir.path}}http.html#history]({{site.data.fhir.path}}http.html#history) on the mCSD Resources.
 
 A Care Services Update Supplier and Care Services Update Consumer shall support the following parameters.
 
 ```
 _since
 ```
+
+It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
 
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
@@ -51,11 +53,11 @@ See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) fo
 
 ##### 2:3.91.4.1.3 Expected Actions
 
-The Care Services Update Supplier shall process the query to discover the resources that match the search parameters given, and gives a response as per [Section 2:3.91.4.2](#239142-request-care-services-updates-response-message) or an error as per [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+The Care Services Update Supplier shall process the query to discover the resources that match the search parameters given, and gives a response as per [Section 2:3.91.4.2](#239142-request-care-services-updates-response-message) or an error as per [{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors).
 
 #### 2:3.91.4.2 Request Care Services Updates Response Message
 
-The Request Care Services Updates \[ITI-91\] transaction uses the response semantics as defined at [http://hl7.org/fhir/R4/http.html#history](http://hl7.org/fhir/R4/http.html#history) as applicable for the resources.
+The Request Care Services Updates \[ITI-91\] transaction uses the response semantics as defined at [{{site.data.fhir.path}}http.html#history]({{site.data.fhir.path}}http.html#history) as applicable for the resources.
 
 ##### 2:3.91.4.2.1 Trigger Events
 
@@ -63,27 +65,12 @@ The Care Services Update Supplier sends the Request Care Services Updates Respon
 
 ##### 2:3.91.4.2.2 Message Semantics
 
-The Care Services Update Supplier shall support the history response message as defined at [http://hl7.org.fhir/R4/http.html#history](http://hl7.org.fhir/R4/http.html#history) on the following Resources:
-
-  - Organization, as defined at
-    [http://hl7.org/fhir/R4/organization.html](http://hl7.org/fhir/R4/organization.html)
-
-  - Location, as defined at [http://hl7.org/fhir/R4/location.html](http://hl7.org/fhir/R4/location.html)
-
-  - Practitioner, as defined at
-    [http://hl7.org/fhir/R4/practitioner.html](http://hl7.org/fhir/R4/practitioner.html)
-
-  - PractitionerRole, as defined at
-    [http://hl7.org/fhir/R4/practitionerrole.html](http://hl7.org/fhir/R4/practitionerrole.html)
-
-  - HealthcareService, as defined at
-    [http://hl7.org/fhir/R4/healthcareservice.html](http://hl7.org/fhir/R4/healthcareservice.html)
+The Care Services Update Supplier shall support the history response message as defined at [http://hl7.org.fhir/R4/http.html#history](http://hl7.org.fhir/R4/http.html#history) on the Care Services Resources:
     
-    All References (reference.reference element) to Resources defined in
-    this transaction shall be populated with an accessible URL (see
-    [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)
-    ), unless the referenced resource is not present on a server
-    accessible to the client.
+All References (reference.reference element) to Resources defined in
+this transaction shall be populated with an accessible URL (see
+[https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not present on a server
+accessible to the client.
 
 ###### 2:3.91.4.2.2.1 FHIR Organization Resource Constraints
 
@@ -115,6 +102,18 @@ A Care Services Update Consumer and a Care Services Update Supplier shall query 
 ###### 2:3.91.4.2.2.5 FHIR HealthcareService Resource Constraints
 
 A Care Services Update Consumer and a Care Services Update Supplier shall query or return a HealthcareService Resource. The HealthcareService Resource shall be further constrained as described in the [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+
+###### 2:3.91.4.2.2.6 FHIR OrganizationAffiliation Resource Constraints
+
+A Care Services Update Consumer may query on OrganizationAffiliation Resources. A Care Services Update Supplier shall return a Bundle of matching OrganizationAffiliation Resources. The OrganizationAffiliation Resource shall be further constrained as described in the [OrganizationAffiliation Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html).
+
+When the OrganizationAffiliation contains an Endpoint to an IHE document sharing environment, it shall further be constrained as described in the [OrganizationAffiliation for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html).
+
+###### 2:3.91.4.2.2.7 FHIR Endpoint Resource Constraints
+
+A Care Services Update Consumer may query on Endpoint Resources. A Care Services Update Supplier shall return a Bundle of matching Endpoint Resources. The Endpoint Resource shall be further constrained as described in the [Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
+
+When the Endpoint is to an IHE document sharing environment, it shall further be constrained as described in the [Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
 
 ##### 2:3.91.4.2.3 Expected Actions
 

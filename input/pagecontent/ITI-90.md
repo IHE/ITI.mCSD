@@ -13,7 +13,7 @@ The Find Matching Care Services transaction returns a list of matching care serv
 
 ### 2:3.90.3 Referenced Standards
 
-  - HL7 FHIR standard Release 4 [http://hl7.org/fhir/R4/index.html](http://hl7.org/fhir/R4/index.html)
+  - HL7 FHIR standard Release 4 [{{site.data.fhir.path}}index.html]({{site.data.fhir.path}}index.html)
 
 ### 2:3.90.4 Messages
 
@@ -34,7 +34,7 @@ A Care Services Selective Consumer triggers a Find Matching Care Services Reques
 
 ##### 2:3.90.4.1.2 Message Semantics
 
-A Care Services Selective Consumer initiates a search request using HTTP GET or POST as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the mCSD Resources. The Care Services Selective Supplier shall support both GET and POST based searches. The query parameters are identified below. A Care Services Selective Consumer may query any combination or subset of the parameters.
+A Care Services Selective Consumer initiates a search request using HTTP GET or POST as defined at [{{site.data.fhir.path}}http.html#search]({{site.data.fhir.path}}http.html#search) on the mCSD Resources. The Care Services Selective Supplier shall support both GET and POST based searches. The query parameters are identified below. A Care Services Selective Consumer may query any combination or subset of the parameters.
 
 A Care Services Selective Supplier shall support responding to a request for both the JSON and the XML messaging formats as defined in FHIR. A Care Services Selective Consumer shall accept either the JSON or the XML messaging formats as defined in FHIR. See [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details.
 
@@ -46,7 +46,7 @@ See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) fo
 
 The Care Services Selective Supplier shall support the `:contains` and `:exact` modifiers in all of the string query parameters below.
 
-The Care Services Selective Supplier shall support the following search parameters as defined at [http://hl7.org/fhir/R4/search.html#all](http://hl7.org/fhir/R4/search.html#all).
+The Care Services Selective Supplier shall support the following search parameters as defined at [{{site.data.fhir.path}}search.html#all]({{site.data.fhir.path}}search.html#all).
 
 ```
 _id
@@ -57,7 +57,7 @@ The Care Services Selective Supplier shall also support the following prefixes f
 
 ###### 2:3.90.4.1.2.2 Organization Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the Organization Resource as defined at [http://hl7.org/fhir/R4/organization.html#search](http://hl7.org/fhir/R4/organization.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+The Care Services Selective Supplier shall support the following search parameters on the Organization Resource as defined at [{{site.data.fhir.path}}organization.html#search]({{site.data.fhir.path}}organization.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
 
 ```
 active
@@ -73,7 +73,7 @@ _revInclude=OrganizationAffiliation:primary-organization
 
 ###### 2:3.90.4.1.2.3 Location Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the Location Resource as defined at [http://hl7.org/fhir/R4/location.html#search](http://hl7.org/fhir/R4/location.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+The Care Services Selective Supplier shall support the following search parameters on the Location Resource as defined at [{{site.data.fhir.path}}location.html#search]({{site.data.fhir.path}}location.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
 
 ```
 identifier
@@ -87,7 +87,7 @@ _include=Location:organization
 
 ###### 2:3.90.4.1.2.4 Practitioner Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the Practitioner Resource as defined at [http://hl7.org/fhir/R4/practitioner.html#search](http://hl7.org/fhir/R4/practitioner.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+The Care Services Selective Supplier shall support the following search parameters on the Practitioner Resource as defined at [{{site.data.fhir.path}}practitioner.html#search]({{site.data.fhir.path}}practitioner.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
 
 ```
 active
@@ -99,7 +99,7 @@ family
 
 ###### 2:3.90.4.1.2.5 PractitionerRole Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the PractitionerRole Resource as defined at [http://hl7.org/fhir/R4/practitionerrole.html#search](http://hl7.org/fhir/R4/practitionerrole.html#search).
+The Care Services Selective Supplier shall support the following search parameters on the PractitionerRole Resource as defined at [{{site.data.fhir.path}}practitionerrole.html#search]({{site.data.fhir.path}}practitionerrole.html#search).
 
 ```
 active
@@ -114,7 +114,7 @@ _include=PractitionerRole:practitioner
 
 ###### 2:3.90.4.1.2.6 HealthcareService Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the HealthcareService Resource as defined at [http://hl7.org/fhir/R4/healthcareservice.html#search](http://hl7.org/fhir/R4/healthcareservice.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+The Care Services Selective Supplier shall support the following search parameters on the HealthcareService Resource as defined at [{{site.data.fhir.path}}healthcareservice.html#search]({{site.data.fhir.path}}healthcareservice.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
 
 ```
 active
@@ -127,7 +127,7 @@ service-type
 
 ###### 2:3.90.4.1.2.7 Location Distance Option Message Semantics
 
-The Care Services Selective Supplier supporting the Location Distance Option shall support the following search parameters on the Location Resource as defined at [http://hl7.org/fhir/R4/location.html#search](http://hl7.org/fhir/R4/location.html#search).
+The Care Services Selective Supplier supporting the Location Distance Option shall support the following search parameters on the Location Resource as defined at [{{site.data.fhir.path}}location.html#search]({{site.data.fhir.path}}location.html#search).
 
 ```
 near
@@ -135,7 +135,7 @@ near
 
 ###### 2:3.90.4.1.2.8 Endpoint Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the Endpoint Resource as defined at [http://hl7.org/fhir/R4/endpoint.html#search](http://hl7.org/fhir/R4/endpoint.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+The Care Services Selective Supplier shall support the following search parameters on the Endpoint Resource as defined at [{{site.data.fhir.path}}endpoint.html#search]({{site.data.fhir.path}}endpoint.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
 
 ```
 identifier
@@ -145,7 +145,7 @@ status
 
 ###### 2:3.90.4.1.2.9 OrganizationAffiliation Resource Message Semantics
 
-The Care Services Selective Supplier shall support the following search parameters on the OrganizationAffiliation Resource as defined at [http://hl7.org/fhir/R4/organizationaffiliation.html#search](http://hl7.org/fhir/R4/organizationaffiliation.html#search). String parameter modifiers are defined at [http://hl7.org/fhir/R4/search.html#string](http://hl7.org/fhir/R4/search.html#string).
+The Care Services Selective Supplier shall support the following search parameters on the OrganizationAffiliation Resource as defined at [{{site.data.fhir.path}}organizationaffiliation.html#search]({{site.data.fhir.path}}organizationaffiliation.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
 
 ```
 active
@@ -160,7 +160,7 @@ _include=OrganizationAffiliation:endpoint
 ##### 2:3.90.4.1.3 Expected Actions
 
 The Care Services Selective Supplier shall process the query to discover the resources that match the search parameters given, and return a response as per Section 2:3.90.4.2 or an error as per
-[http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+[{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors).
 
 #### 2:3.90.4.2 Find Matching Care Services Response Message
 
@@ -170,28 +170,12 @@ The Care Services Selective Supplier sends the Find Matching Care Services Respo
 
 ##### 2:3.90.4.2.2 Message Semantics
 
-The Care Services Selective Supplier shall support the search response message as defined at [http://hl7.org/fhir/R4/http.html#search](http://hl7.org/fhir/R4/http.html#search) on the following Resources.
+The Care Services Selective Supplier shall support the search response message as defined at [{{site.data.fhir.path}}http.html#search]({{site.data.fhir.path}}http.html#search) on the Care Services Resources.
 
-  - Organization, as defined at
-    [http://hl7.org/fhir/R4/organization.html](http://hl7.org/fhir/R4/organization.html)
+It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
 
-  - Location, as defined at [http://hl7.org/fhir/R4/location.html](http://hl7.org/fhir/R4/location.html)
+They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
-  - Practitioner, as defined at
-    [http://hl7.org/fhir/R4/practitioner.html](http://hl7.org/fhir/R4/practitioner.html)
-
-  - PractitionerRole, as defined at
-    [http://hl7.org/fhir/R4/practitionerrole.html](http://hl7.org/fhir/R4/practitionerrole.html)
-
-  - HealthcareService, as defined at
-    [http://hl7.org/fhir/R4/healthcareservice.html](http://hl7.org/fhir/R4/healthcareservice.html)
-    
-  - Endpoint, as defined at
-    [http://hl7.org/fhir/R4/endpoint.html](http://hl7.org/fhir/R4/endpoint.html)
-    
-  - OrganizationAffiliation, as defined at
-    [http://hl7.org/fhir/R4/organizationaffiliation.html](http://hl7.org/fhir/R4/organizationaffiliation.html)
-    
 All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
 
 ###### 2:3.90.4.2.2.1 FHIR Organization Resource Constraints
@@ -239,7 +223,6 @@ When the OrganizationAffiliation contains an Endpoint to an IHE document sharing
 A Care Services Selective Consumer may query on Endpoint Resources. A Care Services Selective Supplier shall return a Bundle of matching Endpoint Resources. The Endpoint Resource shall be further constrained as described in the [Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
 
 When the Endpoint is to an IHE document sharing environment, it shall further be constrained as described in the [Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
-
 
 ##### 2:3.90.4.2.3 Expected Actions
 

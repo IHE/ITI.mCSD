@@ -75,7 +75,7 @@ No additional requirements.  The following are two example capability statement 
 
 The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information about mCSD resources.
 
-The Care Services Selective Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
+The Care Services Selective Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples: 
 
@@ -96,7 +96,7 @@ No additional requirements. The following are two example capability statement r
 
 The Care Services Update Supplier can provide updates about mCSD resources in response to a refresh request from a Care Services Update Consumer. The updates include new or modified information since a previous refresh.
 
-The Care Services Update Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
+The Care Services Update Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
 All supported interactions shall be specified. The [search parameters](ITI-91.html#2391412-message-semantics) and [message semantics](ITI-91.html#2391422-message-semantics) defined in \[ITI-91\] shall be supported, other parameters may be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
@@ -108,7 +108,7 @@ This capabilities response will typically include all of the capabilities inclus
 
 The Care Services Feed Consumer receives updates to information about mCSD resources from a Care Services Feed Supplier.
 
-The Care Services Feed Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
+The Care Services Feed Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
 All supported interactions SHALL be specified.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
@@ -300,7 +300,7 @@ The interactions between the various actors in this use case are shown in Figure
 
 In this use case, a healthcare worker needs to identify the organizations active in the State/Province Health Information Exchange (HIE) that have been added since 2017, to make contact with new organizations and negotiate future clinical exchange.
 
-Membership in an HIE is a more dynamic and transitory business relationship than the "parent-child" hierarchy represented by Organization.partOf. For these more flexible business relationships, the [OrganizationAffiliation](http://hl7.org/fhir/R4/organizationaffiliation.html) resource allows for organizations to relate to each other in non-hierarchical and more dynamic business relationships. Unlike partOf, the relationship is itself a resource, so it can be categorized with codes, status, etc. 
+Membership in an HIE is a more dynamic and transitory business relationship than the "parent-child" hierarchy represented by Organization.partOf. For these more flexible business relationships, the [OrganizationAffiliation]({{site.data.fhir.path}}organizationaffiliation.html) resource allows for organizations to relate to each other in non-hierarchical and more dynamic business relationships. Unlike partOf, the relationship is itself a resource, so it can be categorized with codes, status, etc. 
 
 In the example below:
 - Organization B has a parent Organization A.
@@ -535,7 +535,7 @@ When an Organization with an Endpoint has a complex structure, for example, sub-
 **Figure 1:46.8.2-1: Endpoint to Organizational Hierarchy**
 
 Typical directories will take an organizational hierarchy to imply accessibility to parts of the structure, for example:
-- For FHIR REST endpoints, the URL is simply the Service Base URL as specified in [FHIR R4 3.1.0.1.2](http://hl7.org/fhir/R4/http.html#general). Clients can expect to find resources related to Organizations A, B and C.
+- For FHIR REST endpoints, the URL is simply the Service Base URL as specified in [FHIR R4 3.1.0.1.2]({{site.data.fhir.path}}http.html#general). Clients can expect to find resources related to Organizations A, B and C.
 - For XCA endpoints, a client querying Organization A for documents (e.g., using \[ITI-38\]) may receive documents from Organizations A, B and C. If these organizations have identifiers of type Home Community ID in the directory, clients can expect to see these identifiers in the returned document metadata.
 - For XDR endpoints, a client sending a Provide and Register Document Set-b (\[ITI-41\]) request to Organization A can optionally specify Organizations B and/or C in intendedRecipient.
 - For MHD endpoints, a client sending a Provide Document Bundle (\[ITI-65\]) request to Organization A can optionally specify Organizations B and/or C in intendedRecipient.

@@ -13,7 +13,7 @@ The Care Services Feed transaction is used to create, update, or delete care ser
 
 ### 2:3.YY1.3 Referenced Standards
 
-  - [HL7 FHIR standard Release 4](http://hl7.org/fhir/R4/index.html)
+  - [HL7 FHIR standard Release 4]({{site.data.fhir.path}}index.html)
 
 
 ### 2:3.YY1.4 Messages
@@ -25,102 +25,262 @@ The Care Services Feed transaction is used to create, update, or delete care ser
 
 **Figure 2:3.YY1.4-1: Interaction Diagram**
 
-# TODO: Update messages, the rest is copied from ITI-91 so not ready yet
-
 #### 2:3.YY1.4.1 Create Care Services Resource Request Message
 
-A Create Care Services Updates message is a FHIR history operation, optionally using the ```_since``` parameter, on the mCSD Resources.
+A Create Care Services Resource Request Message is a FHIR create operation on any supported Care Services resource the Care Services Feed Consumer supports.
 
 ##### 2:3.YY1.4.1.1 Trigger Events
 
-A Care Services Update Consumer triggers a Request Care Services Updates Request to a Care Services Update Supplier according to the business rules for the query. These business rules are outside the scope of this transaction.
+A Care Services Feed Supplier triggers a Create Care Services Resource Request to a Care Services Feed Consumer when it needs to submit a new Care Services resource.
 
 ##### 2:3.YY1.4.1.2 Message Semantics
 
-A Care Services Update Consumer initiates a history request using HTTP GET as defined at [http://hl7.org/fhir/R4/http.html#history](http://hl7.org/fhir/R4/http.html#history) on the mCSD Resources.
+A Care Services Feed Supplier SHALL initiate a create request using HTTP POST as defined at [{{site.data.fhir.path}}http.html#create] on the Care Services Resource. 
 
-A Care Services Update Supplier and Care Services Update Consumer shall support the following parameters.
+A Care Services Feed Supplier SHALL submit the Care Services resource in either XML format or JSON format 
+thus the media type of the HTTP body SHALL be either `application/fhir+json` or `application/fhir+xml` respectively.
+A Care Services Feed Consumer SHALL accept both XML and JSON formats.
 
-```
-_since
-```
+It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
 
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
-A Care Services Update Supplier shall support receiving a request for both the JSON and the XML messaging formats as defined in FHIR. A Care Services Update Consumer shall accept either the JSON or the XML messaging formats as defined in FHIR.
+All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
 
-See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for this transaction.
+###### 2:3.YY1.4.1.2.1 FHIR Organization Resource Constraints
+
+A Care Services Feed Supplier may submit Organization Resources. The Organization Resource shall be further constrained as described in the [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
+
+A Care Services Feed Supplier may submit Organization Resources when working with Facilities. The FHIR Organization Resource shall be further constrained as described in the [Organization for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
+
+A Care Services Feed Supplier may submit Organization Resources when working with Jurisdictions. The FHIR Organization Resource shall be further constrained as described in the [Organization for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
+
+###### 2:3.YY1.4.1.2.2 FHIR Location Resource Constraints
+
+A Care Services Feed Supplier may submit Location Resources. A Care Services Selective Supplier shall return a Bundle of matching Location Resources. The Location Resource shall be further constrained as described in the [Location Profile for mCSD](StructureDefinition-IHE.mCSD.Location.html).
+
+When the resource is a Facility, the Location Resource shall be paired with an Organization Resource using the managingOrganization element in Location. A Care Services Feed Supplier may submit Location Resources when working with Facilities. The FHIR Location Resource shall be further constrained as described in the [Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html).
+
+When the resource is a Jurisdiction, the Location Resource shall be paired with an Organization Resource using the managingOrganization element in Location. A Care Services Feed Supplier may submit Location Resources when working with Jurisdictions. The FHIR Location Resource shall be further constrained as described in the [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html).
+
+When a geographic boundary is available for the Jurisdiction Location, the location-boundary-geojson extension defined at [http://hl7.org/fhir/extension-location-boundary-geojson.html](http://hl7.org/fhir/extension-location-boundary-geojson.html) shall be used to store this information.
+
+When supporting the Location Distance Option, the Location Resource shall be further constrained as described in the [Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
+
+###### 2:3.YY1.4.1.2.3 FHIR Practitioner Resource Constraints
+
+A Care Services Feed Supplier may submit Practitioner Resources. The Practitioner Resource shall be further constrained as described in the [Practitioner Profile for mCSD](StructureDefinition-IHE.mCSD.Practitioner.html).
+
+###### 2:3.YY1.4.1.2.4 FHIR PractitionerRole Resource Constraints
+
+A Care Services Feed Supplier may submit PractitionerRole Resources. The PractitionerRole Resource shall be further constrained as described in the 
+[PractitionerRole Profile for mCSD](StructureDefinition-IHE.mCSD.PractitionerRole.html).
+
+###### 2:3.YY1.4.1.2.5 FHIR HealthcareService Resource Constraints
+
+A Care Services Feed Supplier may submit HealthcareService Resources. The HealthcareService Resource shall be further constrained as described in the [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+
+###### 2:3.YY1.4.1.2.6 FHIR OrganizationAffiliation Resource Constraints
+
+A Care Services Feed Supplier may submit OrganizationAffiliation Resources. The OrganizationAffiliation Resource shall be further constrained as described in the [OrganizationAffiliation Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html).
+
+When the OrganizationAffiliation contains an Endpoint to an IHE document sharing environment, it shall further be constrained as described in the [OrganizationAffiliation for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html).
+
+###### 2:3.YY1.4.1.2.7 FHIR Endpoint Resource Constraints
+
+A Care Services Feed Supplier may submit Endpoint Resources. The Endpoint Resource shall be further constrained as described in the [Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
+
+When the Endpoint is to an IHE document sharing environment, it shall further be constrained as described in the [Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
+
 
 ##### 2:3.YY1.4.1.3 Expected Actions
 
-The Care Services Update Supplier shall process the query to discover the resources that match the search parameters given, and gives a response as per [Section 2:3.YY1.4.2](#239142-request-care-services-updates-response-message) or an error as per [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+A Care Services Feed Consumer SHALL process the submission to validate the resources submitted, and give a response as per [Section 2:3.YY1.4.2](#23YY142-create-care-services-resources-response-message) or an error as per [{{site.data.fhir.path}}http.html#create]({{site.data.fhir.path}}http.html#create).
 
-#### 2:3.YY1.4.2 Request Care Services Updates Response Message
+#### 2:3.YY1.4.2 Create Care Services Resource Response Message
 
-The Request Care Services Updates \[ITI-91\] transaction uses the response semantics as defined at [http://hl7.org/fhir/R4/http.html#history](http://hl7.org/fhir/R4/http.html#history) as applicable for the resources.
+The Create Care Services Resource response message uses the response semantics as defined at [{{site.data.fhir.path}}http.html#create]({{site.data.fhir.path}}http.html#create) as applicable for the resources.
 
 ##### 2:3.YY1.4.2.1 Trigger Events
 
-The Care Services Update Supplier sends the Request Care Services Updates Response to the Care Services Update Consumer when results are ready.
+The Care Services Feed Consumer sends the Create Care Services Resource response message to the Care Services Feed Supplier when submitted resource has been processed.
 
 ##### 2:3.YY1.4.2.2 Message Semantics
 
-The Care Services Update Supplier shall support the history response message as defined at [http://hl7.org.fhir/R4/http.html#history](http://hl7.org.fhir/R4/http.html#history) on the following Resources:
-
-  - Organization, as defined at
-    [http://hl7.org/fhir/R4/organization.html](http://hl7.org/fhir/R4/organization.html)
-
-  - Location, as defined at [http://hl7.org/fhir/R4/location.html](http://hl7.org/fhir/R4/location.html)
-
-  - Practitioner, as defined at
-    [http://hl7.org/fhir/R4/practitioner.html](http://hl7.org/fhir/R4/practitioner.html)
-
-  - PractitionerRole, as defined at
-    [http://hl7.org/fhir/R4/practitionerrole.html](http://hl7.org/fhir/R4/practitionerrole.html)
-
-  - HealthcareService, as defined at
-    [http://hl7.org/fhir/R4/healthcareservice.html](http://hl7.org/fhir/R4/healthcareservice.html)
-    
-    All References (reference.reference element) to Resources defined in
-    this transaction shall be populated with an accessible URL (see
-    [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)
-    ), unless the referenced resource is not present on a server
-    accessible to the client.
-
-###### 2:3.YY1.4.2.2.1 FHIR Organization Resource Constraints
-
-A Care Services Update Consumer and a Care Services Update Supplier shall query or return an Organization Resource. The Organization Resource shall be further constrained as described in the [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
-
-When the Organization represents a Facility and is paired with a Location, the FHIR Organization Resource shall be further constrained as described in the [Organization for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
-
-When the Organization represents a Jurisdiction and is paired with a Location, the FHIR Organization Resource shall be further constrained as described in the [Organization for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
-
-###### 2:3.YY1.4.2.2.2 FHIR Location Resource Constraints
-
-A Care Services Update Consumer and a Care Services Update Supplier shall query or return a Location Resource. The Location Resource shall be further constrained as described in the [Location Profile for mCSD](StructureDefinition-IHE.mCSD.Location.html).
-
-When the Location represents a Facility and is paired with an Organization, the FHIR Location Resource shall be further constrained as described in the 
-[Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html).
-
-When the Location represents a Jurisdiction and is paired with an Organization, the FHIR Location Resource shall be further constrained as described in the [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html).
-
-When supporting the Location Distance Option, the FHIR Location Resource shall be further constrained as described in the [Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
-
-###### 2:3.YY1.4.2.2.3 FHIR Practitioner Resource Constraints
-
-A Care Services Update Consumer and a Care Services Update Supplier shall query or return a Practitioner Resource. The Practitioner Resource shall be further constrained as described in the [Practitioner Profile for mCSD](StructureDefinition-IHE.mCSD.Practitioner.html).
-
-###### 2:3.YY1.4.2.2.4 FHIR PractitionerRole Resource Constraints
-
-A Care Services Update Consumer and a Care Services Update Supplier shall query or return a PractitionerRole Resource. The PractitionerRole Resource shall be further constrained as described in the [PractitionerRole Profile for mCSD](StructureDefinition-IHE.mCSD.PractitionerRole.html).
-
-###### 2:3.YY1.4.2.2.5 FHIR HealthcareService Resource Constraints
-
-A Care Services Update Consumer and a Care Services Update Supplier shall query or return a HealthcareService Resource. The HealthcareService Resource shall be further constrained as described in the [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+A Care Services Feed Consumer SHALL respond with an `HTTP 201 Created` status code as indicated at [{{site.data.fhir.path}}http.html#create]({{site.data.fhir.path}}http.html#create) or an appropriate error status code.
 
 ##### 2:3.YY1.4.2.3 Expected Actions
 
-The Care Services Update Consumer has received the response and continues with its workflow.
+The Care Services Feed Supplier has received the response and continues with its workflow.
+
+#### 2:3.YY1.4.3 Update Care Services Resource Request Message
+
+A Update Care Services Resource Request Message is a FHIR update operation on any supported Care Services resource the Care Services Feed Consumer supports.
+
+##### 2:3.YY1.4.3.1 Trigger Events
+
+A Care Services Feed Supplier triggers a Update Care Services Resource Request to a Care Services Feed Consumer when it needs to update a Care Services resource.
+
+##### 2:3.YY1.4.3.2 Message Semantics
+
+A Care Services Feed Supplier SHALL initiate a update request using HTTP PUT as defined at [{{site.data.fhir.path}}http.html#update] on the Care Services Resource. 
+
+A Care Services Feed Supplier SHALL submit the Care Services resource in either XML format or JSON format 
+thus the media type of the HTTP body SHALL be either `application/fhir+json` or `application/fhir+xml` respectively.
+A Care Services Feed Consumer SHALL accept both XML and JSON formats.
+
+It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
+
+They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
+
+All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
+
+###### 2:3.YY1.4.3.2.1 FHIR Organization Resource Constraints
+
+A Care Services Feed Supplier may submit Organization Resources. The Organization Resource shall be further constrained as described in the [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
+
+A Care Services Feed Supplier may submit Organization Resources when working with Facilities. The FHIR Organization Resource shall be further constrained as described in the [Organization for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityOrganization.html).
+
+A Care Services Feed Supplier may submit Organization Resources when working with Jurisdictions. The FHIR Organization Resource shall be further constrained as described in the [Organization for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionOrganization.html).
+
+###### 2:3.YY1.4.3.2.2 FHIR Location Resource Constraints
+
+A Care Services Feed Supplier may submit Location Resources. A Care Services Selective Supplier shall return a Bundle of matching Location Resources. The Location Resource shall be further constrained as described in the [Location Profile for mCSD](StructureDefinition-IHE.mCSD.Location.html).
+
+When the resource is a Facility, the Location Resource shall be paired with an Organization Resource using the managingOrganization element in Location. A Care Services Feed Supplier may submit Location Resources when working with Facilities. The FHIR Location Resource shall be further constrained as described in the [Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html).
+
+When the resource is a Jurisdiction, the Location Resource shall be paired with an Organization Resource using the managingOrganization element in Location. A Care Services Feed Supplier may submit Location Resources when working with Jurisdictions. The FHIR Location Resource shall be further constrained as described in the [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html).
+
+When a geographic boundary is available for the Jurisdiction Location, the location-boundary-geojson extension defined at [http://hl7.org/fhir/extension-location-boundary-geojson.html](http://hl7.org/fhir/extension-location-boundary-geojson.html) shall be used to store this information.
+
+When supporting the Location Distance Option, the Location Resource shall be further constrained as described in the [Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
+
+###### 2:3.YY1.4.3.2.3 FHIR Practitioner Resource Constraints
+
+A Care Services Feed Supplier may submit Practitioner Resources. The Practitioner Resource shall be further constrained as described in the [Practitioner Profile for mCSD](StructureDefinition-IHE.mCSD.Practitioner.html).
+
+###### 2:3.YY1.4.3.2.4 FHIR PractitionerRole Resource Constraints
+
+A Care Services Feed Supplier may submit PractitionerRole Resources. The PractitionerRole Resource shall be further constrained as described in the 
+[PractitionerRole Profile for mCSD](StructureDefinition-IHE.mCSD.PractitionerRole.html).
+
+###### 2:3.YY1.4.3.2.5 FHIR HealthcareService Resource Constraints
+
+A Care Services Feed Supplier may submit HealthcareService Resources. The HealthcareService Resource shall be further constrained as described in the [HealthcareService Profile for mCSD](StructureDefinition-IHE.mCSD.HealthcareService.html).
+
+###### 2:3.YY1.4.3.2.6 FHIR OrganizationAffiliation Resource Constraints
+
+A Care Services Feed Supplier may submit OrganizationAffiliation Resources. The OrganizationAffiliation Resource shall be further constrained as described in the [OrganizationAffiliation Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html).
+
+When the OrganizationAffiliation contains an Endpoint to an IHE document sharing environment, it shall further be constrained as described in the [OrganizationAffiliation for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html).
+
+###### 2:3.YY1.4.3.2.7 FHIR Endpoint Resource Constraints
+
+A Care Services Feed Supplier may submit Endpoint Resources. The Endpoint Resource shall be further constrained as described in the [Endpoint Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.html).
+
+When the Endpoint is to an IHE document sharing environment, it shall further be constrained as described in the [Endpoint for Document Sharing Profile for mCSD](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
+
+##### 2:3.YY1.4.3.3 Expected Actions
+
+A Care Services Feed Consumer SHALL process the submission to validate the resources submitted, and give a response as per [Section 2:3.YY1.4.3](#23YY144-update-care-services-resources-response-message) or an error as per [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#update).
+
+#### 2:3.YY1.4.4 Update Care Services Resource Response Message
+
+The Update Care Services Resource response message uses the response semantics as defined at [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#update) as applicable for the resources.
+
+##### 2:3.YY1.4.4.1 Trigger Events
+
+The Care Services Feed Consumer sends the Update Care Services Resource response message to the Care Services Feed Supplier when submitted resource has been processed.
+
+##### 2:3.YY1.4.4.2 Message Semantics
+
+A Care Services Feed Consumer SHALL respond with an `HTTP 200 OK` status code as indicated at [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#update) or an appropriate error status code as indicated at [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#rejecting-updates)
+
+##### 2:3.YY1.4.4.3 Expected Actions
+
+The Care Services Feed Supplier has received the response and continues with its workflow.
+
+#### 2:3.YY1.4.5 Delete Care Services Resource Request Message
+
+A Delete Care Services Resource Request Message is a FHIR delete operation on any supported Care Services resource the Care Services Feed Consumer supports.
+
+##### 2:3.YY1.4.5.1 Trigger Events
+
+A Care Services Feed Supplier triggers a Delete Care Services Resource Request to a Care Services Feed Consumer when it needs to delete a Care Services resource.
+
+##### 2:3.YY1.4.5.2 Message Semantics
+
+A Care Services Feed Supplier SHALL initiate a delete request using HTTP DELETE as defined at [{{site.data.fhir.path}}http.html#delete] on the Care Services Resource. 
+
+It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
+
+They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
+
+##### 2:3.YY1.4.5.3 Expected Actions
+
+A Care Services Feed Consumer SHALL process the submission and give a response as per [Section 2:3.YY1.4.5](#23YY146-delete-care-services-resources-response-message) or an error as per [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete).
+
+#### 2:3.YY1.4.6 Delete Care Services Resource Response Message
+
+The Delete Care Services Resource response message uses the response semantics as defined at [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete) as applicable for the resources.
+
+##### 2:3.YY1.4.6.1 Trigger Events
+
+The Care Services Feed Consumer sends the Delete Care Services Resource response message to the Care Services Feed Supplier when submitted resource has been processed.
+
+##### 2:3.YY1.4.6.2 Message Semantics
+
+A Care Services Feed Consumer SHALL respond with an `HTTP 200 OK` status code as indicated at [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete) or an appropriate error status code as indicated at [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete)
+
+##### 2:3.YY1.4.6.3 Expected Actions
+
+The Care Services Feed Supplier has received the response and continues with its workflow.
+
+#### 2:3.YY1.4.7 Process Care Services Resources Request Message
+
+A Process Care Services Resources Request Message is a FHIR batch/transaction operation including Care Services resources the Care Services Feed Consumer supports.
+
+##### 2:3.YY1.4.7.1 Trigger Events
+
+A Care Services Feed Supplier triggers a Process Care Services Resources Request to a Care Services Feed Consumer when it needs to process multiple Care Services resource feed messages.
+
+##### 2:3.YY1.4.7.2 Message Semantics
+
+A Care Services Feed Supplier SHALL initiate a batch/transaction request using HTTP POST as defined at [{{site.data.fhir.path}}http.html#transaction] on the server with a FHIR Bundle as the body of the request.
+
+A Care Services Feed Supplier SHALL submit the Care Services resource in either XML format or JSON format 
+thus the media type of the HTTP body SHALL be either `application/fhir+json` or `application/fhir+xml` respectively.
+A Care Services Feed Consumer SHALL accept both XML and JSON formats.
+
+It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
+
+They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
+
+##### 2:3.YY1.4.7.3 Expected Actions
+
+A Care Services Feed Consumer SHALL process the submission and give a response as per [Section 2:3.YY1.4.7](#23YY148-process-care-services-resources-response-message) or an error as per [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction).
+
+#### 2:3.YY1.4.8 Process Care Services Resources Response Message
+
+The Process Care Services Resources response message uses the response semantics as defined at [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction) as applicable for the resources.  Each entry in the bundle SHALL conform to the other feed messages:
+
+* [Create Care Services Resource](#23YY141-create-care-services-resources-request-message)
+* [Update Care Services Resource](#23YY143-update-care-services-resources-request-message)
+* [Delete Care Services Resource](#23YY145-delete-care-services-resources-request-message)
+
+##### 2:3.YY1.4.8.1 Trigger Events
+
+The Care Services Feed Consumer sends the Process Care Services Resources response message to the Care Services Feed Supplier when submitted resources have been processed.
+
+##### 2:3.YY1.4.8.2 Message Semantics
+
+A Care Services Feed Consumer SHALL respond with an `HTTP 200 OK` status code as indicated at [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction) or an appropriate error status code as indicated at [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction).
+
+The response will be a FHIR Bundle with the type set to either `batch-response` or `transaction-response` for the type `batch` or `transaction` of the request message respectively.  The entries in the Bundle will correspond to the entries in the request with the result of processing each entry.
+
+##### 2:3.YY1.4.8.3 Expected Actions
+
+The Care Services Feed Supplier has received the response and continues with its workflow.
 
 ### 2:3.YY1.5 Security Considerations
 
@@ -130,9 +290,9 @@ See [ITI TF-2: Appendix Z.8](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z
 
 #### 2:3.YY1.5.1 Security Audit Considerations
 
-Note that the same audit message is recorded by both Care Services Update Supplier and Care Services Update Consumer. The
+Note that the same audit message is recorded by both Care Services Feed Supplier and Care Services Feed Consumer. The
 difference being the Audit Source element. Both sides record to show consistency
 between the message sent by the Supplier and the action taken at the Consumer.
 
 The actors involved shall record audit events according to the
-[Audit Event for Request Care Services Updates by the Care Services Update Supplier and Consumer](StructureDefinition-IHE.mCSD.Audit.CareServices.Updates.html).
+[Audit Event for Request Care Services Updates by the Care Services Feed Supplier and Consumer](StructureDefinition-IHE.mCSD.Audit.CareServices.Feed.Create.html).
