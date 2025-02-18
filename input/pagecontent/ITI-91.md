@@ -51,6 +51,11 @@ A Care Services Update Supplier shall support receiving a request for both the J
 
 See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for this transaction.
 
+See the CapabilityStatements for the Care Services Update Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.LocationDistance.html)
+
 ##### 2:3.91.4.1.3 Expected Actions
 
 The Care Services Update Supplier shall process the query to discover the resources that match the search parameters given, and gives a response as per [Section 2:3.91.4.2](#239142-request-care-services-updates-response-message) or an error as per [{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors).
@@ -71,6 +76,11 @@ All References (reference.reference element) to Resources defined in
 this transaction shall be populated with an accessible URL (see
 [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not present on a server
 accessible to the client.
+
+See the CapabilityStatements for the Care Services Update Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
 
 ###### 2:3.91.4.2.2.1 FHIR Organization Resource Constraints
 

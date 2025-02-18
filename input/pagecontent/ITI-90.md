@@ -42,6 +42,11 @@ A Care Services Selective Supplier shall implement the parameters described belo
 
 See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for this transaction.
 
+See the CapabilityStatements for the Care Services Selective Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.LocationDistance.html)
+
 ###### 2:3.90.4.1.2.1 Common Parameters
 
 The Care Services Selective Supplier shall support the `:contains` and `:exact` modifiers in all of the string query parameters below.
@@ -189,6 +194,11 @@ They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe
 
 All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
 
+See the CapabilityStatements for the Care Services Selective Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance.html)
+
 ###### 2:3.90.4.2.2.1 FHIR Organization Resource Constraints
 
 A Care Services Selective Consumer may query on Organization Resources. A Care Services Selective Supplier shall return a Bundle of matching Organization Resources. The Organization Resource shall be further constrained as described in the [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
@@ -256,6 +266,11 @@ The `resourceId` included in the request always represents the unique identifier
 
 Note: The use of "http" or "https" in URL does not override requirements to use TLS for security purposes.
 
+See the CapabilityStatements for the Care Services Selective Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.LocationDistance.html)
+
 ##### 2:3.90.4.3.3 Expected Actions
 The Care Services Selective Supplier shall retrieve the record indicated by the Resource identifier on the HTTP GET supplied by the Care Services Selective Consumer. The Care Services Selective Supplier shall respond to the retrieve request as described by the following cases:
 
@@ -292,6 +307,11 @@ The Retrieve Care Services Resource response is sent from the Care Services Sele
 See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance on Access Denied.
 
 If the Care Services Selective Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Care Services Selective Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
+
+See the CapabilityStatements for the Care Services Selective Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance.html)
 
 ###### 2:3.90.4.4.2.1 Care Services Resource Definition in the Context of Care Services Resource Response
 The Care Services Resource definition in the context of a retrieve interaction is the FHIR definition of the various Care Services Resources. Table 2:3.90.4.4.2.1-1 lists the resources with where to find the additional constraints.
