@@ -231,6 +231,10 @@ either managingOrganization or contact must be populated.
 
 [mCSD\_34](https://github.com/IHE/ITI.mCSD/issues/58). Should we add a subscription model for receiving updates instead of or in addition to \[ITI-91\] for resource updates?
 
+mCSD\_35. Should there be guidance on usage of the Provenance resource?  Is there a use case for this?
+
+mCSD\_36. Should there be a message for the Feed Transaction [ITI-YY1] to support PATCH?  This may be more useful in cases where finer access controls may be used.
+
 ### Closed Issues
 These issues have been decided and documented in the publication.
 

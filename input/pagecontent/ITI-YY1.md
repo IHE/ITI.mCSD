@@ -35,7 +35,7 @@ A Care Services Feed Supplier triggers a Create Care Services Resource Request t
 
 ##### 2:3.YY1.4.1.2 Message Semantics
 
-A Care Services Feed Supplier SHALL initiate a create request using HTTP POST as defined at [{{site.data.fhir.path}}http.html#create] on the Care Services Resource. 
+A Care Services Feed Supplier SHALL initiate a create request using HTTP POST as defined at [{{site.data.fhir.path}}http.html#create]({{site.data.fhir.path}}http.html#create) on the Care Services Resource. 
 
 A Care Services Feed Supplier SHALL submit the Care Services resource in either XML format or JSON format 
 thus the media type of the HTTP body SHALL be either `application/fhir+json` or `application/fhir+xml` respectively.
@@ -123,7 +123,7 @@ A Care Services Feed Supplier triggers a Update Care Services Resource Request t
 
 ##### 2:3.YY1.4.3.2 Message Semantics
 
-A Care Services Feed Supplier SHALL initiate a update request using HTTP PUT as defined at [{{site.data.fhir.path}}http.html#update] on the Care Services Resource. 
+A Care Services Feed Supplier SHALL initiate a update request using HTTP PUT as defined at [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#update) on the Care Services Resource. 
 
 A Care Services Feed Supplier SHALL submit the Care Services resource in either XML format or JSON format 
 thus the media type of the HTTP body SHALL be either `application/fhir+json` or `application/fhir+xml` respectively.
@@ -210,7 +210,7 @@ A Care Services Feed Supplier triggers a Delete Care Services Resource Request t
 
 ##### 2:3.YY1.4.5.2 Message Semantics
 
-A Care Services Feed Supplier SHALL initiate a delete request using HTTP DELETE as defined at [{{site.data.fhir.path}}http.html#delete] on the Care Services Resource. 
+A Care Services Feed Supplier SHALL initiate a delete request using HTTP DELETE as defined at [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete) on the Care Services Resource. 
 
 It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
 
@@ -246,7 +246,7 @@ A Care Services Feed Supplier triggers a Process Care Services Resources Request
 
 ##### 2:3.YY1.4.7.2 Message Semantics
 
-A Care Services Feed Supplier SHALL initiate a batch/transaction request using HTTP POST as defined at [{{site.data.fhir.path}}http.html#transaction] on the server with a FHIR Bundle as the body of the request.
+A Care Services Feed Supplier SHALL initiate a batch/transaction request using HTTP POST as defined at [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction) on the server with a FHIR Bundle as the body of the request.
 
 A Care Services Feed Supplier SHALL submit the Care Services resource in either XML format or JSON format 
 thus the media type of the HTTP body SHALL be either `application/fhir+json` or `application/fhir+xml` respectively.
