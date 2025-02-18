@@ -305,6 +305,8 @@ The Care Services Resource definition in the context of a retrieve interaction i
 | `Practitioner`      | [2:3.90.4.2.2.3 FHIR Practitioner Resource Constraints](#23904223-fhir-practitioner-resource-constraints) |
 | `PractitionerRole`  | [2:3.90.4.2.2.4 FHIR PractitionerRole Resource Constraints](#23904224-fhir-practitionerrole-resource-constraints) |
 | `HealthcareService` | [2:3.90.4.2.2.5 FHIR HealthcareService Resource Constraints](#23904225-fhir-healthcareservice-resource-constraints) |
+| `OrganizationAffiliation` | [2:3.90.4.2.2.6 FHIR OrganizationAffiliation Resource Constraints](#23904226-fhir-organizationaffiliation-resource-constraints) |
+| `Endpoint` | [2:3.90.4.2.2.7 FHIR Endpoint Resource Constraints](#23904227-fhir-endpoint-resource-constraints) |
 {: .grid .table-striped}
 
 ### 2:3.90.5 Security Considerations
