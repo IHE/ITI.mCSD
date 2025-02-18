@@ -71,6 +71,12 @@ _revInclude=OrganizationAffiliation:participating-organization
 _revInclude=OrganizationAffiliation:primary-organization
 ```
 
+The Care Services Selective Supplier should support the following search parameters on the Organization Resource.
+
+```
+partof
+```
+
 ###### 2:3.90.4.1.2.3 Location Resource Message Semantics
 
 The Care Services Selective Supplier shall support the following search parameters on the Location Resource as defined at [{{site.data.fhir.path}}location.html#search]({{site.data.fhir.path}}location.html#search). String parameter modifiers are defined at [{{site.data.fhir.path}}search.html#string]({{site.data.fhir.path}}search.html#string).
@@ -79,10 +85,15 @@ The Care Services Selective Supplier shall support the following search paramete
 identifier
 name
 organization
-partof
 status
 type
 _include=Location:organization
+```
+
+The Care Services Selective Supplier should support the following search parameters on the Location Resource.
+
+```
+partof
 ```
 
 ###### 2:3.90.4.1.2.4 Practitioner Resource Message Semantics

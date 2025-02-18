@@ -91,7 +91,10 @@
         <name value="organization"/> 
         <type value="reference"/> 
       </searchParam> 
-      <searchParam> 
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" >
+          <valueCode value="SHOULD"/>
+        </extension>        
         <name value="partof"/> 
         <type value="reference"/> 
       </searchParam> 
@@ -139,6 +142,9 @@
         <type value="string"/> 
       </searchParam> 
       <searchParam> 
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation" >
+          <valueCode value="SHOULD"/>
+        </extension>  
         <name value="partof"/> 
         <type value="reference"/> 
       </searchParam> 
