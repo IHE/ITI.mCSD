@@ -14,7 +14,7 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest
-  * mode = #server
+  * mode = #client
   * documentation = "IHE ITI mCSD ITI-YY1 endpoint"
   * resource
     * type = #Location

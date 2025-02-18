@@ -47,6 +47,11 @@ They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe
 
 All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
 
+See the CapabilityStatements for the Care Services Feed Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.LocationDistance.html)
+
 ###### 2:3.YY1.4.1.2.1 FHIR Organization Resource Constraints
 
 A Care Services Feed Supplier may submit Organization Resources. The Organization Resource shall be further constrained as described in the [Organization Profile for mCSD](StructureDefinition-IHE.mCSD.Organization.html).
@@ -109,6 +114,11 @@ The Care Services Feed Consumer sends the Create Care Services Resource response
 
 A Care Services Feed Consumer SHALL respond with an `HTTP 201 Created` status code as indicated at [{{site.data.fhir.path}}http.html#create]({{site.data.fhir.path}}http.html#create) or an appropriate error status code.
 
+See the CapabilityStatements for the Care Services Feed Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.LocationDistance.html)
+
 ##### 2:3.YY1.4.2.3 Expected Actions
 
 The Care Services Feed Supplier has received the response and continues with its workflow.
@@ -134,6 +144,11 @@ It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is hig
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
 All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.
+
+See the CapabilityStatements for the Care Services Feed Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.LocationDistance.html)
 
 ###### 2:3.YY1.4.3.2.1 FHIR Organization Resource Constraints
 
@@ -196,6 +211,11 @@ The Care Services Feed Consumer sends the Update Care Services Resource response
 
 A Care Services Feed Consumer SHALL respond with an `HTTP 200 OK` status code as indicated at [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#update) or an appropriate error status code as indicated at [{{site.data.fhir.path}}http.html#update]({{site.data.fhir.path}}http.html#rejecting-updates)
 
+See the CapabilityStatements for the Care Services Feed Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServic
+
 ##### 2:3.YY1.4.4.3 Expected Actions
 
 The Care Services Feed Supplier has received the response and continues with its workflow.
@@ -216,6 +236,11 @@ It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is hig
 
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
+See the CapabilityStatements for the Care Services Feed Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.LocationDistance.html)
+
 ##### 2:3.YY1.4.5.3 Expected Actions
 
 A Care Services Feed Consumer SHALL process the submission and give a response as per [Section 2:3.YY1.4.5](#23YY146-delete-care-services-resources-response-message) or an error as per [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete).
@@ -231,6 +256,12 @@ The Care Services Feed Consumer sends the Delete Care Services Resource response
 ##### 2:3.YY1.4.6.2 Message Semantics
 
 A Care Services Feed Consumer SHALL respond with an `HTTP 200 OK` status code as indicated at [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete) or an appropriate error status code as indicated at [{{site.data.fhir.path}}http.html#delete]({{site.data.fhir.path}}http.html#delete)
+
+See the CapabilityStatements for the Care Services Feed Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.LocationDistance.html)
+
 
 ##### 2:3.YY1.4.6.3 Expected Actions
 
@@ -256,6 +287,11 @@ It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is hig
 
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
+See the CapabilityStatements for the Care Services Feed Supplier for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.LocationDistance.html)
+
 ##### 2:3.YY1.4.7.3 Expected Actions
 
 A Care Services Feed Consumer SHALL process the submission and give a response as per [Section 2:3.YY1.4.7](#23YY148-process-care-services-resources-response-message) or an error as per [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction).
@@ -277,6 +313,11 @@ The Care Services Feed Consumer sends the Process Care Services Resources respon
 A Care Services Feed Consumer SHALL respond with an `HTTP 200 OK` status code as indicated at [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction) or an appropriate error status code as indicated at [{{site.data.fhir.path}}http.html#transaction]({{site.data.fhir.path}}http.html#transaction).
 
 The response will be a FHIR Bundle with the type set to either `batch-response` or `transaction-response` for the type `batch` or `transaction` of the request message respectively.  The entries in the Bundle will correspond to the entries in the request with the result of processing each entry.
+
+See the CapabilityStatements for the Care Services Feed Consumer for additional details:
+
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.LocationDistance.html)
 
 ##### 2:3.YY1.4.8.3 Expected Actions
 
