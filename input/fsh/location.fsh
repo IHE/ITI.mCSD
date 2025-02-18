@@ -17,7 +17,7 @@ A location may have a hierarchical relationship with other locations.
 * type 1..*
   * ^short = "A code that describes the type of Location."
   * ^definition = "A code that describes the type of Location."
-* physicalType 1..1
+* physicalType 0..1
   * ^short = "A code that describes the physical form of the Location."
   * ^definition = "A code that describes the physical form of the Location."
 * name 1..1
