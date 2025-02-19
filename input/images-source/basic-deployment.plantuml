@@ -9,18 +9,12 @@ frame "Update Client" {
   agent "Care Services Update Consumer" as Consumer
 }
 
-frame "Data Source" {
-  agent "Care Services Feed Supplier" as FeedSupplier
-}
-
 frame Directory {
-  agent "Care Services Selective Supplier" as Selective
-  agent "Care Services Update Supplier" as Supplier
-  agent "Care Services Feed Consumer" as FeedConsumer
+agent "Care Services Selective Supplier" as Selective
+agent "Care Services Update Supplier" as Supplier
 }
 
 Query --> Selective: Find Matching Care Services\n[ITI-90]
 Consumer --> Supplier: Request Care Services Updates\n[ITI-91]
-FeedConsumer <-- FeedSupplier: Care Services Feed\n[ITI-YY1]
 
 @enduml
