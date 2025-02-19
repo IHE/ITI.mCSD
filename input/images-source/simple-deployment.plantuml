@@ -21,6 +21,6 @@ frame Directory {
 
 Query --> Selective: Find Matching Care Services\n[ITI-90]
 Consumer --> Supplier: Request Care Services Updates\n[ITI-91]
-FeedConsumer <-- FeedSupplier: Care Services Feed\n[ITI-YY1]
+FeedConsumer <-- FeedSupplier: Care Services Feed\n[ITI-130]
 
 @enduml

@@ -11,5 +11,5 @@ SelectiveConsumer -> SelectiveSupplier : "Find Matching Care Services [ITI-90]"
 SelectiveConsumer -[hidden]-> UpdateConsumer
 UpdateConsumer -> UpdateSupplier : "Request Care Services Updates [ITI-91]"
 UpdateConsumer -[hidden]-> FeedSupplier
-FeedSupplier -> FeedConsumer : "Care Services Feed [ITI-YY1]"
+FeedSupplier -> FeedConsumer : "Care Services Feed [ITI-130]"
 @enduml

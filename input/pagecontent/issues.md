@@ -233,7 +233,7 @@ either managingOrganization or contact must be populated.
 
 mCSD\_35. Should there be guidance on usage of the Provenance resource?  Is there a use case for this?
 
-mCSD\_36. Should there be a message for the Feed Transaction [ITI-YY1] to support PATCH?  This may be more useful in cases where finer access controls may be used.
+mCSD\_36. Should there be a message for the Feed Transaction [ITI-130] to support PATCH?  This may be more useful in cases where finer access controls may be used.
 
 ### Closed Issues
 These issues have been decided and documented in the publication.

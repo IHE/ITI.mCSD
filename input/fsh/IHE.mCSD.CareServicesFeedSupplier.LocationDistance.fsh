@@ -15,7 +15,7 @@ Usage: #definition
 * format[+] = #application/fhir+json
 * rest
   * mode = #client
-  * documentation = "IHE ITI mCSD ITI-YY1 endpoint"
+  * documentation = "IHE ITI mCSD ITI-130 endpoint"
   * resource
     * type = #Location
     * supportedProfile = Canonical(MCSDLocationDistance)

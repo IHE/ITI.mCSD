@@ -5,17 +5,17 @@ participant "Care Services Feed Consumer" as Server
 activate Client
 activate Server
 ==Create Care Services Resource Message==
-Client -> Server : Create Care Services Resource Request [ITI-YY1]
-Server --> Client : Create Care Services Resource Response [ITI-YY1]
+Client -> Server : Create Care Services Resource Request [ITI-130]
+Server --> Client : Create Care Services Resource Response [ITI-130]
 ==Update Care Services Resource Message==
-Client -> Server : Update Care Services Resource Request [ITI-YY1]
-Server --> Client : Update Care Services Resource Response [ITI-YY1]
+Client -> Server : Update Care Services Resource Request [ITI-130]
+Server --> Client : Update Care Services Resource Response [ITI-130]
 ==Delete Care Services Resource Message==
-Client -> Server : Delete Care Services Resource Request [ITI-YY1]
-Server --> Client : Delete Care Services Resource Response [ITI-YY1]
+Client -> Server : Delete Care Services Resource Request [ITI-130]
+Server --> Client : Delete Care Services Resource Response [ITI-130]
 ==Process Care Services Resources Message==
-Client -> Server : Process Care Services Resources Request [ITI-YY1]
-Server --> Client : Process Care Services Resources Response [ITI-YY1]
+Client -> Server : Process Care Services Resources Request [ITI-130]
+Server --> Client : Process Care Services Resources Response [ITI-130]
 deactivate Client
 deactivate Server
 @enduml

@@ -52,8 +52,8 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 | Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
 | Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
 | Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | [ITI TF-2: 3.91](ITI-91.html) |
-| Care Services Feed Consumer      | Care Services Feed \[ITI-YY1\]           | Responder              | R           | [ITI TF-2: 3.YY1](ITI-YY1.html) |
-| Care Services Feed Supplier      | Care Services Feed \[ITI-YY1\]           | Initiator              | R           | [ITI TF-2: 3.YY1](ITI-YY1.html) |
+| Care Services Feed Consumer      | Care Services Feed \[ITI-130\]           | Responder              | R           | [ITI TF-2: 3.130](ITI-130.html) |
+| Care Services Feed Supplier      | Care Services Feed \[ITI-130\]           | Initiator              | R           | [ITI TF-2: 3.130](ITI-130.html) |
 {: .grid .table-striped}
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
