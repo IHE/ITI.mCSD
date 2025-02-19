@@ -50,8 +50,8 @@ Usage:        #example
 
 Instance:     ex-device
 InstanceOf:   Device
-Title:        "Device Example for SVCM"
+Title:        "Device Example for mCSD"
 Description:  """
-Device Example for SVCM.
+Device Example for mCSD.
 """
 Usage:        #example

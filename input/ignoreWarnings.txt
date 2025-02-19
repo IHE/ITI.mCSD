@@ -9,3 +9,7 @@ Reference to experimental CodeSystem https://profiles.ihe.net/ITI/mCSD/CodeSyste
 # understood that these IHE code systems are not published as a FHIR CodeSystem
 A definition for CodeSystem 'urn:ihe:iti:xca:2010' could not be found, so the code cannot be validated
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
+
+# These come from BasicAudit and can be removed once that is updated.
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
