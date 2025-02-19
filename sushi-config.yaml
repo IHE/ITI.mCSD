@@ -61,8 +61,8 @@ pages:
   ITI-91.md:
     title: 2:3.91 Request Care Services Updates [ITI-91]
     generation: markdown
-  ITI-YY1.md:
-    title: 2:3.YY1 Care Services Feed [ITI-YY1]
+  ITI-130.md:
+    title: 2:3.130 Care Services Feed [ITI-130]
     generation: markdown
   testplan.md:
     title: mCSD Test Plan
@@ -92,7 +92,7 @@ menu:
   Volume 2:
     "Find Matching Care Services [ITI-90]": ITI-90.html
     "Request Care Services Updates [ITI-91]": ITI-91.html 
-    "Care Services Feed [ITI-YY1]": ITI-YY1.html 
+    "Care Services Feed [ITI-130]": ITI-130.html 
   Test Plan: testplan.html
   Artifacts: artifacts.html
   Other:
