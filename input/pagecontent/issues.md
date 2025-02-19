@@ -4,6 +4,13 @@
 
 The significant changes:
 
+### 4.0
+- Public Comment for addition of ITI-130 Feed Transaction (Create, Update, Delete, Batch/Transaction)
+- Fix for [Issue 166](https://github.com/IHE/ITI.mCSD/issues/166) on physicalType cardinality
+- Fix for [Issue 157](https://github.com/IHE/ITI.mCSD/issues/157) on partof search parameter requirement to SHOULD
+- Fix for [Issue 158](https://github.com/IHE/ITI.mCSD/issues/166) on linking to the capability statement display for search parameters
+- Changed CapabilityStatements to use FSH
+
 ### 3.9
 
 - Integration of CP-ITI-1290 - clarifying Practitioner/PractitionerRole in Volume 1
@@ -233,7 +240,7 @@ either managingOrganization or contact must be populated.
 
 mCSD\_35. Should there be guidance on usage of the Provenance resource?  Is there a use case for this?
 
-mCSD\_36. Should there be a message for the Feed Transaction [ITI-130] to support PATCH?  This may be more useful in cases where finer access controls may be used.
+mCSD\_36. Should there be a message for the Feed Transaction [ITI-YY1] to support PATCH?  This may be more useful in cases where finer access controls may be used.
 
 ### Closed Issues
 These issues have been decided and documented in the publication.

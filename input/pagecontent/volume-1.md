@@ -387,7 +387,7 @@ Actors are expected to follow the recommendations and requirements found in [ITI
 
 The resources exchanged in this profile may contain information which pose a privacy risk, or in some cases, a safety risk, to providers and other personnel, as well as patients. For example, practitioner phone numbers and home addresses may be conveyed. Implementers should determine what data will be exposed by the system and what level of public access there will be if any.
 
-Access controls should be considered when allowing updates to the data in a directory to ensure only allowed users and/or systems are able to update data.  This may include resource or element level controls as well as Provenance for documenting the data source.
+Access controls should be considered when allowing updates to the data in a directory to ensure only allowed users and/or systems are able to update data.  This may include resource or element level controls as well as Provenance for documenting the data source.  These access controls could be addressed by the client or the server as dictated by the implementation.  It is recommended to use [IUA](https://profiles.ihe.net/ITI/IUA/index.html) for authorization.
 
 The Endpoint Resources exchanged in this profile will expose information about the particular APIs and web services running on the underlying host systems. This might attract malicious activity or provide hints to potential attackers on how to attack a particular host system. Implementers should consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc. 
 
