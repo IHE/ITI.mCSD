@@ -1,13 +1,17 @@
 {
  "package-id" : "ihe.iti.mcsd",
- "version" : "3.9.0",
+ "version" : "4.0.0-comment",
  "path" : "https://profiles.ihe.net/ITI/mCSD/3.9.0",
  "mode" : "milestone",
- "status" : "trial-use",
+ "status" : "ballot",
  "sequence": "Publication",
- "desc" : "Trial Implementation - Integration of CP-ITI-1290",
- "descmd" : "Version 3.9.0
-- Integration of CP-ITI-1290",
+ "desc" : "Public Comment - Addition of Feed Transaction.  Minor fixes for issues.",
+ "descmd" : "Version 4.0.0-comment
+- Public Comment for addition of ITI-130 Feed Transaction
+- Fix for [Issue 166](https://github.com/IHE/ITI.mCSD/issues/166)
+- Fix for [Issue 157](https://github.com/IHE/ITI.mCSD/issues/157)
+- Fix for [Issue 158](https://github.com/IHE/ITI.mCSD/issues/166)
+- Changed CapabilityStatements to use FSH",
  "changes" : "issues.html"
 }
 
