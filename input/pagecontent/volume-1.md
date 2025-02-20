@@ -108,7 +108,7 @@ This capabilities response will typically include all of the capabilities inclus
 
 The Care Services Feed Consumer receives updates to information about mCSD resources from a Care Services Feed Supplier.
 
-The Care Services Feed Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
+The Care Services Feed Consumer SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
 All supported interactions SHALL be specified.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
