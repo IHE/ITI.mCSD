@@ -371,15 +371,25 @@ The interactions between the various actors in this use case are shown in Figure
 
 **Figure 1:46.4.2.6.2-1: Health Information Exchange (HIE) Endpoint Discovery Workflow**
 
-#### 1:46.4.2.7 Use Case \#7: Centralized facilities registry allowing updates for health workers and services 
+#### 1:46.4.2.7 Use Case \#7: Centralized Facilities Registry Allowing Updates for Health Workers and Services 
 
-#### 1:46.4.2.7.1 Managing facilities capabilities description
+##### 1:46.4.2.7.1 Managing Facilities Capabilities Description
 
 A country or region may have a central facility registry and allow the facilities to directly manage its services and the relationship to its health workers:
 
 - A facility adds, updates or deletes health care service it delivers in the centralized facility registry.
 - A facility adds, updates or removes health care worker from its organization.
 - A facility can manage it's own organization hierarchy.
+
+##### 1:46.4.2.7.2 Managing Facilities Capabilities Process Flow
+
+- A facility has an update to a health care service and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html)
+- A facility has removed a health care worker and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html)
+
+<div>
+{%include usecase7-processflow.svg%}
+</div>
+<div style="clear: left;"/>
 
 ## 1:46.5 mCSD Security Considerations
 
