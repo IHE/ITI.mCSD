@@ -401,7 +401,7 @@ Access controls should be considered when allowing updates to the data in a dire
 
 The Endpoint Resources exchanged in this profile will expose information about the particular APIs and web services running on the underlying host systems. This might attract malicious activity or provide hints to potential attackers on how to attack a particular host system. Implementers should consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc. 
 
-There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the mCSD Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
+There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the mCSD Profile. The use of TLS is encouraged.
 
 User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. The network communication security and user authentication are layered in the HTTP transport layer.
 
