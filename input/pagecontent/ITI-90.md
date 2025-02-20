@@ -68,7 +68,6 @@ The Care Services Selective Supplier shall support the following search paramete
 active
 identifier
 name
-partof
 type
 _include=Organization:endpoint
 _revInclude=Location:organization
