@@ -371,7 +371,7 @@ The interactions between the various actors in this use case are shown in Figure
 
 **Figure 1:46.4.2.6.2-1: Health Information Exchange (HIE) Endpoint Discovery Workflow**
 
-#### 1:46.4.2.7 Use Case \#7: Centralized Facilities Registry Allowing Updates for Health Workers and Services 
+#### 1:46.4.2.7 Use Case \#7: Centralized Facilities Registry Allowing Updates for Health Workers and Services
 
 ##### 1:46.4.2.7.1 Managing Facilities Capabilities Description
 
