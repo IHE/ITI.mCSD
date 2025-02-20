@@ -1,0 +1,23 @@
+@startuml
+hide footbox
+participant "Facility" as Facility
+participant "Directory" as Directory
+
+activate Facility
+activate Directory
+
+group Update HealthcareService
+  Facility -> Facility: HealthcareService is updated
+  Facility -> Directory: Care Services Feed [ITI-130] request\nUpdate existing HealthcareService
+  Directory -> Facility: Care Services Feed [ITI-130] response\nHTTP 200 OK
+end
+
+group Delete Practitioner
+  Facility -> Facility: Practitioner is no longer providing service and is deleted.
+  Facility -> Directory: Care Services Feed [ITI-130] request\nDelete existing Practitioner
+  Directory -> Facility: Care Services Feed [ITI-130] response\nHTTP 200 OK
+end
+
+deactivate Directory
+deactivate Facility
+@enduml

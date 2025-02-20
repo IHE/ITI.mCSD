@@ -5,7 +5,8 @@
 The significant changes:
 
 ### 4.0
-- Public Comment for addition of ITI-130 Feed Transaction (Create, Update, Delete, Batch/Transaction)
+- Public Comment for addition of [ITI-130](ITI-130.html) Feed Transaction (Create, Update, Delete, Batch/Transaction)
+  - Updated Volume 1 for new actors and transaction and added use case and additions to security considerations.
 - Fix for [Issue 166](https://github.com/IHE/ITI.mCSD/issues/166) on physicalType cardinality
 - Fix for [Issue 157](https://github.com/IHE/ITI.mCSD/issues/157) on partof search parameter requirement to SHOULD
 - Fix for [Issue 158](https://github.com/IHE/ITI.mCSD/issues/166) on linking to the capability statement display for search parameters

@@ -32,6 +32,7 @@ This guide is organized into the following four main sections:
 2. Volume 2: Transaction Detail
     1. [Find Matching Care Services \[ITI-90\]](ITI-90.html)
     2. [Request Care Services Updates \[ITI-91\]](ITI-91.html)
+    3. [Care Services Feed \[ITI-130\]](ITI-130.html)
 3. Other
    1. [Test Plan](testplan.html)
    2. [Changes to Other IHE Specifications](other.html)
