@@ -187,8 +187,6 @@ The Care Services Selective Supplier sends the Find Matching Care Services Respo
 
 The Care Services Selective Supplier shall support the search response message as defined at [{{site.data.fhir.path}}http.html#search]({{site.data.fhir.path}}http.html#search) on the Care Services Resources.
 
-It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
-
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
 All References (Reference.reference element) to Resources defined in this transaction shall be populated with an accessible URL (see [https://www.hl7.org/fhir/references-definitions.html#Reference.reference](https://www.hl7.org/fhir/references-definitions.html#Reference.reference)), unless the referenced resource is not available at a URL known to the server.

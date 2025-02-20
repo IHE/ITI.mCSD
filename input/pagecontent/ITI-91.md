@@ -43,8 +43,6 @@ A Care Services Update Supplier and Care Services Update Consumer shall support 
 _since
 ```
 
-It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
-
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
 A Care Services Update Supplier shall support receiving a request for both the JSON and the XML messaging formats as defined in FHIR. A Care Services Update Consumer shall accept either the JSON or the XML messaging formats as defined in FHIR.
