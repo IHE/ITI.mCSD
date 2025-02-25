@@ -43,8 +43,6 @@ A Care Services Update Supplier and Care Services Update Consumer shall support 
 _since
 ```
 
-It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
-
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
 A Care Services Update Supplier shall support receiving a request for both the JSON and the XML messaging formats as defined in FHIR. A Care Services Update Consumer shall accept either the JSON or the XML messaging formats as defined in FHIR.
@@ -54,7 +52,6 @@ See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) fo
 See the CapabilityStatements for the Care Services Update Consumer for additional details:
 
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.LocationDistance.html)
 
 ##### 2:3.91.4.1.3 Expected Actions
 
@@ -80,7 +77,6 @@ accessible to the client.
 See the CapabilityStatements for the Care Services Update Supplier for additional details:
 
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
 
 ###### 2:3.91.4.2.2.1 FHIR Organization Resource Constraints
 
@@ -98,8 +94,6 @@ When the Location represents a Facility and is paired with an Organization, the 
 [Location for Facilities Profile for mCSD](StructureDefinition-IHE.mCSD.FacilityLocation.html).
 
 When the Location represents a Jurisdiction and is paired with an Organization, the FHIR Location Resource shall be further constrained as described in the [Location for Jurisdictions Profile for mCSD](StructureDefinition-IHE.mCSD.JurisdictionLocation.html).
-
-When supporting the Location Distance Option, the FHIR Location Resource shall be further constrained as described in the [Location with Distance Option Profile for mCSD](StructureDefinition-IHE.mCSD.LocationDistance.html).
 
 ###### 2:3.91.4.2.2.3 FHIR Practitioner Resource Constraints
 

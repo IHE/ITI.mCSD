@@ -68,7 +68,6 @@ The Care Services Selective Supplier shall support the following search paramete
 active
 identifier
 name
-partof
 type
 _include=Organization:endpoint
 _revInclude=Location:organization
@@ -187,8 +186,6 @@ The Care Services Selective Supplier sends the Find Matching Care Services Respo
 ##### 2:3.90.4.2.2 Message Semantics
 
 The Care Services Selective Supplier shall support the search response message as defined at [{{site.data.fhir.path}}http.html#search]({{site.data.fhir.path}}http.html#search) on the Care Services Resources.
-
-It is possible to use HTTP protocol or HTTPS protocol. The HTTPS protocol is highly recommended.
 
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 

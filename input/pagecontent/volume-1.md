@@ -60,7 +60,7 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 
 Most requirements are documented in ITI TF-2: Transactions. This section documents any additional requirements on mCSD actors.
 
-mCSD supports querying for Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint. However, a Care Services Selective Supplier or Care Service Update Supplier is not required to contain data on all of these.
+mCSD supports querying for Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint. However, Care Services Selective Suppliers, Care Services Update Suppliers, or Care Services Feed Suppliers are not required to contain data on all of these.
 
 #### 1:46.1.1.1 Care Services Selective Consumer
 
@@ -108,7 +108,7 @@ This capabilities response will typically include all of the capabilities inclus
 
 The Care Services Feed Consumer receives updates to information about mCSD resources from a Care Services Feed Supplier.
 
-The Care Services Feed Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
+The Care Services Feed Consumer SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
 All supported interactions SHALL be specified.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
@@ -371,15 +371,25 @@ The interactions between the various actors in this use case are shown in Figure
 
 **Figure 1:46.4.2.6.2-1: Health Information Exchange (HIE) Endpoint Discovery Workflow**
 
-#### 1:46.4.2.7 Use Case \#7: Centralized facilities registry allowing updates for health workers and services 
+#### 1:46.4.2.7 Use Case \#7: Centralized Facilities Registry Allowing Updates for Health Workers and Services
 
-#### 1:46.4.2.7.1 Managing facilities capabilities description
+##### 1:46.4.2.7.1 Managing Facilities Capabilities Description
 
 A country or region may have a central facility registry and allow the facilities to directly manage its services and the relationship to its health workers:
 
 - A facility adds, updates or deletes health care service it delivers in the centralized facility registry.
 - A facility adds, updates or removes health care worker from its organization.
 - A facility can manage it's own organization hierarchy.
+
+##### 1:46.4.2.7.2 Managing Facilities Capabilities Process Flow
+
+- A facility has an update to a health care service and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html)
+- A facility has removed a health care worker and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html)
+
+<div>
+{%include usecase7-processflow.svg%}
+</div>
+<div style="clear: left;"/>
 
 ## 1:46.5 mCSD Security Considerations
 
@@ -391,7 +401,7 @@ Access controls should be considered when allowing updates to the data in a dire
 
 The Endpoint Resources exchanged in this profile will expose information about the particular APIs and web services running on the underlying host systems. This might attract malicious activity or provide hints to potential attackers on how to attack a particular host system. Implementers should consider this when determining the access policies for these Resources. System administrators for the underlying host systems must follow industry best practices for authentication, authorization, auditing, timely application of software patches, etc. 
 
-There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the mCSD Profile. The use of TLS is encouraged, specifically the use of the ATNA Profile (see [ITI TF-1: 9](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)).
+There are many reasonable methods of security for interoperability transactions which can be implemented without modifying the characteristics of the transactions in the mCSD Profile. The use of TLS is encouraged.
 
 User authentication on mobile devices and browsers is typically handled by more lightweight authentication schemes such as HTTP Authentication, OAuth 2.0, or OpenID Connect. IHE has a set of profiles for user authentication including Internet User Authentication (IUA) for REST-based authentication. The network communication security and user authentication are layered in the HTTP transport layer.
 
