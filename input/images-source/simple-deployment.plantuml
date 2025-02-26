@@ -1,26 +1,15 @@
 @startuml
 hide footbox
+skinparam linetype polyline
 
-frame "Query Client" {
-agent "Care Services Selective Consumer" as Query
-}
+agent "Query Client" as Query
+agent "Update Client" as Update
+agent "Data Source" as Source
+agent "Directory" as Directory
 
-frame "Update Client" {
-  agent "Care Services Update Consumer" as Consumer
-}
 
-frame "Data Source" {
-  agent "Care Services Feed Supplier" as FeedSupplier
-}
-
-frame Directory {
-  agent "Care Services Selective Supplier" as Selective
-  agent "Care Services Update Supplier" as Supplier
-  agent "Care Services Feed Consumer" as FeedConsumer
-}
-
-Query --> Selective: Find Matching Care Services\n[ITI-90]
-Consumer --> Supplier: Request Care Services Updates\n[ITI-91]
-FeedConsumer <-- FeedSupplier: Care Services Feed\n[ITI-130]
+Query --> Directory: Find Matching Care Services\n[ITI-90]
+Update --> Directory: Request Care Services Updates\n[ITI-91]
+Directory <-- Source: Care Services Feed\n[ITI-130]
 
 @enduml

@@ -1,10 +1,10 @@
 Profile:      AuditMcsdCareServicesCreate
 Parent:       https://profiles.ihe.net/ITI/BALP/StructureDefinition/IHE.BasicAudit.Create
 Id:           IHE.mCSD.Audit.CareServices.Create
-Title:        "Audit Event for Care Services Feed Transaction by the Care Services Feed Consumer and Care Services Selective Feed for Create"
+Title:        "Audit Event for Care Services Feed Transaction by the Directory and Care Services Selective Feed for Create"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Care Services Feed Transaction happens
-to create a Care Services resource, as recorded by the Care Services Feed Consumer or Care Services Feed Supplier.
+to create a Care Services resource, as recorded by the Directory or Data Source.
 """
 * subtype 2..*
 * subtype contains iti130 1..1
@@ -17,10 +17,10 @@ to create a Care Services resource, as recorded by the Care Services Feed Consum
 Profile:      AuditMcsdCareServicesUpdate
 Parent:       https://profiles.ihe.net/ITI/BALP/StructureDefinition/IHE.BasicAudit.Update
 Id:           IHE.mCSD.Audit.CareServices.Update
-Title:        "Audit Event for Care Services Feed Transaction by the Care Services Feed Consumer and Care Services Selective Feed for Update"
+Title:        "Audit Event for Care Services Feed Transaction by the Directory and Care Services Selective Feed for Update"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Care Services Feed Transaction happens
-to update a Care Services resource, as recorded by the Care Services Feed Consumer or Care Services Feed Supplier.
+to update a Care Services resource, as recorded by the Directory or Data Source.
 """
 * subtype 2..*
 * subtype contains iti130 1..1
@@ -33,10 +33,10 @@ to update a Care Services resource, as recorded by the Care Services Feed Consum
 Profile:      AuditMcsdCareServicesDelete
 Parent:       https://profiles.ihe.net/ITI/BALP/StructureDefinition/IHE.BasicAudit.Delete
 Id:           IHE.mCSD.Audit.CareServices.Delete
-Title:        "Audit Event for Care Services Feed Transaction by the Care Services Feed Consumer and Care Services Selective Feed for Delete"
+Title:        "Audit Event for Care Services Feed Transaction by the Directory and Care Services Selective Feed for Delete"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Care Services Feed Transaction happens
-to delete a Care Services resource, as recorded by the Care Services Feed Consumer or Care Services Feed Supplier.
+to delete a Care Services resource, as recorded by the Directory or Data Source.
 """
 * subtype 2..*
 * subtype contains iti130 1..1
@@ -49,10 +49,10 @@ to delete a Care Services resource, as recorded by the Care Services Feed Consum
 Profile:      AuditMcsdCareServicesProcess
 Parent:       https://profiles.ihe.net/ITI/BALP/StructureDefinition/IHE.BasicAudit.Update
 Id:           IHE.mCSD.Audit.CareServices.Process
-Title:        "Audit Event for Care Services Feed Transaction by the Care Services Feed Consumer and Care Services Selective Feed for Batch/Transaction"
+Title:        "Audit Event for Care Services Feed Transaction by the Directory and Care Services Selective Feed for Batch/Transaction"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Care Services Feed Transaction happens
-to do batch/transaction updates to Care Services resources, as recorded by the Care Services Feed Consumer or Care Services Feed Supplier.
+to do batch/transaction updates to Care Services resources, as recorded by the Directory or Data Source.
 """
 * subtype 2..*
 * subtype contains iti130 1..1

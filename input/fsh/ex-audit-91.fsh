@@ -1,8 +1,8 @@
 
 Instance:     ex-AuditMcsdCareServicesUpdates
 InstanceOf:   AuditMcsdCareServicesUpdates
-Title:        "Audit example for ITI-91 for Care Services Update Supplier."
-Description:  "Audit example for a Care Services Update Consumer requesting updates on a Care Services Resource for ITI-91."
+Title:        "Audit example for ITI-91 for Update Client."
+Description:  "Audit example for a Update Client requesting updates on a Care Services Resource for ITI-91."
 Usage:        #example
 * subtype[anyHistoryT] = http://hl7.org/fhir/restful-interaction#history-type "history-type"
 * subtype[iti91] = urn:ihe:event-type-code#ITI-91 "Request Care Services Updates"
