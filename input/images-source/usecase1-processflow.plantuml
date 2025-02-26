@@ -2,8 +2,8 @@
 hide footbox
 participant "Vera" as Patient
 participant "Dr. West" as Doctor
-participant "EMR (Care Services Selective Consumer)" as EMR
-participant "HWR (Care Services Selective Supplier)" as HWR
+participant "EMR (Query Client)" as EMR
+participant "HWR (Directory)" as HWR
 
 activate Patient
 activate Doctor
