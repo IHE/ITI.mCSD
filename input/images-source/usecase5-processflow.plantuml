@@ -1,8 +1,8 @@
 @startuml
 hide footbox
 participant "Health Worker" as HW
-participant "EMR\nCare Services Selective Consumer" as EMR
-participant "HIE Directory\nCare Services Selective Supplier" as Directory
+participant "EMR\nQuery Client" as EMR
+participant "HIE Directory\nDirectory" as Directory
 
 activate HW
 activate EMR

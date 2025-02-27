@@ -36,9 +36,7 @@ This section defines the actors, transactions, and/or content modules in this pr
 
 Figure 1:46.1-1 shows the actors directly involved in the mCSD Profile and the relevant transactions between them. If needed for context, other actors that may be indirectly involved due to their participation in other related profiles are shown in dotted lines. Actors which have a mandatory grouping are shown in conjoined boxes.
 
-<div>
 {%include ActorsAndTransactions.svg%}
-</div>
 <div style="clear: left;"></div>
 **Figure 1:46.1-1: mCSD Actor Diagram**
 
@@ -48,82 +46,63 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 
 | Actors                           | Transactions                             | Initiator or Responder | Optionality | Reference       |
 | -------------------------------- | ---------------------------------------- | ---------------------- | ----------- | --------------- |
-| Care Services Selective Consumer | Find Matching Care Services \[ITI-90\]   | Initiator              | R           | [ITI TF-2: 3.90](ITI-90.html) |
-| Care Services Selective Supplier | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
-| Care Services Update Consumer    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
-| Care Services Update Supplier    | Request Care Services Updates \[ITI-91\] | Responder              | R           | [ITI TF-2: 3.91](ITI-91.html) |
-| Care Services Feed Consumer      | Care Services Feed \[ITI-130\]           | Responder              | R           | [ITI TF-2: 3.130](ITI-130.html) |
-| Care Services Feed Supplier      | Care Services Feed \[ITI-130\]           | Initiator              | R           | [ITI TF-2: 3.130](ITI-130.html) |
+| Directory                        | Find Matching Care Services \[ITI-90\]   | Responder              | R           | [ITI TF-2: 3.90](ITI-90.html) |
+|                                  | Request Care Services Updates \[ITI-91\] | Responder              | O           | [ITI TF-2: 3.91](ITI-91.html) |
+|                                  | Care Services Feed \[ITI-130\]           | Responder              | O           | [ITI TF-2: 3.130](ITI-130.html) |
+| Query Client                     | Find Matching Care Services \[ITI-90\]   | Initiator              | R           | [ITI TF-2: 3.90](ITI-90.html) |
+| Update Client                    | Request Care Services Updates \[ITI-91\] | Initiator              | R           | [ITI TF-2: 3.91](ITI-91.html) |
+| Data Source                      | Care Services Feed \[ITI-130\]           | Initiator              | R           | [ITI TF-2: 3.130](ITI-130.html) |
 {: .grid .table-striped}
 
 ### 1:46.1.1 Actor Descriptions and Actor Profile Requirements
 
 Most requirements are documented in ITI TF-2: Transactions. This section documents any additional requirements on mCSD actors.
 
-mCSD supports querying for Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint. However, Care Services Selective Suppliers, Care Services Update Suppliers, or Care Services Feed Suppliers are not required to contain data on all of these.
+mCSD supports querying for Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint. However, Directories, Query Clients, Update Clients, or Data Sources are not required to contain data on all of these.
 
-#### 1:46.1.1.1 Care Services Selective Consumer
+#### 1:46:1.1.1 Directory
 
-The Care Services Selective Consumer queries the Care Services Selective Supplier for information about mCSD resources.
+The Directory processes received queries from Query Client and returns information about mCSD resources.
 
-No additional requirements.  The following are two example capability statement resources that a Care Services Selective Consumer could support:
+When the Directory supports the Update Option, it can provide updates about mCSD resources in response to a refresh request from an Update Client. The updates include new or modified information since a previous refresh.
 
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveConsumer.LocationDistance.html)
+When the Directory supports the Feed Option, it receives updates to information about mCSD resources from a Data Source.
 
-#### 1:46.1.1.2 Care Services Selective Supplier
+The Directory SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
+All supported interactions shall be specified. All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] SHALL be supported.  When the Update Option is supported, the [search parameters](ITI-91.html#2391412-message-semantics) and [message semantics](ITI-91.html#2391422-message-semantics) defined in \[ITI-91\] shall be supported.  When the Feed Option is supported, the message semantics defined in \[ITI-130\] SHALL be supported for each message:  [create response](ITI-130.html#23130422-message-semantics), [update response](ITI-130.html#23130442-message-semantics), [delete response](ITI-130.html#23130462-message-semantics), and [process response](ITI-130.html#23130482-message-semantics).  Other parameters may be supported.
 
-The Care Services Selective Supplier processes received queries from Care Services Selective Consumers and returns information about mCSD resources.
+This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are some examples: 
 
-The Care Services Selective Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters](ITI-90.html#2390412-message-semantics) and [message semantics](ITI-90.html#2390422-message-semantics) defined in \[ITI-90\] shall be supported, other parameters may be supported.
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Directory](CapabilityStatement-IHE.mCSD.Directory.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Directory Location Distance Option](CapabilityStatement-IHE.mCSD.Directory.LocationDistance.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Directory Update Option](CapabilityStatement-IHE.mCSD.Directory.Update.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Directory Feed Option](CapabilityStatement-IHE.mCSD.Directory.Feed.html)
 
-This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples: 
+#### 1:46.1.1.2 Query Client
 
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Selective Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesSelectiveSupplier.LocationDistance.html)
+The Query Client queries the Directory for information about mCSD resources.
 
-#### 1:46.1.1.3 Care Services Update Consumer
+No additional requirements.  The following are two example capability statement resources that a Query Client could support:
 
-The Care Services Update Consumer can query for updates since a previous refresh, to information about mCSD resources from one 
-or more Care Services Update Suppliers.
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Query Client](CapabilityStatement-IHE.mCSD.QueryClient.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Query Client Location Distance Option](CapabilityStatement-IHE.mCSD.QueryClient.LocationDistance.html)
 
-No additional requirements. The following are two example capability statement resources that a Care Services Update Consumer could support:
+#### 1:46.1.1.3 Update Client
 
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateConsumer.LocationDistance.html)
+The Update Client can query for updates since a previous refresh, to information about mCSD resources from one 
+or more Directories that support the Update Option.
 
-#### 1:46.1.1.4 Care Services Update Supplier
+No additional requirements. The following are two example capability statement resources that a Update Client could support:
 
-The Care Services Update Supplier can provide updates about mCSD resources in response to a refresh request from a Care Services Update Consumer. The updates include new or modified information since a previous refresh.
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Update Client](CapabilityStatement-IHE.mCSD.UpdateClient.html)
 
-The Care Services Update Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
-All supported interactions shall be specified. The [search parameters](ITI-91.html#2391412-message-semantics) and [message semantics](ITI-91.html#2391422-message-semantics) defined in \[ITI-91\] shall be supported, other parameters may be supported.
+#### 1:46.1.1.4 Data Source
 
-This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
+The Data Source can provide updates about mCSD resources to a Directory. The updates include create, update, or delete requests to individual resources or a batch/transaction request for a bundle of resources.
 
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Update Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesUpdateSupplier.LocationDistance.html)
+No additional requirements. The following are two example capability statement resources that a Data Source could support:
 
-#### 1:46.1.1.5 Care Services Feed Consumer
-
-The Care Services Feed Consumer receives updates to information about mCSD resources from a Care Services Feed Supplier.
-
-The Care Services Feed Consumer SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
-All supported interactions SHALL be specified.
-
-This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.  The following are two examples:
-
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Consumer Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedConsumer.LocationDistance.html)
-
-#### 1:46.1.1.6 Care Services Feed Supplier
-
-The Care Services Feed Supplier can provide updates about mCSD resources to a Care Services Feed Consumer. The updates include create, update, or delete requests to individual resources or a batch/transaction request for a bundle of resources.
-
-No additional requirements. The following are two example capability statement resources that a Care Services Feed Consumer could support:
-
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.html)
-- [IHE ITI Mobile Care Services Discovery (mCSD) - Care Services Feed Supplier Location Distance Option](CapabilityStatement-IHE.mCSD.CareServicesFeedSupplier.LocationDistance.html)
+- [IHE ITI Mobile Care Services Discovery (mCSD) - Data Source](CapabilityStatement-IHE.mCSD.DataSource.html)
 
 ## 1:46.2 mCSD Actor Options
 
@@ -133,19 +112,31 @@ Options that may be selected for each actor in this profile, if any, are listed 
 
 | Actor                            | Option Name              | Reference      |
 | -------------------------------- | ------------------------ | -------------- |
-| Care Services Selective Consumer | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
-| Care Services Selective Supplier | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
-| Care Services Update Consumer    | No options defined       | -- |
-| Care Services Update Supplier    | No options defined       | -- |
-| Care Services Feed Consumer    | No options defined       | -- |
-| Care Services Feed Supplier    | No options defined       | -- |
+| Directory                        | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
+| Directory                        | Update Option            | [Section 1:46.2.2](#14622-update-option) |
+| Directory                        | Feed Option              | [Section 1:46.2.3](#14623-feed-option) |
+| Query Client                     | Location Distance Option | [Section 1:46.2.1](#14621-location-distance-option) |
+| Update Client                    | No options defined       | -- |
+| Data Source                      | No options defined       | -- |
 {: .grid .table-striped}
 
 ### 1:46.2.1 Location Distance Option
 
 The Location Distance Option enables querying Location resources based on relative distances.
 
-A Care Services Selective Consumer or Care Services Selective Supplier that supports the Location Distance Option SHALL implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+A Query Client or Directory that supports the Location Distance Option SHALL implement the semantics for the Location Distance Option of the Find Matching Care Services \[ITI-90\] transaction. See [ITI TF-2: 2:3.90.4.1.2.2](ITI-90.html#23904122-organization-resource-message-semantics) and [ITI TF-2: 2:3.90.4.2.2.2](ITI-90.html#23904222-fhir-location-resource-constraints).
+
+### 1:46.2.2 Update Option
+
+The Update Option enables sending bulk updates to the Update Client from the Directory.
+
+A Directory that supports the Update Option SHALL implement the [Request Care Services Updates [ITI-91]](ITI-91.html) transaction.
+
+### 1:46.2.3 Feed Option
+
+The Feed Option enables receiving feed updates from the Feed Client from the Directory.
+
+A Directory that supports the Update Option SHALL implement the [Request Care Services Updates [ITI-91]](ITI-91.html) transaction.
 
 ## 1:46.3 mCSD Required Actor Groupings
 
@@ -157,12 +148,10 @@ An actor from this profile (Column 1) shall implement all of the required transa
 
 | mCSD Actor                       | Actor to be grouped with | Reference | Content Bindings Reference |
 | -------------------------------- | ------------------------ | --------- | -------------------------- |
-| Care Services Selective Consumer | None                     | \--       | \--                        |
-| Care Services Selective Supplier | None                     | \--       | \--                        |
-| Care Services Update Consumer    | None                     | \--       | \--                        |
-| Care Services Update Supplier    | None                     | \--       | \--                        |
-| Care Services Feed Consumer      | None                     | \--       | \--                        |
-| Care Services Feed Supplier      | None                     | \--       | \--                        |
+| Directory                        | None                     | \--       | \--                        |
+| Query Client                     | None                     | \--       | \--                        |
+| Update Client                    | None                     | \--       | \--                        |
+| Data Source                      | None                     | \--       | \--                        |
 {: .grid .table-striped}
 
 ## 1:46.4 mCSD Overview
@@ -190,7 +179,7 @@ The patient, Vera Brooks, consults with her physician who recommends surgery. Th
 
 - Dr. West diagnoses the problem as a torn ACL and decides to refer Vera to an orthopedic surgeon.
 
-- Dr. West uses her EMR query tool, which implements a Care Services Selective Consumer to search for orthopedic surgeons within 30km of Vera’s home.
+- Dr. West uses her EMR query tool, which implements a Query Client to search for orthopedic surgeons within 30km of Vera’s home.
 
 - The EMR retrieves the information from a Healthcare Worker Registry (HWR) and displays it to Dr. West.
 
@@ -217,11 +206,11 @@ Resources from jurisdictional areas can be reported up to a central location so 
 
 ##### 1:46.4.2.2.2 Provider Lookup During an Emergency Event Process Flow
 
-  - A jurisdictional (state/district) Care Services Update Supplier will provide data to a central Care Services Update Consumer (National HIE).
+  - A jurisdictional (state/district) Directory will provide data to a central Update Client (National HIE).
 
-  - The National HIE will be a Care Services Update Consumer grouped with a Care Services Selective Supplier.
+  - The National HIE will be a Update Client grouped with a Directory.
 
-  - An emergency responder (e.g., police on site controlling access) can use a Care Services Selective Consumer to validate the credentials of a reporting health worker from the central Care Services Update Supplier.
+  - An emergency responder (e.g., police on site controlling access) can use a Query Client to validate the credentials of a reporting health worker from the central Directory.
 
   - Based on the result, the emergency responder can allow or deny access to the reporting health worker.
 
@@ -250,13 +239,13 @@ Projects like the U.S. President's Emergency Plan for AIDS Relief (PEPFAR)’s D
 
 ##### 1:46.4.2.3.2 Cross-jurisdictional Site Management Process Flow
 
-An Operating Unit (OU) will run a Care Services Update Consumer and Care Services Update Supplier for a specific geographic area (e.g., country). This Update Consumer will query other organizations (ministries of health, partners) operating in the geographic area to get updated site data for the sites managed by the OU.
+An Operating Unit (OU) will run a Update Client and Directory for a specific geographic area (e.g., country). This Update Client will query other organizations (ministries of health, partners) operating in the geographic area to get updated site data for the sites managed by the OU.
 
-  - An OU Update Consumer will query a sub-unit Care Services Update Suppliers (e.g., MoH) to get an updated list of sites under the sub-unit.
+  - An OU Update Client will query a sub-unit Directory (e.g., MoH) to get an updated list of sites under the sub-unit.
 
-  - An OU Update Consumer will query a subunit Care Services Update Suppliers (e.g., partner) to get an updated list of sites under the subunit.
+  - An OU Update Client will query a subunit Directory (e.g., partner) to get an updated list of sites under the subunit.
 
-  - The OU Update Consumer will use entity matching to determine if there are duplicated sites in the combined data and flag them for review. (See
+  - The OU Update Client will use entity matching to determine if there are duplicated sites in the combined data and flag them for review. (See
     [https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service](https://wiki.ohie.org/display/documents/OpenHIE+Entity+Matching+Service).)
 
 The interactions between the various actors in this use case are shown
@@ -277,7 +266,7 @@ A developing country has decided to implement a Master Facility List (MFL) based
 
 ##### 1:46.4.2.4.2 Master Facility List Process Flow
 
-A Master Facility List (MFL) will run a Care Services Update Supplier and Care Services Selective Supplier for an entire country. A Human Resources Information System (HRIS) will run a Care Services Update Consumer to retrieve the list of facilities. A Logistics Management Information System (LMIS) will run a Care Services Update Consumer to retrieve the list of facilities.
+A Master Facility List (MFL) will run a Directory for an entire country. A Human Resources Information System (HRIS) will run a Update Client to retrieve the list of facilities. A Logistics Management Information System (LMIS) will run a Update Client to retrieve the list of facilities.
 
 - An HRIS will query the MFL for an updated list of facilities where Practitioners can provide care.
 
@@ -409,27 +398,27 @@ User authentication on mobile devices and browsers is typically handled by more 
 
 ### 1:46.6.1 Aggregate Data Exchange – ADX
 
-The IHE QRPH Aggregate Data Exchange (ADX) Profile enables reporting of public health and service delivery indicators in various locations. A reporting system may play the role of a Care Services Update Consumer to ensure that it has an updated list of the resources for the reporting locations.
+The IHE QRPH Aggregate Data Exchange (ADX) Profile enables reporting of public health and service delivery indicators in various locations. A reporting system may play the role of a Update Client to ensure that it has an updated list of the resources for the reporting locations.
 
-Additionally, a service that contains information on practitioners (and may be a Care Services Selective Supplier or Care Services Update Supplier) can also be used to generate an ADX message to satisfy the use case of a district health manager running an aggregate report on staffing levels by facility and health worker type from the ITI Care Services Discovery (CSD) Profile.
+Additionally, a service that contains information on practitioners (and may be a Directory) can also be used to generate an ADX message to satisfy the use case of a district health manager running an aggregate report on staffing levels by facility and health worker type from the ITI Care Services Discovery (CSD) Profile.
 
 ### 1:46.6.2 Care Services Discovery – CSD
 
-A Care Services Directory in the CSD Profile can be grouped with the Care Services Update Supplier from mCSD. The CSD Care Services InfoManager could implement the mCSD Care Services Update Consumer and the Care Services Selective Supplier Actors. The CSD Service Finder could implement the mCSD Care Services Selective Consumer. This enables the CSD actors to allow RESTful transactions without having to change the underlying data store.
+A Care Services Directory in the CSD Profile can be grouped with the Directory from mCSD. The CSD Care Services InfoManager could implement the mCSD Update Client and the Directory Actors. The CSD Service Finder could implement the mCSD Query Client. This enables the CSD actors to allow RESTful transactions without having to change the underlying data store.
 
 ### 1:46.6.3 Health Provider Directory – HPD
 
-A Provider Information Source in HPD can also implement the Care Services Update Supplier from mCSD. Note that in this case the Provider Information Source would be queried for updates instead of pushing the updates to the Consumer. The HPD Provider Information Directory could implement the mCSD Care Services Update Consumer and the Care Services Selective Supplier Actors. The HPD Provider Information Consumer could implement the mCSD Care Services Selective Consumer. This enables the HPD actors to allow RESTful transactions without having to change the underlying data store.
+A Provider Information Source in HPD can also implement the Directory from mCSD. Note that in this case the Provider Information Source would be queried for updates instead of pushing the updates to the HPD Provider Information Consumer. The HPD Provider Information Directory could implement the mCSD Update Client and the Directory Actors. The HPD Provider Information Consumer could implement the mCSD Query Client. This enables the HPD actors to allow RESTful transactions without having to change the underlying data store.
 
 ### 1:46.6.4 Mobile Alert Communication Management – mACM
 
-The mACM Profile defines the means to send an alert to practitioners. The mCSD Profile provides a way to query that list of practitioners. A mACM Alert Reporter can be grouped with a Care Services Update Consumer or a Care Services Selective Consumer to ensure that it has an updated list of practitioners.
+The mACM Profile defines the means to send an alert to practitioners. The mCSD Profile provides a way to query that list of practitioners. A mACM Alert Reporter can be grouped with a Update Client or a Query Client to ensure that it has an updated list of practitioners.
 
 ## 1:46.7 mCSD Deployment Considerations
 
 ### 1:46.7.1 Basic Deployment
 
-A basic deployment may only have a single directory that will maintain data internally. In this case, you would only need the Care Services Selective Supplier (and/or Care Services Update Supplier) to send search results back to one or more Care Services Selective Consumers (or Care Services Update Consumers). The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.1-1 below.
+A basic deployment may only have a single directory that will maintain data internally. In this case, you would only need the Directory to send search results back to one or more Query Clients (or Update Clients). The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.1-1 below.
 
 <div>
 {%include basic-deployment.svg%}
@@ -440,7 +429,7 @@ A basic deployment may only have a single directory that will maintain data inte
 
 ### 1:46.7.2 Simple Deployment
 
-A more common deployment may have a single directory with one or more data sources that feed data into the directory. This would also have one or more selective or update consumers to query the data in the directory. The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.2-1 below.
+A more common deployment may have a single directory with one or more data sources that feed data into the directory. This would also have one or more query or update clients to query the data in the directory. The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.2-1 below.
 
 <div>
 {%include simple-deployment.svg%}
@@ -451,34 +440,33 @@ A more common deployment may have a single directory with one or more data sourc
 
 ### 1:46.7.3 Federated and Cross-Jurisdictional Deployments
 
-A Federated Deployment has multiple levels of the Care Services Update Suppliers linked to Care Services Update Consumers. These Update Consumers may also support being Care Services Update Suppliers so that higher level Update Consumers can receive their updates. They may also support being a Care Services Selective Supplier so that Selective Consumer clients can query that level of information. See Figure 1:46.7.3-1 below.
+A Federated Deployment has multiple levels of the Directories linked to Update Clients. These Update Clients may also support being Directories so that higher level Update Clients can receive their updates.  See Figure 1:46.7.3-1 below.
 
-Interrelated content is maintained by the Care Services Update Consumer. The Care Services Update Consumer routinely obtains new or updated content from Care Services Update Suppliers by polling them. These updates may refresh a data cache which the Update Consumer maintains. The Update Consumer’s cache is refreshed at an appropriate interval specified by the implementing jurisdiction. The implementing jurisdiction will consider the implications of out of date information when setting the refresh interval between cache updates. The normal delays in updating listings will also be part of this consideration.
+Interrelated content is maintained by the Update Client. The Update Client routinely obtains new or updated content from Directories by polling them. These updates may refresh a data cache which the Update Client maintains. The Update Client's cache is refreshed at an appropriate interval specified by the implementing jurisdiction. The implementing jurisdiction will consider the implications of out of date information when setting the refresh interval between cache updates. The normal delays in updating listings will also be part of this consideration.
 
-The various data sources would maintain definitive data regarding one or more Care Services Resources and implement the Care Services Update Supplier. These Care Services Update Suppliers would respond to a Care Services Update Consumer’s request for new or updated content since a specified date and time. To support this capability, a Care Services Update Supplier should support time stamped updates. Data elements that are deprecated should not simply be deleted, but rather are updated to an appropriate status indicating their deprecation.
+The various data sources would maintain definitive data regarding one or more Care Services Resources and implement the Directory. These Directories would respond to a Update Client’s request for new or updated content since a specified date and time. To support this capability, a Directory should support time stamped updates. Data elements that are deprecated should not simply be deleted, but rather are updated to an appropriate status indicating their deprecation.
 
-This deployment may also have cross-jurisdictional considerations if any of the Update Suppliers have overlap in the data they manage. In this instance, the Care Services Update Consumer would need to resolve any conflicts before sharing this information as either a Care Services Update Supplier or a Care Services Selective Supplier. The way in which these conflicts are resolved is defined by the implementing jurisdiction of the Care Services Update Consumer.
+This deployment may also have cross-jurisdictional considerations if any of the Directories have overlap in the data they manage. In this instance, the Update Client would need to resolve any conflicts before sharing this information as a Directory. The way in which these conflicts are resolved is defined by the implementing jurisdiction of the Update Client.
 
-![Federated and Cross Jurisdictional Deployment](FederatedDeployment.png)
-<div style="clear: left;"/>
-
+{%include FederatedDeployment.svg%}
+<div style="clear: left;"></div>
 **Figure 1:46.7.3-1: Federated and Cross Jurisdictional Deployment**
 
-The Care Services Selective Consumer is the actor that queries for information about interrelated care services. These queries are sent to the Care Services Selective Supplier who develops a response based on the content in its local data store. When a Care Services Selective Supplier is combined with a Care Services Update Consumer (Global and Country servers from Figure 1:46.7.3-1), it should maintain a cache of the aggregated information from all the configured Care Services Update Suppliers it is linked to.
+The Query Client is the actor that queries for information about interrelated care services. These queries are sent to the Directory who develops a response based on the content in its local data store. When a Directory is combined with a Update Client (Global and Country servers from Figure 1:46.7.3-1), it should maintain a cache of the aggregated information from all the configured Directories it is linked to.
 
-In order for the Care Services Update Consumer’s (Global and Country servers) cached content to be able to serve its role as an interlinked data source, the following conditions should be met by Care Services Update Suppliers who maintain content.
+In order for the Update Client's (Global and Country servers) cached content to be able to serve its role as an interlinked data source, the following conditions should be met by Directories who maintain content.
 
-1. Implementing jurisdictions may mandate terminologies for Organization Type, Service Type, Location Type, Location Status, Practitioner Type, Practitioner Status, Contact Point Type, Credential Type, Specialization Code, and language code. Care Services Update Suppliers would be configurable to use these terminologies, where mandated. In the case of a cross jurisdictional deployment, mapping between the terminology used by the various jurisdictions may need to be maintained.
+1. Implementing jurisdictions may mandate terminologies for Organization Type, Service Type, Location Type, Location Status, Practitioner Type, Practitioner Status, Contact Point Type, Credential Type, Specialization Code, and language code. Directories would be configurable to use these terminologies, where mandated. In the case of a cross jurisdictional deployment, mapping between the terminology used by the various jurisdictions may need to be maintained.
 
-2. Implementing jurisdictions may mandate conventions regarding the types, components and formatting of Name, Address and Address Line elements. Care Services Update Suppliers would be configurable to use these formatting conventions, where mandated.
+2. Implementing jurisdictions may mandate conventions regarding the types, components and formatting of Name, Address and Address Line elements. Directories would be configurable to use these formatting conventions, where mandated.
 
-3. Implementing jurisdictions may mandate the source of truth regarding Organization ID, Healthcare Service ID, Location ID and Practitioner ID. Care Services Update Suppliers would ensure that all cross-referenced IDs match corresponding resources in the jurisdictionally mandated sources of truth.
+3. Implementing jurisdictions may mandate the source of truth regarding Organization ID, Healthcare Service ID, Location ID and Practitioner ID. Directories would ensure that all cross-referenced IDs match corresponding resources in the jurisdictionally mandated sources of truth.
 
 For guidance on handling challenges regarding the representation of names across multiple languages and in different cultures, refer to the [ITI TF-2: 3.24.5.2.3.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-24.html#3.24.5.2.3.1). This section in the ITI Technical Framework describes the use of the language tag as documented in IETF RFC1766 and the HL7 XCN name data type.
 
 #### 1:46.7.3.1 Terminology Services
 
-All referenced terminologies from a Care Services Selective Supplier or Care Services Update Supplier may be pre-coordinated or they may be resolvable from one or more terminology services. Though it is out of scope of the mCSD Profile to define the means of interacting with a terminology service, this could be provided, for example, through the
+All referenced terminologies from a Directory may be pre-coordinated or they may be resolvable from one or more terminology services. Though it is out of scope of the mCSD Profile to define the means of interacting with a terminology service, this could be provided, for example, through the
 [Sharing Valuesets, Codes, and Maps (SVCM) Profile](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_SVCM.pdf).
 
 ## 1:46.8 mCSD Endpoint Usage Considerations
@@ -590,7 +578,7 @@ does not reflect which endpoint is the adapter or the adaptee.
 
 ##### 1:46.8.4 Endpoint Discovery Usage
 
-The following example shows the steps used by a Care Services Selective Consumer to navigate a directory to find suitable electronic service Endpoints to some desired Organizations. In this example, a "suitable" Endpoint means it supports an IHE Document Sharing profile, and is based on .connectionType, .extension:specificType, .payloadType, .payloadMimeType, and status (both Endpoint.status as well as the actual status of the electronic service). The example uses the [mCSD-profiled OrganizationAffiliation] StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html) that indicates federated connectivity for Document Sharing (e.g., affiliated organizations may be addressed as intendedRecipient). The pseudocode below uses a depth-first, first-match search, and does not protect against loops.
+The following example shows the steps used by a Query Client to navigate a directory to find suitable electronic service Endpoints to some desired Organizations. In this example, a "suitable" Endpoint means it supports an IHE Document Sharing profile, and is based on .connectionType, .extension:specificType, .payloadType, .payloadMimeType, and status (both Endpoint.status as well as the actual status of the electronic service). The example uses the [mCSD-profiled OrganizationAffiliation] StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html) that indicates federated connectivity for Document Sharing (e.g., affiliated organizations may be addressed as intendedRecipient). The pseudocode below uses a depth-first, first-match search, and does not protect against loops.
 
 Until a suitable Endpoint is found or the search is complete, check the following in this order:
 - Locate the desired Organization resource.
@@ -603,7 +591,7 @@ Until a suitable Endpoint is found or the search is complete, check the followin
 - If there is an Organization.partOf (i.e., a parent), check if it has a suitable Organization.endpoint.
   - Continue searching for a suitable Endpoint by traversing Organization.partOf recursively.
 
-Rather than a first-match search, the Care Services Selective Consumer might search for and decide among multiple electronic paths to the same Organization. For example:
+Rather than a first-match search, the Query Client might search for and decide among multiple electronic paths to the same Organization. For example:
 - It finds a suitable Endpoint resource for the target Organization, but instead uses an Endpoint for an Organization two levels higher to make a broader search for records.
 - It finds suitable Endpoint resources for equivalent mechanisms, XDR \[ITI-41\] and MHD \[ITI-65\], and chooses MHD as the preferred transaction.
 - It finds suitable Endpoint resources to the same Organization via two different HIEs, and prefers one HIE based on lower fees and authorization differences.

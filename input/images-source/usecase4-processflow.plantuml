@@ -1,9 +1,9 @@
 @startuml
 hide footbox
 
-participant "MFL\nCare Services Update Supplier" as MFL
-participant "HRIS\nCare Services Update Consumer" as HRIS
-participant "LMIS\nCare Services Update Consumer" as LMIS
+participant "MFL\nDirectory" as MFL
+participant "HRIS\nUpdate Client" as HRIS
+participant "LMIS\nUpdate Client" as LMIS
 
 activate HRIS
 activate MFL

@@ -1,10 +1,10 @@
 Profile:      AuditMcsdCareServicesUpdates
 Parent:       AuditEvent
 Id:           IHE.mCSD.Audit.CareServices.Updates
-Title:        "Audit Event for Request Care Services Updates Transaction by the Care Services Update Consumer and Care Services Update Supplier"
+Title:        "Audit Event for Request Care Services Updates Transaction by the Update Client and Directory"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Request Care Services Updates Transaction happens
-for a Care Services Resource updates, as recorded by the Care Services Update Supplier or Care Services Update Consumer.
+for a Care Services Resource updates, as recorded by the Directory or Update Client.
 """
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest "Restful Operation"
 

@@ -1,8 +1,8 @@
 @startuml
 hide footbox
 participant "Health Worker" as HW
-participant "EMR\nCare Services Selective Consumer\nXCA Initiating Gateway" as EMR
-participant "HIE Endpoint Directory\nCare Services Selective Supplier" as Directory
+participant "EMR\nQuery Client\nXCA Initiating Gateway" as EMR
+participant "HIE Endpoint Directory\nDirectory" as Directory
 participant "Participant\nXCA Responding Gateway" as Responder67
 
 activate HW

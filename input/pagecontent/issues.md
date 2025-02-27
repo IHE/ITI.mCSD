@@ -7,10 +7,21 @@ The significant changes:
 ### 4.0
 - Public Comment for addition of [ITI-130](ITI-130.html) Feed Transaction (Create, Update, Delete, Batch/Transaction)
   - Updated Volume 1 for new actors and transaction and added use case and additions to security considerations.
+  - Reworked all Actors to improve clarity
 - Fix for [Issue 166](https://github.com/IHE/ITI.mCSD/issues/166) on physicalType cardinality
 - Fix for [Issue 157](https://github.com/IHE/ITI.mCSD/issues/157) on partof search parameter requirement to SHOULD
 - Fix for [Issue 158](https://github.com/IHE/ITI.mCSD/issues/166) on linking to the capability statement display for search parameters
-- Changed CapabilityStatements to use FSH
+- Changed CapabilityStatements to use FSH and added expectations to fix [Issue 185](https://github.com/IHE/ITI.mCSD/issues/185)
+
+| New Actor (with Option)                                            | Old Actor                                |
+| ------------------------------------------------------------------ | ---------------------------------------- |
+| [Directory](volume-1.html#146111-directory)                        | Care Services Selective Supplier         |
+| [Directory](volume-1.html#146111-directory) with [Update Option](volume-1.html#14622-update-option) | Care Services Update Supplier         |
+| [Directory](volume-1.html#146111-directory) with [Feed Option](volume-1.html#14623-feed-option)     | Care Services Feed Consumer           |
+| [Query Client](volume-1.html#146112-query-client)                  | Care Services Selective Consumer         |
+| [Update Client](volume-1.html#146113-update-client)                | Care Services Update Consumer            |
+| [Data Source](volume-1.html#146114-data-source)                    | Care Services Feed Supplier              |
+{: .grid .table-striped}
 
 ### 3.9
 

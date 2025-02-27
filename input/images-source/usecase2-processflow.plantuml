@@ -1,9 +1,9 @@
 @startuml
 hide footbox
 participant "Health Worker" as HW
-participant "Emergency Responder\nCare Services Selective Consumer" as ER
-participant "National HIE\nCare Services Update Consumer\nCare Services Selective Supplier" as NHIE
-participant "State HIE\nCare Services Update Supplier" as SHIE
+participant "Emergency Responder\Query Client" as ER
+participant "National HIE\nUpdate Client\nDirectory" as NHIE
+participant "State HIE\nDirectory" as SHIE
 
 loop Regular update of practitioner information
 activate NHIE

@@ -1,7 +1,7 @@
 @startuml
 hide footbox
-participant "Care Services Feed Supplier" as Client
-participant "Care Services Feed Consumer" as Server
+participant "Data Source" as Client
+participant "Directory" as Server
 activate Client
 activate Server
 ==Create Care Services Resource Message==

@@ -3,9 +3,9 @@ hide footbox
 
 title Cross-Jurisdictional Data Exchange
 
-agent "Operating Unit\nCare Services Update Consumer" as OU
-agent "Ministry of Health\nCare Services Update Supplier" as MOH
-collections "Implementing Partner\nCare Services Update Supplier" as Partner
+agent "Operating Unit\nUpdate Client" as OU
+agent "Ministry of Health\nDirectory" as MOH
+collections "Implementing Partner\nDirectory" as Partner
 
 OU --> MOH
 OU --> Partner

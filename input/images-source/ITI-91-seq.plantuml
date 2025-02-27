@@ -1,7 +1,7 @@
 @startuml
 hide footbox
-participant "Care Services Update Consumer" as Client
-participant "Care Services Update Supplier" as Server
+participant "Update Client" as Client
+participant "Directory" as Server
 activate Client
 activate Server
 Client -> Server : 1. Request Care Services Updates Request [ITI-91]
