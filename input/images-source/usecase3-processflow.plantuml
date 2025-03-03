@@ -1,9 +1,9 @@
 @startuml
 hide footbox
 participant "OU Reviewer" as Reviewer
-participant "Operating Unit\nCare Services Update Consumer" as OU
-participant "MOH\nCare Services Update Supplier" as MOH
-participant "Partner\nCare Services Update Supplier" as Partner
+participant "Operating Unit\nUpdate Client" as OU
+participant "MOH\nDirectory" as MOH
+participant "Partner\nDirectory" as Partner
 
 activate OU
 

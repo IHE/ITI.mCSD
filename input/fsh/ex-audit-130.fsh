@@ -1,7 +1,7 @@
 Instance:     ex-AuditMcsdCareServicesCreate
 InstanceOf:   AuditMcsdCareServicesCreate
-Title:        "Audit example for ITI-130 for Care Services Feed Supplier for create."
-Description:  "Audit example for a Care Services Feed Supplier submitting a create on a Care Services resource for ITI-130."
+Title:        "Audit example for ITI-130 for Data Source for create."
+Description:  "Audit example for a Data Source submitting a create on a Care Services resource for ITI-130."
 Usage:        #example
 
 * subtype[anyCreate] = http://hl7.org/fhir/restful-interaction#create "create"
@@ -25,8 +25,8 @@ Usage:        #example
 
 Instance:     ex-AuditMcsdCareServicesUpdate
 InstanceOf:   AuditMcsdCareServicesUpdate
-Title:        "Audit example for ITI-130 for Care Services Feed Supplier for update."
-Description:  "Audit example for a Care Services Feed Supplier submitting an update on a Care Services resource for ITI-130."
+Title:        "Audit example for ITI-130 for Data Source for update."
+Description:  "Audit example for a Data Source submitting an update on a Care Services resource for ITI-130."
 Usage:        #example
 
 * subtype[anyUpdate] = http://hl7.org/fhir/restful-interaction#update "update"
@@ -50,8 +50,8 @@ Usage:        #example
 
 Instance:     ex-AuditMcsdCareServicesDelete
 InstanceOf:   AuditMcsdCareServicesDelete
-Title:        "Audit example for ITI-130 for Care Services Feed Supplier for delete."
-Description:  "Audit example for a Care Services Feed Supplier submitting a delete on a Care Services resource for ITI-130."
+Title:        "Audit example for ITI-130 for Data Source for delete."
+Description:  "Audit example for a Data Source submitting a delete on a Care Services resource for ITI-130."
 Usage:        #example
 
 * subtype[anyDelete] = http://hl7.org/fhir/restful-interaction#delete "delete"
@@ -75,8 +75,8 @@ Usage:        #example
 
 Instance:     ex-AuditMcsdCareServicesProcess
 InstanceOf:   AuditMcsdCareServicesProcess
-Title:        "Audit example for ITI-130 for Care Services Feed Supplier for batch/transaction updates."
-Description:  "Audit example for a Care Services Feed Supplier submitting a batch/transaction on Care Services resources for ITI-130."
+Title:        "Audit example for ITI-130 for Data Source for batch/transaction updates."
+Description:  "Audit example for a Data Source submitting a batch/transaction on Care Services resources for ITI-130."
 Usage:        #example
 
 * subtype[anyUpdate] = http://hl7.org/fhir/restful-interaction#update "update"
