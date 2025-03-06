@@ -334,10 +334,10 @@ See [ITI TF-2: Appendix Z.8](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z
 
 #### 2:3.90.5.1 Security Audit Considerations
 
-Note that the same audit message is recorded by both Directory and Query Client. The
+Note that when grouped with ATNA Secure Node or Secure Application Actor, the same audit message is recorded by both Directory and Query Client. The
 difference being the Audit Source element. Both sides record to show consistency
 between the message sent by the Directory and the action taken at the Query Client.
 
-The actors involved shall record audit events according to the
+The actors involved shall be able to record audit events according to the
 [Audit Event for Find Matching Care Services for Read by the Directory and Query Client](StructureDefinition-IHE.mCSD.Audit.CareServices.Read.html)
 or the [Audit Event for Find Matching Care Services for Query by the Directory and Query Client](StructureDefinition-IHE.mCSD.Audit.CareServices.Query.html).
