@@ -13,3 +13,6 @@ A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the
 # These come from BasicAudit and can be removed once that is updated.
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
+
+# not worrying about vocabulary canonical versions
+TYPE_SPECIFIC_CHECKS_DT_CANONICAL_MULTIPLE_POSSIBLE_VERSIONS
