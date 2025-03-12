@@ -163,7 +163,7 @@ The Mobile Care Services Discovery (mCSD) Profile supports queries for resources
 ![Top-level Relationships between Care Services Entities](mCSDRelationships.png)
 <div style="clear: left;"></div>
 
-**Figure 1:46.4.1-1: Top-level Relationships between Care Services Entities**
+**Figure 1:46.4.1-1: Top-level Relationships Between Care Services Entities**
 
 ### 1:46.4.2 Use Cases
 
@@ -372,8 +372,8 @@ A country or region may have a central facility registry and allow the facilitie
 
 ##### 1:46.4.2.7.2 Managing Facilities Capabilities Process Flow
 
-- A facility has an update to a health care service and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html)
-- A facility has removed a health care worker and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html)
+- A facility has an update to a health care service and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html).
+- A facility has removed a health care worker and needs to update the directory using [ITI-130 Care Services Feed](ITI-130.html).
 
 <div>
 {%include usecase7-processflow.svg%}

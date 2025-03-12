@@ -1,8 +1,6 @@
 <div markdown="1" class="stu-note">
 
-## Release notes
-
-The significant changes:
+## Significant Changes
 
 ### 4.0
 - Public Comment for addition of [ITI-130](ITI-130.html) Feed Transaction (Create, Update, Delete, Batch/Transaction)
@@ -62,8 +60,21 @@ The significant changes:
   - [mCSD Organization Affiliation DocumentSharing](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html): OrganizationAffiliation that supports IHE Document Sharing, using a fixed code "DocShare-federate" that indicates that the affiliation implies electronic access to the participatingOrganization (see [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-endpoint-usage-considerations))
 - Added [examples](artifacts.html#example-example-instances) for OrganizationAffiliation and Endpoint
 
+### 3.3:
+- FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
+- Removed inline UML text and moved it to images-source/
+- Removed reference to setting meta.profile as it is redundant
+- Added sections in actor requirements describing the requirement of providing a capability statement [Volume 1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
+- Updated the canonical URL for the organization hierarchy extension to `https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
+- Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
+- Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing
+- Added in text to show that searches can use GET or POST [ITI-90 Message Semantics](ITI-90.html#2390412-message-semantics)
+- Added in retrieve (GET RESOURCE/ID) message section starting at [ITI-90](ITI-90.html#239043-retrieve-care-services-resource-message)
+- Removed tables for StructureDefinitions for resources.
+
 ## Issues
 
+### Submit an Issue
 IHE welcomes [New Issues](https://github.com/IHE/ITI.mCSD/issues/new/choose)
 from the GitHub community. For those without GitHub access, issues may be
 submitted at [ITI Public Comments](https://www.ihe.net/ITI_Public_Comments/).
@@ -399,16 +410,5 @@ in a single request.*
 
 Combined into related open issue 7.
 
-## Significant changes from mCSD, Rev 3.3:
-- FHIR Implementation Guide instead of [pdf - Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_mCSD.pdf)
-- Removed inline UML text and moved it to images-source/
-- Removed reference to setting meta.profile as it is redundant
-- Added sections in actor requirements describing the requirement of providing a capability statement [Volume 1](volume-1.html#14611-actor-descriptions-and-actor-profile-requirements)
-- Updated the canonical URL for the organization hierarchy extension to `https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.OrganizationHierarchy`
-- Added links to the structure definitions for resource profiles to [ITI-90](ITI-90.html) and [ITI-91](ITI-91.html)
-- Changed structuredefinitions for Facility and Jurisdiction to use an invariant for the type requirement instead of slicing
-- Added in text to show that searches can use GET or POST [ITI-90 Message Semantics](ITI-90.html#2390412-message-semantics)
-- Added in retrieve (GET RESOURCE/ID) message section starting at [ITI-90](ITI-90.html#239043-retrieve-care-services-resource-message)
-- Removed tables for StructureDefinitions for resources.
 
 </div>

@@ -50,7 +50,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 
 pages:
   index.md:
-    title: Mobile Care Services Discovery (mCSD)
+    title: Mobile Care Services Discovery (mCSD) Home
     generation: markdown
   volume-1.md:
     title: 1:46 Mobile Care Services Discovery (mCSD)
@@ -65,13 +65,13 @@ pages:
     title: 2:3.130 Care Services Feed [ITI-130]
     generation: markdown
   testplan.md:
-    title: mCSD Test Plan
+    title: Test Plan
     generation: markdown
   issues.md:
-    title: mCSD Open and Closed issues
+    title: Significant Changes and Issues
     generation: markdown
   other.md:
-    title: Changes to Other Documents
+    title: Changes to Other Specifications
     generation: markdown
   download.md:
     title: "Download and Analysis"
@@ -93,7 +93,6 @@ menu:
     "Find Matching Care Services [ITI-90]": ITI-90.html
     "Request Care Services Updates [ITI-91]": ITI-91.html 
     "Care Services Feed [ITI-130]": ITI-130.html 
-  Test Plan: testplan.html
   Artifacts: artifacts.html
   Other:
     Changes to Other IHE Specifications: other.html
