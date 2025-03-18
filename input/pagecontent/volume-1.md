@@ -134,9 +134,9 @@ A Directory that supports the Update Option SHALL implement the [Request Care Se
 
 ### 1:46.2.3 Feed Option
 
-The Feed Option enables receiving feed updates from the Feed Client from the Directory.
+The Feed Option enables the Directory to receive feed updates from the Feed Client.
 
-A Directory that supports the Update Option SHALL implement the [Request Care Services Updates [ITI-91]](ITI-91.html) transaction.
+A Directory that supports the Feed Option SHALL implement the [Care Services Feed [ITI-130]](ITI-130.html) transaction.
 
 ## 1:46.3 mCSD Required Actor Groupings
 
