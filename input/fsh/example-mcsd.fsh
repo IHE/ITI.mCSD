@@ -133,7 +133,7 @@ Usage: #example
 // bundler
 
 Instance: Example-MCSD
-InstanceOf: Bundle
+InstanceOf: MCSDProcessCareServices
 Title: "Example Bundle of mCSD Resources"
 Description: "Example Bundle of Core mCSD Resources."
 Usage: #example
