@@ -49,10 +49,10 @@ to delete a Care Services resource, as recorded by the Directory or Data Source.
 Profile:      AuditMcsdCareServicesProcess
 Parent:       https://profiles.ihe.net/ITI/BALP/StructureDefinition/IHE.BasicAudit.Update
 Id:           IHE.mCSD.Audit.CareServices.Process
-Title:        "Audit Event for Care Services Feed Transaction by the Directory and Care Services Selective Feed for Batch/Transaction"
+Title:        "Audit Event for Care Services Feed Transaction by the Directory and Care Services Selective Feed for Transaction"
 Description:  """
 Defines constraints on the AuditEvent Resource to record when a Care Services Feed Transaction happens
-to do batch/transaction updates to Care Services resources, as recorded by the Directory or Data Source.
+to do transaction updates to Care Services resources, as recorded by the Directory or Data Source.
 """
 * subtype 2..*
 * subtype contains iti130 1..1

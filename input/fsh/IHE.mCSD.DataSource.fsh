@@ -122,7 +122,4 @@ Usage: #definition
       * code = #delete
   * interaction[+]
     * insert Expectation(SHALL)
-    * code = #batch
-  * interaction[+]
-    * insert Expectation(SHALL)
     * code = #transaction

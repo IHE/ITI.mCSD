@@ -1,10 +1,3 @@
-ValueSet: RestrictedBundleTypeVS
-Id: restricted-bundle-type-vs
-Title: "Restricted Bundle Type Value Set"
-Description: "Value set restricting Bundle types to only batch and transaction."
-* http://hl7.org/fhir/bundle-type#batch "Batch"
-* http://hl7.org/fhir/bundle-type#transaction "Transaction"
-
 ValueSet: RestrictedHTTPVerbVS
 Id: restricted-http-verb-vs
 Title: "Restricted HTTP Verb Value Set"
@@ -17,8 +10,8 @@ Profile:        MCSDProcessCareServices
 Parent:         Bundle
 Id:             IHE.mCSD.ProcessCareServices
 Title:          "Process"
-Description:    "A profile on the Bundle transaction/batch for ITI-130 Process Care Services Resources Request Message"
-* type from RestrictedBundleTypeVS (required)
+Description:    "A profile on the Bundle transaction for ITI-130 Process Care Services Resources Request Message"
+* type = #transaction
 * entry.request 1..1 MS
 * entry.request.method from RestrictedHTTPVerbVS (required)
 * entry ^slicing.discriminator[0].type = #profile
