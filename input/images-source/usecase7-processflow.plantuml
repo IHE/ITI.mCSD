@@ -9,13 +9,13 @@ activate Directory
 group Update HealthcareService
   Facility -> Facility: HealthcareService is updated
   Facility -> Directory: Care Services Feed [ITI-130] request\nUpdate existing HealthcareService
-  Directory -> Facility: Care Services Feed [ITI-130] response\nHTTP 200 OK
+  Directory -> Facility: Care Services Feed [ITI-130] response
 end
 
 group Delete Practitioner
   Facility -> Facility: Practitioner is no longer providing service and is deleted.
   Facility -> Directory: Care Services Feed [ITI-130] request\nDelete existing Practitioner
-  Directory -> Facility: Care Services Feed [ITI-130] response\nHTTP 200 OK
+  Directory -> Facility: Care Services Feed [ITI-130] response
 end
 
 deactivate Directory
