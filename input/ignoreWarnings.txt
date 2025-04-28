@@ -9,6 +9,7 @@ Reference to experimental CodeSystem https://profiles.ihe.net/ITI/mCSD/CodeSyste
 # understood that these IHE code systems are not published as a FHIR CodeSystem
 A definition for CodeSystem 'urn:ihe:iti:xca:2010' could not be found, so the code cannot be validated
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
+URL value 'urn:ihe:event-type-code' does not resolve
 
 # These come from BasicAudit and can be removed once that is updated.
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
@@ -16,3 +17,31 @@ The discriminator type 'pattern' is deprecated in R5+. For future compatibility,
 
 # not worrying about vocabulary canonical versions
 TYPE_SPECIFIC_CHECKS_DT_CANONICAL_MULTIPLE_POSSIBLE_VERSIONS
+
+# These request URLs from the example Bundle for a transaction don't need to resolve and are relative to the submission resource
+URL value 'Organization/MCSDJurisdictionOrganization-Example' does not resolve
+URL value 'Location/MCSDJurisdictionLocation-Example' does not resolve
+URL value 'Organization/MCSDOrganization-ExamplePartner' does not resolve 
+URL value 'Organization/MCSDFacilityOrganization-Example' does not resolve 
+URL value 'Location/MCSDFacilityLocation-Example' does not resolve 
+URL value 'HealthcareService/MCSDHealthcareService-Example' does not resolve 
+URL value 'PractitionerRole/MCSDPractitionerRole-Example' does not resolve 
+URL value 'Practitioner/MCSDPractitioner-Example' does not resolve 
+URL value 'OrganizationAffiliation/ex-OrgAff' does not resolve 
+URL value 'Organization/ex-OrgA' does not resolve 
+URL value 'urn:ihe:iti:xca:2010' does not resolve 
+URL value 'Organization/ex-OrgB' does not resolve 
+URL value 'Organization/ex-OrgC' does not resolve 
+URL value 'OrganizationAffiliation/ex-OrgAffC' does not resolve 
+URL value 'Endpoint/ex-endpointXCAquery' does not resolve 
+URL value 'Endpoint/ex-endpointXCAretrieve' does not resolve 
+URL value 'Endpoint/ex-endpointDicom' does not resolve 
+
+# These sliced values shouldn't be must support as they are optional (only at least one is required)
+The slice 'MCSDPractitioner' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+The slice 'MCSDPractitionerRole' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+The slice 'MCSDOrganization' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+The slice 'MCSDLocation' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+The slice 'MCSDHealthcareService' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+The slice 'MSDOrganizationAffiliation' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+The slice 'MCSDEndpoint' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 

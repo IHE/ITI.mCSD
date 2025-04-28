@@ -2,6 +2,7 @@ ValueSet: RestrictedHTTPVerbVS
 Id: restricted-http-verb-vs
 Title: "Restricted HTTP Verb Value Set"
 Description: "Value set for allowed HTTP verbs, excluding GET operations."
+* ^experimental = false
 * http://hl7.org/fhir/http-verb#POST "POST"
 * http://hl7.org/fhir/http-verb#PUT "PUT"
 * http://hl7.org/fhir/http-verb#DELETE "DELETE"
@@ -26,7 +27,7 @@ Description:    "A profile on the Bundle transaction for ITI-130 Process Care Se
     MCSDLocation 0..* and
     MCSDHealthcareService 0..* and
     MSDOrganizationAffiliation 0..* and
-    MCSDEndpoint 0..*
+    MCSDEndpoint 0..* 
 * entry[MCSDPractitioner].resource only IHE.mCSD.Practitioner 
 * entry[MCSDPractitioner] ^short = "Practitioner"
 * entry[MCSDPractitionerRole].resource only IHE.mCSD.PractitionerRole 

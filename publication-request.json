@@ -1,13 +1,13 @@
 {
  "package-id" : "ihe.iti.mcsd",
- "version" : "4.0.0-comment",
- "path" : "https://profiles.ihe.net/ITI/mCSD/4.0.0-comment",
+ "version" : "4.0.0",
+ "path" : "https://profiles.ihe.net/ITI/mCSD/4.0.0",
  "mode" : "milestone",
- "status" : "ballot",
+ "status" : "trial-use",
  "sequence": "Publication",
  "desc" : "Public Comment - Addition of Feed Transaction.  Minor fixes for issues.",
- "descmd" : "Version 4.0.0-comment
-- Public Comment for addition of ITI-130 Feed Transaction (Create, Update, Delete, Batch/Transaction)
+ "descmd" : "Version 4.0.0
+- Trial Implementation with addition of ITI-130 Feed Transaction (Create, Update, Delete, Batch/Transaction)
 - Updated and reconfigured actor names and options to improve clarity
 - Fix for [Issue 166](https://github.com/IHE/ITI.mCSD/issues/166)
 - Fix for [Issue 157](https://github.com/IHE/ITI.mCSD/issues/157)
