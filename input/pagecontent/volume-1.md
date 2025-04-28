@@ -98,7 +98,7 @@ No additional requirements. The following are two example capability statement r
 
 #### 1:46.1.1.4 Data Source
 
-The Data Source can provide updates about mCSD resources to a Directory. The updates include create, update, or delete requests to individual resources or a batch/transaction request for a bundle of resources.
+The Data Source can provide updates about mCSD resources to a Directory. The updates include create, update, or delete requests to individual resources or a transaction request for a bundle of resources.
 
 No additional requirements. The following are two example capability statement resources that a Data Source could support:
 

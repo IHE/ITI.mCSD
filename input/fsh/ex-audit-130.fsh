@@ -75,8 +75,8 @@ Usage:        #example
 
 Instance:     ex-AuditMcsdCareServicesProcess
 InstanceOf:   AuditMcsdCareServicesProcess
-Title:        "Audit example for ITI-130 for Data Source for batch/transaction updates."
-Description:  "Audit example for a Data Source submitting a batch/transaction on Care Services resources for ITI-130."
+Title:        "Audit example for ITI-130 for Data Source for transaction updates."
+Description:  "Audit example for a Data Source submitting a transaction on Care Services resources for ITI-130."
 Usage:        #example
 
 * subtype[anyUpdate] = http://hl7.org/fhir/restful-interaction#update "update"
