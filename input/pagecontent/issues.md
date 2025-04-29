@@ -21,6 +21,8 @@
 | [Data Source](volume-1.html#146114-data-source)                    | Care Services Feed Supplier              |
 {: .grid .table-striped}
 
+* Replaced MCSDOrgAffTypes Code System with [HL7's Organization Affiliation Role for HIE Code System.](https://terminology.hl7.org/6.2.0/CodeSystem-organization-affiliation-role-for-hie.html)
+
 ### 3.9
 
 - Integration of CP-ITI-1290 - clarifying Practitioner/PractitionerRole in Volume 1
@@ -51,7 +53,7 @@
   - A [core value set](ValueSet-MCSDEndpointTypesCoreDocShareVS.html) to cover the codes at the HL7 level of detail, suitable for use in connectionType
   - An [expanded value set](ValueSet-MCSDEndpointTypesVS.html) using the child codes, for use in the following extension
   - An [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html) to carry the more-specific IHE code
-- Added a [code system](CodeSystem-MCSDOrgAffTypes.html) and [value set](ValueSet-MCSDOrgAffTypesVS.html) for types of OrganizationAffiliation
+- Added a code system (MCSDOrgAffTypes) and [value set](ValueSet-MCSDOrgAffTypesVS.html) for types of OrganizationAffiliation
 - Added structure definitions for resource profiles:
   - [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html): general Endpoint
   - [mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html):
@@ -235,16 +237,6 @@ We believe we are using it appropriately, but there are a couple of issues we ar
 - [FHIR-25406: definition of organization and participatingOrganization in OrganizationAffiliation is not clear](https://jira.hl7.org/browse/FHIR-25406)
 - [FHIR-36019: OrganizationAffiliation.network unclear](https://jira.hl7.org/browse/FHIR-36019)
 
-[mCSD\_30](https://github.com/IHE/ITI.mCSD/issues/111). Currently there is one code in [mCSD Organization Affiliation Types](https://build.fhir.org/ig/IHE/ITI.mCSD/branches/main/CodeSystem-MCSDOrgAffTypes.html). Should there be at least two, one for transparent federation vs opaque federation?
-The expectations would be different: with transparent federation, federated identifiers would be
-preserved in responses and respected in requests. With opaque federation, identifiers would be
-consolidated/overwritten with the identifiers of the "parent" organization.
-
-Probably, but the implications of opaque federation are complex. Some aspects may be consolidated
-(e.g., golden patient record) while others are not (separate documents). Perhaps we could limit scope
-to whether federated communities (Organizations with an ID of type HCID) are addressable in
-requests and responses. Seeking input from reviewers.
-
 [mCSD\_31](https://github.com/IHE/ITI.mCSD/issues/112). Currently, only synchronous XDS/XCA/XDR and MHD Push are supported. This scope was limited
 for the public-comment deadline. After public comment, we plan to add in asynchronous (WS-A and AS4)
 and full MHD. One area that needs work is Digital Certificates to support async end-to-end security
@@ -410,5 +402,16 @@ in a single request.*
 
 Combined into related open issue 7.
 
+[mCSD\_30](https://github.com/IHE/ITI.mCSD/issues/111). Currently there is one code in mCSD Organization Affiliation Types. Should there be at least two, one for transparent federation vs opaque federation?
+The expectations would be different: with transparent federation, federated identifiers would be
+preserved in responses and respected in requests. With opaque federation, identifiers would be
+consolidated/overwritten with the identifiers of the "parent" organization.
+
+Probably, but the implications of opaque federation are complex. Some aspects may be consolidated
+(e.g., golden patient record) while others are not (separate documents). Perhaps we could limit scope
+to whether federated communities (Organizations with an ID of type HCID) are addressable in
+requests and responses. Seeking input from reviewers.
+
+We now reference the HL7 Value Set instead. 
 
 </div>
