@@ -1,6 +1,6 @@
 ValueSet: MCSDOrgDocSharingAffTypesVS
-Title: "mCSD Organization Affiliation Types ValueSet"
-Description: "ValueSet of Organization Affiliation types allowed"
+Title: "mCSD Organization Affiliation Types for Document Sharing Networks ValueSet"
+Description: "ValueSet of Organization Affiliation types to be used in Document Sharing networks"
 * ^experimental = false
 * codes from system NetworkOrgAffTypes
 
