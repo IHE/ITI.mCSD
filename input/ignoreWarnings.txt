@@ -45,3 +45,6 @@ The slice 'MCSDLocation' on path 'Bundle.entry' is not marked as 'must-support' 
 The slice 'MCSDHealthcareService' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
 The slice 'MSDOrganizationAffiliation' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
 The slice 'MCSDEndpoint' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
+
+# Ignoring this for now, but hoping there is a fix, see: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Slice.20info.20warning.20in.20inherited.20profile
+This element does not match any known slice defined in the profile https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint|4.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
