@@ -49,9 +49,7 @@ Parent:       MCSDOrganizationAffiliation
 Id:           IHE.mCSD.OrganizationAffiliation.DocShare
 Title:        "mCSD Organization Affiliation DocumentSharing"
 Description:  """
-A profile on the OrganizationAffiliation resource for mCSD in Document Sharing. Karen's Cross, when expanded to either/or a service that translates protocols, or a proxy that mediates network communication.
-
-Not used for direct connected mesh networks of depth 2 as that is handled fine with Organization->Endpoint. 
+A profile on the OrganizationAffiliation resource for mCSD in Document Sharing.
 
 Affiliation is used to show Document Sharing network linkage to a set of communities that are not directly addressable.  
 The participating organization would not have Organization->Endpoint advertised in the network directory. 

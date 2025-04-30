@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase3-diagram
 hide footbox
 
 title Cross-Jurisdictional Data Exchange

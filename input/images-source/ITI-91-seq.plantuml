@@ -1,4 +1,4 @@
-@startuml
+@startuml ITI-91-seq
 hide footbox
 participant "Update Client" as Client
 participant "Directory" as Server

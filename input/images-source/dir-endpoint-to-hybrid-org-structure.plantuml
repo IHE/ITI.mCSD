@@ -1,4 +1,4 @@
-@startuml
+@startuml dir-endpoint-to-hybrid-org-structure
 hide footbox
 
 object "Organization A" as OrganizationA
@@ -7,7 +7,7 @@ object "Endpoint" as EndpointA
 object "Organization C" as OrganizationC
 object "Organization D" as OrganizationD
 object "Organization E" as OrganizationE
-object ":OrganizationAffiliation" as OrgAff
+object "OrganizationAffiliation" as OrgAff
 OrgAff : code = DocShare-federate
 OrgAff -> OrganizationB : participatingOrganization
 OrganizationA <-- OrgAff : organization

@@ -1,16 +1,16 @@
-@startuml
+@startuml dir-endpoint-to-org-affiliates
 hide footbox
 
 object "Organization A" as OrganizationA
 object "Organization B" as OrganizationB
 object "Endpoint" as EndpointA
 object "Organization C" as OrganizationC
-object ":OrganizationAffiliation" as OrgAff
-OrgAff : code = DocShare-federate
+object "OrganizationAffiliation" as OrgAff
+OrgAff : code = DocShareFederateExt
 OrgAff --> OrganizationB : participatingOrganization
 OrganizationA <-- OrgAff : organization
-object ":OrganizationAffiliation" as OrgAff2
-OrgAff2 : code = DocShare-federate
+object "OrganizationAffiliation" as OrgAff2
+OrgAff2 : code = DocShareFederateExt
 OrgAff2 --> OrganizationC : participatingOrganization
 OrganizationA <-- OrgAff2 : organization
 

@@ -45,7 +45,7 @@ _since
 
 They shall also support the requirements in [ITI TF-2: Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format), Populating the Expected Response Format.
 
-A Directory shall support receiving a request for both the JSON and the XML messaging formats as defined in FHIR. A Update Client shall accept either the JSON or the XML messaging formats as defined in FHIR.
+A Directory shall support receiving a request for both the JSON and the XML messaging formats as defined in FHIR. A Update Client shall accept at least one of either the JSON or the XML messaging formats as defined in FHIR.
 
 See [ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for informative implementation material for this transaction.
 
@@ -135,5 +135,5 @@ Note that when grouped with ATNA Secure Node or Secure Application Actor, the sa
 difference being the Audit Source element. Both sides record to show consistency
 between the message sent by the Directory and the action taken at the Client.
 
-The actors involved shall be able to record audit events according to the
+When grouped with ATNA Secure Node or Secure Application actors, the actors involved shall be able to record audit events according to the
 [Audit Event for Request Care Services Updates by the Directory and Update Client](StructureDefinition-IHE.mCSD.Audit.CareServices.Updates.html).

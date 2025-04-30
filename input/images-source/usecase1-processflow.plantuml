@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase1-processflow
 hide footbox
 participant "Vera" as Patient
 participant "Dr. West" as Doctor

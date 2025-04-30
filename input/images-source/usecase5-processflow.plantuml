@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase5-processflow
 hide footbox
 participant "Health Worker" as HW
 participant "EMR\nQuery Client" as EMR

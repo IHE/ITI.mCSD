@@ -1,4 +1,4 @@
-@startuml
+@startuml dir-endpoint-to-org-hierarchy
 hide footbox
 
 object "Organization A" as OrganizationA

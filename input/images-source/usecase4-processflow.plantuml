@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase4-processflow
 hide footbox
 
 participant "MFL\nDirectory" as MFL

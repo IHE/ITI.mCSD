@@ -1,4 +1,4 @@
-@startuml
+@startuml ITI-130-seq
 hide footbox
 participant "Data Source" as Client
 participant "Directory" as Server

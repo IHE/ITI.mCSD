@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase7-processflow
 hide footbox
 participant "Facility" as Facility
 participant "Directory" as Directory
