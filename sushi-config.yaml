@@ -88,7 +88,7 @@ menu:
     Security Considerations: volume-1.html#1465-mcsd-security-considerations
     Cross-Profile Considerations: volume-1.html#1466-mcsd-cross-profile-considerations
     Deployment Considerations: volume-1.html#1467-mcsd-deployment-considerations  
-    Endpoint Usage Considerations: volume-1.html#1468-mcsd-endpoint-usage-considerations
+    mCSD as a Health Information Network Directory: volume-1.html#1468-mcsd-as-a-health-information-network-directory
   Volume 2:
     "Find Matching Care Services [ITI-90]": ITI-90.html
     "Request Care Services Updates [ITI-91]": ITI-91.html 
