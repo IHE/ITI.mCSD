@@ -53,7 +53,7 @@ A profile on the OrganizationAffiliation resource for mCSD in Document Sharing. 
 
 Not used for direct connected mesh networks of depth 2 as that is handled fine with Organization->Endpoint. 
 
-Affiliation is used to show Document Sharing network linkage to a set of communities that are not directly addressible.  
+Affiliation is used to show Document Sharing network linkage to a set of communities that are not directly addressable.  
 The participating organization would not have Organization->Endpoint advertised in the network directory. 
 There will be many OrganizationAffiliations, one for each pathway provided on the network by the serving organization (.organization) to another organization (.participatingOrganization).
 """
@@ -118,7 +118,7 @@ Title: "Example Organization C"
 Description: """
 Example Organization C supports communication with Organization B
 - Note that this organization hosts an XDS Query endpoint on the network. 
-- More endponts would be here, but the use-case is simplified to just XDS Query
+- More endpoints would be here, but the use-case is simplified to just XDS Query
 """
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
