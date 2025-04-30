@@ -1,27 +1,15 @@
-// Need to clarify that Karen's Cross does not need OrgAff. Karen's Cross is supported simplistically with simply Organization->Endpoint(s); where each endpoint expresses the various protocols supported. Where Document Sharing OrgAff is needed is when a network service is made available to mediate between originating Org-A needing to talk to Org-B where either (a) they don't have a common protocol (spirit of Karen's cross service), or (b) don't have a common direct link (proxy service). The Document Sharing OrgAff enables both (a) and (b). The OrgAff resource links a network endpoint hosting organization (OrgAff.organization and .participatingOrganization) and that organizations endpoint (OrgAff.endpoint and/or OrgAff.organization.endpoint, which is on the network) with a destination (push destination, or query/retrieve destination) organization (OrgAff.network) that does not have an endpoint present on the network.
-// Jira ticket filed on unclear .network -- https://jira.hl7.org/browse/FHIR-36019
-// Jira ticket filed on unclear .participatingOrganization -- https://jira.hl7.org/browse/FHIR-25406
-
-
-CodeSystem:  MCSDOrgAffTypes
-Title: "mCSD Organization Affiliation Types"
-Description:  "mCSD OrganizationAffiliation types beyond those in the FHIR core."
-* ^caseSensitive = true
+ValueSet: MCSDOrgDocSharingAffTypesVS
+Title: "mCSD Organization Affiliation Types for Document Sharing Networks ValueSet"
+Description: "ValueSet of Organization Affiliation types to be used in Document Sharing networks"
 * ^experimental = false
-* #DocShare-federate "Federation to any Document Sharing exchange"
-
-//TODO Define what an Document Sharing Federation means -- Joe --> It means if org A is a "parent" of org B through OrgAff and it has this code, then when doing doc sharing, when pulling, that results of Org B will be aggregated in Org A's responses, and when pushing, that Org B can be specified as intendedRecipient in a push to Org A.
-// Unclear if there needs to be many codes, or just one. Do we need a code for transparent fed vs opaque fed? 
-
+* codes from system NetworkOrgAffTypes
 
 ValueSet: MCSDOrgAffTypesVS
 Title: "mCSD Organization Affiliation Types ValueSet"
 Description: "ValueSet of Organization Affiliation types allowed"
 * ^experimental = false
-* codes from system MCSDOrgAffTypes
+* codes from valueset MCSDOrgDocSharingAffTypesVS
 * codes from system http://hl7.org/fhir/organization-role
-
-
 
 Profile:      MCSDOrganizationAffiliation
 Parent:       OrganizationAffiliation
@@ -65,7 +53,7 @@ A profile on the OrganizationAffiliation resource for mCSD in Document Sharing. 
 
 Not used for direct connected mesh networks of depth 2 as that is handled fine with Organization->Endpoint. 
 
-Affiliation is used to show Document Sharing network linkage to a set of communities that are not directly addressible.  
+Affiliation is used to show Document Sharing network linkage to a set of communities that are not directly addressable.  
 The participating organization would not have Organization->Endpoint advertised in the network directory. 
 There will be many OrganizationAffiliations, one for each pathway provided on the network by the serving organization (.organization) to another organization (.participatingOrganization).
 """
@@ -73,7 +61,7 @@ There will be many OrganizationAffiliations, one for each pathway provided on th
 * identifier ^short = "the homeCommunityId(s)"
 * identifier ^definition = "Shall be all the homeCommunityId(s) of all the communities in the affiliation network."
 * identifier ^comment = "Open-Issue: should this be mandated, recommended, or forbidden?"
-* insert requireAtLeastOneMatch( code, docshare, MCSDOrgAffTypes#DocShare-federate)
+* insert requireAtLeastOneFromValueSet( code, docshare, MCSDOrgDocSharingAffTypesVS)
 * endpoint only Reference(MCSDEndpointDocShare)
 
 
@@ -130,7 +118,7 @@ Title: "Example Organization C"
 Description: """
 Example Organization C supports communication with Organization B
 - Note that this organization hosts an XDS Query endpoint on the network. 
-- More endponts would be here, but the use-case is simplified to just XDS Query
+- More endpoints would be here, but the use-case is simplified to just XDS Query
 """
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
@@ -151,7 +139,7 @@ Usage: #example
 * identifier.type =  urn:ihe:iti:xca:2010#homeCommunityId
 * identifier.value = "urn:uuid:4f88dade-42a7-4fb3-b0a6-f877ff6b23b7" // OrgB
 * active = true
-* code[docshare] = MCSDOrgAffTypes#DocShare-federate
+* code[docshare] = NetworkOrgAffTypes#DocShareFederateExt
 * organization = Reference(Organization/ex-OrgC)
 * participatingOrganization = Reference(Organization/ex-OrgB)
 * endpoint[+] = Reference(Endpoint/ex-endpointXCAquery)

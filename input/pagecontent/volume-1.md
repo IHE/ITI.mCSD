@@ -328,8 +328,6 @@ Users in Health IT systems often need to be able to obtain clinical information 
 
 An HIE publishes a directory that contains all of its member organizations and their electronic endpoints.
 
-Note: Guidance for usage of endpoints in directories is provided [here](#1468-mcsd-endpoint-usage-considerations).
-
 - Endpoints are not limited to RESTful FHIR servers; they may point to systems that implement other mechanisms. This IG provides two profiles:
   [a general endpoint](StructureDefinition-IHE.mCSD.Endpoint.html), and
   [an endpoint to an IHE Document Sharing actor](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html).
@@ -469,129 +467,107 @@ For guidance on handling challenges regarding the representation of names across
 All referenced terminologies from a Directory may be pre-coordinated or they may be resolvable from one or more terminology services. Though it is out of scope of the mCSD Profile to define the means of interacting with a terminology service, this could be provided, for example, through the
 [Sharing Valuesets, Codes, and Maps (SVCM) Profile](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_SVCM.pdf).
 
-## 1:46.8 mCSD Endpoint Usage Considerations
+## 1:46.8 mCSD as a Health Information Network Directory
 
-This section provides guidance for populating and using Endpoint resources in an mCSD directory to enable electronic communication, for example defining local points of connectivity within a community, or defining a Health Information Exchange (HIE) that allows multiple communities to interoperate.
+mCSD can be used to represent the health information technology infrastructure that makes up a document sharing network by linking Endpoints—access points for data exchange—to Organizations and their Affiliations.
+This structure enables clear modeling of network topology by associating Endpoint Resources with Organizations in the mCSD Directory. 
+Endpoint Resources represent access points of connectivity to the entity to which they are linked. 
+The hierarchy of the IT systems to which the Endpoints point can be represented as one of the (potentially) many hierarchies represented by Organization Affiliation links in the mCSD Directory. 
+Codes from the [mCSD Organization Affiliation Types for Document Sharing Networks ValueSet](ValueSet-MCSDOrgDocSharingAffTypesVS.html) are used to indicate that an Organization Affiliation is part of a document sharing network hierarchy. 
 
-Many current Endpoint directories based on FHIR are purpose-built, which is to say they are deployed to a server that only hosts Organization and Endpoint resources, and only for the use case of Endpoint lookup. For this reason, directories often reflect network details directly in the Organization resource, such as:
-- The organization's role in the network, like participant or sub-participant, expressed as the type of organization.
-- The organization's relationship to its connectivity vendor, expressed as the organization hierarchy (i.e., partOf).
-- The organization's connectivity state as an extension.
-- Supported profiles, purposes of use, etc. as extensions.
-- The organization's identity as a home community ID, for use in IHE Document Sharing profiles.
+Child Organization Resources might be present in an mCSD Directory for business reasons other than representing document sharing infrastructure.
+Such child Organizations would not have their own Endpoints but could be accessible through their parent Organization's Endpoints. 
+An mCSD Directory must specify a policy that describes which types of affiliations are to be represented in the directory and any implications of how the network topology is represented in the Directory. 
 
-When the organization's structure and its network capabilities need to vary independently (e.g., an organization uses two connectivity vendors), directories typically handle this by creating parallel instances of the Organization resource that then have to be merged by custom code to display.
+Readers who are interested in representing a document sharing network in a Directory are strongly encouraged to read the IHE [Document Sharing Across Network Topologies white paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html) for additional guidance in representing the network structure.
 
-We anticipate these conflicts increasing over time due to many forces:
-- Implementers taking advantage of profiles like mCSD to represent more comprehensive organizational and personnel structures.
-- Implementers scaling by delegating maintenance of organization sub-trees to the organizations themselves.
-- Directories consolidating/federating over time into more comprehensive "phonebooks", where a given organization participates in multiple HIEs. One example would be the USA ONC TEFCA Recognized Coordinating Entity, which will be maintaining a directory that consists of entries supplied by each Qualified Health Information Network (QHIN).
-
-In this guidance, we allow organization structure and network details to vary independently by moving network details out of the Organization and into the Endpoint and OrganizationAffiliation resources.
+Specific details of addressing to federated recipients in standards based transactions are specific to the message semantics and expected actions of the transaction actors and therefore are out of the scope of this IG.
 
 ##### 1:46.8.1 Endpoint to an Organization
 
-The simplest usage model for a client is when the organization it needs to contact has a dedicated Endpoint resource in Organization.endpoint. Because this Endpoint is Organization-specific, it does not matter to the client who hosts it. Some examples follow.
+mCSD allows for Endpoint Resources to be linked both to Organization Resources and OrganizationAffiliation Resources.
+An Endpoint on an Organization Resource indicates that the Endpoint is broadly applicable to that Organization.
+This is often the simplest model for the client. Because this Endpoint is Organization-specific, it does not matter to the client to whom the Organization is affiliated with.
+The Organization might have affiliations, but those affiliations are not directly relevant for contacting the Organization. 
 
-Note: The managingOrganization of an Endpoint is who users need to contact for support. It may or may not be the same as the organization that hosts it. Since hosting is not reflected in the directory, we are indicating it in the diagrams below by the URLs.
+Note: The managingOrganization of an Endpoint is the contact point for support. This may differ from the organization that hosts the Endpoint. It may or may not be the same as the organization that hosts it. Since hosting might not be reflected in the directory, we are indicating it in the diagrams below by the URLs.
 
-Organization A hosts its own Endpoint:
+Organization A's endpoint is broadly applicable:
+
 <div>
+
 {%include dir-org-specific-endpoint-self.svg%}
+
 </div>
+
 <div style="clear: left;"/>
+
 **Figure 1:46.8.1-1: Organization-specific Endpoint Hosted by the Organization**
 
-Organization A is directly reachable by an endpoint hosted by its parent Organization B:
+Organization A is directly reachable by a broadly applicable endpoint hosted by its parent Organization B:
+
 <div>
+
 {%include dir-org-specific-endpoint-parent.svg%}
+
 </div>
+
 <div style="clear: left;"/>
+
 **Figure 1:46.8.1-2: Organization-specific Endpoint Hosted by Parent**
 
-Organization C is directly reachable by an endpoint hosted by its affiliated Organization D:
+Organization C is directly reachable by a broadly applicable endpoint hosted by its affiliated Organization D:
+
 <div>
+
 {%include dir-org-specific-endpoint-affil.svg%}
+
 </div>
+
 <div style="clear: left;"/>
+
 **Figure 1:46.8.1-3: Organization-specific Endpoint Hosted by Affiliation**
 
 Organization E is directly reachable by an endpoint hosted by a hidden (i.e., not in the directory) Intermediary F:
+
 <div>
+
 {%include dir-org-specific-endpoint-inter.svg%}
+
 </div>
+
 <div style="clear: left;"/>
+
 **Figure 1:46.8.1-4: Organization-specific Endpoint Hosted by Hidden Intermediary**
 
-##### 1:46.8.2 Endpoint to a Structure
-
-When an Organization with an Endpoint has a complex structure, for example, sub-organizations, clients can often make use of this structure:
-
-<div>
-{%include dir-endpoint-to-org-hierarchy.svg%}
-</div>
-<div style="clear: left;"/>
-
-**Figure 1:46.8.2-1: Endpoint to Organizational Hierarchy**
-
-Typical directories will take an organizational hierarchy to imply accessibility to parts of the structure, for example:
-- For FHIR REST endpoints, the URL is simply the Service Base URL as specified in [FHIR R4 3.1.0.1.2]({{site.data.fhir.path}}http.html#general). Clients can expect to find resources related to Organizations A, B and C.
-- For XCA endpoints, a client querying Organization A for documents (e.g., using \[ITI-38\]) may receive documents from Organizations A, B and C. If these organizations have identifiers of type Home Community ID in the directory, clients can expect to see these identifiers in the returned document metadata.
-- For XDR endpoints, a client sending a Provide and Register Document Set-b (\[ITI-41\]) request to Organization A can optionally specify Organizations B and/or C in intendedRecipient.
-- For MHD endpoints, a client sending a Provide Document Bundle (\[ITI-65\]) request to Organization A can optionally specify Organizations B and/or C in intendedRecipient.
-
-Specific details of addressing to federated recipients are out of the scope of this IG.
-
-Examples of this kind of federated structure are shown in [ITI TF-1: Appendix E.9](https://profiles.ihe.net/ITI/TF/Volume1/ch-E.html#E.9.3), for XCA Responding Gateways.
-
-By contrast, OrganizationAffiliations by themselves do not necessarily imply this kind of electronic accessibility. For this reason, this IG defines the code "DocShare-federate", which explicitly declares that the participatingOrganization is accessible as a federated organization via the OrganizationAffiliation.endpoint.
+In contrast, Endpoints that are placed on an OrganizationAffiliation Resource indicate that the Endpoint applies to the .participatingOrganization of the affiliation, but only in the context of the affiliation. 
+This allows Organizations which are affiliated with multiple networks to have different Endpoints for each network, which might be necessary due to different needs (such as security) of each network.
 
 The following diagram shows the same accessibility, but using OrganizationAffiliation.
 
 <div>
+
 {%include dir-endpoint-to-org-affiliates.svg%}
+
 </div>
+
 <div style="clear: left;"/>
 
 **Figure 1:46.8.2-2: Endpoint to Organizational Affiliates**
 
-In addition, these mechanisms may be combined. This may be useful, for example, when adding an existing organizational structure to an HIE.
+##### 1:46.8.3 Endpoint Content
+
+The Endpoint.connectionType and specificType extension indicate the type of connectivity enabled by the Endpoint.
+As such, Organization and OrganizationAffiliation Resources MAY have many Endpoints for the various types of connectivity they support. 
+
+The following example shows an Organization that has two Endpoints, one for IHE MHD and one for IHE XDR:
 
 <div>
-{%include dir-endpoint-to-hybrid-org-structure.svg%}
-</div>
-<div style="clear: left;"/>
 
-**Figure 1:46.8.2-3: Endpoint to Hybrid Organizational Structure**
-
-##### 1:46.8.3 Grouping Actors
-
-Grouped actors may be represented as well, although not explicitly. In the following example, Participant A is reachable by either an MHD endpoint or XDR endpoints. The directory
-does not reflect which endpoint is the adapter or the adaptee.
-
-<div>
 {%include dir-endpoint-xdr-mhd.svg%}
+
 </div>
+
 <div style="clear: left;"/>
 
-**Figure 1:46.8.3-1: Endpoints to Grouped Actors**
-
-##### 1:46.8.4 Endpoint Discovery Usage
-
-The following example shows the steps used by a Query Client to navigate a directory to find suitable electronic service Endpoints to some desired Organizations. In this example, a "suitable" Endpoint means it supports an IHE Document Sharing profile, and is based on .connectionType, .extension:specificType, .payloadType, .payloadMimeType, and status (both Endpoint.status as well as the actual status of the electronic service). The example uses the [mCSD-profiled OrganizationAffiliation] StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html) that indicates federated connectivity for Document Sharing (e.g., affiliated organizations may be addressed as intendedRecipient). The pseudocode below uses a depth-first, first-match search, and does not protect against loops.
-
-Until a suitable Endpoint is found or the search is complete, check the following in this order:
-- Locate the desired Organization resource.
-- Check if it has a suitable Organization.endpoint.
-- Find OrganizationAffiliation resources where the Organization is the .participatingOrganization, and OrganizationAffiliation.code = DocShare-federate.
-- For each OrganizationAffiliation found:
-  - Check if it has a suitable OrganizationAffiliation.endpoint.
-  - Check if it has a suitable OrganizationAffiliation.organization.endpoint.
-  - Continue searching for a suitable Endpoint by traversing the OrganizationAffiliation resources recursively (i.e., where the OrganizationAffiliation.organization of the current resource is the .participatingOrganization of the next resource).
-- If there is an Organization.partOf (i.e., a parent), check if it has a suitable Organization.endpoint.
-  - Continue searching for a suitable Endpoint by traversing Organization.partOf recursively.
-
-Rather than a first-match search, the Query Client might search for and decide among multiple electronic paths to the same Organization. For example:
-- It finds a suitable Endpoint resource for the target Organization, but instead uses an Endpoint for an Organization two levels higher to make a broader search for records.
-- It finds suitable Endpoint resources for equivalent mechanisms, XDR \[ITI-41\] and MHD \[ITI-65\], and chooses MHD as the preferred transaction.
-- It finds suitable Endpoint resources to the same Organization via two different HIEs, and prefers one HIE based on lower fees and authorization differences.
+**Figure 1:46.8.3-1: An Organization With Multiple Endpoints**
