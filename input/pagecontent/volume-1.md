@@ -82,7 +82,7 @@ This capabilities response will typically include all of the capabilities inclus
 
 The Query Client queries the Directory for information about mCSD resources.
 
-No additional requirements.  The following are two example capability statement resources that a Query Client could support:
+The following are two example capability statement resources that a Query Client could support:
 
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Query Client](CapabilityStatement-IHE.mCSD.QueryClient.html)
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Query Client Location Distance Option](CapabilityStatement-IHE.mCSD.QueryClient.LocationDistance.html)
@@ -92,7 +92,7 @@ No additional requirements.  The following are two example capability statement 
 The Update Client can query for updates since a previous refresh, to information about mCSD resources from one 
 or more Directories that support the Update Option.
 
-No additional requirements. The following are two example capability statement resources that a Update Client could support:
+The following are two example capability statement resources that a Update Client could support:
 
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Update Client](CapabilityStatement-IHE.mCSD.UpdateClient.html)
 
@@ -100,7 +100,7 @@ No additional requirements. The following are two example capability statement r
 
 The Data Source can provide updates about mCSD resources to a Directory. The updates include create, update, or delete requests to individual resources or a transaction request for a bundle of resources.
 
-No additional requirements. The following are two example capability statement resources that a Data Source could support:
+The following are two example capability statement resources that a Data Source could support:
 
 - [IHE ITI Mobile Care Services Discovery (mCSD) - Data Source](CapabilityStatement-IHE.mCSD.DataSource.html)
 
