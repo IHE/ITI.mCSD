@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase6-processflow
 hide footbox
 participant "Health Worker" as HW
 participant "EMR\nQuery Client\nXCA Initiating Gateway" as EMR

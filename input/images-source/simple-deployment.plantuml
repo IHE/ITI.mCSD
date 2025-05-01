@@ -1,4 +1,4 @@
-@startuml
+@startuml simple-deployment
 hide footbox
 skinparam linetype polyline
 

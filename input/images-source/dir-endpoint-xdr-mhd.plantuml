@@ -1,12 +1,12 @@
-@startuml
+@startuml dir-endpoint-xdr-mhd
 hide footbox
 
-object ":Organization" as Organization
+object "Organization" as Organization
 Organization : name = "Participant A"
-object ":Endpoint" as Responder38
+object "Endpoint" as Responder38
 Responder38 : connectionType = ihe-xca
 Responder38 : extension:specificType = XDR-DocRecipient
-object ":Endpoint" as Responder39
+object "Endpoint" as Responder39
 Responder39 : connectionType = hl7-fhir-rest
 Responder39 : extension:specificType = MHD-Recipient-ProvideReg
 

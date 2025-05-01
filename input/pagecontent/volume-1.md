@@ -58,13 +58,13 @@ Table 1:46.1-1 lists the transactions for each actor directly involved in the mC
 
 Most requirements are documented in ITI TF-2: Transactions. This section documents any additional requirements on mCSD actors.
 
-mCSD supports querying for Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint. However, Directories, Query Clients, Update Clients, or Data Sources are not required to contain data on all of these.
+mCSD supports communicating Organization, Facility, Location, Practitioner, PractitionerRole, Healthcare Service, OrganizationAffiliation, and Endpoint Resources. However, Directories, Query Clients, Update Clients, or Data Sources are not required to contain data on all of these.
 
 #### 1:46:1.1.1 Directory
 
 The Directory processes received queries from Query Client and returns information about mCSD resources.
 
-When the Directory supports the Update Option, it can provide updates about mCSD resources in response to a refresh request from an Update Client. The updates include new or modified information since a previous refresh.
+When the Directory supports the Update Option, it can provide updates about mCSD resources in response to a request from an Update Client. The updates include new or modified information since a previous refresh.
 
 When the Directory supports the Feed Option, it receives updates to information about mCSD resources from a Data Source.
 
@@ -481,7 +481,8 @@ An mCSD Directory must specify a policy that describes which types of affiliatio
 
 Readers who are interested in representing a document sharing network in a Directory are strongly encouraged to read the IHE [Document Sharing Across Network Topologies white paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html) for additional guidance in representing the network structure.
 
-Specific details of addressing to federated recipients in standards based transactions are specific to the message semantics and expected actions of the transaction actors and therefore are out of the scope of this IG.
+Details regarding the addressing of federated recipients in standards-based transactions are dependent on the message semantics and the expected actions of the involved actors.
+As such, they are outside the scope of this Implementation Guide.
 
 ##### 1:46.8.1 Endpoint to an Organization
 

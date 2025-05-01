@@ -1,4 +1,4 @@
-@startuml
+@startuml dir-org-specific-endpoint-affil
 hide footbox
 
 object "Organization C" as OrganizationC

@@ -1,4 +1,4 @@
-@startuml
+@startuml ITI-90-seq
 hide footbox
 participant "Query Client" as Client
 participant "Directory" as Server
