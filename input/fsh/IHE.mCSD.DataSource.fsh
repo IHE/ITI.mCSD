@@ -27,7 +27,7 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * resource[+]
     * insert Expectation(MAY)
@@ -44,7 +44,7 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * resource[+]
     * insert Expectation(MAY)
@@ -60,7 +60,7 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * resource[+]
     * insert Expectation(MAY)
@@ -74,7 +74,7 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * resource[+]
     * insert Expectation(MAY)
@@ -88,7 +88,7 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * resource[+]
     * insert Expectation(MAY)
@@ -103,7 +103,7 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * resource[+]
     * insert Expectation(MAY)
@@ -118,8 +118,8 @@ Usage: #definition
       * insert Expectation(SHALL)
       * code = #update
     * interaction[+]
-      * insert Expectation(SHALL)
+      * insert Expectation(MAY)
       * code = #delete
   * interaction[+]
-    * insert Expectation(SHALL)
+    * insert Expectation(MAY)
     * code = #transaction
