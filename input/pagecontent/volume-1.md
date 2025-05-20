@@ -554,9 +554,9 @@ The following diagram shows the same accessibility, but using OrganizationAffili
 
 <div style="clear: left;"/>
 
-**Figure 1:46.8.2-2: Endpoint to Organizational Affiliates**
+**Figure 1:46.8.1-5: Endpoint to Organizational Affiliates**
 
-##### 1:46.8.3 Endpoint Content
+##### 1:46.8.2 Endpoint Content
 
 The Endpoint.connectionType and specificType extension indicate the type of connectivity enabled by the Endpoint.
 As such, Organization and OrganizationAffiliation Resources MAY have many Endpoints for the various types of connectivity they support. 
@@ -571,4 +571,4 @@ The following example shows an Organization that has two Endpoints, one for IHE 
 
 <div style="clear: left;"/>
 
-**Figure 1:46.8.3-1: An Organization With Multiple Endpoints**
+**Figure 1:46.8.2-1: An Organization With Multiple Endpoints**
