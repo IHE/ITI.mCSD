@@ -4,7 +4,7 @@
 
 ### 4.0
 - Public Comment for addition of [ITI-130](ITI-130.html) Feed Transaction (Create, Update, Delete, Batch/Transaction)
-  - Updated Volume 1 for new actors and transaction and added use case and additions to security considerations.
+  - Updated Volume 1 for new actors and transaction and added use case and additions to security considerations
   - Reworked all Actors to improve clarity
 - Fix for [Issue 166](https://github.com/IHE/ITI.mCSD/issues/166) on physicalType cardinality
 - Fix for [Issue 157](https://github.com/IHE/ITI.mCSD/issues/157) on partof search parameter requirement to SHOULD
@@ -21,8 +21,8 @@
 | [Data Source](volume-1.html#146114-data-source)                    | Care Services Feed Supplier              |
 {: .grid .table-striped}
 
-* Replaced MCSDOrgAffTypes Code System with [HL7's Organization Affiliation Role for HIE Code System.](https://terminology.hl7.org/6.2.0/CodeSystem-organization-affiliation-role-for-hie.html)
-* Renamed [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-as-a-health-information-network-directory) to "mCSD as a Health Information Network Directory" and simplified the section; removing content that is duplicative of the IHE [Document Sharing Across Network Topologies white paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html)
+- Replaced MCSDOrgAffTypes Code System with [HL7's Organization Affiliation Role for HIE Code System](https://terminology.hl7.org/6.2.0/CodeSystem-organization-affiliation-role-for-hie.html)
+- Renamed [1:46.8 mCSD Endpoint Usage Considerations](volume-1.html#1468-mcsd-as-a-health-information-network-directory) to "mCSD as a Health Information Network Directory" and simplified the section; removing content that is duplicative of the IHE [Document Sharing Across Network Topologies white paper](https://profiles.ihe.net/ITI/papers/Topologies/index.html)
 
 ### 3.9
 
@@ -59,7 +59,7 @@
   - [mCSD Endpoint](StructureDefinition-IHE.mCSD.Endpoint.html): general Endpoint
   - [mCSD Endpoint for Document Sharing](StructureDefinition-IHE.mCSD.Endpoint.DocShare.html):
     Endpoint that supports IHE Document Sharing (e.g., XCA, MHD), using the [extension for Endpoint Specific Type](StructureDefinition-ihe-endpointspecifictype.html)
-  - [mCSD Organization Affiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html): general OrganizationAffiliation.
+  - [mCSD Organization Affiliation](StructureDefinition-IHE.mCSD.OrganizationAffiliation.html): general OrganizationAffiliation
   - [mCSD Organization Affiliation DocumentSharing](StructureDefinition-IHE.mCSD.OrganizationAffiliation.DocShare.html): OrganizationAffiliation that supports IHE Document Sharing, using a fixed code "DocShare-federate" that indicates that the affiliation implies electronic access to the participatingOrganization (see [mCSD as a Health Information Network Directory](volume-1.html#1468-mcsd-as-a-health-information-network-directory))
 - Added [examples](artifacts.html#example-example-instances) for OrganizationAffiliation and Endpoint
 
