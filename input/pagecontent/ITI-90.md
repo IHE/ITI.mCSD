@@ -338,6 +338,6 @@ Note that when grouped with ATNA Secure Node or Secure Application Actor, the sa
 difference being the Audit Source element. Both sides record to show consistency
 between the message sent by the Directory and the action taken at the Query Client.
 
-When grouped with ATNA Secure Node or Secure Application actors, the actors involved shall be able to record audit events according to the
+When grouped with ATNA Secure Node or Secure Application Actors, the actors involved shall be able to record audit events according to the
 [Audit Event for Find Matching Care Services for Read by the Directory and Query Client](StructureDefinition-IHE.mCSD.Audit.CareServices.Read.html)
 or the [Audit Event for Find Matching Care Services for Query by the Directory and Query Client](StructureDefinition-IHE.mCSD.Audit.CareServices.Query.html).
