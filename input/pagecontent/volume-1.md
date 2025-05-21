@@ -424,7 +424,6 @@ A basic deployment may only have a single directory that will maintain data inte
 <div style="clear: left;"/>
 **Figure 1:46.7.1-1: Basic Deployment**
 
-
 ### 1:46.7.2 Simple Deployment
 
 A more common deployment may have a single directory with one or more data sources that feed data into the directory. This would also have one or more query or update clients to query the data in the directory. The Update Client could be a system that caches bulk updates for local reference and doesn't do individual queries.  See Figure 1:46.7.2-1 below.
@@ -484,7 +483,7 @@ Readers who are interested in representing a document sharing network in a Direc
 Details regarding the addressing of federated recipients in standards-based transactions are dependent on the message semantics and the expected actions of the involved actors.
 As such, they are outside the scope of this Implementation Guide.
 
-##### 1:46.8.1 Endpoint to an Organization
+### 1:46.8.1 Endpoint to an Organization
 
 mCSD allows for Endpoint Resources to be linked both to Organization Resources and OrganizationAffiliation Resources.
 An Endpoint on an Organization Resource indicates that the Endpoint is broadly applicable to that Organization.
@@ -556,7 +555,7 @@ The following diagram shows the same accessibility, but using OrganizationAffili
 
 **Figure 1:46.8.1-5: Endpoint to Organizational Affiliates**
 
-##### 1:46.8.2 Endpoint Content
+### 1:46.8.2 Endpoint Content
 
 The Endpoint.connectionType and specificType extension indicate the type of connectivity enabled by the Endpoint.
 As such, Organization and OrganizationAffiliation Resources MAY have many Endpoints for the various types of connectivity they support. 
