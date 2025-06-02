@@ -19,6 +19,9 @@ The discriminator type 'pattern' is deprecated in R5+. For future compatibility,
 # not worrying about vocabulary canonical versions
 TYPE_SPECIFIC_CHECKS_DT_CANONICAL_MULTIPLE_POSSIBLE_VERSIONS
 
+# This is a warning from a child profile where the slice doesn't exist in the parent profile so it is ok.
+This element does not match any known slice defined in the profile https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint|4.0.1-current (this may not be a problem, but you should check that it's not intended to match a slice) 
+
 # These sliced values shouldn't be must support as they are optional (only at least one is required)
 The slice 'MCSDPractitioner' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
 The slice 'MCSDPractitionerRole' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
