@@ -9,7 +9,8 @@ Reference to experimental CodeSystem https://profiles.ihe.net/ITI/mCSD/CodeSyste
 # understood that these IHE code systems are not published as a FHIR CodeSystem
 A definition for CodeSystem 'urn:ihe:iti:xca:2010' could not be found, so the code cannot be validated
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
-URL value 'urn:ihe:event-type-code' does not resolve
+No definition could be found for URL value 'urn:ihe:event-type-code'
+No definition could be found for URL value 'urn:ihe:iti:xca:2010'
 
 # These come from BasicAudit and can be removed once that is updated.
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
@@ -18,24 +19,8 @@ The discriminator type 'pattern' is deprecated in R5+. For future compatibility,
 # not worrying about vocabulary canonical versions
 TYPE_SPECIFIC_CHECKS_DT_CANONICAL_MULTIPLE_POSSIBLE_VERSIONS
 
-# These request URLs from the example Bundle for a transaction don't need to resolve and are relative to the submission resource
-URL value 'Organization/MCSDJurisdictionOrganization-Example' does not resolve
-URL value 'Location/MCSDJurisdictionLocation-Example' does not resolve
-URL value 'Organization/MCSDOrganization-ExamplePartner' does not resolve 
-URL value 'Organization/MCSDFacilityOrganization-Example' does not resolve 
-URL value 'Location/MCSDFacilityLocation-Example' does not resolve 
-URL value 'HealthcareService/MCSDHealthcareService-Example' does not resolve 
-URL value 'PractitionerRole/MCSDPractitionerRole-Example' does not resolve 
-URL value 'Practitioner/MCSDPractitioner-Example' does not resolve 
-URL value 'OrganizationAffiliation/ex-OrgAff' does not resolve 
-URL value 'Organization/ex-OrgA' does not resolve 
-URL value 'urn:ihe:iti:xca:2010' does not resolve 
-URL value 'Organization/ex-OrgB' does not resolve 
-URL value 'Organization/ex-OrgC' does not resolve 
-URL value 'OrganizationAffiliation/ex-OrgAffC' does not resolve 
-URL value 'Endpoint/ex-endpointXCAquery' does not resolve 
-URL value 'Endpoint/ex-endpointXCAretrieve' does not resolve 
-URL value 'Endpoint/ex-endpointDicom' does not resolve 
+# This is a warning from a child profile where the slice doesn't exist in the parent profile so it is ok.
+This element does not match any known slice defined in the profile https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Endpoint|4.0.1-current (this may not be a problem, but you should check that it's not intended to match a slice) 
 
 # These sliced values shouldn't be must support as they are optional (only at least one is required)
 The slice 'MCSDPractitioner' on path 'Bundle.entry' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true 
